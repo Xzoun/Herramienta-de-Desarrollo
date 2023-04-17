@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Gastos</title>
+    <link rel="stylesheet" href="app de gastos.css">
+</head>
+<body>
+    <h1 id="titulo">Mis Gastos</h1>
+    <form id="lista">
+        <div class="formulario">
+            Tipo de Transaccion
+            <input id="transacciontipo" name="transacciontipo" type="radio" value="Ingreso">
+            <label for="Tipo de Transaccion">Ingreso</label>
+
+            <input id="transacciontipo" name="transacciontipo" type="radio" value="Egreso">
+            <label for="Tipo de Transaccion">Egreso</label>
+        </div>
+        <div class="formulario">
+            <label for="transacciondescripcion">Descripcion</label>
+            <input id="transacciondescripcion" name="transacciondescripcion">
+        </div>
+        <div class="formulario">
+            <label for="transaccionmonto">Monto</label>
+            <input id="transaccionmonto" type="number" name="transaccionmonto">
+        </div>
+        <div class="formulario">
+            <label for="transaccioncategoria">Categoria</label>
+            <input id="transaccioncategoria" name="transaccioncategoria">
+        </div>
+        <div class="formulario">
+            <button id="boton">Cargar Gastos</button>
+        </div>
+    </form>
+    <div class="formatotabla">
+        <table ID="idtabla">
+            <tr>
+                <th>Tipo de transaccion</th>
+                <th>Descripcion</th>
+                <th>Monto</th>
+                <th>Categoria</th>
+            </tr>            
+        </table>
+    </div>
+    <script>
+        const formulario = document.getElementById("lista");
+        formulario.addEventListener("submit", function (event) {
+            //Evitar comportamiento por defecto de F5 y "enviar" al hacer click en "cargar"
+            event.preventDefault();
+            //listaData almacena las respuestas del formulario
+            let listaData = new FormData(formulario);
+            //funcion que obtiene la informacion del "listaData" en variables
+            let nuevacarga = convertirObjeto(listaData);
+            //funcion para guardar las respuestasen el local Storage
+            let guardar = guardarData(nuevacarga);
+            //funcion para cargar el resultado del formulario  en la tabla "idtabla"
+            cargartabla(nuevacarga);
+            //Vuelve el formulario a su estado inicial
+            formulario.reset();
+        })
+
+        document.addEventListener("DOMContentLoaded", function(event){
+            //Esta linea guarda en una variable todos los vectores almacenados en el local store
+            let cargasanteorioresObj = JSON.parse(localStorage.getItem("Gastos")) || [];
+            //forEach recorre cada elemento(En este caso son los vectores del local store)
+            //Devuelve en "cargas anteriores" cada elemento del vector
+             let CargasAnteriores;
+            cargasanteorioresObj.forEach(function(CargasAnteriores){
+                cargartabla(CargasAnteriores);
+                });
+        })
+        function generarIdTransaccion(){
+            let ultimatransaccion = localStorage.getItem("ultimatransaccion") || "0";
+            let nuevotransaccionId = JSON.parse(ultimatransaccion) + 1;
+            localStorage.setItem("ultimatransaccion",JSON.stringify(nuevotransaccionId)); 
+            return nuevotransaccionId;
+        }
+        function convertirObjeto(listaData) {
+            let transacciontipo = listaData.get("transacciontipo");
+            let transacciondescripcion = listaData.get("transacciondescripcion");
+            let transaccionmonto = listaData.get("transaccionmonto");
+            let transaccioncategoria = listaData.get("transaccioncategoria");
+            let transaccionId = generarIdTransaccion();
+            return {
+                "transacciontipo": transacciontipo,
+                "transacciondescripcion": transacciondescripcion,
+                "transaccionmonto": transaccionmonto,
+                "transaccioncategoria": transaccioncategoria,
+                "transaccionId" : transaccionId
+            }
+        }
+        function guardarData(nuevacarga) {        
+            //JSON.parse revierte en JSON.stringify
+            //esta linea toma lo que ya este en el local storage y 
+            //lo guarda en "gastosArray"
+            let anteriorescargas = JSON.parse(localStorage.getItem("Gastos")) || [];
+            //esta linea le agrega los datos nuevos
+            anteriorescargas.push(nuevacarga);
+            // JSON.stringify convierte en cadena 
+            let convertirObjJSON = JSON.stringify(anteriorescargas);
+            //guarda en el local storage la cadena
+            localStorage.setItem("Gastos", convertirObjJSON);
+        }
+        function cargartabla(nuevacarga) {
+            let listatablaRef = document.getElementById("idtabla");
+            let newfilatabla = listatablaRef.insertRow(-1);           
+            let newceldatabla = newfilatabla.insertCell(0);
+            newceldatabla.textContent = nuevacarga["transacciontipo"];
+            newceldatabla = newfilatabla.insertCell(1);
+            newceldatabla.textContent = nuevacarga["transacciondescripcion"];
+            newceldatabla = newfilatabla.insertCell(2);
+            newceldatabla.textContent = nuevacarga["transaccionmonto"];
+            newceldatabla = newfilatabla.insertCell(3);
+            newceldatabla.textContent = nuevacarga["transaccioncategoria"];
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent="Eliminar.";
+            let deleteCell = newfilatabla.insertCell(4);
+            deleteCell.appendChild(deleteButton);            
+            deleteButton.addEventListener("click",function(event){
+                event.target.parentNode.parentNode.remove();
+            })
+        }
+        function deletelocalstore(transaccionId){
+
+        }
+    </script>
+</body>
+
+</html>

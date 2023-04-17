@@ -1,0 +1,477 @@
+@media (max-width: 767px) {
+    * {
+        margin: 0px;
+    }
+
+    body {
+        background-color: rgb(245, 222, 179);
+    }
+
+    #TodoJuego2 {
+        width: 95%;
+        margin: 50px auto;
+    }
+
+    header {
+        width: 70%;
+        margin-left: 15%;
+        text-align: center;
+        line-height: 85px;
+        color: dark;
+        border-bottom: 3px solid black;
+    }
+
+    #indicacioninicial {
+        margin-top: 20px;
+        display: none;
+        width: 100%;
+        text-align: center;
+        line-height: 50px;
+        color: dark;
+        font-size: 3ch;
+    }
+
+    #bienvenida {
+        text-align: center;
+        padding: 1px;
+        font-size: 3ch;
+        display: block;
+        padding-top: 10px;
+    }
+
+    #ingresonombre {
+        border: solid 3px black;
+    }
+
+    #ingresoboton {
+        border: solid 3px black;
+        color: rgb(208, 72, 241);
+        background-color: wheat;
+        margin-top: 30px;
+    }
+
+    #ingresoboton:hover {
+        border: solid 3px black;
+        background-color: rgb(123, 42, 143);
+        color: wheat;
+    }
+
+    #ingresoformulario {
+        margin: 3ch;
+        background-color: wheat;
+    }
+
+    #Botoninicial {
+        width: 50%;
+        display: none;
+        text-align: center;
+        color: rgb(208, 72, 241);
+        border: solid 3px black;
+        padding: 15px 60px;
+        font-size: 3ch;
+        background-color: wheat;
+        margin-right: 25%;
+        margin-left: 25%;
+        margin-bottom: 70px;
+        margin-top: 40px;
+    }
+
+    #Botoninicial:hover {
+        background-color: rgb(123, 42, 143);
+        color: wheat;
+    }
+
+    #idbotones {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        display: none;
+        font-size: 2ch;
+    }
+
+    .PPT {
+        color: rgb(208, 72, 241);
+        padding: 10px 40px;
+        background-color: wheat;
+        font-size: 3ch;
+    }
+
+    .PPT:hover {
+        background-color: rgb(123, 42, 143);
+        color: wheat;
+    }
+
+    #interfazgeneral {
+        width: 100%;
+        background-color: wheat;
+    }
+
+    .formatotablero {
+        width: 100%;
+        border: solid 3px black;
+        margin-top: 20px;
+        display: none;
+        font-size: 3ch;
+    }
+
+    .formatotablero th {
+        width: 100%;
+        border-bottom: solid 3px black;
+        border-left: solid 3px black;
+        background-color: rgb(208, 72, 241);
+        text-align: center;
+        color: wheat;
+
+    }
+
+    .formatotablero td {
+        width: 1%;
+        border-bottom: solid 3px black;
+        border-left: solid 3px black;
+        text-align: center;
+
+    }
+
+    #puntousuario,
+    #puntoIA {
+        visibility: hidden;
+    }
+
+    .interfazpunto {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding: 15px 20px;
+        border: solid 3px rgb(208, 72, 241);
+        color: rgb(208, 72, 241);
+        background-color: black;
+        margin-top: 20px;
+        visibility: hidden;
+        font-size: 2.5ch;
+        margin-bottom: 60px;
+    }
+
+    .interfazpunto th {
+
+        text-align: center;
+    }
+
+    .interfazpunto td {
+
+        width: 1%;
+        text-align: center;
+
+    }
+
+    .boost {
+        display: none;
+    }
+
+    .formatoboost {
+        width: 30%;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: rgb(226, 158, 32);
+        font-size: 3ch;
+        color: rgb(208, 72, 241);
+
+    }
+
+    .formatoboost:hover {
+        background-color: rgb(123, 42, 143);
+        color: wheat;
+    }
+}
+
+@media (min-width: 768px) {
+    * {
+        margin: 0px;
+    }
+
+    body {
+        background-color: rgb(245, 222, 179);
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    #TodoJuego2 {
+        width: 95%;
+        margin: 50px auto;
+    }
+
+    header {
+        width: 90%;
+        margin-left: 5%;
+        text-align: center;
+        line-height: 85px;
+        color: dark;
+
+    }
+
+    h1 {
+        border-bottom: 3px solid rgb(170, 81, 46);;
+        font-size: 4ch;
+    }
+
+    #indicacioninicial {
+        display: none;
+    }
+
+    #racha {
+        display: flex;
+        width: 30%;
+        margin: 0px 32%;
+    }
+
+    #racha1 {
+        flex: 1;
+        text-align: center;
+        margin-left: 8%;
+        display: none;
+
+    }
+
+    #rachaactual {
+        flex: 1;
+        text-align: right;
+        margin-right: 16%;
+        display: none;
+
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 3ch;
+    }
+
+    #bienvenida {
+        margin-top: 15px;
+        text-align: center;
+        padding: 1px;
+        display: block;
+        padding-top: 10px;
+        font-size: 2ch;
+    }
+
+    #ingresonombreindicacion {
+        
+        font-size: 2ch;
+    }
+
+    #ingresonombre {
+        border: solid 3px black;
+        margin: 30px 0px;
+        border-radius: 12px;
+
+    }
+
+    #ingresoboton {
+        font-size: 2ch;
+        border: solid 3px black;
+        color: rgb(208, 72, 241);
+        background-color: wheat;
+        border-radius:12px;
+        margin-top: 40px;
+    }
+
+    #ingresoboton:hover {
+        border: solid 3px black;
+        background-color: rgb(123, 42, 143);
+        color: wheat;
+    }
+
+    #ingresoformulario {
+        margin-bottom: 15px;
+        background-color: wheat;
+       
+    }
+
+    #reglamento {
+        display: none;
+    }
+
+    #Botoninicial {
+        width: 50%;
+        text-align: center;
+        color: rgb(208, 72, 241);
+        border: solid 3px black;
+        padding: 10px 10px;
+        font-size: 4ch;
+        background-color: wheat;
+        margin-right: 25%;
+        margin-left: 25%;
+        margin-top: 30px;
+        border-radius:12px;
+    }
+
+    #Botoninicial:hover {
+        background-color: rgb(123, 42, 143);
+        color: wheat;
+    }
+
+    #idbotones {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        display: none;
+        font-size: 2ch;
+    }
+
+    .PPT {
+        color: rgb(208, 72, 241);
+        margin: 10px;
+        padding: 25px 70px;
+        background-color: wheat;
+        font-size: 3ch;
+        margin-bottom: 35px;
+        border-radius:12px;
+
+    }
+
+    .PPT:hover {
+        background-color: rgb(123, 42, 143);
+        color: wheat;
+    }
+
+    .interfazgeneral {
+        display: flex;
+        width: 100%;
+       
+    }
+
+    #tablero {
+        border: solid 3px black;
+        display: none;
+        flex: 1;
+        margin: 10px;
+    }
+
+    .pantalla {
+        border: solid 3px rgb(208, 72, 241);
+        background-color: black;
+        visibility: hidden;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 10px;
+        box-shadow: 4px 4px 10px rgb(124, 30, 179),
+                    -4px -4px 10px rgb(124, 30, 179);
+    }
+
+    .Boost {
+        flex: 1;
+        margin: 10px;
+    }
+
+
+    #tablero th {
+        border-bottom: solid 3px black;
+        border-left: solid 3px black;
+        background-color: rgb(170, 81, 46);
+        color: wheat;
+        width: 270px;
+        padding: 10px;
+        overflow:hidden;
+    }
+
+    #tablero td {
+        border-bottom: solid 3px black;
+        border-left: solid 3px black;
+        text-align: center;
+        width:120px;
+        max-width:120px;
+        padding: 7px;
+        overflow:hidden;
+    }
+
+    .A1 {
+        color: wheat;
+        padding: 10px;
+    }
+
+    #elegiste,
+    #eligioIA,
+    #puntousuario,
+    #puntoIA,
+    #mensaje,
+    #mensajeIA,
+    #infoguardada {
+        display: none;
+
+
+    }
+
+
+    #KO{
+        display: none;
+      background-color: red;
+    }
+    #fire {
+        display: none;
+        background-color: rgb(170, 81, 46);
+        font-size: 3ch;
+        color: wheat;
+        border-radius:12px;
+    }
+    #fire:hover{
+        font-size: 3ch;
+        background-color: orange;
+        color:rgb(170, 81, 46);
+        border : none;
+        padding: 3px;
+        box-shadow: 4px 4px 10px orange,
+        0px -10px 10px 4px  rgb(228, 197, 24),
+        0px -15px 10px 10px orange,
+        0px -5px 10px 8px red,
+        0px -10px 10px 10px rgb(228, 197, 24),
+        0px -20px 10px 10px red,
+        0px -25px 10px 15px rgb(228, 197, 24),
+        -8px -10px 10px  rgb(228, 197, 24),
+        0px 4px rgba(255, 187, 0, 0.87) inset;
+
+    }
+
+    .formatoboost {
+        width: 80%;
+        margin: 10px 10%;
+        
+    }
+
+    .formatoboost:hover {
+        background-color: rgb(123, 42, 143);
+        color: wheat;
+    }
+
+
+
+    #findeljuego {
+        display: none;
+        text-align: center;
+    }
+
+    #si,
+    #no {
+        font-size: 3ch;
+        border-bottom: solid 3px black;
+        color: rgb(208, 72, 241);
+        background-color: wheat;
+        margin-bottom: 3ch;
+        margin-top: 40px;
+        border-radius:12px;
+        width: 10ch;
+    }
+
+
+    #si:hover,
+    #no:hover {
+        border: solid 3px black;
+        background-color: rgb(123, 42, 143);
+        color: wheat;
+    }
+
+    footer {
+        margin-top : 3ch;
+        border-top: solid 3px rgb(123, 42, 143);
+        padding: 30px;
+    }
+}

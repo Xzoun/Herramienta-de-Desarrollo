@@ -1,0 +1,25 @@
+#Prueba{
+    height: 1px;
+    width : 1px;    
+    text-align: center;
+    font-size: 3ch;
+    box-shadow: 0px -60px 3px 3px  rgb(247, 247, 11),
+                0px -52px px 5px red,
+                0px -55px 10px 7px rgb(255, 251, 0),
+                5px -45px 30px 10px red,
+                -50px 50px rgb(32, 32, 26);
+background-color: wheat;
+color: wheat;
+                
+                
+}
+#contenedor{
+    
+       
+        margin-top: 40ch;
+        border: solid 3px black;
+        text-align: center;
+        font-size: 3ch;
+       
+                    
+}

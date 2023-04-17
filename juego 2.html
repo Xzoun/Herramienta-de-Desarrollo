@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style juego 2.css">
+</head>
+
+<body>
+    <div id="TodoJuego2">
+        <h1>Piedra Papel o Tijera?</h1>
+
+
+        <button class="PPT" id="boton1">Piedra</button>
+        <button class="PPT" id="boton2">Papel</button>
+        <button class="PPT" id="boton3">Tijera</button>
+
+
+        <form id="solicitud">
+            <div id=formulario>
+                <div class="nombre" id="formatonombre">
+                    <label for="Nombrein">Ingrese su nombre</label>
+                    <input id="Nombrein" name="Nombrein" class="nombre">
+                </div>
+                <div class="nombre" id="formatonombre">
+                    <button id="botonnombre">Cargar Nombre</button>
+                </div>
+            </div>
+        </form>
+        <div class="formatocontador" >
+            <table id="contador">
+                <tr>
+                    <th>IA : </th>
+                </tr>
+            </table>
+        </div>
+        <button class="boost" id="boton4">K.O</button>
+        <button class="boost" id="boton5">Fire</button>
+        <script>
+            const click = document.getElementById("solicitud");
+            click.addEventListener("submit", function (event) {
+                event.preventDefault();
+                let nombre = new FormData(click);
+                let nuevousuario = convertirObjeto(nombre);
+               // ocultarinterfaz();
+                //funcion para guardar al ganador en el local Storage
+                //let guardar = guardarData(resultado);
+                //funcion para cargar el el nombre al contador"
+                CargarNombre();
+                //Vuelve el formulario a su estado inicial
+
+
+            })
+            //El formulario pide el nombre para poner en el contador.
+
+            //Este listener deberia cargar el historial al iniciar el programa.
+            document.addEventListener("DOMContentLoaded", function (event) {
+
+                let partidasanteoriores = JSON.parse(localStorage.getItem("Historial")) || [];
+                eleccion();
+            })
+            function guardarData(resultado) {
+                let anteriorescargas = JSON.parse(localStorage.getItem("Historial")) || [];
+                anteriorescargas.push(resultado);
+                let actualizacion = JSON.stringify(anteriorescargas);
+                localStorage.setItem("Historial", actualizacion);
+            }
+            function eleccion() {
+                boton1.addEventListener("click", function (event) {
+                    let mensaje = document.getElementById("mensaje").innerText = "Piedra";
+                });
+                boton2.addEventListener("click", function (event) {
+                    let mensaje = document.getElementById("mensaje").innerText = "Papel";
+                });
+                boton3.addEventListener("click", function (event) {
+                    let mensaje = document.getElementById("mensaje").innerText = "Tijera";
+                });
+            }
+            function convertirObjeto(nombre) {
+                let ingresonombre = nombre.get("Nombrein");
+                return {
+                    "Nombrein": ingresonombre
+                }
+            }
+            //function ocultarinterfaz() {
+              //  document.getElementById("formulario").style.display = none;
+            //}
+        function CargarNombre(nuevoformulario){
+                let listatablaRef = document.getElementById("contador");
+                let newfilatabla = listatablaRef.insertRow(-1);           
+                let newceldatabla = newfilatabla.insertCell(0);
+                newceldatabla.textContent = nombre["Nombrein    "];
+    
+            } 
+        </script>
+        <div id="mensaje"> </div>
+</body>
+</div>
+
+</html>

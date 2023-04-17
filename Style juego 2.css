@@ -1,0 +1,41 @@
+#TodoJuego2{
+font-size: large;
+}
+.PPT {
+ color: rgb(73, 136, 190);
+   margin: 40px;
+   padding: 25px 100px;
+   background-color: wheat;
+   font-size: 3ch;
+}
+.PPT:hover{
+    background-color: rgb(243, 203, 128);   
+}
+h1{
+    text-align: center;
+    margin: 15px;
+}
+.nombre{
+    text-align: center;
+    padding-left: 10;
+    padding-right: 10px;
+    margin-top: 15px;
+    font-size: 2ch;
+}
+.boost{
+    margin-top: 10px;
+    padding: 25px 100px;
+    margin-left: 70%;
+    background-color: rgb(226, 158, 32);
+    font-size: 3ch;
+    color: rgb(219, 213, 183);
+}
+.boost:hover{
+    background-color: rgb(212, 143, 15);
+}
+#contador{
+    padding: 25px 100px;
+    margin-top: 10px;
+    font-size: 3ch;
+}
+

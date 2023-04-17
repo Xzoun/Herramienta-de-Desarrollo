@@ -1,0 +1,30 @@
+#titulo{
+    text-align: center;
+    font-style: italic;
+    font-size: 40px;
+}
+#lista div{
+    font-style: italic;
+    text-align: center;  
+    font-size: 25px;
+}
+.formulario{
+    background-color: wheat;
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+#boton{
+    background-color:   rgb(226, 168, 59);
+    font-style: italic;
+    font-size: 20px;
+}
+.formatotabla table{
+    margin: 10px auto;
+}
+th, td{
+    text-align: center;
+    border: solid black 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

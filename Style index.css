@@ -1,0 +1,44 @@
+/*para sacar margenes por defecto de todos los elementos*/
+* {
+    margin: 0px;
+
+}
+
+body {
+    background-color: wheat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+#Todo {
+    width: 70%;
+    margin: 50px auto;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    line-height: 85px;
+    color: dark;
+    border-bottom: 3px solid black;
+}
+nav{
+    background-color: wheat;
+    height:150px;
+    margin: 20px auto;
+}
+
+nav ul li{
+    list-style: none;
+    margin-bottom: 10px;
+    line-height: 25px;
+    text-align: left;
+}
+.clearfix{
+    clear:both;
+}
+#botonjuego2{
+  text-align: left;
+ height: 10%;
+ width: 10%;
+}
