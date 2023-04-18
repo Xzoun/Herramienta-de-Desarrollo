@@ -197,7 +197,7 @@
                         findeljuego(),
                             document.getElementById("mensaje").innerText = nombre + ", fue un empate..."
                     }, 1550);
-                } else if (puntaje >= 10 && puntajeIA != 10) {
+                } else if (puntaje >= 10 && puntajeIA >= 10) {
                     setTimeout(() => {
                         findeljuego(),
                             document.getElementById("mensaje").innerText = nombre + ", fue un empate..."
@@ -207,7 +207,7 @@
                         findeljuego(),
                             document.getElementById("mensaje").innerText = nombre + ", Perdiste :("
                     }, 1550);
-                } else if (puntaje == 10 && puntajeIA < 10) {
+                } else if (puntaje >= 10 && puntajeIA < 10) {
                     setTimeout(() => {
                         findeljuego(),
                             document.getElementById("mensaje").innerText = nombre + ", Ganaste! :D"
@@ -244,7 +244,7 @@
                     cont = 2;
                     cargartablero(puntaje, puntajeIA, cont)
                 }, 1550);
-                var intervalo = setInterval(buclepantalla, 500);
+                var intervalo = setInterval(buclepantalla, 1000);
             })
             })
             function ocultarinterfaz(cont) {
