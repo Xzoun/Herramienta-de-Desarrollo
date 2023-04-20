@@ -302,6 +302,7 @@
 
 @media (min-width: 768px) {
     * {
+      
         margin: 0px;
     }
 
@@ -418,11 +419,13 @@
         margin-left: 25%;
         margin-top: 30px;
         border-radius:12px;
+        transition: .3s ease all;
     }
 
     #Botoninicial:hover {
         background-color: rgb(123, 42, 143);
         color: wheat;
+        transition: .3s ease all;
     }
 
     #idbotones {
@@ -441,12 +444,14 @@
         font-size: 3ch;
         margin-bottom: 35px;
         border-radius:12px;
+        transition: .3s ease all;
 
     }
 
     .PPT:hover {
         background-color: rgb(123, 42, 143);
         color: wheat;
+        transition: .3s ease all;
     }
 
     .interfazgeneral {
@@ -523,6 +528,7 @@
         color: wheat;
         border-radius:12px;
         border : solid 3px black;
+        transition: .3s ease all;
         
     }
     #KO:hover{
@@ -530,6 +536,7 @@
         background-color: rgb(8, 8, 8);
         color:rgb(255, 255, 255);
         border : solid 3px grey;
+        transition: .3s ease all;
         
     }
     #fire {
@@ -538,7 +545,8 @@
         font-size: 3ch;
         color: wheat;
         border-radius:12px;    
-        border : solid 3px black;    
+        border : solid 3px black; 
+        transition: .3s ease all;   
     }
     #fire:hover{
         font-size: 3ch;
@@ -554,6 +562,7 @@
         0px -20px 10px 10px red,
         0px -25px 10px 15px rgb(228, 197, 24),
         -8px -10px 10px  rgb(228, 197, 24);
+        transition: .3s ease all;
     }
 
     .formatoboost {
@@ -572,6 +581,7 @@
     #findeljuego {
         display: none;
         text-align: center;
+       
     }
 
     #si,
@@ -584,6 +594,7 @@
         margin-top: 40px;
         border-radius:12px;
         width: 10ch;
+        transition: .3s ease all;
     }
 
 
@@ -592,11 +603,12 @@
         border: solid 3px black;
         background-color: rgb(123, 42, 143);
         color: wheat;
+        transition: .3s ease all;
     }
-
-    footer {
-        margin-top : 3ch;
+    footer{
+        margin-top: 3px;
         border-top: solid 3px rgb(123, 42, 143);
         padding: 30px;
+        
     }
 }
