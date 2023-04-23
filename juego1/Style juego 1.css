@@ -1,21 +1,42 @@
 *{
     margin: 0px;
+    background-color: wheat;
 }
 
 #Todojuego1{
-       border: 3px solid rgb(0, 0, 0);
+    margin: 20px 10%;
+      background-color: rgb(55, 60, 65);
+}
+header {
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    line-height: 85px;
+    color: dark;
 
 }
-body {
-    
-   
+
+h1 {
+    border-bottom: 3px solid rgb(170, 81, 46);;
+    font-size: 4ch;
+}
+body {   
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 canvas{
-    margin: 60px 30%;   
-
+   
+    margin: 60px 30%; 
 }
-#mycanvas{
+#puntuacion{
+    display : none;
+}
+
+#juegocanvas{
+  background-color: black;  
+}
+footer{
+    margin-top: 3px;
+    border-top: solid 3px rgb(123, 42, 143);
+    padding: 30px;
     
-    border:1px solid hsl(0, 0%, 100%);
 }

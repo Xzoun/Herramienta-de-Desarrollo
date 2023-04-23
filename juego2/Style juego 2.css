@@ -597,7 +597,6 @@
         transition: .3s ease all;
     }
 
-
     #si:hover,
     #no:hover {
         border: solid 3px black;
