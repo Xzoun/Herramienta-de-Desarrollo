@@ -24,23 +24,7 @@ export class cuerpoPropiedades {
     }
 }
 
-export class crearComida{
-    constructor(){
-        this.x=Math.floor(Math.random()*30)*10
-        this.y=Math.floor(Math.random()*30)*10
-    }
-    
-    render(ctx){
-        ctx.fillStyle = "yellow"
-        ctx.fillRect(this.x,this.y,10,10)      
-    }
-    nuevacomida(){
-        this.x=Math.floor(Math.random()*30)*10
-        this.y=Math.floor(Math.random()*30)*10
-    }
-}
-
-function cuadricula(ctx) {
+export function cuadricula(ctx) {
     ctx.linewidth = 1;
     let ax = 0, bx = 0, ay = 0, by = 300;
     ctx.beginPath();
@@ -62,4 +46,19 @@ function cuadricula(ctx) {
     }
     ctx.stroke()
 }
-export { cuadricula }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

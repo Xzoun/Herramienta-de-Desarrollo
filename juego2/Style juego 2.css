@@ -608,6 +608,10 @@
         margin-top: 3px;
         border-top: solid 3px rgb(123, 42, 143);
         padding: 30px;
-        
+        text-decoration: none;  
+    }
+    a{
+        text-decoration: none; 
+        color : black;
     }
 }

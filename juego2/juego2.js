@@ -1,24 +1,22 @@
-import { interfazFc, maquinaFc, tableroFc, puntoFc } from "./Funciones/Funciones.js";
+import {
+    interfazFc,
+    maquinaFc,
+    tableroFc,
+    puntoFc,
+    bienvenidaFc,
+    iniciarFc
+} from "./Funciones/Funciones.js";
 let ocultarinterfaz = interfazFc,
     eleccionmaquina = maquinaFc,
     cargartablero = tableroFc,
-    punto = puntoFc;
+    punto = puntoFc,
+    bienvenidainicial = bienvenidaFc,
+    iniciar=iniciarFc;
 let racha = 0,
     puntaje = 0,
     puntajeIA = 0;
+bienvenidainicial();
 
-const bienvenidainicial = document.getElementById("bienvenida");
-bienvenidainicial.addEventListener("submit", function funcion(event) {
-    event.preventDefault();
-    let puntaje = 0,
-        puntajeIA = 0,
-        cont = 0;
-    var nombre = document.getElementById("ingresonombre").value || "Player 1";
-
-    ocultarinterfaz(cont);
-    cargartablero(puntaje, puntajeIA, cont, nombre);
-    iniciar();
-}, { once: true })
 
 let fireactivado = false;
 const idbotones = document.getElementById("idbotones");
@@ -46,15 +44,15 @@ idbotones.childNodes.forEach((eleccion) => {
             puntaje = (puntaje + 1);
         } else if (puntoactual == 1) {
             puntaje = (puntaje + 1);
-            racha +=1;
+            racha += 1;
         } else {
             racha = 0;
             puntajeIA = (puntajeIA + 1);
         }
-        if(racha>=3){
+        if (racha >= 3) {
             cont = 3;
             ocultarinterfaz(cont);
-        }else if(racha>=7){
+        } else if (racha >= 7) {
             cont = 4;
             ocultarinterfaz(cont);
         }
@@ -139,7 +137,7 @@ idbotones.childNodes.forEach((eleccion) => {
                 } else if (punto == -1) {
                     document.getElementById("puntoIA").style.display = "block";
                 }
-            }else if (contadorpantalla == 3) {
+            } else if (contadorpantalla == 3) {
                 clearInterval(intervalo);
             }
         }
@@ -152,17 +150,7 @@ idbotones.childNodes.forEach((eleccion) => {
     })
 })
 
-function iniciar() {
-    const Botoninicial = document.getElementById("Botoninicial");
-    Botoninicial.addEventListener("click", function funcion(event) {
-        document.getElementById("rachaactual").textContent = 0;
-        let puntaje = 0,
-            puntajeIA = 0,
-            cont = 1;
-        cargartablero(puntaje, puntajeIA, cont);
-        ocultarinterfaz(cont);
-    }, { once: true })
-}
+
 
 function findeljuego() {
     const reinicio = document.getElementById("sino");

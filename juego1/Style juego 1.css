@@ -1,11 +1,13 @@
 *{
     margin: 0px;
-    background-color: wheat;
+    background-color: rgb(37, 63, 59);
 }
 
 #Todojuego1{
     margin: 20px 10%;
-      background-color: rgb(55, 60, 65);
+      color: wheat;
+      background-color:rgb(37, 63, 59);
+        font-family: 'Courier New', Courier, monospace;
 }
 header {
     width: 90%;
@@ -17,26 +19,191 @@ header {
 }
 
 h1 {
-    border-bottom: 3px solid rgb(170, 81, 46);;
+    border-bottom: 3px solid wheat;
     font-size: 4ch;
 }
-body {   
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-canvas{
-   
-    margin: 60px 30%; 
-}
-#puntuacion{
-    display : none;
+
+#indicacioninicial {
+    display: none;
 }
 
-#juegocanvas{
-  background-color: black;  
+
+#racha {
+    display: flex;
+    width: 30%;
+    margin: 0px 32%;
+}
+
+#racha1 {
+    flex: 1;
+    text-align: center;
+    margin-left: 8%;
+    display: none;
+
+}
+
+#rachaactual {
+    flex: 1;
+    text-align: right;
+    margin-right: 16%;
+    display: none;
+
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5ch;
+}
+
+#bienvenida {
+    margin-top: 15px;
+    text-align: center;
+    padding: 1px;
+    padding-top: 10px;
+    font-size: 2ch;
+}
+
+#ingresonombreindicacion {
+    
+    font-size: 2ch;
+}
+
+#ingresonombre {
+    border: solid 3px  wheat;
+    margin: 30px 0px;
+    border-radius: 12px;
+    color: wheat;
+
+}
+
+#ingresoboton {
+    font-size: 2ch;
+    border: solid 3px  wheat;
+    color:wheaT;
+    background-color:rgb(37, 63, 59);
+    border-radius:12px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#ingresoboton:hover {
+    border: solid 3px black;
+    background-color: rgb(123, 42, 143);
+    color: wheat;
+}
+#informacion{
+    display: none;
+}
+
+#ingresoformulario {
+    margin-bottom: 15px;
+    background-color: rgb(37, 63, 59);
+   
+}
+
+#reglamento {
+    display: none;
+}
+#mododejuegobotones {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+    font-size: 2ch;
+}
+
+.PPT {
+    border: solid 3px wheat;
+    color: wheat;
+    margin: 10px 20%;
+    padding: 25px 70px;
+    background-color: rgb(37, 63, 59);
+    font-size: 2ch;
+    margin-bottom: 35px;
+    border-radius:12px;
+    transition: .3s ease all;
+
+}
+
+.PPT:hover {
+    border: solid 3px black;
+    background-color: rgb(123, 42, 143);
+    color: wheat;
+    transition: .3s ease all;
+}
+
+canvas{      
+    margin: 60px 30%; 
+    background-color: rgb(37, 63, 59);
+}
+
+#juegoCanvas{   
+    display: none;
+    border : solid 3px rgb(5, 3, 5);
+}
+#temporizador{   
+    display: none;
+    width: 290px;
+    height: 170px;
+    font-size: 3ch;
+    position : fixed;
+    top : 173px;
+    left: 354px;
+    padding-top: 120px;
+    text-align: center;
+    
+}
+
+#findeljuego {
+    display: none;
+    text-align: center;  
+    transition: .3s ease all;    
+}
+
+#si,
+#no {
+    font-size: 3ch;
+    border-bottom: solid 3px wheat;
+    color: wheat;
+    background-color: rgb(37, 63, 59);
+    margin-bottom: 3ch;
+    margin-top: 40px;
+    border-radius:12px;
+    width: 10ch;
+    transition: .3s ease all;   
+}
+
+#cambiarmodo{
+    font-size: 3ch;
+    border-bottom: solid 3px wheat;
+    color: wheat;
+    background-color: rgb(37, 63, 59);
+    margin-bottom: 3ch;
+    margin-top: 20px;
+    border-radius:12px;
+    width: 15ch;
+    transition: .3s ease all;  
+}
+#si:hover,
+#no:hover,
+#cambiarmodo:hover {
+    
+    border: solid 3px black;
+    background-color: rgb(123, 42, 143);
+    color: wheat;
+    transition: .3s ease all;
+}
+#despedida{
+    display : none;
 }
 footer{
     margin-top: 3px;
-    border-top: solid 3px rgb(123, 42, 143);
+    border-top: solid 3px wheat;
     padding: 30px;
+    color: wheat;   
     
+}
+a{
+    text-decoration: none; 
+    color: wheat;    
 }

@@ -1,4 +1,4 @@
-function interfazFc(cont) {
+export function interfazFc(cont) {
     //Reglamento
     if (cont == 0) {
         document.querySelector(".pantalla").style.visibility = "hidden";
@@ -45,9 +45,8 @@ function interfazFc(cont) {
         document.getElementById("elegiste").textContent = "Gracias por jugar " + nombre + ", hasta pronto";
     }
 }
-export{interfazFc}
 
-function maquinaFc() {
+export function maquinaFc() {
     let IA = Math.round(Math.random() * 2);
     let maquina = "";
     if (IA == 0) {
@@ -61,9 +60,8 @@ function maquinaFc() {
         maquina
     }
 }
-export{maquinaFc}
 
-function tableroFc(puntaje, puntajeIA, cont, nombre) {
+export function tableroFc(puntaje, puntajeIA, cont, nombre) {
     let celdanombre = document.getElementById("celdanombre");
     let celdamarcador = document.getElementById("celdamarcador");
     let celdamarcadorIA = document.getElementById("celdamarcadorIA");
@@ -76,9 +74,8 @@ function tableroFc(puntaje, puntajeIA, cont, nombre) {
         celdamarcadorIA.textContent = puntajeIA;
     }
 }
-export{tableroFc}
 
-function puntoFc(player, maquina) {
+export function puntoFc(player, maquina) {
     let marcador = 0;
     let marcadorIA = 0;
     if (player == maquina) {
@@ -99,4 +96,30 @@ function puntoFc(player, maquina) {
         marcadorIA
     }
 }
-export{puntoFc}
+
+export function bienvenidaFc(){
+    const bienvenidainicial = document.getElementById("bienvenida");
+    bienvenidainicial.addEventListener("submit", function funcion(event) {
+        event.preventDefault();
+        let puntaje = 0,
+            puntajeIA = 0,
+            cont = 0;
+        var nombre = document.getElementById("ingresonombre").value || "Player 1";
+    
+        interfazFc(cont);
+        tableroFc(puntaje, puntajeIA, cont, nombre);
+        iniciarFc();
+    }, { once: true })
+}
+
+export function iniciarFc() {
+    const Botoninicial = document.getElementById("Botoninicial");
+    Botoninicial.addEventListener("click", function funcion(event) {
+        document.getElementById("rachaactual").textContent = 0;
+        let puntaje = 0,
+            puntajeIA = 0,
+            cont = 1;
+        tableroFc(puntaje, puntajeIA, cont);
+        interfazFc(cont);
+    }, { once: true })
+}
