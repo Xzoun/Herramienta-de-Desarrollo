@@ -6,14 +6,17 @@ export class cuerpoPropiedades {
         this.vy = 0; 
         this.direccion = 0;
     }
+
     rendercabeza(ctx){
-        ctx.fillStyle = "#328618"
+        ctx.fillStyle = "#253f3b"
         ctx.fillRect(this.cabezaposX, this.cabezaposY, 10, 10)
     }
+
     render(ctx) {
-        ctx.fillStyle = "#3dcc12"
+        ctx.fillStyle = "green"
         ctx.fillRect(this.cabezaposX, this.cabezaposY, 10, 10)
     }
+
     mover(){
         if (this.direccion === 2) { this.vx = 10; this.vy = 0; }    
             else if (this.direccion === 1){ this.vy = -10; this.vx = 0; }
@@ -46,7 +49,11 @@ export function cuadricula(ctx) {
     }
     ctx.stroke()
 }
-    
+
+
+
+
+
 
 
 

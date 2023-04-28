@@ -19,6 +19,8 @@ export function interfazFc(cont) {
         //Interfaz General - Inicio        
     } else if (cont == 1) {
         document.getElementById("juegoCanvas").style.display = "block"
+        document.getElementById("racha").style.display = "block"
+        document.getElementById("nombre").style.display = "block"
         document.getElementById("indicacioninicial").style.display = "none"
         document.getElementById("mododejuegobotones").style.display = "none"
         document.getElementById("findeljuego").style.display = "none"
@@ -31,8 +33,13 @@ export function interfazFc(cont) {
     } else if (cont == 3) {
         document.getElementById("findeljuego").style.display = "block"
         document.getElementById("juegoCanvas").style.display = "none"
+        document.getElementById("racha").style.display = "none"
+        document.getElementById("boost").style.display = "none"
+        document.getElementById("nombre").style.display = "none"
     } else if (cont == 4) {
+        let nombre = document.getElementById("nombre").innerText || "Player 1";
         document.getElementById("despedida").style.display = "block"
+        document.getElementById("despedida").innerText = "Gracias por jugar "+nombre+", hasta pronto!"
         document.getElementById("findeljuego").style.display = "none"
         document.getElementById("juegoCanvas").style.display = "none"
     }

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<div id="Todojuego1">
 
+<div id="Todojuego1">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Viborita</title>
-        <link rel="stylesheet" href="Style juego 1.css">
+        <title>La Viborita</title>
+        <link rel="stylesheet" href="Css\Style juego 1.css">        
     </head>
 
     <body>
         <header>
-            <h1> Viborita</h1>
+            <h1>Snake: La Viborita</h1>
         </header>
         <form id="bienvenida">
             <header>
@@ -21,18 +21,20 @@
             <div class="ingresosolicitud">
                 <label for="ingresonombre" id="ingresonombreindicacion">Por favor ingresa tu nombre</label>
                 <input id="ingresonombre" name="ingresonombre"></input>
-            </div>
-            <div class="ingresosolicitud">
-                <button id="ingresoboton">Cargar nombre</button>
-            </div>
+            </div>      
+            <button id="ingresoboton" class ="ingresoboton" class="ingresosolicitud">
+                <div class="iconoBoton">
+                    <img  class="arrowright"  src="..\Cosas\Arrow right.png"></img>
+                </div>
+                <span>Cargar</span>
+            </button> 
         </form>
         
         <header><h2 id="indicacioninicial">Bien, ahora elegi el modo de juego</h2></header>
-       <div id="temporizador">3</div>
         <div id = "mododejuegobotones">
-            <button class="PPT" value="modo supervivencia">Modo Supervivencia</button>
-            <button class="PPT" value="modo niveles">Modo por Niveles</button>
-            <button class="PPT" value="modo clasico">Modo Clasico</button>            
+            <button class="PPT" value="modo supervivencia"><span>Modo Supervivencia</span></button>
+            <button class="PPT" value="modo niveles"><span>Modo por Niveles</span></button>
+            <button class="PPT" value="modo clasico"><span>Modo Clasico</span></button>            
         </div>
         <div id="findeljuego">
             <header>
@@ -42,24 +44,30 @@
                 <button id=si value="si">Dale!</button>
                 <button id=no value="no">Nono</button>
                 <button id="cambiarmodo" value="cambiarmodo">Cambiar modo</button>
-            </div>
-            <div id="despedida">Gracias por jugar, hasta pronto!</div>
+            </div>            
         </div>
+        <h2 id="despedida"></h2>
         <div id="informacion">
-        <div id="eleccion">no elegido</div>
-        <div id="nombre"></div>
-        <div id="inicio">noiniciado</div>
+            <div id="eleccion"></div>
+            <div id="tiempo"></div>
+        </div>        
         </div>
-        <div id="racha"><div id="racha1">Puntuacion</div><div id = "rachaactual"></div></div>
+        <div id="racha">
+            <div id="racha1">Puntuacion </div>
+            <div id="nombre"></div>
+            <div id="rachaactual"></div> 
+            <div id="boost"></div>
+        </div>
         <canvas id="juegoCanvas" width="300" height="300"></canvas>
         <script type="module" id="juego1" src="juego 1.js"></script>
 
        </script>
+       
     </body>
     <footer>
         <ul>
             <li>
-                <a href="..\index.html">Volver</a>
+                <a href="..\Jugate a algo.html">Volver</a>
             </li>
         </ul>
     </footer>

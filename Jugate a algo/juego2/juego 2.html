@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra, Papel o Tijeras?</title>
-    <link rel="stylesheet" href=" Style juego 2.css">
+    <link rel="stylesheet" href="Css\Style juego 2.css">
+    
 </head>
 
 <body>
@@ -23,7 +24,14 @@
                 <input id="ingresonombre" name="ingresonombre">
             </div>
             <div class="ingresosolicitud">
-                <button id="ingresoboton">Cargar nombre</button>
+                <button id="ingresoboton" class ="ingresoboton" class="ingresosolicitud">
+                    <div class="iconoBoton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                      </svg>
+                    </div>
+                    <span>Cargar</span>
+                </button> 
             </div>
         </form>
         <header>
@@ -55,7 +63,7 @@
             <h4>K.O.</h4>
             <p>Reclama la victoria!</p>
             <div>Racha: 7 puntos.</div>
-            <button id="Botoninicial">Let's Play!</button>
+            <button id="Botoninicial" class="fondo" class="borde">Let's Play!</button>
         </div>
         <div id="idbotones">
             <button class="PPT" id="boton1" value="Piedra">Piedra</button>
@@ -99,15 +107,15 @@
                 <button id="KO" id="idbotones" value="KO" class="formatoboost">K.O.</button>
             </div>
         </div>
-       
-                   
-       <script type="module" id="formatojuego2" src="juego2.js"></script>
-       
+
+
+        <script type="module" id="formatojuego2" src="juego2.js"></script>
+
 
         <footer>
             <ul>
                 <li>
-                    <a href="..\index.html">Volver</a>
+                    <a href="..\Jugate a algo.html">Volver</a>
                 </li>
             </ul>
         </footer>
