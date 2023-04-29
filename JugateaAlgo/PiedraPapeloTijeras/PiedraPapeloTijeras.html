@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra, Papel o Tijeras?</title>
     <link rel="stylesheet" href="Css\Style juego 2.css">
-    
+
 </head>
 
 <body>
@@ -24,14 +24,12 @@
                 <input id="ingresonombre" name="ingresonombre">
             </div>
             <div class="ingresosolicitud">
-                <button id="ingresoboton" class ="ingresoboton" class="ingresosolicitud">
+                <button id="ingresoboton" class="ingresoboton" class="ingresosolicitud">
                     <div class="iconoBoton">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-                      </svg>
+                        <img class="arrowright" src="..\Cosas\Arrow right.png"></img>
                     </div>
                     <span>Cargar</span>
-                </button> 
+                </button>
             </div>
         </form>
         <header>
@@ -42,7 +40,6 @@
             <h2 id="indicacioninicial"> Bien, ahora elige una opcion</h2>
         </header>
         <div id="reglamento">
-
             <header>
                 <h2>Reglamento</h2>
             </header>
@@ -63,7 +60,7 @@
             <h4>K.O.</h4>
             <p>Reclama la victoria!</p>
             <div>Racha: 7 puntos.</div>
-            <button id="Botoninicial" class="fondo" class="borde">Let's Play!</button>
+            <button id="Botoninicial">Let's Play!</button>
         </div>
         <div id="idbotones">
             <button class="PPT" id="boton1" value="Piedra">Piedra</button>
@@ -81,19 +78,21 @@
         </div>
         <div class="interfazgeneral">
             <div id="infoguardada"></div>
-            <table id="tablero">
-                <tr>
-                    <th colspan="2"> Score </th>
-                </tr>
-                <tr>
-                    <td id="celdanombre"> </td>
-                    <td> I. A. </td>
-                </tr>
-                <tr>
-                    <td id="celdamarcador"></td>
-                    <td id="celdamarcadorIA"></td>
-                </tr>
-            </table>
+            <div id="tablero" class="bordetablero">
+                <table class="Styletablero">
+                    <tr>
+                        <th colspan="2"> Score </th>
+                    </tr>
+                    <tr>
+                        <td id="celdanombre"> </td>
+                        <td id="celdaIA"> I. A. </td>
+                    </tr>
+                    <tr>
+                        <td id="celdamarcador"></td>
+                        <td id="celdamarcadorIA"></td>
+                    </tr>
+                </table>
+            </div>
             <div class="pantalla">
                 <div id="elegiste" class="A1">Elegiste</div>
                 <div id="eligioIA" class="A1">I.A. Eligio</div>
@@ -113,11 +112,12 @@
 
 
         <footer>
-            <ul>
-                <li>
-                    <a href="..\Jugate a algo.html">Volver</a>
-                </li>
-            </ul>
+            <a href="..\JugateaAlgo.html">
+                <div id="atras">
+                    <img class="arrowleft" src="../Cosas/Arrow left.png"></img>
+                    <span>Volver</span>
+                </div>
+            </a>
         </footer>
     </div>
 </body>

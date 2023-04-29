@@ -63,6 +63,7 @@ p {
 
 #linkjuegos:hover::-webkit-scrollbar-thumb {
     background: rgb(245, 208, 208);
+     
     border-radius: 12px;
     filter: blur(1px);
 }
@@ -130,7 +131,7 @@ img {
 #divjuego3:hover,
 #divjuego4:hover,
 #divjuego5:hover {
-    color: black;
+    color: rgb(255, 255, 255);
     background: rgb(244, 192, 85);
     background: linear-gradient(3deg,
             rgba(244, 192, 85, 1) 4%,
@@ -141,7 +142,8 @@ img {
             rgb(171, 82, 212) 24%,
             rgba(217, 180, 217, 1) 28%,
             rgb(245, 208, 208) 32%,
-            white 36%);
+            rgb(160, 158, 158) 36%,
+            rgb(2, 0, 36)96%);
 
 
     transition: .3s ease all;
@@ -159,6 +161,7 @@ img {
 #descripcionjuego4:hover>p,
 #descripcionjuego5:hover>p {
     opacity: 1;
+    color: white;
 }
 
 #descripcionjuego1:hover>h2,
@@ -170,7 +173,7 @@ img {
 }
 
 .rainbow-text {
-    background-image: linear-gradient(90deg,
+    background-image: linear-gradient(130deg,
             rgba(244, 192, 85, 1) 4%,
             rgba(247, 232, 55, 1) 8%,
             rgba(125, 233, 208, 1) 12%,
@@ -179,15 +182,7 @@ img {
             rgb(171, 82, 212) 24%,
             rgba(217, 180, 217, 1) 28%,
             rgb(245, 208, 208) 32%,
-            rgba(244, 192, 85, 1) 36%,
-            rgba(247, 232, 55, 1) 40%,
-            rgba(125, 233, 208, 1) 44%,
-            rgb(92, 226, 222) 48%,
-            rgb(67, 83, 223) 52%,
-            rgb(171, 82, 212) 56%,
-            rgba(217, 180, 217, 1) 60%,
-            rgb(245, 208, 208) 64%,
-            white 70%);
+            white 36%);
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -216,22 +211,34 @@ img {
 
 footer {
     position: absolute;
-    bottom: 0px;
+    bottom: 30px;
     color: white;
-    height: 20px;
+    height: 30px;
+    width: 150px;
+    left: 50px;
+
+}
+footer:hover .arrowleft, footer:hover span{    
+    opacity: 1;
+    padding-left:10px;
 }
 
 footer span {
     color: white;
     position: absolute;
-    left: 100px;
-    bottom: 30px;
-    width: 150px;
+    left: 0px;
+    bottom: 0px;
+    height: 25px; 
 }
 
-footer svg {
+footer .arrowleft {
     color: white;
     position: absolute;
-    bottom: 30px;
-    width: 100px;
+    bottom: 4px;
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+    opacity: 0;
+    transition: .3s ease all;
+    left:-70px;
 }

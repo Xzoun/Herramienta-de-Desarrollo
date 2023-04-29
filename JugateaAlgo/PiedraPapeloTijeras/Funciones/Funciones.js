@@ -15,9 +15,10 @@ export function interfazFc(cont) {
         //Pantalla - Racha
     } else if (cont == 2) {
         document.querySelector(".pantalla").style.visibility = "visible";
-        document.getElementById("rachaactual").style.display = "block";
-        document.getElementById("racha1").style.display = "block";
+        document.getElementById("racha").style.display = "block";
         document.getElementById("indicacioninicial").style.display = "none";
+        document.getElementById("fire").style.display = "none";
+        document.getElementById("KO").style.display = "none";
         //Boost fire
     } else if (cont == 3) {
         document.getElementById("fire").style.visibility = "visible";
@@ -29,8 +30,7 @@ export function interfazFc(cont) {
     } else if (cont == 5) {
         document.getElementById("tablero").style.visibility = "hidden";
         document.getElementById("idbotones").style.display = "none";
-        document.getElementById("rachaactual").style.display = "none";
-        document.getElementById("racha1").style.display = "none";
+        document.getElementById("racha").style.display = "none";
         document.getElementById("mensaje").style.display = "block";
         //document.getElementById("fire").style.visibility = "hidden";
         document.getElementById("fire").style.display = "none";

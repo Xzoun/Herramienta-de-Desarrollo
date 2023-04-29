@@ -1,20 +1,18 @@
-@media (max-width: 767px) {
-  
-}
+/* @media (max-width: 767px) {}
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { */
     * {
-
         margin: 0px;
     }
-    
+
     body {
         background: rgb(2, 0, 36);
         background: linear-gradient(59deg,
                 rgba(2, 0, 36, 1) 0%,
                 rgba(164, 177, 180, 1) 100%);
-        font-family: 'Courier New', Courier, monospace; 
-        height: 655px;     
+        font-family: 'Courier New', Courier, monospace;
+        height: 655px;
+        overflow: hidden;
     }
 
     #Todojuego1 {
@@ -28,7 +26,6 @@
         text-align: right;
         line-height: 85px;
         color: white;
-
     }
 
     h1 {
@@ -46,7 +43,6 @@
         text-align: left;
         display: none;
         color: white;
-
     }
 
     button {
@@ -54,25 +50,23 @@
     }
 
     #racha {
-        display: flex;
-        width: 30%;
-        margin: 0px 32%;
+        position: relative;
+        width: 250px;
+        margin: 0px 25%;
+        display: none;
     }
 
     #racha1 {
-        flex: 1;
+
         text-align: center;
         margin-left: 8%;
-        display: none;
-
     }
 
     #rachaactual {
-        flex: 1;
+        position: absolute;
+        top: 0px;
+        left: 300px;
         text-align: right;
-        margin-right: 16%;
-        display: none;
-
     }
 
     #bienvenida {
@@ -81,7 +75,6 @@
         padding: 1px;
         padding-top: 10px;
         font-size: 2ch;
-
     }
 
     #ingresonombreindicacion {
@@ -96,7 +89,7 @@
         color: rgb(0, 0, 0);
     }
 
-    #ingresoboton {       
+    #ingresoboton {
         text-align: center;
         background: black;
         border: none;
@@ -104,37 +97,45 @@
         font-weight: bold;
         position: relative;
         border-radius: 12px;
-        font-size: 2ch;       
+        font-size: 2ch;
         margin-top: 40px;
         transition: .3s ease all;
     }
-   
-   
+
+
     #ingresonombre {
         border: solid 3px black;
         margin: 30px 0px;
         border-radius: 12px;
-
     }
 
     #ingresoformulario {
         margin-bottom: 15px;
         background-color: wheat;
-
     }
 
     #reglamento {
         padding: 1rem;
         color: white;
+        width: 800px;
+        text-align: justify;
         border-width: 3px;
         border-style: solid;
+        margin: 50px auto;
         border-image:
             linear-gradient(to bottom,
-                red,
+                rgba(244, 192, 85, 1),
+                rgba(247, 232, 55, 1),
+                rgba(125, 233, 208, 1),
+                rgb(92, 226, 222),
+                rgb(67, 83, 223),
+                rgb(171, 82, 212),
+                rgba(217, 180, 217, 1),
+                rgb(245, 208, 208),
                 rgba(0, 0, 0, 0)) 1 100%;
-
         display: none;
     }
+
     #ingresoboton {
         display: inline-flex;
         background: black;
@@ -150,6 +151,7 @@
         height: 40px;
         width: 150px;
     }
+
     #idbotones {
         width: 100%;
         text-align: center;
@@ -157,20 +159,46 @@
         display: none;
         font-size: 2ch;
     }
+
+    #Botoninicial {
+        text-align: center;
+        background: black;
+        border: none;
+        position: absolute;
+        border-radius: 50px;
+        font-size: 3ch;
+        transition: .3s ease all;
+        right: 120px;
+        color: grey;
+    }
+
+    #Botoninicial:hover {
+        color: white;
+        padding: 10px 20px;
+        right: 100px;
+        bottom: 105px;
+        transition: .4s ease-in-out all;
+    }
+
     .PPT {
         text-align: center;
         background: black;
         border: none;
-        color: white;
-        
+        color: grey;
         position: relative;
-        border-radius: 12px;
-        padding: 25px 70px;        
+        border-radius: 50px;
+        padding: 20px 40px;
         font-size: 3ch;
         margin: 10px;
+        margin-top: 80px;
         margin-bottom: 35px;
         transition: .3s ease all;
-    }   
+    }
+
+    .PPT:hover {
+        color: white;
+        padding: 25px 70px;
+    }
 
     .ingresoboton span {
         transition: .4s ease-in-out all;
@@ -191,23 +219,29 @@
         position: absolute;
         z-index: 2;
         left: -40px;
-        top: 4px;
+        top: 6px;
         transition: .3s ease-in-out all;
         opacity: 0;
     }
 
     .ingresoboton:hover .iconoBoton {
-        left: 110px;
+        left: 100px;
         opacity: 1;
     }
 
-    .ingresoboton svg {
-        width: 35px;
-        height: 35px;
-        color: white;
+    .arrowright {
+        width: 30px;
+        height: 30px;
+        filter: invert(1);
     }
 
-    #ingresoboton::before,.PPT::before {
+    #ingresoboton::before,
+    .PPT::before,
+    #Botoninicial::before,
+    #KO::before,
+    #si::before,
+    #no::before,
+    #fire::before {
         content: "";
         position: absolute;
         z-index: -1;
@@ -230,9 +264,6 @@
         animation: glowing 20s linear infinite;
     }
 
-
-
-
     @keyframes glowing {
         0% {
             background-position: 0 0;
@@ -246,22 +277,18 @@
             background-position: 0 0
         }
     }
-   
-   
 
-   
-   
-   
     .interfazgeneral {
         display: flex;
         width: 100%;
-
+        margin-top:90px;
+        position: relative;
     }
 
     #tablero {
-        border: solid 3px black;
         display: none;
-        margin: 10px;
+        flex: 1;
+        margin: 20px;
     }
 
     .pantalla {
@@ -272,9 +299,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 90px;
         margin: 20px 10px;
         box-shadow: 4px 4px 10px rgb(124, 30, 179),
             -4px -4px 10px rgb(124, 30, 179);
+        border-radius: 12px;
+        margin: 20px;
     }
 
     .Boost {
@@ -282,29 +312,86 @@
         flex: 1;
     }
 
-
-    #tablero th {
-        border-bottom: solid 3px black;
-        border-left: solid 3px black;
-        background-color: rgb(170, 81, 46);
-        color: wheat;
-        width: 270px;
-        padding: 10px;
-        overflow: hidden;
+    .Styletablero {
+        position: relative;
+        width: 255px;
+        max-height: 60px;
+        margin-left: 15px;
     }
 
-    #tablero td {
-        border-bottom: solid 3px black;
-        border-left: solid 3px black;
+    .Styletablero th {
+        color: rgb(255, 255, 255);
+        height: 26px;
+        z-index: 1;
+        border-bottom: 3px solid white;
+        border-radius: 2px;
+    }
+
+    .Styletablero td {
         text-align: center;
-        width: 120px;
-        max-width: 120px;
-        padding: 7px;
+        padding: 4px;
         overflow: hidden;
+        z-index: 1;
+        color: white;
+        height: 15px;
+        width: 150px;
+    }
+
+    #celdamarcadorIA,
+    #celdaIA {
+        border-left: 1px white solid;
+        border-radius: 2px;
+    }
+
+    #celdanombre,
+    #celdaIA {
+        border-bottom: 2px white solid;
+        border-radius: 2px;
+    }
+
+    .bordetablero {
+        bottom: 0px;
+        left: 6px;
+        width: 250px;
+        height: 90px;
+        position: relative;
+        z-index: -1;
+
+    }
+
+    .bordetablero::before {
+        content: "";
+        height: 90px;
+        width: 290px;
+        position: absolute;
+        background: linear-gradient(200deg,
+                rgba(244, 192, 85, 1),
+                rgba(247, 232, 55, 1),
+                rgba(125, 233, 208, 1),
+                rgb(92, 226, 222),
+                rgb(67, 83, 223),
+                rgb(171, 82, 212),
+                rgba(217, 180, 217, 1),
+                rgb(245, 208, 208));
+        filter: blur(8px);
+        z-index: -2;
+        border-radius: 50px;
+    }
+
+    .bordetablero::after {
+        content: "";
+        position: absolute;
+        background-color: black;
+        height: 100%;
+        width: 96%;
+        top: 0%;
+        right: 4%;
+        border-radius: 50px;
+        z-index: -1;
     }
 
     .A1 {
-        color: wheat;
+        color: white;
         padding: 10px;
     }
 
@@ -320,14 +407,15 @@
     }
 
     #KO {
-        display: none;
-        background-color: rgb(170, 81, 46);
-        font-size: 3ch;
-        color: wheat;
-        border-radius: 12px;
-        border: solid 3px black;
+        text-align: center;
+        background: black;
+        border: none;
+        color: grey;
+        position: relative;
+        border-radius: 50px;            
+        display: none;        
+        font-size: 3ch;            
         transition: .3s ease all;
-
     }
 
     #KO:hover {
@@ -340,19 +428,21 @@
     }
 
     #fire {
-        display: none;
-        background-color: rgb(170, 81, 46);
-        font-size: 3ch;
-        color: wheat;
-        border-radius: 12px;
-        border: solid 3px black;
+        text-align: center;
+        background: black;
+        border: none;
+        color: grey;
+        position: relative;
+        border-radius: 50px;            
+        display: none;        
+        font-size: 3ch;            
         transition: .3s ease all;
     }
 
     #fire:hover {
         font-size: 3ch;
         background-color: orange;
-        color: rgb(170, 81, 46);
+        color: rgb(255, 75, 4);
         border: solid 3px orange;
         padding: 3px;
         box-shadow: 4px 4px 10px orange,
@@ -369,7 +459,6 @@
     .formatoboost {
         width: 80%;
         margin: 10px 10%;
-
     }
 
     .formatoboost:hover {
@@ -377,42 +466,67 @@
         color: wheat;
     }
 
-
-
     #findeljuego {
         display: none;
         text-align: center;
-
     }
-
-    #si,
-    #no {
-        font-size: 3ch;
-        border-bottom: solid 3px black;
-        color: rgb(208, 72, 241);
-        background-color: wheat;
-        margin-bottom: 3ch;
-        margin-top: 40px;
+    #si,#no{
+        background: black;
+        border: none;
+        color: rgba(164, 177, 180, 1);
+        position: relative;
+        border-radius: 50px;
+        font-size: 2ch;
+        margin-right: 25%;
+        margin-left: 25%;
+        margin: 20px 20%;
+        padding: 10px 50px;
         border-radius: 12px;
-        width: 10ch;
         transition: .3s ease all;
+        border-radius: 50px;
     }
-
-    #si:hover,
-    #no:hover {
-        border: solid 3px black;
-        background-color: rgb(123, 42, 143);
-        color: wheat;
-        transition: .3s ease all;
-    }
-
-    footer{
-        position: absolute;
-        bottom: 30px;
+    #si:hover,#no:hover{
+        color:white;
+        transition: .3s ease-in-out all;
     }
 
     a {
         text-decoration: none;
         color: rgb(255, 255, 255);
     }
-}
+
+    footer {
+        position: absolute;
+        bottom: 30px;
+        color: white;
+        height: 30px;
+        width: 150px;
+        left: 50px;
+    }
+
+    footer:hover .arrowleft,
+    footer:hover span {
+        opacity: 1;
+        padding-left: 10px;
+    }
+
+    footer span {
+        color: white;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        height: 25px;
+    }
+
+    footer .arrowleft {
+        color: white;
+        position: absolute;
+        bottom: 4px;
+        width: 25px;
+        height: 25px;
+        filter: invert(1);
+        opacity: 0;
+        transition: .3s ease all;
+        left: -30px;
+    }
+/* } */

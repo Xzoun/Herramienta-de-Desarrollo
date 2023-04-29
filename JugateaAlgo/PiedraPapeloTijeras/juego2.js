@@ -49,10 +49,13 @@ idbotones.childNodes.forEach((eleccion) => {
             racha = 0;
             puntajeIA = (puntajeIA + 1);
         }
-        if (racha >= 3) {
+        if(racha == 0){
+            cont =2;
+            ocultarinterfaz(cont);
+        }else if (racha >= 3 && racha<7) {
             cont = 3;
             ocultarinterfaz(cont);
-        } else if (racha >= 7) {
+        }else if (racha >= 7) {
             cont = 4;
             ocultarinterfaz(cont);
         }

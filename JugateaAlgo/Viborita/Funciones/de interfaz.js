@@ -1,27 +1,14 @@
-export function bienvenidaFc() {
-    const bienvenidainicial = document.getElementById("bienvenida");
-    bienvenidainicial.addEventListener("submit", function funcion(event) {
-        event.preventDefault();
-        let cont = 0;
-        var nombre = document.getElementById("ingresonombre").value || "Player 1";
-        document.getElementById("nombre").innerText = nombre
-        interfazFc(cont);
-    }, { once: true })
-}
-
 export function interfazFc(cont) {
     //Elegir modo de juego
     if (cont == 0) {
         document.getElementById("indicacioninicial").style.display = "block"
         document.getElementById("mododejuegobotones").style.display = "block"
         document.getElementById("bienvenida").style.display = "none"
-        document.getElementById("findeljuego").style.display = "none"
         //Interfaz General - Inicio        
     } else if (cont == 1) {
         document.getElementById("juegoCanvas").style.display = "block"
         document.getElementById("racha").style.display = "block"
         document.getElementById("nombre").style.display = "block"
-        document.getElementById("indicacioninicial").style.display = "none"
         document.getElementById("mododejuegobotones").style.display = "none"
         document.getElementById("findeljuego").style.display = "none"
         //reglamento
@@ -34,15 +21,23 @@ export function interfazFc(cont) {
         document.getElementById("findeljuego").style.display = "block"
         document.getElementById("juegoCanvas").style.display = "none"
         document.getElementById("racha").style.display = "none"
-        document.getElementById("boost").style.display = "none"
-        document.getElementById("nombre").style.display = "none"
     } else if (cont == 4) {
         let nombre = document.getElementById("nombre").innerText || "Player 1";
         document.getElementById("despedida").style.display = "block"
-        document.getElementById("despedida").innerText = "Gracias por jugar "+nombre+", hasta pronto!"
+        document.getElementById("despedida").innerText = "Gracias por jugar " + nombre + ", hasta pronto!"
         document.getElementById("findeljuego").style.display = "none"
         document.getElementById("juegoCanvas").style.display = "none"
     }
+}
+
+export function findeljuego() {
+    let cont = 3;
+    interfazFc(cont);
+    let no = document.getElementById("no");
+           no.addEventListener("click",()=>{
+            cont = 4;
+            interfazFc(cont);           
+},{once: true})
 }
 
 // let contadorpantalla = 0;
