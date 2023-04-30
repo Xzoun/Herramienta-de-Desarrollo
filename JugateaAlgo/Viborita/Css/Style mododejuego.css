@@ -55,6 +55,7 @@ button {
     top: 5px;
     color: white;
     font-weight: 800;
+    
 }
 
 #rachaactual,
@@ -84,9 +85,9 @@ button {
     width: 350px;
     position: absolute;
     background: linear-gradient(200deg,
-            rgba(244, 192, 85, 1),
-            rgba(247, 232, 55, 1),
-            rgba(125, 233, 208, 1),
+            #f4c055,
+            #f7e837,
+            #7de9d0,
             rgb(92, 226, 222),
             rgb(67, 83, 223),
             rgb(171, 82, 212),
@@ -103,7 +104,10 @@ button {
     bottom: 145px;
     width: 360px;
     left: 340px;
-    text-align: center;    
+    text-align: center;  
+    background-color: black;
+    border-radius: 50px;  
+    font-weight: 800;
 }
 #boost #bonus{
     height: 26px;
@@ -118,6 +122,8 @@ button {
     width: 20px;
     height: 26px;
     right: 35px;
+    font-size: 3ch;
+    top: -2px;
     font-weight: 800;
 }
 
@@ -126,6 +132,7 @@ button {
     filter: invert(1);
     width: 26px;
     right:10px;    
+    font-weight: 800;
 }
 
 #nombre {
@@ -240,8 +247,7 @@ canvas {
 #si,
 #no,
 .cambiarmodo,
-#cambiarmodo,
-#boost {
+#cambiarmodo{
     background: black;
     border: none;
     color: rgba(164, 177, 180, 1);

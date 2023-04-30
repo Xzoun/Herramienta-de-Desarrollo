@@ -1,40 +1,56 @@
 export class crearObstaculo {
     constructor() {
-        this.x = Math.floor(Math.random() * 29) * 10
-        this.y = Math.floor(Math.random() * 29) * 10
-        this.x1 = 0, this.y1 = 0; this.n = 0; this.m = 0;
-        this.vx = 0; this.vy = 0; this.vx1 = 0; this.vy1 = 0;
-        this.direccion = 8;
+        this.x = Math.floor(Math.random() * 28) * 10
+        this.y = Math.floor(Math.random() * 28) * 10
+        this.n = 10
+        this.m = 10
+        this.vx = 0;
+        this.vy = 0;
+        this.direccion = Math.floor(Math.random() * 7);
+        this.indice = 0;
+        this.colores = ["#2c2e9c","#cfa900", "#3a210d","#c7732f","#60328d","black"];
     }
 
     render(ctx) {
-
-        ctx.fillStyle = "black"
-
-        ctx.fillRect(this.x, this.y, 10, 10)
+        ctx.save()
+        ctx.fillStyle = this.colores[this.indice]
+        ctx.fillRect(this.x, this.y, this.n, this.m)
+        ctx.lineWidth = 2
+        ctx.strokeRect(this.x, this.y, this.n, this.m)
+        ctx.strokeStyle = "black"
+        ctx.restore()
     }
 
+    moverObstaculos(cont = 0) {
+        switch (cont) {
+            case 0:
+                this.direccion = Math.floor(Math.random() * 7);
+                this.indice = Math.floor(Math.random() * this.colores.length)
+                break;
+            case 1:
+                this.direccion = Math.floor(Math.random() * 7);
+                this.indice = Math.floor(Math.random() * this.colores.length)
+                // this.x1 = Math.floor(Math.random() * 30) * 10
+                // this.y1 = Math.floor(Math.random() * 30) * 10
+                // this.n1 = Math.floor(Math.random() * 5) * 10
+                // this.m1 = Math.floor(Math.random() * 5) * 10
+                break;
+            case 2:
+                this.indice = Math.floor(Math.random() * this.colores.length)
+                this.direccion = Math.floor(Math.random() * 7);
+                // this.m = Math.floor(Math.random() * 3) * 10
+                // this.n = Math.floor(Math.random() * 3) * 10
+                break;
+            case 3:
+                this.x = 150;
+                this.y = 150;
+                this.indice = Math.floor(Math.random() * this.colores.length)
+                this.direccion = Math.floor(Math.random() * 7);
+                // this.m = Math.floor(Math.random() * 8) * 10
+                // this.n = Math.floor(Math.random() * 8) * 10
+                break;
+            default:
 
-    nuevoObstaculo(cont = 0) {
-        if (cont == 0) {
-            this.direccion = Math.floor(Math.random() * 7);
-
-        } else if (cont == 1) {
-            this.direccion = Math.floor(Math.random() * 7);
-
-            // this.x1 = Math.floor(Math.random() * 30) * 10
-            // this.y1 = Math.floor(Math.random() * 30) * 10
-            // this.n1 = Math.floor(Math.random() * 5) * 10
-            // this.m1 = Math.floor(Math.random() * 5) * 10
-
-        } else if (cont == 2) {
-            this.direccion = Math.floor(Math.random() * 7);
-            this.m = Math.floor(Math.random() * 3) * 10
-            this.n = Math.floor(Math.random() * 3) * 10
-        } else if (cont == 3) {
-            this.direccion = Math.floor(Math.random() * 7);
-            this.m = Math.floor(Math.random() * 8) * 10
-            this.n = Math.floor(Math.random() * 8) * 10
         }
     }
 
@@ -52,18 +68,19 @@ export class crearObstaculo {
         if ((this.x < 1 && this.y < 1) ||
             (this.x > 289 && this.y < 1) ||
             (this.x > 289 && this.y > 289) ||
-            (this.x < 1 && this.y > 289)) { this.vx = -this.vx; this.yx = -this.yx }
+            (this.x < 1 && this.y > 289)) {
+            this.x = 150;
+            this.y = 150;
+            this.direccion = 8;
+            this.vx = -this.vx;
+            this.yx = -this.yx
+        }
         else if (this.x > 289 || this.x < 1) { this.direccion = 8; this.vx = - this.vx; }
         else if (this.y > 289 || this.y < 1) { this.direccion = 8; this.vy = - this.vy; }
         this.x += this.vx;
         this.y += this.vy;
     }
 }
-export function Bonus() {
-
-
-}
-
 // export function frames() {
 //     let puntuacion = document.getElementById("rachaactual").innerText
 //     let puntos = Math.floor(puntuacion)
