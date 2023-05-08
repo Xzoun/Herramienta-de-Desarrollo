@@ -38,7 +38,6 @@ export function interfazFc(cont) {
         document.getElementById("idbotones").style.display = "none";
         document.getElementById("racha").style.display = "none";
         document.getElementById("mensaje").style.display = "block";
-        //document.getElementById("fire").style.visibility = "hidden";
         document.getElementById("fire").style.display = "none";
         document.getElementById("KO").style.display = "none";
         document.getElementById("findeljuego").style.display = "block";

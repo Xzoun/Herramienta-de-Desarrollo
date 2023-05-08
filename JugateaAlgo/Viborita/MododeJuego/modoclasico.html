@@ -15,21 +15,13 @@
         <header>
             <h1>Snake: La Viborita</h1>
         </header>
-        <div id="mododejuegobotones">
-            <a href="modosupervivencia.html"><button class="PPT" value="modo supervivencia"><span>
-                Supervivencia</span></button></a>
-            <a href="modoniveles.html"><button class="PPT" value="modo niveles"><span>
-                Por Niveles</span></button></a>
-            <a href="modoclasico.html"><button class="PPT" value="modo clasico"><span>
-                Clasico</span></button></a>
-        </div>
         <div id="findeljuego">
             <header>
                 <h2>Jugas otra?</h2>
             </header>
             <div id="sino">
-                <a href="modoclasico.html"><button id=si value="si">Dale!</button></a> 
-                <button id=no value="no">Nono</button>                
+                <a href="modoclasico.html"><button id=si value="si">Dale!</button></a>
+                <button id=no value="no">Nono</button>
             </div>
         </div>
         <div id="cambiarmodo" value="cambiarmodo">
@@ -43,20 +35,19 @@
             <div id="eleccion"></div>
             <div id="tiempo"></div>
         </div>
+        <canvas id="juegoCanvas" class="canvasClasico" width="300" height="300"></canvas>
         <div id="racha">
+            <div id="pantalla">
+                <div id="mensaje"></div>
+            </div>
+            <div id="vida"></div>
             <div id="racha1">
-                <p>Puntuacion</p>
+                <div id="puntuacion">Puntuacion</div>
                 <div id="nombre"></div>
                 <div id="rachaactual"></div>
             </div>
-            <div id="boost"></div>
         </div>
-        <canvas id="juegoCanvas" class="canvasClasico" width="300" height="300"></canvas>
         <script type="module" id="juego1" src="modoclasico.js"></script>
-
-        </script>
-
-
         <footer>
             <a href="../../JugateaAlgo.html">
                 <div id="atras">

@@ -1,7 +1,7 @@
 export class cuerpoPropiedades {
     constructor() {
-        this.cabezaposX = 150;
-        this.cabezaposY = 150;
+        this.x = 150;
+        this.y = 150;
         this.vx = 10;
         this.vy = 0;
         this.direccion = 0;
@@ -12,41 +12,41 @@ export class cuerpoPropiedades {
 
     rendercabeza(ctx) {
         ctx.save()
-        ctx.fillStyle = "#7ba715"
-        ctx.fillRect(this.cabezaposX, this.cabezaposY, 10, 10)
+        ctx.fillStyle = "#bcff1f"
+        ctx.fillRect(this.x, this.y, 10, 10)
         ctx.lineWidth = 2
-        ctx.strokeRect(this.cabezaposX, this.cabezaposY, 10, 10)
+        ctx.strokeRect(this.x, this.y, 10, 10)
         ctx.strokeStyle = "black"
         ctx.restore()
         switch (this.direccion) {
             case 0:
-                this.ojoX = this.cabezaposX + 2
-                this.ojoPar = this.cabezaposY + 2
-                this.ojoY = this.cabezaposY + 6
+                this.ojoX = this.x + 2
+                this.ojoPar = this.y + 2
+                this.ojoY = this.y + 6
                 ctx.fillStyle = "black"
                 ctx.fillRect(this.ojoX, this.ojoPar, 2, 2);
                 ctx.fillRect(this.ojoX, this.ojoY, 2, 2);
                 break;
             case 1:
-                this.ojoX = this.cabezaposX + 2
-                this.ojoPar = this.cabezaposX + 6
-                this.ojoY = this.cabezaposY + 2
+                this.ojoX = this.x + 2
+                this.ojoPar = this.x + 6
+                this.ojoY = this.y + 2
                 ctx.fillStyle = "black"
                 ctx.fillRect(this.ojoX, this.ojoY, 2, 2);
                 ctx.fillRect(this.ojoPar, this.ojoY, 2, 2);
                 break;
             case 2:
-                this.ojoX = this.cabezaposX + 6
-                this.ojoPar = this.cabezaposY + 2
-                this.ojoY = this.cabezaposY + 6
+                this.ojoX = this.x + 6
+                this.ojoPar = this.y + 2
+                this.ojoY = this.y + 6
                 ctx.fillStyle = "black"
                 ctx.fillRect(this.ojoX, this.ojoPar, 2, 2);
                 ctx.fillRect(this.ojoX, this.ojoY, 2, 2);
                 break;
             case 3:
-                this.ojo1X = this.cabezaposX + 6
-                this.ojo2X = this.cabezaposX + 2
-                this.ojo1Y = this.cabezaposY + 6
+                this.ojo1X = this.x + 6
+                this.ojo2X = this.x + 2
+                this.ojo1Y = this.y + 6
                 ctx.fillStyle = "black"
                 ctx.fillRect(this.ojo1X, this.ojo1Y, 2, 2);
                 ctx.fillRect(this.ojo2X, this.ojo1Y, 2, 2);
@@ -57,11 +57,11 @@ export class cuerpoPropiedades {
     render(ctx) {
 
         ctx.fillStyle = "#bcff1f"
-        ctx.fillRect(this.cabezaposX, this.cabezaposY, 10, 10)
+        ctx.fillRect(this.x, this.y, 10, 10)
         ctx.save()
         ctx.strokeStyle = "black"
         ctx.lineWidth = 3
-        ctx.strokeRect(this.cabezaposX, this.cabezaposY, 10, 10)
+        ctx.strokeRect(this.x, this.y, 10, 10)
         ctx.restore()
     }
 
@@ -70,50 +70,60 @@ export class cuerpoPropiedades {
         else if (this.direccion === 1) { this.vy = -10; this.vx = 0; }
         else if (this.direccion === 3) { this.vy = 10; this.vx = 0; }
         else if (this.direccion === 0) { this.vx = -10; this.vy = 0; }
-        this.cabezaposX += this.vx;
-        this.cabezaposY += this.vy;
+        this.x += this.vx;
+        this.y += this.vy;
     }
 }
 
 export class zona {
 
     constructor() {
-        this.x1 = 0
-        this.y1 = 0
-        this.n1 = 0
-        this.m1 = 0
+        this.xz = -30
+        this.yz = -30
+        this.nz = 0
+        this.mz = 0
     }
 
     render(ctx) {
         ctx.beginPath();
-        ctx.fillStyle = "rgba(92, 226, 222, 0.6)"
-        ctx.fillRect(this.x1, this.y1, this.n1, this.m1)
+        ctx.fillStyle = "black"        
+        ctx.font="bold 24px verdana"
+        let posiciontextoX = this.xz+10
+        let posiciontextoY = this.yz+30
+        ctx.textAlign="start"
+        ctx.fillText("Bunker",posiciontextoX,posiciontextoY)
+        ctx.fillStyle = "rgba(92, 226, 222, 0.6)" 
+        ctx.fillRect(this.xz, this.yz, this.nz, this.mz)
         ctx.lineWidth = 2
-        ctx.rect(this.x1, this.y1, this.n1, this.m1)
+        ctx.rect(this.xz, this.yz, this.nz, this.mz)
         ctx.stroke();
     }
 
     crearBonus(cont) {
         switch (cont) {
             case 1:
-                this.x1 = (Math.floor(Math.random() * 18) * 10)
-                this.y1 = (Math.floor(Math.random() * 18) * 10)
-                this.n1 = 120;
-                this.m1 = 120;
+                this.xz = (Math.floor(Math.random() * 18) * 10)
+                this.yz = (Math.floor(Math.random() * 18) * 10)
+                this.nz = 120;
+                this.mz = 120;
                 break;
             case 2:
-                this.n1 = 0;
-                this.m1 = 0;
+                this.nz = 0;
+                this.mz = 0;
+                this.xz = -30
+                this.yz = -30
                 break;
             case 3:
-                this.x1 = (Math.floor(Math.random() * 18) * 10)
-                this.y1 = (Math.floor(Math.random() * 18) * 10)
-                this.n1 = 60;
-                this.m1 = 60;
+                this.xz = (Math.floor(Math.random() * 18) * 10)
+                this.yz = (Math.floor(Math.random() * 18) * 10)
+                this.nz = 60;
+                this.mz = 60;
                 break;
             case 4:
-                this.n1 = 0;
-                this.m1 = 0;
+                this.nz = 0;
+                this.mz = 0;
+                this.xz = -30
+                this.yz = -30
                 break;
         }
     }

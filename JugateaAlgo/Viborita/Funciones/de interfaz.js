@@ -8,7 +8,6 @@ export function interfazFc(cont) {
     } else if (cont == 1) {
         document.getElementById("juegoCanvas").style.display = "block"
         document.getElementById("racha").style.display = "block"
-        document.getElementById("nombre").style.display = "block"
         document.getElementById("mododejuegobotones").style.display = "none"
         document.getElementById("findeljuego").style.display = "none"
         //reglamento
@@ -18,9 +17,12 @@ export function interfazFc(cont) {
 
         //Fin del juego
     } else if (cont == 3) {
+        document.getElementById("racha").style.display = "block"
         document.getElementById("findeljuego").style.display = "block"
         document.getElementById("juegoCanvas").style.display = "none"
-        document.getElementById("racha").style.display = "none"
+        document.getElementById("pantalla").style.display = "none"
+        document.getElementById("vida").style.display = "none"
+        
     } else if (cont == 4) {
         let nombre = document.getElementById("nombre").innerText || "Player 1";
         document.getElementById("despedida").style.display = "block"

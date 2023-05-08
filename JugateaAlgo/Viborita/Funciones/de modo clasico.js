@@ -8,6 +8,7 @@ export class crearComida {
         ctx.fillStyle = "red"
         ctx.fillRect(this.x, this.y, 10, 10)
     }
+    
     nuevacomida() {
         this.x = Math.floor(Math.random() * 30) * 10
         this.y = Math.floor(Math.random() * 30) * 10
@@ -23,11 +24,11 @@ export function puntuacion() {
     } else if (puntos >= 10 && puntos <= 29) {
         puntos += 2
         document.getElementById("rachaactual").innerText = puntos
-        document.getElementById("boost").innerText = "Boost + 2 puntos"
+        document.getElementById("mensaje").innerText = "Boost + 2 puntos"
     } else if (puntos >= 30) {
         puntos += 4
         document.getElementById("rachaactual").innerText = puntos
-        document.getElementById("boost").innerText = "Boost + 4 puntos"
+        document.getElementById("mensaje").innerText = "Boost + 4 puntos"
     }
 }
 

@@ -1,17 +1,67 @@
 import { cuerpoPropiedades } from "../Funciones/de juego.js"
-import { crearComida,puntuacion } from "../Funciones/de modo clasico.js";
-import {findeljuego} from "../Funciones/de interfaz.js"
+import { crearComida, puntuacion } from "../Funciones/de modo clasico.js";
+import { findeljuego } from "../Funciones/de interfaz.js"
 
-    const juegocanvas = document.getElementById("juegoCanvas"),
-        ctx = juegocanvas.getContext("2d");
+const juegocanvas = document.getElementById("juegoCanvas"),
+    ctx = juegocanvas.getContext("2d");
+
+let contador = -1;
+
+function limpiarcanvas(ctx) {
+    ctx.clearRect(0, 0, 300, 300);
+}
+
+function inicio(){
+    contador++; 
+    switch (contador) {
+        case 0:                      
+            ctx.beginPath();
+            ctx.fillStyle = "black"
+            ctx.font = "bold 24px verdana"
+            ctx.textAlign = "start"
+            ctx.fillText("3", 140, 150)
+            ctx.stroke();
+            break;
+        case 1:           
+            limpiarcanvas(ctx)           
+            break;
+        case 2:                   
+            ctx.beginPath();
+            ctx.fillStyle = "black"
+            ctx.font = "bold 24px verdana"
+            ctx.textAlign = "start"
+            ctx.fillText("2", 140, 150)
+            ctx.stroke();
+            break;
+        case 3:
+            limpiarcanvas(ctx)       
+            break;
+        case 4:
+            ctx.beginPath();
+            ctx.fillStyle = "black"
+            ctx.font = "bold 24px verdana"
+            ctx.textAlign = "start"
+            ctx.fillText("1", 140, 150)
+            ctx.stroke();
+            break;
+        case 5:
+            limpiarcanvas(ctx)
+            clearInterval(intervaloinicio)
+    }
+}
+
+let intervaloinicio = setInterval(inicio, 500)
+
+setTimeout(() => {
+
     let Snake = [],
         Comida = new crearComida(),
         fps = 1000 / 15;
 
     Snake[0] = new cuerpoPropiedades()
     Snake[0].direccion = 2;
-    
-    document.getElementById("rachaactual").innerText = 0;    
+
+    document.getElementById("rachaactual").innerText = 0;
     document.getElementById("nombre").innerText = window.name;
 
     document.addEventListener("keyup", (e) => {
@@ -21,8 +71,8 @@ import {findeljuego} from "../Funciones/de interfaz.js"
         else if (e.key === "ArrowRight" && Snake[0].direccion != 0) Snake[0].direccion = 2;
     })
 
-
     let intervalodejuego = setInterval(juego, fps)
+
     function juego() {
 
         mover()
@@ -34,20 +84,16 @@ import {findeljuego} from "../Funciones/de interfaz.js"
         }
     }
 
-    function limpiarcanvas(ctx) {
-        ctx.clearRect(0, 0, 300, 300);
-    }
-
     function mover() {
         unircuerpo();
         Snake[0].mover();
-        if (Snake[0].cabezaposX >= juegocanvas.width) { findeljuego(); game0ver(intervalodejuego); }
-        else if (Snake[0].cabezaposX < 0) { findeljuego(); game0ver(intervalodejuego); }
-        else if (Snake[0].cabezaposY >= juegocanvas.height) { findeljuego(); game0ver(intervalodejuego); }
-        else if (Snake[0].cabezaposY < 0) { findeljuego(); game0ver(intervalodejuego); }
+        if (Snake[0].x >= juegocanvas.width) { findeljuego(); game0ver(intervalodejuego); }
+        else if (Snake[0].x < 0) { findeljuego(); game0ver(intervalodejuego); }
+        else if (Snake[0].y >= juegocanvas.height) { findeljuego(); game0ver(intervalodejuego); }
+        else if (Snake[0].y < 0) { findeljuego(); game0ver(intervalodejuego); }
         for (let i = 1; i < Snake.length - 1; i++) {
             if (Snake.length > 1) {
-                if (Snake[0].cabezaposX == Snake[i].cabezaposX && Snake[0].cabezaposY == Snake[i].cabezaposY) {
+                if (Snake[0].x == Snake[i].x && Snake[0].y == Snake[i].y) {
                     findeljuego()
                     game0ver(intervalodejuego);
                     Snake = null;
@@ -55,7 +101,7 @@ import {findeljuego} from "../Funciones/de interfaz.js"
                 }
             }
         }
-        if (Snake[0].cabezaposY == Comida.y && Snake[0].cabezaposX == Comida.x) {
+        if (Snake[0].y == Comida.y && Snake[0].x == Comida.x) {
             Comida.nuevacomida()
             Snake[Snake.length] = new cuerpoPropiedades();
             unircuerpo();
@@ -66,8 +112,8 @@ import {findeljuego} from "../Funciones/de interfaz.js"
     function unircuerpo() {
         if (Snake.length > 1) {
             for (let i = 0; i < Snake.length - 1; i++) {
-                Snake[Snake.length - i - 1].cabezaposX = Snake[Snake.length - i - 2].cabezaposX;
-                Snake[Snake.length - i - 1].cabezaposY = Snake[Snake.length - i - 2].cabezaposY;
+                Snake[Snake.length - i - 1].x = Snake[Snake.length - i - 2].x;
+                Snake[Snake.length - i - 1].y = Snake[Snake.length - i - 2].y;
             }
         }
     }
@@ -75,3 +121,5 @@ import {findeljuego} from "../Funciones/de interfaz.js"
     function game0ver(intervalodejuego) {
         clearInterval(intervalodejuego)
     }
+
+}, 3500)
