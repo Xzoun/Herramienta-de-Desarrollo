@@ -3,6 +3,571 @@
     padding: 0px;
 }
 
+@media (max-width : 679px){
+
+    body {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(0deg,
+                rgba(255, 255, 255, 1) 18%,
+                rgba(58, 8, 119,  0.493) 76%);
+        min-height: 1200px;
+        font-family: 'Catamaran', sans-serif;
+    
+        &.Dark {
+            background: rgb(0, 0, 0);
+            background: linear-gradient(0deg,
+                   
+                    rgba(58, 8, 119, 0.493) 18%,
+                    rgba(0, 0, 0, 1) 76%);
+            color: white;
+        }
+    }
+    
+    #banner {
+        height: 210px;
+    }
+    
+    .header {
+        position: sticky;
+        top: 0;
+    }
+    
+    h1 {
+        position: sticky;
+        text-align: left;
+        margin-left: 30px;
+        font-size: 4ch;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-weight: 700px;
+        top: 0;
+        visibility: hidden;
+    }
+    
+    .header h2 {
+        position: absolute;
+        top: 160px;
+        right: 180px;
+        min-height: 26px;
+        min-width: 200px;
+        text-align: center;
+        visibility: hidden;
+    }
+    
+    #Rick {
+        top: 0;
+        right: 0;
+        z-index: -1;
+        border-radius: 50px;
+        position: fixed;
+    }
+    
+    body::-webkit-scrollbar {
+        width: 7px;
+        height: 0px;
+        border-right: 10px solid rgba(0, 0, 0, 0.2);
+        margin-right: 3px;
+    }
+    
+    body:hover::-webkit-scrollbar-thumb {
+        background: rgb(170, 165, 170);
+        border-radius: 12px;
+        filter: blur(1px);
+        border-right: 10px solid rgba(0, 0, 0, 0.2);
+    }
+    
+    body::-webkit-scrollbar-thumb:hover {
+        width: 7px;
+        background: rgb(55, 56, 56);
+        border-right: 10px solid rgba(0, 0, 0, 0.2);
+    }
+    
+    
+    #DarkButton {
+        width: 60px;
+        height: 30px;
+        border-radius: 50px;
+        background-color: white;
+        left: 780px;
+        top: 10px;
+        position: absolute;
+        position: fixed;
+        border: 3px solid black;
+        transition: .4s ease-in-out all;
+        cursor: pointer;
+        z-index: 1;
+    
+        &.activado {
+            background-color: rgb(59, 216, 228);
+        }
+    
+        &.activado:hover {
+            background-color: white;
+            transition: .2s ease-in-out all;
+        }
+    
+        &.activado #LightIcon {
+            opacity: 0;
+            transition: .2s ease-in-out all;
+        }
+    
+        &.activado #DarkIcon {
+            opacity: 1;
+        }
+    }
+    
+    #DarkButton:hover {
+        background-color: rgb(59, 216, 228);
+    }
+    
+    #DarkIcon {
+        transition: .2s ease-in-out all;
+        opacity: 0;
+        width: 22px;
+        height: 22px;
+    }
+    
+    #LightIcon {
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        left: 16px;
+    }
+    
+    #Darkmode {
+        opacity: 0;
+        display: none;
+    }
+    
+    #DarkButton:hover #Darkmode {
+        border-radius: 50px;
+        position: absolute;
+        top: 0px;
+        left: 58px;
+        width: 100px;
+        opacity: 0.5;
+        background-color: white;
+        display: block;
+    }
+    
+    #juegos {
+        position: absolute;
+        top: 12px;
+        left: 620px;
+        border-radius: 3px;
+        background-color: rgba(1, 1, 1, 0);
+        font-weight: 800;
+        font-size: 2ch;
+        z-index: 0;
+        border-bottom: black 3px solid;
+        color: black;
+    
+        &.Dark {
+            color: white;
+            border-bottom: white 3px solid;
+        }
+    }
+    
+    #juegos:hover {
+        background: rgba(0, 0, 0, 0.2);
+        background: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.9890567050890976) 10%,
+                rgba(0, 0, 0, 0) 100%);
+        color: rgb(255, 255, 255);
+        padding: 0px 5px;
+        border-bottom: none;
+        border-radius: 50px;
+    }
+    
+    #atajos {
+        width: 100%;
+        margin-left: 20px;
+    
+        &.Dark th {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    
+        &.Dark a {
+            color: white;
+        }
+    
+        &.Dark #c1,
+        &.Dark #c2,
+        &.Dark #c3,
+        &.Dark #c4 {
+            float: left;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+            width: 240px;
+            font-size: 1ch;
+            background: rgba(255, 255, 0, 0.2);
+        background: linear-gradient(25deg,
+                rgba(11, 139, 139, 0.125) 0%,
+                rgba(255, 255, 255, 0) 60%);
+            color: white;
+        }
+    
+        &.Dark:hover a:hover {
+            background: rgba(0, 0, 0, 0.2);
+            background: linear-gradient(90deg,
+                    rgba(0, 0, 0, 0.9890567050890976) 10%,
+                    rgba(0, 0, 0, 0) 85%);
+            color: white;
+            border-left: rgb(255, 255, 255) solid 3px;
+            border-radius: 0px;
+        }
+    }
+    
+    #c1,
+    #c2,
+    #c3,
+    #c4 {
+        float: left;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        width: 240px;
+        font-size: 2ch;
+        background: rgba(255, 255, 0, 0.2);
+        background: linear-gradient(25deg,
+                rgba(11, 139, 139, 0.125) 0%,
+                rgba(255, 255, 255, 0) 60%);
+        border-radius: 12px;
+        cursor: pointer;
+    }
+    
+    #atajos ul {
+        margin: 0px;
+        margin-left: 10px;
+        padding: 0px;
+        text-align: left;
+    }
+    
+    #c1 a,
+    #c2 a,
+    #c3 a,
+    #c4 a {
+        display: none;
+        color: black;
+    }
+    
+    #c1:hover a,
+    #c2:hover a,
+    #c3:hover a,
+    #c4:hover a {
+        display: block;
+    
+    }
+    
+    #atajos:hover a:hover {
+        background: rgba(0, 0, 0, 0.2);
+        background: linear-gradient(90deg,
+                rgba(0, 0, 0, 0.9890567050890976) 10%,
+                rgba(0, 0, 0, 0) 85%);
+                border-left: rgb(255, 255, 255) solid 3px;
+        color: white;
+        display: block;
+    }
+    
+    #bulto1 {
+        height: 180px;
+    }
+    
+    #notas {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+    
+    #notas h2 {
+        position: absolute;
+        top: 0px;
+        left: 650px;
+        width: 350px;
+        margin-left: 30px;
+        width: 60px;
+        z-index: 2;
+    }
+    
+    #nuevaNota {
+        left: 650px;
+        width: 300px;
+        position: relative;
+        top: 0px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 120px);
+        padding: 24px;
+        gap: 24px;
+        border-radius: 12px;
+        height: auto;
+        background: rgba(0, 0, 0, 0.2);
+        background: linear-gradient(0deg,
+                rgba(255, 255, 255, 0.5) 10%,
+                rgba(255, 255, 255, 0.5) 85%);
+        border-radius: 12px;
+        padding-top: 60px;
+    }
+    
+    .dropZone {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 120px);
+        margin-left: 10px;
+        gap: 24px;
+    
+    }
+    
+    #dropZone {
+        top: -330px;
+        position: absolute;
+        width: 680px;
+        height: 120px;
+    }
+    
+    #dropZone1 {
+        top: 50px;
+        left: 250px;
+        position: absolute;
+    }
+    
+    #dropZone2 {
+        position: fixed;
+        right: 20px;
+        bottom: 10px;
+        width: 120px;
+        height: 120px;
+    }
+    
+    #dropZone2:hover {
+        right: 80px;
+        bottom: 80px;
+    }
+    
+    .drag {
+        background: rgba(0, 0, 0, 0.2);
+        background: linear-gradient(0deg,
+                rgba(255, 255, 255, 0.5) 10%,
+                rgba(255, 255, 255, 0.5) 85%);
+        border-radius: 12px;
+        transition: .3s ease-in-out all;
+        border: grey dashed 2px;
+    }
+    
+    #newNotebtn {
+        z-index: 1;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+        background-color: rgb(0, 0, 0, 0);
+        border: none;
+    }
+    
+    #newNotebtn:hover {
+        cursor: pointer;
+    }
+    
+    .note {
+        background: rgba(255, 255, 0, 0.5);
+        height: 120px;
+        width: 120px;
+        box-sizing: border-box;
+        padding: 5px;
+        border: none;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: (0, 0, 7px, rgba(0, 0, 0, ));
+    }
+    
+    .note:hover {
+        height: 200px;
+        width: 200px;
+        background-color: rgba(255, 255, 0, 1);
+        z-index: 1;
+        padding: 20px;
+        font-size: 2ch;
+    }
+    
+    
+    
+    
+    #bulto {
+        height: 120px;
+        border: solid 2px red;
+        width: 600px;
+        margin-left: 10px;
+    }
+    
+    footer {
+        margin-bottom: 10px;
+        position: fixed;
+        bottom: 10px;
+    }
+    
+    #redes {
+        width: 100px;
+        height: 45px;
+        left: 20px;
+        border-radius: 3px;
+        border-bottom: 3px black solid;
+        position: relative;
+        margin-bottom: 15px;
+        z-index: 2;
+    
+        &.Dark {
+            border-bottom: 3px white solid;
+        }
+    
+        &.Dark:hover {
+            background-color: rgba(255, 255, 255);
+            border-radius: 12px;
+            color: black;
+        }
+    
+        &.Dark:hover #redesimg {
+            filter: invert(0);
+        }
+    
+        &.Dark #redesimg {
+            filter: invert(1);
+        }
+    }
+    
+    #Lista {
+        position: fixed;
+        right: 10px;
+        top: 290px;
+        width: 300px;
+    }
+    
+    #redesimg {
+        position: absolute;
+        left: 0px;
+    }
+    
+    #redes span {
+        position: absolute;
+        align-items: center;
+        top: 20px;
+        left: 50px;
+        font-weight: 800;
+    }
+    
+    #redes:hover {
+        padding-right: 500px;
+        transition: .5s ease-in-out all;
+        background-color: rgba(255, 253, 253, 0);
+    }
+    
+    ul {
+        list-style: none;
+        margin: 0%;
+        padding: 0%;
+    }
+    
+    #redes li {
+        float: left;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    
+    #Youtube,
+    #YoutubeIcon,
+    #Twitter,
+    #TwitterIcon,
+    #Instagram,
+    #InstagramIcon,
+    #Twitch,
+    #TwitchIcon {
+        visibility: hidden;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: -40px;
+        top: 6px;
+        transition: .5s ease-in-out all;
+        opacity: 0;
+    }
+    
+    #redes:hover #YoutubeIcon {
+        visibility: visible;
+        left: 155px;
+        opacity: 1;
+        top: 2px;
+    }
+    
+    #redes:hover #InstagramIcon {
+        visibility: visible;
+        left: 270px;
+        opacity: 1;
+        filter: invert(32%) sepia(58%) saturate(987%) hue-rotate(352deg) brightness(90%) contrast(86%)
+    }
+    
+    #redes:hover #TwitterIcon {
+        visibility: visible;
+        left: 380px;
+        opacity: 1;
+        filter:
+            invert(45%) sepia(97%) saturate(1728%) hue-rotate(164deg) brightness(100%) contrast(103%);
+    }
+    
+    #redes:hover #TwitchIcon {
+        visibility: visible;
+        left: 470px;
+        opacity: 1;
+    }
+    
+    #redes:hover #Youtube {
+        visibility: visible;
+        left: 210px;
+        opacity: 1;
+        color: rgb(255, 0, 0);
+        font-weight: 800;
+    }
+    
+    #redes:hover #Instagram {
+        visibility: visible;
+        left: 315px;
+        opacity: 1;
+        color: #965118;
+        font-weight: 800;
+    }
+    
+    #redes:hover #Twitter {
+        visibility: visible;
+        left: 425px;
+        opacity: 1;
+        color: #00acee;
+        font-weight: 800;
+    }
+    
+    #redes:hover #Twitch {
+        visibility: visible;
+        left: 515px;
+        opacity: 1;
+        color: #6441a5;
+        font-weight: 800;
+    }
+    
+    #TwitterIcon,
+    #InstagramIcon,
+    #redesimgIcon,
+    #TwitchIcon {
+        width: 35px;
+        height: 35px;
+        margin-left: 10px;
+    }
+    
+    #YoutubeIcon {
+        width: 50px;
+        height: 45px;
+    }
+    }
+@media (min-width : 680px){
+
 body {
     background: rgb(255, 255, 255);
     background: linear-gradient(0deg,
@@ -54,8 +619,7 @@ h1 {
 
 #Rick {
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
     z-index: -1;
     border-radius: 50px;
     position: fixed;
@@ -283,7 +847,7 @@ body::-webkit-scrollbar-thumb:hover {
 #notas h2 {
     position: absolute;
     top: 0px;
-    left: 650px;
+    left: 0px;
     width: 350px;
     margin-left: 30px;
     width: 60px;
@@ -387,7 +951,11 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: 2ch;
 }
 
-
+#presentacion{
+    width: 600px;
+    margin-left:10px;
+    margin-bottom: 20px;
+}
 
 
 #bulto {
@@ -563,4 +1131,5 @@ a {
 #YoutubeIcon {
     width: 50px;
     height: 45px;
+}
 }
