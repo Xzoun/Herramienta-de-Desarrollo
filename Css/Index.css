@@ -214,7 +214,7 @@ body::-webkit-scrollbar-thumb:hover {
                 rgba(0, 0, 0, 0.9890567050890976) 10%,
                 rgba(0, 0, 0, 0) 85%);
         color: white;
-        border-left: rgb(255, 255, 255,0.6) solid 3px;
+        border-left: rgb(255, 255, 255) solid 3px;
         border-radius: 0px;
     }
 }
@@ -265,7 +265,7 @@ body::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(90deg,
             rgba(0, 0, 0, 0.9890567050890976) 10%,
             rgba(0, 0, 0, 0) 85%);
-    border-left: rgb(255, 255, 255,0.6) solid 3px;
+            border-left: rgb(255, 255, 255) solid 3px;
     color: white;
     display: block;
 }
@@ -277,7 +277,7 @@ body::-webkit-scrollbar-thumb:hover {
 #notas {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 #notas h2 {
