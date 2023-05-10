@@ -951,12 +951,58 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: 2ch;
 }
 
-#presentacion{
-    width: 600px;
+#presentacion, #notasFunc,#chat-gpt{   
     margin-left:10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;  
+    transition: .5 ease-in-out all;  
+}
+#notasFunc, #chat-gpt{
+    display:none;
+}
+#chat-gpt a{
+    margin-left:-40px;
+}
+#notasFunc h2, #notasFunc p{
+    text-align: center;
 }
 
+#swap{    
+    width: 600px;
+    height: 500px;
+    position: relative;
+}
+
+.opcion{
+    position: absolute;
+    bottom: 10px;
+border-radius: 100px;
+width: 10px;
+height: 10px;
+border: black 3px solid;
+cursor:pointer;
+transition: .5 ease-in-out all;
+}
+#one{
+    left:240px;
+    background: yellow;
+    &.activado{
+        background: white;
+    }
+}
+#two{
+    left:280px;
+    background: white;
+    &.activado{
+        background: yellow;
+    }
+}
+#three{
+    left:320px;
+    background: white;
+    &.activado{
+        background: yellow;
+    }
+}
 
 #bulto {
     height: 120px;
@@ -966,9 +1012,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 footer {
+    margin-top: 30px;
     margin-bottom: 10px;
-    position: fixed;
-    bottom: 10px;
 }
 
 #redes {
@@ -1001,7 +1046,6 @@ footer {
 }
 
 #Lista {
-    position: fixed;
     right: 10px;
     top: 290px;
     width: 300px;
