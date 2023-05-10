@@ -3,7 +3,6 @@ export function inicio() {
     frases();
     fecha();
     contador++;
-    console.log(contador)
     switch (contador) {
         case 0:
             document.getElementById("bienvenido").style.visibility = "visible"
@@ -11,7 +10,6 @@ export function inicio() {
         case 2:
             document.getElementById("bienvenido").style.visibility = "hidden"
             document.getElementById("hoyes").style.visibility = "visible"
-            console.log(contador)
             break;
         case 3:
             document.getElementById("hoyes").style.visibility = "hidden"
@@ -129,4 +127,5 @@ function fecha() {
     }
 
     document.getElementById("dia").innerText = dia + " " + numero + " de " + mes + " de " + año;
+    // document.getElementById("inputFecha").innerText = dia + " " + numero + " de " + mes + " de " + año;
 }

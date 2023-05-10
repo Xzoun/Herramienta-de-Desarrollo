@@ -1,6 +1,8 @@
-import{inicio} from"./Cosas/Bienvenido.js"
+import { inicio } from "./Cosas/Bienvenido.js"
+import { notas } from "./Cosas/Notas.js"
+
 const DarkButton = document.getElementById("DarkButton");
-DarkButton.addEventListener("click",()=>{
+DarkButton.addEventListener("click", () => {
     document.body.classList.toggle("Dark");
     DarkButton.classList.toggle("activado");
     const juegos = document.getElementById("juegos");
@@ -9,8 +11,10 @@ DarkButton.addEventListener("click",()=>{
     css.classList.toggle("Dark");
     const redes = document.getElementById("redes");
     redes.classList.toggle("Dark");
-},{passive:true})
-var bienvenida = setInterval(inicio,1000);
-setTimeout(()=>{
+}, { passive: true })
+var bienvenida = setInterval(inicio, 1000);
+setTimeout(() => {
     clearInterval(bienvenida)
-},12000);
+}, 12000);
+
+
