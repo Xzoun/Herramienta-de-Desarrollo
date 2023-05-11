@@ -9,7 +9,7 @@
                 rgba(2, 0, 36, 1) 0%,
                 rgba(164, 177, 180, 1) 100%);
         font-family: 'Courier New', Courier, monospace;
-        height: 655px;
+        height: 500px;
     }
 
     #Todojuego1 {
@@ -21,13 +21,13 @@
         width: 90%;
         margin-left: 5%;
         text-align: right;
-        line-height: 85px;
+        line-height: 55px;
         color: white;
     }
 
     h1 {
         border-bottom: 3px solid rgba(217, 180, 180, 1);
-        font-size: 4ch;
+        font-size: 2ch;
         text-align: center;
     }
 
@@ -41,7 +41,7 @@
         text-align: left;
         display: none;
         color: white;
-
+        font-size: 2ch;
     }
 
     button {
@@ -55,7 +55,6 @@
         text-align: center;
         padding: 1px;
         padding-top: 10px;
-        font-size: 2ch;
     }
 
     #ingresonombreindicacion {
@@ -178,9 +177,8 @@
     #mododejuegobotones {
         width: 100%;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 10px;
         display: none;
-        font-size: 2ch;
     }
 
     .PPT {
@@ -189,7 +187,6 @@
         color: rgba(164, 177, 180, 1);
         position: relative;
         border-radius: 50px;
-        font-size: 2ch;
         margin-right: 25%;
         margin-left: 25%;
         margin: 20px 20%;

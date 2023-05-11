@@ -2,6 +2,7 @@ export function interfazFc(cont) {
     //Reglamento
     switch(cont){
     case 0:
+        document.getElementById("atras").style.display = "none";
         document.querySelector(".pantalla").style.visibility = "hidden";
         document.getElementById("reglamento").style.display = "block";
         document.getElementById("bienvenida").style.display = "none";
@@ -14,6 +15,7 @@ export function interfazFc(cont) {
         document.getElementById("tablero").style.visibility = "visible";
         document.getElementById("idbotones").style.display = "block";
         document.getElementById("indicacioninicial").style.display = "block";
+        document.getElementById("atras").style.display = "block";
         break;
         //Pantalla - Racha
     case 2:
