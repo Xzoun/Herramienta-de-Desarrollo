@@ -134,12 +134,12 @@ function mover(id, element, divDestino, currentLocation) {
   })
   dropZone.addEventListener("drop", e => {
     e.preventDefault();
-    if (dropZone.childElementCount<=3){   
-    dropZone.appendChild(element);
-    targetNote.divDestino = "dropZone";  
-    guardar(notasActuales); 
+    if (dropZone.childElementCount <= 3) {
+      dropZone.appendChild(element);
+      targetNote.divDestino = "dropZone";
+      guardar(notasActuales);
     }
-    element = notasActuales   
+    element = notasActuales
   });
 
   dropZone1.addEventListener("dragenter", e => {
@@ -165,14 +165,64 @@ function mover(id, element, divDestino, currentLocation) {
     e.preventDefault();
   })
   dropZone2.addEventListener("drop", e => {
-    e.preventDefault();  
-    if (dropZone2.childElementCount<=0){    
-    dropZone2.appendChild(element);
-    targetNote.divDestino = "dropZone2";  
-    guardar(notasActuales); 
+    e.preventDefault();
+    if (dropZone2.childElementCount <= 0) {
+      dropZone2.appendChild(element);
+      targetNote.divDestino = "dropZone2";
+      guardar(notasActuales);
     }
-    element = notasActuales    
+    element = notasActuales
   });
 }
 
+// function asignarEventosDrag(element, id, divDestino) {
+//   element.addEventListener("dragstart", e => {
+//     contNotas.classList.add("drag");
+//     dropZone.classList.add("drag");
+//     dropZone1.classList.add("drag");
+//     dropZone2.classList.add("drag");
+//     element.classList.add("dragging");
+//   });
 
+//   element.addEventListener("dragend", e => {
+//     contNotas.classList.remove("drag");
+//     dropZone.classList.remove("drag");
+//     dropZone1.classList.remove("drag");
+//     dropZone2.classList.remove("drag");
+//     element.classList.remove("dragging");
+//   });
+
+//   element.addEventListener("dblclick", () => {
+//     const doDelete = confirm("Eliminar nota?");
+//     if (doDelete) {
+//       eliminar(id, element);
+//     }
+//   });
+
+//   if (divDestino === "dropZone") {
+//     element.addEventListener("drag", e => {
+//       e.preventDefault();
+//       mover(id, element, divDestino, "dropZone");
+//     });
+//   } else if (divDestino === "dropZone1") {
+//     element.addEventListener("drag", e => {
+//       e.preventDefault();
+//       mover(id, element, divDestino, "dropZone1");
+//     });
+//   } else if (divDestino === "dropZone2") {
+//     element.addEventListener("drag", e => {
+//       e.preventDefault();
+//       mover(id, element, divDestino, "dropZone2");
+//     });
+//   } else {
+//     element.addEventListener("drag", e => {
+//       e.preventDefault();
+//       mover(id, element, divDestino, "nuevaNota");
+//     });
+//   }
+
+
+// newnoteBtn.addEventListener("click", agregar());
+
+//   guardar(notasActuales);
+// }

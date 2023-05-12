@@ -66,8 +66,8 @@
         height: 30px;
         border-radius: 50px;
         background-color: white;
-        left: 280px;
-        top: 60px;
+        left: 80%;
+        top: 10px;
         position: fixed;
         border: 3px solid black;
         transition: .4s ease-in-out all;
@@ -130,9 +130,10 @@
     #juegos {
         position: absolute;
         top: 10px;
-        left: 230px;
-        width: 110px;
-        padding-left:10px ;
+        left: 60%;
+        width: 18%;
+        max-width: 110px;
+        padding-left: 10px;
         border-radius: 3px;
         background-color: rgba(1, 1, 1, 0);
         font-weight: 400;
@@ -140,11 +141,38 @@
         z-index: 0;
         border-bottom: black 3px solid;
         color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
         &.Dark {
             color: white;
             border-bottom: white 3px solid;
         }
+    }
+
+    #queVer {
+        position: absolute;
+        top: 10px;
+        left: 40%;
+        width: 18%;
+        max-width: 110px;
+        padding-left: 10px;
+        border-radius: 3px;
+        background-color: rgba(1, 1, 1, 0);
+        font-weight: 400;
+        font-size: 2ch;
+        z-index: 0;
+        border-bottom: black 3px solid;
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        /* &.Dark {
+                color: white;
+                border-bottom: white 3px solid;
+            } */
     }
 
     #juegos:hover {
@@ -159,6 +187,8 @@
     }
 
     #atajos {
+        width: 95%;
+
         &.Dark th {
             color: white;
             background-color: rgba(255, 255, 255, 0.5);
@@ -172,6 +202,7 @@
         &.Dark #c2,
         &.Dark #c3,
         &.Dark #c4 {
+            text-overflow: ellipsis;
             background: rgba(255, 255, 0, 0.2);
             background: linear-gradient(25deg,
                     rgba(11, 139, 139, 0.125) 0%,
@@ -194,11 +225,9 @@
     #c2,
     #c3,
     #c4 {
-        float: left;
+        width: 23%;
         text-align: center;
-        padding: 1px;
-        margin: 2px;
-        font-size: 0.9ch;
+        font-size: auto;
         background: rgba(255, 255, 0, 0.2);
         background: linear-gradient(25deg,
                 rgba(11, 139, 139, 0.125) 0%,
@@ -206,6 +235,7 @@
         border-radius: 12px;
         cursor: pointer;
     }
+
 
     #atajos ul {
         margin: 0px;
@@ -366,28 +396,53 @@
     }
 
     #chat-gpt a {
-        margin-left: -160px;
-        width: 100px;
+        width: 50%;
         height: 100px;
+        text-align: center;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    #chat-gpt-img {
+
+        &.Dark {
+            filter: invert(1);
+        }
     }
 
     #notasFunc h2,
     #notasFunc p {
         text-align: center;
+        font-weight: 800;
+    }
+
+    #notasFunc h2 {
+        margin: 5px;
+    }
+
+    #notasFunc img {
+        position: absolute;
+        z-index: -1;
+        width: 600px;
+        height: 600px;
+        rotate: 20deg;
+        right: 0px;
+        opacity: 0.2;
     }
 
     #swap {
         font-size: 1.3ch;
-        width: 320px;
+        width: 95%;
         margin: 3px;
         height: 450px;
-        margin-left: 20px;
+        margin: 20px;
         position: relative;
+        overflow: hidden;
+        border-radius: 12px;
     }
 
     .opcion {
-        position: absolute;
-        bottom: 10px;
+        float: left;
         border-radius: 100px;
         width: 5px;
         height: 5px;
@@ -397,18 +452,24 @@
     }
 
     #one {
-        left: 130px;
+        position: absolute;
+        bottom: 10px;
         background: rgb(0, 0, 0);
+        margin-left: 35%;
     }
 
     #two {
-        left: 170px;
+        position: absolute;
+        bottom: 10px;
         background: white;
+        margin-left: 50%;
     }
 
     #three {
-        left: 210px;
+        position: absolute;
+        bottom: 10px;
         background: white;
+        margin-left: 65%;
     }
 
     #bulto {
@@ -672,7 +733,7 @@
         height: 30px;
         border-radius: 50px;
         background-color: white;
-        left: 780px;
+        left: 80%;
         top: 10px;
         position: absolute;
         position: fixed;
@@ -737,30 +798,50 @@
     #juegos {
         position: absolute;
         top: 12px;
-        left: 620px;
-        border-radius: 3px;
+        left: 60%;
         background-color: rgba(1, 1, 1, 0);
         font-weight: 800;
         font-size: 2ch;
         z-index: 0;
-        border-bottom: black 3px solid;
         color: black;
 
         &.Dark {
+            color: white;
+        }
+
+        &.Dark:hover {
             color: white;
             border-bottom: white 3px solid;
         }
     }
 
-    #juegos:hover {
-        background: rgba(0, 0, 0, 0.2);
-        background: linear-gradient(0deg,
-                rgba(0, 0, 0, 0.9890567050890976) 10%,
-                rgba(0, 0, 0, 0) 100%);
-        color: rgb(255, 255, 255);
-        padding: 0px 5px;
+    #queVer {
+        position: absolute;
+        top: 12px;
+        left: 45%;
+
+        background-color: rgba(1, 1, 1, 0);
+        font-weight: 800;
+        font-size: 2ch;
+        z-index: 0;
         border-bottom: none;
-        border-radius: 50px;
+        color: black;
+
+        &.Dark {
+            color: white;
+        }
+
+        &.Dark:hover {
+            color: white;
+            border-bottom: white 3px solid;
+        }
+    }
+
+    #juegos:hover,
+    #queVer:hover {
+        padding: 0px 5px;
+        border-bottom: black 3px solid;
+        border-radius: 3px;
     }
 
     #atajos {
@@ -877,8 +958,8 @@
     }
 
     #nuevaNota {
-        left: 650px;
-        width: 300px;
+        left: 65%;
+        width: 30%;
         position: relative;
         top: -500px;
         display: grid;
@@ -985,20 +1066,44 @@
     }
 
     #chat-gpt a {
-        margin-left: -40px;
+        width: 50%;
+        height: auto;
+        margin-left: 25%;
+    }
+
+    #chat-gpt-img {
+        &.Dark {
+            filter: invert(1);
+        }
     }
 
     #notasFunc h2,
     #notasFunc p {
         text-align: center;
+        font-weight: 800;
+    }
+
+    #notasFunc h2 {
+        margin: 20px;
+    }
+
+    #notasFunc img {
+        position: absolute;
+        z-index: -1;
+        width: 1200px;
+        height: 1200px;
+        rotate: 20deg;
+        right: 0px;
+        opacity: 0.2;
     }
 
     #swap {
-        width: 600px;
+        width: 60%;
         height: 500px;
         margin-left: 20px;
-
         position: relative;
+        overflow: hidden;
+        border-radius: 12px;
     }
 
     .opcion {
@@ -1013,17 +1118,17 @@
     }
 
     #one {
-        left: 240px;
+        left: 35%;
         background: rgb(0, 0, 0);
     }
 
     #two {
-        left: 280px;
+        left: 50%;
         background: white;
     }
 
     #three {
-        left: 320px;
+        left: 65%;
         background: white;
     }
 
@@ -1353,27 +1458,57 @@
     #juegos {
         position: absolute;
         top: 12px;
-        right: 380px;
+        left: 65%;
         border-radius: 3px;
         background-color: rgba(1, 1, 1, 0);
         font-weight: 800;
         font-size: 3ch;
         z-index: 0;
-        border-bottom: black 3px solid;
+        border-bottom: none;
         color: black;
 
         &.Dark {
+            color: white;
+        }
+
+        &.Dark:hover {
             color: white;
             border-bottom: white 3px solid;
         }
     }
 
     #juegos:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        color: rgb(255, 255, 255);
         padding: 0px 5px;
+        border-radius: 3px;
+        border-bottom: black 3px solid;
+    }
+
+    #queVer {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        border-radius: 3px;
+        background-color: rgba(1, 1, 1, 0);
+        font-weight: 800;
+        font-size: 3ch;
+        z-index: 0;
         border-bottom: none;
-        border-radius: 12px;
+        color: black;
+
+        &.Dark {
+            color: white;
+        }
+
+        &.Dark:hover {
+            color: white;
+            border-bottom: white 3px solid;
+        }
+    }
+
+    #queVer:hover{
+        padding: 0px 5px;
+        border-radius: 3px;
+        border-bottom: black 3px solid;
     }
 
     #atajos {
@@ -1463,7 +1598,8 @@
     }
 
     #bulto1 {
-        height: 260px;
+        height: 280px;
+
     }
 
     #notas {
@@ -1484,10 +1620,10 @@
     }
 
     #nuevaNota {
-        left: 1000px;
-        width: 430px;
+        left: 65%;
+        width: 30%;
         position: relative;
-        top: -650px;
+        top: -800px;
         display: grid;
         grid-template-columns: repeat(auto-fill, 150px);
         padding: 40px;
@@ -1510,7 +1646,7 @@
     }
 
     #dropZone {
-        top: -1100px;
+        top: -1240px;
         left: 40px;
         position: absolute;
         width: 760px;
@@ -1518,7 +1654,7 @@
     }
 
     #dropZone1 {
-        top: 50px;
+        top: 40px;
         left: 250px;
         position: absolute;
     }
@@ -1588,7 +1724,13 @@
     #presentacion,
     #notasFunc,
     #chat-gpt {
+
         transition: .5 ease-in-out all;
+    }
+
+    #presentacion {
+        font-size: 2.2ch;
+        font-weight: 800;
     }
 
     #notasFunc,
@@ -1596,26 +1738,56 @@
         display: none;
     }
 
-    #chat-gpt a {
-        margin-left: 100px;
+    #chat-gpt img {
+        width: 40%;
+        height: auto;
+        margin-left: 30%;
+    }
+
+    #chat-gpt-img {
+
+
+        &.Dark {
+            filter: invert(1);
+        }
     }
 
     #notasFunc h2,
     #notasFunc p {
         text-align: center;
+        font-size: 2ch;
+        font-weight: 800;
     }
 
+    #notasFunc h2 {
+        margin: 20px;
+    }
+
+    #notasFunc img {
+        position: absolute;
+        z-index: -1;
+        width: 1200px;
+        height: 1200px;
+        rotate: 20deg;
+        right: 0px;
+        opacity: 0.2;
+
+    }
+
+
     #swap {
-        width: 890px;
-        height: 650px;
+        width: 60%;
+        height: 800px;
         position: relative;
         left: 50px;
         font-size: 2.2ch;
+        overflow: hidden;
+        border-radius: 12px;
     }
 
     .opcion {
         position: absolute;
-        bottom: 10px;
+        bottom: 30px;
         border-radius: 100px;
         width: 15px;
         height: 15px;
@@ -1625,17 +1797,17 @@
     }
 
     #one {
-        left: 350px;
+        left: 35%;
         background: rgb(0, 0, 0);
     }
 
     #two {
-        left: 400px;
+        left: 50%;
         background: white;
     }
 
     #three {
-        left: 450px;
+        left: 65%;
         background: white;
     }
 
