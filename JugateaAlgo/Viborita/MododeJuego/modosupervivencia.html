@@ -24,18 +24,23 @@
                 <button id="no" value="no">Nono</button>
             </div>
         </div>
-        <div id="cambiarmodo" value="cambiarmodo">
-            <p>Cambiar modo</p>
-            <a href="modoclasico.html"><button class="cambiarmodo"> Clasico</button></a>
-            <a href="modoclasico.html"><button class="cambiarmodo">Por Niveles</button></a>
-        </div>
+       
         <h2 id="despedida"></h2>
         <!--TIEMPO ES DE SUPERVIVENCIA Y ELECCION DE VIBORITA -->
         <div id="informacion">
             <div id="eleccion"></div>
             <div id="tiempo"></div>
         </div>
-        <canvas id="juegoCanvas" class="canvasSupervivencia" width="300" height="300"></canvas>
+        <div id="barraLateral">
+            <div id="cambiarmodo" value="cambiarmodo">
+                <p>Cambiar modo</p>
+                <a href="modoclasico.html"><button class="cambiarmodo"> Clasico</button></a>
+                <a href="modoclasico.html"><button class="cambiarmodo">Por Niveles</button></a>
+            </div>
+        </div>
+        <div id="canvasContenedor">
+            <canvas id="juegoCanvas" class="canvasSupervivencia" width="300" height="300"></canvas>
+        </div>
         <div id="racha">
             <div id="pantalla">
                 <div id="mensaje"></div>
@@ -48,7 +53,7 @@
                 <div id="puntuacion">Puntuacion</div>
                 <div id="nombre"></div>
                 <div id="rachaactual"></div>
-            </div>           
+            </div>
         </div>
         <script type="module" id="juego1" src="modosupervivencia.js"></script>
         <footer>

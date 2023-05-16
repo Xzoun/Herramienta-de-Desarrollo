@@ -27,32 +27,6 @@
         height: 100px;
     }
 
-    .header {
-        position: sticky;
-        top: 0;
-    }
-
-    h1 {
-        position: sticky;
-        text-align: left;
-        margin-left: 30px;
-        font-size: 2ch;
-        margin-bottom: 20px;
-        font-weight: 700px;
-        visibility: hidden;
-    }
-
-    .header h2 {
-        position: absolute;
-        top: 50px;
-        left: 30px;
-        max-height: 26px;
-        min-width: 200px;
-        text-align: center;
-        visibility: hidden;
-        font-size: 2ch;
-    }
-
     #Rick {
         top: 0;
         right: 0;
@@ -312,7 +286,7 @@
         border: rgb(0, 0, 0) 3px solid;
         width: 320px;
         height: 360px;
-        margin: 10%  auto;
+        margin: 10% auto;
         background: rgb(255, 255, 255);
         background: linear-gradient(0deg,
                 rgba(255, 255, 255, 1) 18%,
@@ -566,7 +540,6 @@
             background: linear-gradient(215deg,
                     rgb(255, 0, 255, 1) 0%,
                     rgb(146, 0, 146) 10%);
-            color: white;
         }
 
         &.color4 {
@@ -950,36 +923,14 @@
         }
     }
 
-    #banner {
-        height: 300px;
+    a {
+        cursor: pointer;
     }
 
-    h1 {
-        position: sticky;
-        text-align: left;
-        margin-left: 30px;
-        font-size: 4ch;
-        margin-top: 50px;
-        margin-bottom: 20px;
-        font-weight: 700px;
-        top: 0;
-        visibility: hidden;
-    }
-
-    .header h2 {
-        position: absolute;
-        top: 250px;
-        right: 180px;
-        min-height: 26px;
-        min-width: 200px;
-        text-align: center;
-        visibility: hidden;
-    }
-
-    #Rick {
-        top: 0;
+  #Rick {
+        top: 50px;
         right: 0;
-        z-index: -1;
+        z-index: 0;
         border-radius: 50px;
         position: fixed;
     }
@@ -1004,16 +955,91 @@
         border-right: 10px solid rgba(0, 0, 0, 0.2);
     }
 
+    #Banner {
+        height: 300px;
+    }
+
+    #fixedNav {
+        width: 100%;
+        z-index: 100;
+        position: fixed;
+        top:0px;
+        &.fixed {
+            position:absolute;
+        }
+    }
+
+    #fixedDiv {
+        background-color: rgb(0, 0, 0, 0.5);
+        position: relative;
+        width: 100%;
+        border: 3px solid black;
+        height: 40px;
+        &.fixed {
+            top: 0px;
+        }
+
+        &.Dark {
+            background-color: rgb(255, 255, 255, 0.5);
+        }
+    }
+
+    #fixNavBtn {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 6px;
+        right: 140px;
+        border-radius: 100px;
+        cursor: pointer;
+        background-color: rgb(59, 216, 228);
+
+        &.fixed {
+            background-color: rgb(255, 230, 0);
+        }
+
+        &.fixed #fixImg {
+            rotate: 20deg;
+        }
+
+        #fixNavBtn:hover #fixImg {
+            rotate: 0deg;
+        }
+
+    }
+
+    #fixNavBtn:hover {
+        background-color: rgb(255, 230, 0);
+
+        &.fixed {
+            background-color: rgb(59, 216, 228);
+        }
+
+        &.fixed #fixImg {
+            rotate: 0deg
+        }
+    }
+
+    #fixImg{
+        position: absolute;
+        left:0px;
+        top:0px;
+        width: 25px;
+        height: 25px;
+    }
+
+    #fixNavBtn:hover #fixImg {
+        rotate: 20deg;
+    }
 
     #DarkButton {
-        width: 60px;
+        width: 30px;
         height: 30px;
-        border-radius: 50px;
-        background-color: white;
-        left: 80%;
-        top: 10px;
+        border-radius: 100px;
+        background-color: rgb(255, 230, 0);
+        right: 180px;
+        top: 5px;
         position: absolute;
-        position: fixed;
         border: 3px solid black;
         transition: .4s ease-in-out all;
         cursor: pointer;
@@ -1024,7 +1050,7 @@
         }
 
         &.activado:hover {
-            background-color: white;
+            background-color: rgb(255, 230, 0);
             transition: .2s ease-in-out all;
         }
 
@@ -1053,7 +1079,8 @@
         width: 22px;
         height: 22px;
         position: absolute;
-        left: 16px;
+        left: 1px;
+        top:1px;
     }
 
     #Darkmode {
@@ -1064,8 +1091,8 @@
     #DarkButton:hover #Darkmode {
         border-radius: 50px;
         position: absolute;
-        top: 0px;
-        left: 58px;
+        top: 30px;
+        left: 0px;
         width: 100px;
         opacity: 0.5;
         background-color: white;
@@ -1074,56 +1101,50 @@
 
     #juegos {
         position: absolute;
-        top: 12px;
+        top: 2px;
         left: 60%;
         background-color: rgba(1, 1, 1, 0);
         font-weight: 800;
         font-size: 2ch;
-        z-index: 0;
-        color: black;
-
+        color: white;      
         &.Dark {
-            color: white;
+            color: black;  
         }
 
         &.Dark:hover {
-            color: white;
-            border-bottom: white 3px solid;
+            color: black;
+            border-bottom: black 3px solid;
         }
     }
 
     #queVer {
         position: absolute;
-        top: 12px;
+        top: 2px;
         left: 45%;
-
         background-color: rgba(1, 1, 1, 0);
         font-weight: 800;
         font-size: 2ch;
         z-index: 0;
         border-bottom: none;
-        color: black;
-
+        color: white;
         &.Dark {
-            color: white;
+            color: black;
         }
 
         &.Dark:hover {
-            color: white;
-            border-bottom: white 3px solid;
+            color: black;
+            border-bottom: black 3px solid;
         }
     }
 
     #juegos:hover,
     #queVer:hover {
-        padding: 0px 5px;
-        border-bottom: black 3px solid;
+        border-bottom: rgb(255, 255, 255) 3px solid;
         border-radius: 3px;
     }
 
     #atajos {
         width: 100%;
-        margin-left: 20px;
 
         &.Dark th {
             color: white;
@@ -1170,7 +1191,7 @@
         text-align: center;
         padding: 0px;
         margin: 0px;
-        width: 23%;
+        width: 25%;
         font-size: 2ch;
         background: rgba(255, 255, 0, 0.2);
         background: linear-gradient(25deg,
@@ -1178,6 +1199,7 @@
                 rgba(255, 255, 255, 0) 60%);
         border-radius: 12px;
         cursor: pointer;
+
     }
 
     #atajos ul {
@@ -1450,6 +1472,7 @@
     #dropZone2:hover {
         right: 80px;
         bottom: 80px;
+
     }
 
     .drag {
@@ -1504,7 +1527,6 @@
             background: linear-gradient(215deg,
                     rgb(255, 0, 255, 1) 0%,
                     rgb(146, 0, 146) 10%);
-            color: white;
         }
 
         &.color4 {
@@ -1877,40 +1899,13 @@
         }
     }
 
-    #banner {
+    #Banner {
+        position: relative;
         height: 300px;
     }
 
-    .header {
-        position: sticky;
-        top: 0;
-    }
-
-    h1 {
-        position: sticky;
-        text-align: left;
-        margin-left: 30px;
-        font-size: 6ch;
-        margin-top: 50px;
-        margin-bottom: 20px;
-        font-weight: 700px;
-        top: 0;
-        visibility: hidden;
-    }
-
-    .header h2 {
-        position: absolute;
-        top: 160px;
-        right: 350px;
-        font-size: 4ch;
-        min-height: 26px;
-        min-width: 200px;
-        text-align: center;
-        visibility: hidden;
-    }
-
     #Rick {
-        top: 0;
+        top: 80px;
         right: 0;
         z-index: -1;
         border-radius: 50px;
@@ -1939,15 +1934,76 @@
         border-right: 10px solid rgba(0, 0, 0, 0.2);
     }
 
+    #fixedNav {
+        width: 100%;
+        z-index: 100;
+        position: fixed;
+        top:0px;
+        &.fixed {
+            position:absolute;
+        }
+    }
+
+    #fixedDiv {
+        background-color: rgb(0, 0, 0, 0.5);
+        position: relative;
+        width: 100%;
+        border: 3px solid black;
+        height: 70px;
+        &.fixed {
+            top: 0px;
+        }
+
+        &.Dark {
+            background-color: rgb(255, 255, 255, 0.5);
+        }
+
+    }
+
+    #fixNavBtn {
+        position: absolute;
+        top: 10px;
+        right: 150px;
+        border-radius: 100px;
+        cursor: pointer;
+        background-color: rgb(59, 216, 228);
+
+        &.fixed {
+            background-color: rgb(255, 230, 0);
+        }
+
+        &.fixed #fixImg {
+            rotate: 20deg;
+        }
+
+        #fixNavBtn:hover #fixImg {
+            rotate: 0deg;
+        }
+
+    }
+
+    #fixNavBtn:hover {
+        background-color: rgb(255, 230, 0);
+
+        &.fixed {
+            background-color: rgb(59, 216, 228);
+        }
+
+        &.fixed #fixImg {
+            rotate: 0deg
+        }
+    }
+
+    #fixNavBtn:hover #fixImg {
+        rotate: 20deg;
+    }
+
     #DarkButton {
-        width: 100px;
-        height: 50px;
-        border-radius: 50px;
-        background-color: white;
+        border-radius: 100px;
+        background-color: rgb(255, 230, 0);
         right: 250px;
         top: 10px;
         position: absolute;
-        position: fixed;
         border: 3px solid black;
         transition: .4s ease-in-out all;
         cursor: pointer;
@@ -1958,7 +2014,7 @@
         }
 
         &.activado:hover {
-            background-color: white;
+            background-color: rgb(255, 230, 0);
             transition: .2s ease-in-out all;
         }
 
@@ -1979,15 +2035,11 @@
     #DarkIcon {
         transition: .2s ease-in-out all;
         opacity: 0;
-        width: 44px;
-        height: 44px;
     }
 
     #LightIcon {
-        width: 44px;
-        height: 44px;
         position: absolute;
-        left: 26px;
+        left: 0px;
     }
 
     #Darkmode {
@@ -2011,12 +2063,11 @@
         top: 12px;
         left: 65%;
         border-radius: 3px;
-        background-color: rgba(1, 1, 1, 0);
         font-weight: 800;
         font-size: 3ch;
         z-index: 0;
         border-bottom: none;
-        color: black;
+        color: white;
 
         &.Dark {
             color: white;
@@ -2029,9 +2080,8 @@
     }
 
     #juegos:hover {
-        padding: 0px 5px;
         border-radius: 3px;
-        border-bottom: black 3px solid;
+        border-bottom: rgb(255, 255, 255) 3px solid;
     }
 
     #queVer {
@@ -2044,7 +2094,7 @@
         font-size: 3ch;
         z-index: 0;
         border-bottom: none;
-        color: black;
+        color: white;
 
         &.Dark {
             color: white;
@@ -2057,14 +2107,14 @@
     }
 
     #queVer:hover {
-        padding: 0px 5px;
         border-radius: 3px;
-        border-bottom: black 3px solid;
+        border-bottom: rgb(255, 255, 255) 3px solid;
     }
 
     #atajos {
         width: 100%;
-        margin-left: 20px;
+        margin-left: 0px;
+        margin-top: 70px;
 
         &.Dark th {
             color: white;
@@ -2150,7 +2200,6 @@
 
     #bulto1 {
         height: 350px;
-
     }
 
     #notas {
@@ -2375,7 +2424,7 @@
     }
 
     #dropZone {
-        top: -1350px;
+        top: -1400px;
         left: 40px;
         position: absolute;
         width: 950px;
@@ -2390,8 +2439,8 @@
 
     #dropZone2 {
         position: fixed;
-        right: 20px;
-        bottom: 10px;
+        right: 60px;
+        bottom: 60px;
         width: 150px;
         height: 150px;
     }
@@ -2458,7 +2507,6 @@
             background: linear-gradient(215deg,
                     rgb(255, 0, 255, 1) 0%,
                     rgb(146, 0, 146) 10%);
-            color: white;
         }
 
         &.color4 {
@@ -2566,7 +2614,6 @@
     }
 
     #presentacion {
-        font-size: 2.2ch;
         font-weight: 800;
     }
 
@@ -2591,7 +2638,6 @@
     #notasFunc h2,
     #notasFunc p {
         text-align: center;
-        font-size: 2ch;
         font-weight: 800;
     }
 
@@ -2616,18 +2662,18 @@
         height: 800px;
         position: relative;
         left: 50px;
-        font-size: 2.2ch;
         overflow: hidden;
         border-radius: 12px;
+        font-size: 2.5ch;
     }
 
     .opcion {
         position: absolute;
         bottom: 30px;
         border-radius: 100px;
-        width: 40px;
-        height: 40px;
-        border: black 3px solid;
+        width: 20px;
+        height: 20px;
+        border: black 5px solid;
         cursor: pointer;
         transition: .5 ease-in-out all;
     }

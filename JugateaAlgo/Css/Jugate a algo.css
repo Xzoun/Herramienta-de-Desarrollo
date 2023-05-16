@@ -322,7 +322,7 @@ footer .arrowleft {
                 rgba(2, 0, 36, 1) 0%,
                 rgba(164, 177, 180, 1) 100%);
         font-family: 'Catamaran', sans-serif;
-        height: 640px;
+        height: 790px;
     }
     
     header {
@@ -664,7 +664,7 @@ footer .arrowleft {
                 rgba(2, 0, 36, 1) 0%,
                 rgba(164, 177, 180, 1) 100%);
         font-family: 'Catamaran', sans-serif;
-        height: 1000px;
+        height: 1300px;
     }
     
     header {
@@ -704,7 +704,7 @@ footer .arrowleft {
         float: left;
         overflow-x: fixed;
         overflow-y: scroll;
-        height: 500px;
+        height: 900px;
     }
     
     #linkjuegos::-webkit-scrollbar,
@@ -884,8 +884,8 @@ footer .arrowleft {
     
     #jokeInterfaz {
         position: relative;
-        height: 200px;
-        width: 600px;
+        height: 500px;
+        width: 800px;
         top: 40px;
         border-radius: 12px;
         display: none;
@@ -907,7 +907,7 @@ footer .arrowleft {
     #jokeInterfaz #joke {
         position: absolute;
         text-align: center;
-        width: 350px;
+        width: 400px;
         top: 40px;
         padding: 10px;
         font-size: 3ch;
@@ -924,10 +924,11 @@ footer .arrowleft {
     
     #puntuacionJoke p {
         position: absolute;
-        width: 30px;
-        height: 30px;
-        top: 40px;
+        width: 60px;
+        height: 60px;
+        top: 50px;
         font-weight: 800;
+        font-size: 4ch;
         left: 10px;
         text-align: center;
         cursor: pointer;
@@ -935,9 +936,9 @@ footer .arrowleft {
     
     #abajo,
     #arriba {
-        width: 30px;
+        width: 60px;
         margin: 10px;
-        height: 30px;
+        height: 60px;
         cursor: pointer;
     }
     
@@ -948,6 +949,7 @@ footer .arrowleft {
         border-radius: 100%;
         height: 120px;
         left: 49%;
+        font-size: 3ch;
         background-color: rgba(255, 0, 0, 0.1);
         cursor: pointer;
         display: none;
@@ -967,7 +969,7 @@ footer .arrowleft {
     
     footer {
         position: absolute;
-        bottom: 30px;
+        bottom: -300px;
         color: white;
         height: 30px;
         width: 150px;
