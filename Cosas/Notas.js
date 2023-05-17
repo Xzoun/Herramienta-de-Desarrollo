@@ -138,9 +138,6 @@ function funciones(id, content, divDestino, currentLocation, color) {
   return element;
 }
 
-const volver = document.getElementById("cancelar");
-const eliminarNote = document.getElementById("eliminar");
-
 function agregar() {
   return function () {
     const notasActuales = notas();

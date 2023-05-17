@@ -23,7 +23,7 @@
         }
     }
 
-    #banner {
+    #Banner {
         height: 100px;
     }
 
@@ -35,14 +35,95 @@
         display: none;
     }
 
+    #fixedNav {
+        width: 100%;
+        z-index: 100;
+        position: fixed;
+        top: 0px;
+
+        &.fixed {
+            position: absolute;
+        }
+    }
+
+    #fixedDiv {
+        background-color: rgb(0, 0, 0, 0.5);
+        position: relative;
+        width: 110%;
+        border: 5px solid black;
+        height: 40px;
+        left: -5%;
+
+        &.fixed {
+            top: 0px;
+        }
+
+        &.Dark {
+            background-color: rgb(255, 255, 255, 0.8);
+            border: 3px solid grey;
+        }
+    }
+
+    #fixNavBtn {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 5px;
+        right: 10%;
+        border-radius: 100px;
+        cursor: pointer;
+        border: 3px solid black;
+        transition: .4s ease-in-out all;
+        background-color: rgb(59, 216, 228);
+        z-index: 1;
+
+        &.fixed {
+            background-color: rgb(255, 230, 0);
+        }
+
+        &.fixed #fixImg {
+            rotate: 20deg;
+        }
+
+        #fixNavBtn:hover #fixImg {
+            rotate: 0deg;
+        }
+
+    }
+
+    #fixNavBtn:hover {
+        background-color: rgb(255, 230, 0);
+
+        &.fixed {
+            background-color: rgb(59, 216, 228);
+        }
+
+        &.fixed #fixImg {
+            rotate: 0deg
+        }
+    }
+
+    #fixImg {
+        position: absolute;
+        left: 0px;
+        top: -1px;
+        width: 25px;
+        height: 25px;
+    }
+
+    #fixNavBtn:hover #fixImg {
+        rotate: 20deg;
+
+    }
+
     #DarkButton {
-        width: 60px;
+        width: 30px;
         height: 30px;
         border-radius: 50px;
-        background-color: white;
-        left: 80%;
-        top: 10px;
-        position: fixed;
+        background-color: rgb(255, 230, 0);
+        position: absolute;
+        right: 15%;
+        top: 5px;
         border: 3px solid black;
         transition: .4s ease-in-out all;
         cursor: pointer;
@@ -53,7 +134,7 @@
         }
 
         &.activado:hover {
-            background-color: white;
+            background-color: rgb(255, 230, 0);
             transition: .2s ease-in-out all;
         }
 
@@ -72,17 +153,21 @@
     }
 
     #DarkIcon {
+        position: absolute;
+        left: 0px;
+        top: 0px;
         transition: .2s ease-in-out all;
         opacity: 0;
-        width: 22px;
-        height: 22px;
+        width: 25px;
+        height: 25px;
     }
 
     #LightIcon {
-        width: 22px;
-        height: 22px;
+        width: 23px;
+        height: 23px;
         position: absolute;
-        left: 16px;
+        left: 1px;
+        top: 0px;
     }
 
     #Darkmode {
@@ -94,7 +179,7 @@
         border-radius: 50px;
         position: absolute;
         top: 0px;
-        left: -150px;
+        left: -100px;
         width: 100px;
         opacity: 0.5;
         background-color: white;
@@ -103,65 +188,62 @@
 
     #juegos {
         position: absolute;
-        top: 10px;
+        top: 5px;
         left: 60%;
         width: 18%;
         max-width: 110px;
         padding-left: 10px;
         border-radius: 3px;
-        background-color: rgba(1, 1, 1, 0);
         font-weight: 400;
         font-size: 2ch;
         z-index: 0;
-        color: black;
+        color: white;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
 
         &.Dark {
-            color: white;
+            color: black;
         }
 
         &.Dark:hover {
-            border-bottom: white 3px solid;
+            border-bottom: black 3px solid;
         }
     }
 
     #juegos:hover {
-        padding: 0px 5px;
-        border-bottom: solid black 3px;
+        border-bottom: solid white 3px;
         border-radius: 3px;
     }
 
     #queVer {
         position: absolute;
-        top: 10px;
+        top: 5px;
         left: 40%;
         width: 18%;
         max-width: 110px;
         padding-left: 10px;
         border-radius: 3px;
-        background-color: rgba(1, 1, 1, 0);
+        background-color: white(1, 1, 1, 0);
         font-weight: 400;
         font-size: 2ch;
         z-index: 0;
-        color: black;
+        color: white;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
 
         &.Dark {
-            color: white;
+            color: black;
         }
 
         &.Dark:hover {
-            border-bottom: white 3px solid;
+            border-bottom: black 3px solid;
         }
     }
 
     #queVer:hover {
-        padding: 0px 5px;
-        border-bottom: solid black 3px;
+        border-bottom: solid white 3px;
         border-radius: 3px;
     }
 
@@ -927,7 +1009,7 @@
         cursor: pointer;
     }
 
-  #Rick {
+    #Rick {
         top: 50px;
         right: 0;
         z-index: 0;
@@ -963,24 +1045,28 @@
         width: 100%;
         z-index: 100;
         position: fixed;
-        top:0px;
+        top: 0px;
+
         &.fixed {
-            position:absolute;
+            position: absolute;
         }
     }
 
     #fixedDiv {
         background-color: rgb(0, 0, 0, 0.5);
         position: relative;
-        width: 100%;
-        border: 3px solid black;
+        width: 110%;
+        border: 5px solid black;
         height: 40px;
+        left: -5%;
+
         &.fixed {
             top: 0px;
         }
 
         &.Dark {
-            background-color: rgb(255, 255, 255, 0.5);
+            background-color: rgb(255, 255, 255, 0.8);
+            border: 3px solid grey;
         }
     }
 
@@ -988,11 +1074,14 @@
         width: 30px;
         height: 30px;
         position: absolute;
-        top: 6px;
+        top: 5px;
         right: 140px;
         border-radius: 100px;
         cursor: pointer;
+        border: 3px solid black;
+        transition: .4s ease-in-out all;
         background-color: rgb(59, 216, 228);
+        z-index: 1;
 
         &.fixed {
             background-color: rgb(255, 230, 0);
@@ -1020,10 +1109,10 @@
         }
     }
 
-    #fixImg{
+    #fixImg {
         position: absolute;
-        left:0px;
-        top:0px;
+        left: -1px;
+        top: -1px;
         width: 25px;
         height: 25px;
     }
@@ -1039,8 +1128,8 @@
         background-color: rgb(255, 230, 0);
         right: 180px;
         top: 5px;
-        position: absolute;
         border: 3px solid black;
+        position: absolute;
         transition: .4s ease-in-out all;
         cursor: pointer;
         z-index: 1;
@@ -1080,7 +1169,7 @@
         height: 22px;
         position: absolute;
         left: 1px;
-        top:1px;
+        top: 1px;
     }
 
     #Darkmode {
@@ -1106,14 +1195,15 @@
         background-color: rgba(1, 1, 1, 0);
         font-weight: 800;
         font-size: 2ch;
-        color: white;      
+        color: white;
+
         &.Dark {
-            color: black;  
+            color: black;
         }
 
         &.Dark:hover {
             color: black;
-            border-bottom: black 3px solid;
+            border-bottom: black 2px solid;
         }
     }
 
@@ -1127,20 +1217,20 @@
         z-index: 0;
         border-bottom: none;
         color: white;
+
         &.Dark {
             color: black;
         }
 
         &.Dark:hover {
             color: black;
-            border-bottom: black 3px solid;
+            border-bottom: black 2px solid;
         }
     }
 
     #juegos:hover,
     #queVer:hover {
-        border-bottom: rgb(255, 255, 255) 3px solid;
-        border-radius: 3px;
+        border-bottom: rgb(255, 255, 255) 2px solid;
     }
 
     #atajos {
@@ -1935,12 +2025,16 @@
     }
 
     #fixedNav {
-        width: 100%;
+        width: 110%;
         z-index: 100;
         position: fixed;
-        top:0px;
+        top: 0px;
+        left: -5%;
+
         &.fixed {
-            position:absolute;
+            position: absolute;
+            background-color: rgb(255, 255, 255, 0.8);
+            border: 3px solid grey;
         }
     }
 
@@ -1949,7 +2043,8 @@
         position: relative;
         width: 100%;
         border: 3px solid black;
-        height: 70px;
+        height: 60px;
+
         &.fixed {
             top: 0px;
         }
@@ -1961,9 +2056,12 @@
     }
 
     #fixNavBtn {
+        width: 40px;
+        height: 40px;
         position: absolute;
         top: 10px;
-        right: 150px;
+        left: 83%;
+        border: 3px black solid;
         border-radius: 100px;
         cursor: pointer;
         background-color: rgb(59, 216, 228);
@@ -1998,10 +2096,17 @@
         rotate: 20deg;
     }
 
+    #fixImg {
+        width: 35px;
+        height: 35px;
+    }
+
     #DarkButton {
+        width: 40px;
+        height: 40px;
         border-radius: 100px;
         background-color: rgb(255, 230, 0);
-        right: 250px;
+        left: 80%;
         top: 10px;
         position: absolute;
         border: 3px solid black;
@@ -2035,11 +2140,20 @@
     #DarkIcon {
         transition: .2s ease-in-out all;
         opacity: 0;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+
     }
 
     #LightIcon {
+        width: 34px;
+        height: 34px;
         position: absolute;
         left: 0px;
+        top: 0px;
     }
 
     #Darkmode {
@@ -2060,7 +2174,7 @@
 
     #juegos {
         position: absolute;
-        top: 12px;
+        top: 5px;
         left: 65%;
         border-radius: 3px;
         font-weight: 800;
@@ -2086,7 +2200,7 @@
 
     #queVer {
         position: absolute;
-        top: 12px;
+        top: 5px;
         left: 50%;
         border-radius: 3px;
         background-color: rgba(1, 1, 1, 0);
