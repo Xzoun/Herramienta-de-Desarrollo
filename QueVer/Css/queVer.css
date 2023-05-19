@@ -1,0 +1,235 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Catamaran', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  height: 0px;
+  border-right: 10px solid rgba(0, 0, 0, 0.2);
+  margin-right: 3px;
+}
+
+body:hover::-webkit-scrollbar-thumb {
+  background: rgb(170, 165, 170);
+  border-radius: 12px;
+  filter: blur(1px);
+  border-right: 10px solid rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  width: 7px;
+  background: rgb(55, 56, 56);
+  border-right: 10px solid rgba(0, 0, 0, 0.2);
+}
+
+#banner {
+  width: 100%;
+  height: 46px;
+  background-color: black;
+  position: fixed;
+  z-index: 30;
+  transition: .3s ease-in-out all;
+
+  &.black {
+
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  float: left;
+  margin-left: 1%;
+  cursor: pointer;
+  color: white;
+  list-style-type: none;
+  margin-top: 1%;
+  margin-right: 4%;
+}
+
+li:hover {
+  border-bottom: solid white 1px;
+}
+
+#search {
+  position: relative;
+  right: -10%;
+  width: 200px;
+  border: none;
+}
+
+#buscador {
+  margin-left: 0%;
+  visibility: hidden;
+  width: 100%;
+  padding-left: 1%;
+
+  &.active {
+    background-color: rgba(31, 27, 27, 0.89);
+    color: white;
+    visibility: visible;
+  }
+}
+
+#botonBuscar {
+  rotate: 0deg;
+  position: absolute;
+  right: -15%;
+  filter: invert(1);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: .3s ease-in-out all;
+
+  &.active {
+    transform: translateX(-230px)
+  }
+}
+
+
+#favorita img {
+  height: auto;
+  width: 100%;
+
+}
+
+#serieFavoritaInterfaz {
+  width: 450px;
+  position: absolute;
+  top: 350px;
+}
+
+#serieFavoritaInterfaz h1 {
+  text-align: center;
+  font-size: 5ch;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#serieFavoritaInterfaz button {
+  border-radius: 5px;
+  margin-left: 5%;
+  cursor: pointer;
+  color: black;
+  border: none;
+  font-size: 1.7ch;
+  height: 35px;
+
+}
+
+#favoritaTrailer {
+  background-color: rgba(255, 255, 255);
+  width: 30%;
+}
+
+#info {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 40%;
+}
+
+#favoritaTrailer:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#info:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#serieFavoritaInterfaz button img {
+  width: 30px;
+  height: 30px;
+}
+
+#serieFavoritaInterfaz button span {
+  position: relative;
+  top: -25%;
+}
+
+#info img {
+  filter: invert(1);
+}
+
+#info span {
+  color: white;
+}
+
+
+
+#carrusel1 {
+  height: 150px;
+  overflow: hidden;
+
+}
+#carrusel2 {
+  height: 150px;
+  overflow: hidden;
+
+}
+
+.grupo {
+  position: relative;
+  height: 100%;
+}
+
+.SeriesNetflix {
+  height: 100%;
+}
+
+.flechas {
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.flechasDerecha,
+.flechasIzquierda {
+  opacity: 0;
+}
+
+.flechasDerecha:hover,
+.flechasIzquierda:hover {
+  transition: .3s ease-in-out all;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+} 
+
+footer {
+  height: 30px;
+  width: 150px;
+}
+
+footer:hover .arrowleft,
+footer:hover span {
+  opacity: 1;
+  padding-left: 10px;
+
+}
+
+footer span {
+  color: black;
+  height: 25px;
+}
+
+a {
+  font-style: none;
+}
+
+footer .arrowleft {
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+  transition: .3s ease all;
+  left: -10px;
+}
