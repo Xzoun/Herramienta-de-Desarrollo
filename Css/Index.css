@@ -987,6 +987,8 @@
 
 @media (min-width: 768px) and (max-width : 1199px) {
 
+    /*-------------- General --------------*/
+
     body {
         background: rgb(255, 255, 255);
         background: linear-gradient(0deg,
@@ -1036,6 +1038,8 @@
         background: rgb(55, 56, 56);
         border-right: 10px solid rgba(0, 0, 0, 0.2);
     }
+
+    /*-------------- Banner --------------*/
 
     #Banner {
         height: 300px;
@@ -1185,30 +1189,34 @@
 
     #juegos {
         position: absolute;
-        top: 2px;
         left: 60%;
         background-color: rgba(1, 1, 1, 0);
         font-weight: 800;
-        font-size: 2ch;
+        font-size: 1.5ch;
         color: white;
+        bottom: 15%;
+        top: 15%;
     }
 
     #queVer {
         position: absolute;
-        top: 2px;
         left: 45%;
         background-color: rgba(1, 1, 1, 0);
         font-weight: 800;
-        font-size: 2ch;
+        font-size: 1.5ch;
         z-index: 0;
         border-bottom: none;
         color: white;
+        bottom: 15%;
+        top: 15%;
     }
 
     #juegos:hover,
     #queVer:hover {
-        border-bottom: rgb(255, 255, 255) 2px solid;
+        border-bottom: rgb(255, 255, 255) 1px solid;
     }
+
+    /*-------------- Redirecciones --------------*/
 
     #atajos {
         width: 100%;
@@ -1305,6 +1313,8 @@
     #bulto1 {
         height: 220px;
     }
+
+/*-------------- Notas --------------*/
 
     #notas {
         position: absolute;
@@ -1694,6 +1704,8 @@
         }
     }
 
+/*-------------- Presentacion, Funcionalidades de las notas y Chat GPT --------------*/
+
     #presentacion,
     #notasFunc,
     #chat-gpt {
@@ -1779,6 +1791,8 @@
     #bulto2 {
         display: none;
     }
+
+    /*-------------- Footer --------------*/
 
     footer {
         margin-top: 30px;
