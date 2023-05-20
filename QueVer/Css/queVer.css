@@ -110,9 +110,9 @@ li:hover {
 }
 
 #serieFavoritaInterfaz {
-  width: 450px;
+  width: 40%;
   position: absolute;
-  top: 350px;
+  
 }
 
 #serieFavoritaInterfaz h1 {
@@ -170,74 +170,100 @@ li:hover {
 
 /*-------------- Carrusel --------------*/
 
-h2 {
-  font-size: 1.5ch;
+.carrusel {
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.categoria {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 0px 20px;
+}
+
+.categoria h2 {
   color: white;
 }
 
-#carrusel1 {
-  height: 150px;
-  overflow: hidden;
-
+.categoria button {
+  background-color: white;
+  height: 3px;
+  width: 10px;
+  cursor: pointer;
+  border: none;
+  margin-right: 2px;
 }
 
-#carrusel2 {
-  height: 150px;
+.categoria button:hover,
+.categoria button.active {
+  background-color: red;
+}
+
+.contenedorGrupo {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.flechasIzquierda,
+.flechasDerecha {
+  position: absolute;
+  border: none;
+  height: 35px;
+  width: 30px;
+  top: 0;
+  padding: 85px 0;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 10;
+  filter: invert(1);
+  opacity: 0;
+  transition: .3s ease-in-out all;
+}
+
+.flechasIzquierda {
+  left: 0px;
+}
+
+.flechasDerecha {
+  right: 0px;
+}
+
+.flechasIzquierda:hover,
+.flechasDerecha:hover {
+  opacity: 1;
+  filter: invert(1);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.divGrupo {
+  width: 100%;
+  padding: 20px 0px;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 .grupo {
-  position: relative;
-  height: 100%;  
-}
-
-.flechas {
-  position: absolute;
-  height: 100%;
-  top: 0px;
-  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.flechasDerecha,
-.flechasIzquierda {
-  opacity: 0;
-  filter: invert(1);
-}
-
-.flechasDerecha:hover,
-.flechasIzquierda:hover {
-  transition: .1s ease-in-out all;
-  opacity: 1;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 120% 0px 120% 0px;
-}
-
-.Series {
-  height: 100%;
-}
-
-.Series img {
-  height: 100%;
+  flex-wrap: nowrap;
 }
 
 .fotos {
-  height: 100%;
-  text-align: center;
-  width: 24.5%;
-  overflow: hidden;
-  float: left;
-  margin: 0px 0.2% 0px 0.2%;
+  height: 150px;
+  min-width: 20%;
+  transition: .3s ease all;
+  box-shadow: rgba(0,0,0,0.3);
+  cursor: pointer;
 }
 
-/* .SeriesNetflix img:hover {
-padding: 20px;
-} */
-
 .fotos:hover {
-  padding: 20px;
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+.fotos img {
+  height: 100%;
 }
 
 /*-------------- Footer --------------*/
