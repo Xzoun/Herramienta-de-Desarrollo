@@ -1011,13 +1011,7 @@
         cursor: pointer;
     }
 
-    #Rick {
-        top: 50px;
-        right: 0;
-        z-index: 0;
-        border-radius: 50px;
-        position: fixed;
-    }
+  /*-------------- Scroll Bar --------------*/
 
     body::-webkit-scrollbar {
         width: 7px;
@@ -1067,6 +1061,14 @@
         &.fixed {
             top: 0px;
         }
+    }
+
+    #Rick {
+        top: 50px;
+        right: 0;
+        z-index: 0;
+        border-radius: 50px;
+        position: fixed;
     }
 
     #fixNavBtn {
@@ -1988,7 +1990,7 @@
     #Rick {
         top: 80px;
         right: 0;
-        z-index: -1;
+        z-index: 0;
         border-radius: 50px;
         position: fixed;
         width: 200px;
@@ -2020,37 +2022,29 @@
         z-index: 100;
         position: fixed;
         top: 0px;
-        left: -5%;
-
+        left: -5%;  
         &.fixed {
             position: absolute;
-            background-color: rgb(255, 255, 255, 0.8);
-            border: 3px solid grey;
         }
     }
 
     #fixedDiv {
-        background-color: rgb(0, 0, 0, 0.5);
+        background-color: rgb(0, 0, 0);
         position: relative;
         width: 100%;
         border: 3px solid black;
-        height: 60px;
+        height: 90px;
 
         &.fixed {
             top: 0px;
         }
-
-        &.Dark {
-            background-color: rgb(255, 255, 255, 0.5);
-        }
-
     }
 
     #fixNavBtn {
         width: 40px;
         height: 40px;
         position: absolute;
-        top: 10px;
+        top: 25%;
         left: 83%;
         border: 3px black solid;
         border-radius: 100px;
@@ -2098,7 +2092,7 @@
         border-radius: 100px;
         background-color: rgb(255, 230, 0);
         left: 80%;
-        top: 10px;
+        top: 25%;
         position: absolute;
         border: 3px solid black;
         transition: .4s ease-in-out all;
@@ -2165,11 +2159,11 @@
 
     #juegos {
         position: absolute;
-        top: 5px;
+        top: 25%;
         left: 65%;
         border-radius: 3px;
         font-weight: 800;
-        font-size: 3ch;
+        font-size: 2.5ch;
         z-index: 0;
         border-bottom: none;
         color: white;
@@ -2191,12 +2185,12 @@
 
     #queVer {
         position: absolute;
-        top: 5px;
+        top: 25%;
         left: 50%;
         border-radius: 3px;
         background-color: rgba(1, 1, 1, 0);
         font-weight: 800;
-        font-size: 3ch;
+        font-size: 2.5ch;
         z-index: 0;
         border-bottom: none;
         color: white;
@@ -2676,7 +2670,8 @@
         }
 
         &.color3:hover {
-            background: rgb(255, 255, 255);
+            background: rgb(255, 0, 255, 1);
+          
             color: black;
         }
 
@@ -2706,7 +2701,7 @@
         }
 
         &.color9:hover {
-            background: rgb(255, 0, 255, 1);
+            background: rgb(255, 255, 255);
             color: black;
         }
     }

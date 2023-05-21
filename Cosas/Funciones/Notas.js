@@ -87,27 +87,15 @@ function funciones(id, content, divDestino, currentLocation, color) {
 
   /*---------------- Drag and Drop ----------------*/
 
-  element.addEventListener("dragstart", e => {
+  const dragStartHandler = e => {
     contNotas.classList.add("drag");
     dropZone.classList.add("drag");
     dropZone1.classList.add("drag");
     dropZone2.classList.add("drag");
-  })
-
-  const dragHandler = (e) => {
-    e.preventDefault();
     mover(id, element, divDestino, currentLocation)
-   
-  }
-  element.addEventListener("drag", dragHandler)
+  };
+  element.addEventListener("dragstart", dragStartHandler)
 
-  element.addEventListener("dragend", e => {
-    contNotas.classList.remove("drag");
-    dropZone.classList.remove("drag");
-    dropZone1.classList.remove("drag");
-    dropZone2.classList.remove("drag");
-    element.removeEventListener("drag", dragHandler);
-  })
 
   /*---------------- Modificar y Menu----------------*/
 
@@ -181,74 +169,121 @@ function mover(id, element, divDestino, currentLocation) {
   const notasActuales = notas();
   const targetNote = notasActuales.find(note => note.id === id);
 
-
-
-  contNotas.addEventListener("dragenter", e => {
-  })
-  contNotas.addEventListener("dragleave", e => {
-  })
-  contNotas.addEventListener("dragover", e => {
+  const dragHandler = (e) => {
     e.preventDefault();
+  };
+
+  element.addEventListener("dragend", e => {
+    contNotas.classList.remove("drag");
+    dropZone.classList.remove("drag");
+    dropZone1.classList.remove("drag");
+    dropZone2.classList.remove("drag");
+
+    element.removeEventListener("drag", dragHandler);
+
+    contNotas.removeEventListener("dragover", dragOverHandler)
+    contNotas.removeEventListener("dragenter", dragEnterHandler)
+    contNotas.removeEventListener("drop", dropHandler);
+
+    dropZone.removeEventListener("dragover", dragOver1Handler)
+    dropZone.removeEventListener("dragenter", dragEnter1Handler)
+    dropZone.removeEventListener("drop", drop1Handler);
+
+    dropZone1.removeEventListener("dragover", dragOver2Handler)
+    dropZone1.removeEventListener("dragenter", dragEnter2Handler)
+    dropZone1.removeEventListener("drop", drop2Handler);
+
+    dropZone2.removeEventListener("dragover", dragOver3Handler)
+    dropZone2.removeEventListener("dragenter", dragEnter3Handler)
+    dropZone2.removeEventListener("drop", drop3Handler);
   })
-  contNotas.addEventListener("drop", e => {
+
+  const dragEnterHandler = () => {
+  }
+  const dragOverHandler = e => {
+    e.preventDefault();
+  }
+  contNotas.addEventListener("dragleave", () => {
+  })
+  const dropHandler = e => {
     e.preventDefault();
     contNotas.appendChild(element);
     targetNote.divDestino = "nuevaNota";
-    guardar(notasActuales);    
-  });
+    guardar(notasActuales);
+  };
 
-
-
-  dropZone.addEventListener("dragenter", e => {
-  })
-  dropZone.addEventListener("dragleave", e => {
-  })
-  dropZone.addEventListener("dragover", e => {
+  const dragEnter1Handler = () => {
+  }
+  const dragOver1Handler = e => {
     e.preventDefault();
+  }
+  dropZone.addEventListener("dragleave", () => {
   })
-  dropZone.addEventListener("drop", e => {
+  const drop1Handler = e => {
     e.preventDefault();
-   
+
     if (dropZone.childElementCount <= 3) {
       dropZone.appendChild(element);
       targetNote.divDestino = "dropZone";
       guardar(notasActuales);
-    }    
-  });
+    }
+  };
 
 
 
-  dropZone1.addEventListener("dragenter", e => {
-  })
-  dropZone1.addEventListener("dragleave", e => {
-  })
-  dropZone1.addEventListener("dragover", e => {
+  const dragEnter2Handler = () => {
+  }
+  const dragOver2Handler = e => {
     e.preventDefault();
+  };
+  dropZone1.addEventListener("dragleave", () => {
   })
-  dropZone1.addEventListener("drop", e => {
+  const drop2Handler = e => {
     e.preventDefault();
     dropZone1.appendChild(element);
     targetNote.divDestino = "dropZone1";
     guardar(notasActuales);
-  });
+  };
 
 
 
-  dropZone2.addEventListener("dragenter", e => {
-  })
+  const dragEnter3Handler = e => {
+  }
+  const dragOver3Handler = e => {
+    e.preventDefault();
+  };
   dropZone2.addEventListener("dragleave", e => {
   })
-  dropZone2.addEventListener("dragover", e => {
+  const drop3Handler = e => {
     e.preventDefault();
-  })
-  dropZone2.addEventListener("drop", e => {
-    e.preventDefault();
+
     if (dropZone2.childElementCount <= 0) {
       dropZone2.appendChild(element);
       targetNote.divDestino = "dropZone2";
       guardar(notasActuales);
+
+    } else {
+      dropZone2.removeEventListener("drop", dropZone2Handler);
     }
-  });
+  };
+
+  element.addEventListener("drag", dragHandler)
+
+  contNotas.addEventListener("drop", dropHandler)
+  contNotas.addEventListener("dragover", dragOverHandler)
+  contNotas.addEventListener("dragenter", dragEnterHandler)
+
+  dropZone.addEventListener("drop", drop1Handler)
+  dropZone.addEventListener("dragover", dragOver1Handler)
+  dropZone.addEventListener("dragenter", dragEnter1Handler)
+
+  dropZone1.addEventListener("drop", drop2Handler)
+  dropZone1.addEventListener("dragover", dragOver2Handler)
+  dropZone1.addEventListener("dragenter", dragEnter2Handler)
+
+  dropZone2.addEventListener("drop", drop3Handler)
+  dropZone2.addEventListener("dragover", dragOver3Handler)
+  dropZone2.addEventListener("dragenter", dragEnter3Handler)
 }
 
 function colores(id, element) {
@@ -263,7 +298,7 @@ function colores(id, element) {
   document.body.style.overflow = "hidden";
   menu.style.display = "block";
 
-  volver.addEventListener("click", () => {    
+  volver.addEventListener("click", () => {
     eliminarNote.removeEventListener("click", eliminarHandler);
     paletaColores.forEach(colorNuevo => {
       colorNuevo.removeEventListener("click", colorHandler)

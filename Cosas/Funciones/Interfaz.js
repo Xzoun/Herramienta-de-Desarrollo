@@ -26,8 +26,6 @@ DarkButton.addEventListener("click", () => {
     redes.classList.toggle("Dark");
     const imagengpt = document.getElementById("chat-gpt-img");
     imagengpt.classList.toggle("Dark");
-    const navDiv = document.getElementById("fixedDiv");
-    navDiv.classList.toggle("Dark")
 }, { passive: true })
 
 const opcion1 =document.getElementById("one");
