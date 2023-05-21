@@ -29,7 +29,7 @@ const fotos = document.querySelectorAll(".fotos");
 const grupo = document.getElementById("divGrupo");
 const flechaDerecha = document.getElementById("flechasDerecha");
 const flechaIzquierda = document.getElementById("flechasIzquierda");
-const paginas = Math.ceil(fotos.length / 5);
+const paginas = Math.ceil(fotos.length / 4);
 
 for (let i = 0; i < paginas; i++) {
     const indicador = document.createElement("button");

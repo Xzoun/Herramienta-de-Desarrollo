@@ -102,17 +102,20 @@ li:hover {
 }
 
 /*-------------- Recomendacion principal --------------*/
+#serieFavorita {
+  position: relative;
 
-#favorita img {
+}
+
+#favoritaFoto{
   height: auto;
   width: 100%;
-
 }
 
 #serieFavoritaInterfaz {
   width: 40%;
   position: absolute;
-  
+  bottom: 20%;
 }
 
 #serieFavoritaInterfaz h1 {
@@ -172,7 +175,6 @@ li:hover {
 
 .carrusel {
   width: 100%;
-  margin-bottom: 70px;
 }
 
 .categoria {
@@ -251,10 +253,11 @@ li:hover {
 
 .fotos {
   height: 150px;
-  min-width: 20%;
+  min-width: 25%;
   transition: .3s ease all;
   box-shadow: rgba(0,0,0,0.3);
   cursor: pointer;
+  border: solid black 1px;
 }
 
 .fotos:hover {
@@ -263,13 +266,14 @@ li:hover {
 }
 
 .fotos img {
-  height: 100%;
+  max-width: 100%;  
+  max-height: 100%;
 }
 
 /*-------------- Footer --------------*/
 
 footer {
-  height: 30px;
+  height: 25px;
   width: 150px;
 }
 
@@ -277,12 +281,12 @@ footer:hover .arrowleft,
 footer:hover span {
   opacity: 1;
   padding-left: 10px;
-
 }
 
 footer span {
-  color: black;
-  height: 25px;
+  position: absolute;
+  color: white;
+  font-size: large;
 }
 
 a {
@@ -294,5 +298,5 @@ footer .arrowleft {
   height: 25px;
   opacity: 0;
   transition: .3s ease all;
-  left: -10px;
+  filter: invert(1);
 }

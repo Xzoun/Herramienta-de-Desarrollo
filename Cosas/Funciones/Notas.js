@@ -71,6 +71,9 @@ function guardar(notes) {
 }
 
 function funciones(id, content, divDestino, currentLocation, color) {
+
+  /*---------------- Propiedades de cada Nota ----------------*/
+
   const element = document.createElement("textarea");
 
   element.classList.add("note");
@@ -82,58 +85,43 @@ function funciones(id, content, divDestino, currentLocation, color) {
     element.classList.add("color5");
   }
 
+  /*---------------- Drag and Drop ----------------*/
+
   element.addEventListener("dragstart", e => {
-    contNotas.classList.toggle("drag");
-    dropZone.classList.toggle("drag");
-    dropZone1.classList.toggle("drag");
-    dropZone2.classList.toggle("drag");
+    contNotas.classList.add("drag");
+    dropZone.classList.add("drag");
+    dropZone1.classList.add("drag");
+    dropZone2.classList.add("drag");
   })
 
-  element.addEventListener("drag", e => {
+  const dragHandler = (e) => {
     e.preventDefault();
     mover(id, element, divDestino, currentLocation)
-  })
+   
+  }
+  element.addEventListener("drag", dragHandler)
 
   element.addEventListener("dragend", e => {
-    contNotas.classList.toggle("drag");
-    dropZone.classList.toggle("drag");
-    dropZone1.classList.toggle("drag");
-    dropZone2.classList.toggle("drag");
+    contNotas.classList.remove("drag");
+    dropZone.classList.remove("drag");
+    dropZone1.classList.remove("drag");
+    dropZone2.classList.remove("drag");
+    element.removeEventListener("drag", dragHandler);
   })
 
-  element.addEventListener("drop", e => {
-    e.preventDefault();
-    const currentDiv = e.target.parentNode.id;
-    mover(id, currentDiv);
-    e.target.parentNode.appendChild(element);
-  });
+  /*---------------- Modificar y Menu----------------*/
+
+  const menu = document.getElementById("dobleclick")
 
   element.addEventListener("input", () => {
     actualizar(id, element.value);
   });
-  const alertas = document.getElementById("dobleclick");
+
   element.addEventListener("dblclick", () => {
     document.body.style.overflow = "hidden";
-    alertas.style.display = "block"
-    colores(id, element)
-
-    volver.addEventListener("click", volverHandler);
-    eliminarNote.addEventListener("click", eliminarHandler);
-
+    menu.style.display = "block";
+    colores(id, element);
   });
-
-  const volverHandler = () => {
-    alertas.style.display = "none";
-    document.body.style.overflow = "scroll";
-    volver.removeEventListener("click", volverHandler);
-  };
-
-  const eliminarHandler = () => {
-    eliminar(id, element);
-    alertas.style.display = "none";
-    document.body.style.overflow = "scroll";
-    eliminarNote.removeEventListener("click", eliminarHandler);
-  };
 
   return element;
 }
@@ -192,6 +180,9 @@ function eliminar(id, element) {
 function mover(id, element, divDestino, currentLocation) {
   const notasActuales = notas();
   const targetNote = notasActuales.find(note => note.id === id);
+
+
+
   contNotas.addEventListener("dragenter", e => {
   })
   contNotas.addEventListener("dragleave", e => {
@@ -203,9 +194,10 @@ function mover(id, element, divDestino, currentLocation) {
     e.preventDefault();
     contNotas.appendChild(element);
     targetNote.divDestino = "nuevaNota";
-    guardar(notasActuales);
-    location.href = location.href;
+    guardar(notasActuales);    
   });
+
+
 
   dropZone.addEventListener("dragenter", e => {
   })
@@ -216,13 +208,15 @@ function mover(id, element, divDestino, currentLocation) {
   })
   dropZone.addEventListener("drop", e => {
     e.preventDefault();
+   
     if (dropZone.childElementCount <= 3) {
       dropZone.appendChild(element);
       targetNote.divDestino = "dropZone";
       guardar(notasActuales);
-      location.href = location.href;
-    }
+    }    
   });
+
+
 
   dropZone1.addEventListener("dragenter", e => {
   })
@@ -236,8 +230,9 @@ function mover(id, element, divDestino, currentLocation) {
     dropZone1.appendChild(element);
     targetNote.divDestino = "dropZone1";
     guardar(notasActuales);
-    location.href = location.href;
   });
+
+
 
   dropZone2.addEventListener("dragenter", e => {
   })
@@ -252,7 +247,6 @@ function mover(id, element, divDestino, currentLocation) {
       dropZone2.appendChild(element);
       targetNote.divDestino = "dropZone2";
       guardar(notasActuales);
-      location.href = location.href;
     }
   });
 }
@@ -260,74 +254,98 @@ function mover(id, element, divDestino, currentLocation) {
 function colores(id, element) {
   const notasActuales = notas();
   const targetNote = notasActuales.find(note => note.id == id);
-  const alertas = document.getElementById("dobleclick");
+  const menu = document.getElementById("dobleclick");
   const paletaColores = document.querySelectorAll(".paletaColor")
+  const volver = document.getElementById("cancelar")
+  const eliminarNote = document.getElementById("eliminar")
   let color = "";
 
   document.body.style.overflow = "hidden";
-  alertas.style.display = "block";
+  menu.style.display = "block";
 
+  volver.addEventListener("click", () => {    
+    eliminarNote.removeEventListener("click", eliminarHandler);
+    paletaColores.forEach(colorNuevo => {
+      colorNuevo.removeEventListener("click", colorHandler)
+    });
+    menu.style.display = "none";
+    document.body.style.overflow = "scroll";
+  });
+
+  const eliminarHandler = (e) => {
+    eliminar(id, element);
+    menu.style.display = "none";
+    document.body.style.overflow = "scroll";
+  };
+
+  const colorHandler = (e) => {
+    menu.style.display = "none";
+    document.body.style.overflow = "scroll";
+    const selectedColor = e.target.getAttribute("data-color");
+
+    switch (selectedColor) {
+      case "colorOne":
+        element.classList.add("color1");
+        element.classList.remove("color2", "color3", "color4", "color5", "color6", "color7", "color8", "color9")
+        color = "color1";
+        break;
+      case "colorTwo":
+        element.classList.remove("color1", "color3", "color4", "color5", "color6", "color7", "color8", "color9")
+        element.classList.add("color2");
+        color = "color2";
+        break;
+      case "colorThree":
+        element.classList.remove("color1", "color2", "color4", "color5", "color6", "color7", "color8", "color9")
+        element.classList.add("color3");
+        color = "color3";
+        break;
+      case "colorFour":
+        element.classList.remove("color1", "color2", "color3", "color5", "color6", "color7", "color8", "color9")
+        element.classList.add("color4");
+        color = "color4";
+        break;
+      case "colorFive":
+        element.classList.remove("color1", "color2", "color3", "color4", "color6", "color7", "color8", "color9")
+        element.classList.add("color5");
+        color = "color5";
+        break;
+      case "colorSix":
+        element.classList.remove("color1", "color2", "color3", "color4", "color5", "color7", "color8", "color9")
+        element.classList.add("color6");
+        color = "color6";
+        break;
+      case "colorSeven":
+        element.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color8", "color9")
+        element.classList.add("color7");
+        color = "color7";
+        break;
+      case "colorEight":
+        element.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color7", "color9")
+        element.classList.add("color8");
+        color = "color8";
+        break;
+      case "colorNine":
+        element.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color7", "color8")
+        element.classList.add("color9");
+        color = "color9";
+        break;
+    }
+
+    paletaColores.forEach(colorNuevo => {
+      colorNuevo.removeEventListener("click", colorHandler)
+    });
+
+    if (targetNote) {
+      targetNote.color = color;
+      guardar(notasActuales);
+    }
+
+  }
+
+  eliminarNote.addEventListener("click", eliminarHandler);
   paletaColores.forEach(colorNuevo => {
-    colorNuevo.addEventListener("click", () => {
-      alertas.style.display = "none";
-      document.body.style.overflow = "scroll";
-      const selectedColor = colorNuevo.getAttribute("data-color");
-
-      switch (selectedColor) {
-        case "colorOne":
-          element.classList.add("color1");
-          element.classList.remove("color2", "color3", "color4", "color5", "color6", "color7", "color8", "color9")
-          color = "color1";
-          break;
-        case "colorTwo":
-          element.classList.remove("color1", "color3", "color4", "color5", "color6", "color7", "color8", "color9")
-          element.classList.add("color2");
-          color = "color2";
-          break;
-        case "colorThree":
-          element.classList.remove("color1", "color2", "color4", "color5", "color6", "color7", "color8", "color9")
-          element.classList.add("color3");
-          color = "color3";
-          break;
-        case "colorFour":
-          element.classList.remove("color1", "color2", "color3", "color5", "color6", "color7", "color8", "color9")
-          element.classList.add("color4");
-          color = "color4";
-          break;
-        case "colorFive":
-          element.classList.remove("color1", "color2", "color3", "color4", "color6", "color7", "color8", "color9")
-          element.classList.add("color5");
-          color = "color5";
-          break;
-        case "colorSix":
-          element.classList.remove("color1", "color2", "color3", "color4", "color5", "color7", "color8", "color9")
-          element.classList.add("color6");
-          color = "color6";
-          break;
-        case "colorSeven":
-          element.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color8", "color9")
-          element.classList.add("color7");
-          color = "color7";
-          break;
-        case "colorEight":
-          element.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color7", "color9")
-          element.classList.add("color8");
-          color = "color8";
-          break;
-        case "colorNine":
-          element.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color7", "color8")
-          element.classList.add("color9");
-          color = "color9";
-          break;
-      }
-
-      if (targetNote) {
-        targetNote.color = color;
-        guardar(notasActuales);
-        location.href = location.href;
-      }
-    })
-  })
+    colorNuevo.addEventListener("click", colorHandler);
+  });
 }
 
 // function asignarEventosDrag(element, id, divDestino) {
