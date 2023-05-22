@@ -369,6 +369,7 @@ function colores(id, element) {
     paletaColores.forEach(colorNuevo => {
       colorNuevo.removeEventListener("click", colorHandler)
     });
+    eliminarNote.removeEventListener("click", eliminarHandler);
 
     if (targetNote) {
       targetNote.color = color;
@@ -383,54 +384,3 @@ function colores(id, element) {
   });
 }
 
-// function asignarEventosDrag(element, id, divDestino) {
-//   element.addEventListener("dragstart", e => {
-//     contNotas.classList.add("drag");
-//     dropZone.classList.add("drag");
-//     dropZone1.classList.add("drag");
-//     dropZone2.classList.add("drag");
-//     element.classList.add("dragging");
-//   });
-
-//   element.addEventListener("dragend", e => {
-//     contNotas.classList.remove("drag");
-//     dropZone.classList.remove("drag");
-//     dropZone1.classList.remove("drag");
-//     dropZone2.classList.remove("drag");
-//     element.classList.remove("dragging");
-//   });
-
-//   element.addEventListener("dblclick", () => {
-//     const doDelete = confirm("Eliminar nota?");
-//     if (doDelete) {
-//       eliminar(id, element);
-//     }
-//   });
-
-//   if (divDestino === "dropZone") {
-//     element.addEventListener("drag", e => {
-//       e.preventDefault();
-//       mover(id, element, divDestino, "dropZone");
-//     });
-//   } else if (divDestino === "dropZone1") {
-//     element.addEventListener("drag", e => {
-//       e.preventDefault();
-//       mover(id, element, divDestino, "dropZone1");
-//     });
-//   } else if (divDestino === "dropZone2") {
-//     element.addEventListener("drag", e => {
-//       e.preventDefault();
-//       mover(id, element, divDestino, "dropZone2");
-//     });
-//   } else {
-//     element.addEventListener("drag", e => {
-//       e.preventDefault();
-//       mover(id, element, divDestino, "nuevaNota");
-//     });
-//   }
-
-
-// newnoteBtn.addEventListener("click", agregar());
-
-//   guardar(notasActuales);
-// }

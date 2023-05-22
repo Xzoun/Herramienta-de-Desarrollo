@@ -1,3 +1,4 @@
+import {pagina} from "./Cosas/Funciones/pagina.js"
 // ---------- Banner ---------- 
 const lupita = document.getElementById("botonBuscar");
 const buscador = document.getElementById("buscador");
@@ -23,13 +24,13 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// ---------- Carrusel ---------- 
+// ---------- Carrusel series de Netflix---------- 
 
-const fotos = document.querySelectorAll(".fotos");
+const netflixSeries = document.querySelectorAll(".netflixS");
 const grupo = document.getElementById("divGrupo");
 const flechaDerecha = document.getElementById("flechasDerecha");
 const flechaIzquierda = document.getElementById("flechasIzquierda");
-const paginas = Math.ceil(fotos.length / 4);
+const paginas = Math.ceil(netflixSeries.length / 4);
 
 for (let i = 0; i < paginas; i++) {
     const indicador = document.createElement("button");

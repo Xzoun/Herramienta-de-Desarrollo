@@ -47,10 +47,12 @@
     }
 
     #fixedDiv {
-        background-color: rgb(0, 0, 0, 0.5);
+        background: rgb(0, 0, 0);
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.9974836713812324) 80%,
+                rgba(0, 0, 0, 0) 95%);
         position: relative;
         width: 110%;
-        border: 5px solid black;
         height: 40px;
         left: -5%;
 
@@ -1011,7 +1013,7 @@
         cursor: pointer;
     }
 
-  /*-------------- Scroll Bar --------------*/
+    /*-------------- Scroll Bar --------------*/
 
     body::-webkit-scrollbar {
         width: 7px;
@@ -1051,11 +1053,13 @@
     }
 
     #fixedDiv {
-        background-color: rgb(0, 0, 0);
+        background: rgb(0, 0, 0);
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.9974836713812324) 80%,
+                rgba(0, 0, 0, 0) 95%);
         position: relative;
         width: 110%;
-        border: 5px solid black;
-        height: 40px;
+        height: 50px;
         left: -5%;
 
         &.fixed {
@@ -1196,7 +1200,6 @@
         font-weight: 800;
         font-size: 1.5ch;
         color: white;
-        bottom: 15%;
         top: 15%;
     }
 
@@ -1209,7 +1212,6 @@
         z-index: 0;
         border-bottom: none;
         color: white;
-        bottom: 15%;
         top: 15%;
     }
 
@@ -1316,8 +1318,150 @@
         height: 220px;
     }
 
-/*-------------- Notas --------------*/
+    /*-------------- Notas --------------*/
 
+    #newNotebtn {
+        z-index: 1;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+        background-color: rgb(0, 0, 0, 0);
+        border: none;
+    }
+
+    #newNotebtn:hover {
+        cursor: pointer;
+        
+    }
+
+    .note {
+        height: 120px;
+        width: 120px;
+        box-sizing: border-box;
+        padding: 5px;
+        border: none;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: (0, 0, 7px, rgba(0, 0, 0, ));
+        cursor: pointer;
+        font-weight: 800;
+
+        &.color1 {
+            background: linear-gradient(215deg,
+                    rgb(216, 0, 0) 0%,
+                    rgb(139, 0, 0) 10%);
+        }
+
+        &.color2 {
+            background: linear-gradient(215deg,
+                    rgb(97, 124, 216) 0%,
+                    rgb(61, 100, 139) 10%);
+            color: white;
+        }
+
+        &.color3 {
+            background: linear-gradient(215deg,
+                    rgb(255, 0, 255, 1) 0%,
+                    rgb(146, 0, 146) 10%);
+        }
+
+        &.color4 {
+            background: linear-gradient(215deg,
+                    rgb(140, 0, 255, 1) 0%,
+                    rgb(79, 0, 143) 10%);
+            color: white;
+        }
+
+        &.color5 {
+            background: linear-gradient(215deg,
+                    rgb(255, 255, 0, 1) 0%,
+                    rgb(148, 148, 0) 10%);
+
+        }
+
+        &.color6 {
+            background: linear-gradient(215deg,
+                    rgb(0, 255, 200, 1) 0%,
+                    rgb(0, 150, 117) 10%);
+
+        }
+
+        &.color7 {
+            background: linear-gradient(215deg,
+                    rgb(255, 196, 0) 0%,
+                    rgb(163, 125, 1) 10%);
+
+        }
+
+        &.color8 {
+            background: linear-gradient(215deg,
+                    rgb(200, 255, 0) 0%,
+                    rgb(117, 150, 0) 10%);
+
+        }
+
+        &.color9 {
+            background: linear-gradient(215deg,
+                    rgb(255, 255, 255) 0%,
+                    rgb(161, 161, 161) 10%);
+
+        }
+
+    }
+
+    .note:hover {
+        height: 200px;
+        width: 200px;
+        z-index: 1;
+        padding: 20px;
+        font-size: 2ch;
+        font-weight: 800;
+
+        &.color1:hover {
+            background: #d80000;
+            color: black
+        }
+
+        &.color2:hover {
+            background: rgb(97, 124, 216, 1);
+            color: white;
+        }
+
+        &.color3:hover {
+            background: rgb(255, 0, 255, 1);
+            color: black;
+        }
+
+        &.color4:hover {
+            background: rgb(140, 0, 255, 1);
+            color: white;
+        }
+
+        &.color5:hover {
+            background: rgb(255, 255, 0);
+            color: black;
+        }
+
+        &.color6:hover {
+            background: rgb(0, 255, 200);
+            color: black;
+        }
+
+        &.color7:hover {
+            background: rgb(255, 196, 0);
+            color: black;
+        }
+
+        &.color8:hover {
+            background: rgb(200, 255, 0);
+            color: black;
+        }
+
+        &.color9:hover {
+            background: rgb(255, 255, 255);
+            color: black;
+        }
+    }
     #notas {
         position: absolute;
         width: 100%;
@@ -1564,149 +1708,9 @@
         border: grey dashed 2px;
     }
 
-    #newNotebtn {
-        z-index: 1;
-        position: absolute;
-        right: 10px;
-        top: 0px;
-        background-color: rgb(0, 0, 0, 0);
-        border: none;
-    }
+  
 
-    #newNotebtn:hover {
-        cursor: pointer;
-    }
-
-    .note {
-        height: 120px;
-        width: 120px;
-        box-sizing: border-box;
-        padding: 5px;
-        border: none;
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: (0, 0, 7px, rgba(0, 0, 0, ));
-        cursor: pointer;
-        font-weight: 800;
-
-        &.color1 {
-            background: linear-gradient(215deg,
-                    rgb(216, 0, 0) 0%,
-                    rgb(139, 0, 0) 10%);
-        }
-
-        &.color2 {
-            background: linear-gradient(215deg,
-                    rgb(97, 124, 216) 0%,
-                    rgb(61, 100, 139) 10%);
-            color: white;
-        }
-
-        &.color3 {
-            background: linear-gradient(215deg,
-                    rgb(255, 0, 255, 1) 0%,
-                    rgb(146, 0, 146) 10%);
-        }
-
-        &.color4 {
-            background: linear-gradient(215deg,
-                    rgb(140, 0, 255, 1) 0%,
-                    rgb(79, 0, 143) 10%);
-            color: white;
-        }
-
-        &.color5 {
-            background: linear-gradient(215deg,
-                    rgb(255, 255, 0, 1) 0%,
-                    rgb(148, 148, 0) 10%);
-
-        }
-
-        &.color6 {
-            background: linear-gradient(215deg,
-                    rgb(0, 255, 200, 1) 0%,
-                    rgb(0, 150, 117) 10%);
-
-        }
-
-        &.color7 {
-            background: linear-gradient(215deg,
-                    rgb(255, 196, 0) 0%,
-                    rgb(163, 125, 1) 10%);
-
-        }
-
-        &.color8 {
-            background: linear-gradient(215deg,
-                    rgb(200, 255, 0) 0%,
-                    rgb(117, 150, 0) 10%);
-
-        }
-
-        &.color9 {
-            background: linear-gradient(215deg,
-                    rgb(255, 255, 255) 0%,
-                    rgb(161, 161, 161) 10%);
-
-        }
-
-    }
-
-    .note:hover {
-        height: 200px;
-        width: 200px;
-        z-index: 1;
-        padding: 20px;
-        font-size: 2ch;
-        font-weight: 800;
-
-        &.color1:hover {
-            background: #d80000;
-            color: black
-        }
-
-        &.color2:hover {
-            background: rgb(97, 124, 216, 1);
-            color: white;
-        }
-
-        &.color3:hover {
-            background: rgb(255, 0, 255, 1);
-            color: black;
-        }
-
-        &.color4:hover {
-            background: rgb(140, 0, 255, 1);
-            color: white;
-        }
-
-        &.color5:hover {
-            background: rgb(255, 255, 0);
-            color: black;
-        }
-
-        &.color6:hover {
-            background: rgb(0, 255, 200);
-            color: black;
-        }
-
-        &.color7:hover {
-            background: rgb(255, 196, 0);
-            color: black;
-        }
-
-        &.color8:hover {
-            background: rgb(200, 255, 0);
-            color: black;
-        }
-
-        &.color9:hover {
-            background: rgb(255, 255, 255);
-            color: black;
-        }
-    }
-
-/*-------------- Presentacion, Funcionalidades de las notas y Chat GPT --------------*/
+    /*-------------- Presentacion, Funcionalidades de las notas y Chat GPT --------------*/
 
     #presentacion,
     #notasFunc,
@@ -2022,17 +2026,20 @@
         z-index: 100;
         position: fixed;
         top: 0px;
-        left: -5%;  
+        left: -5%;
+
         &.fixed {
             position: absolute;
         }
     }
 
     #fixedDiv {
-        background-color: rgb(0, 0, 0);
-        position: relative;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.9974836713812324) 80%,
+                rgba(0, 0, 0, 0) 95%);
+       position: relative;
         width: 100%;
-        border: 3px solid black;
         height: 90px;
 
         &.fixed {
@@ -2671,7 +2678,7 @@
 
         &.color3:hover {
             background: rgb(255, 0, 255, 1);
-          
+
             color: black;
         }
 
