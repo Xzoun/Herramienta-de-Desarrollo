@@ -1,0 +1,175 @@
+
+
+/* ----------------- General -----------------*/
+
+
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(59deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(164, 177, 180, 1) 100%);
+    font-family: 'Courier New', Courier, monospace;
+    height: 655px;
+}
+
+#todoJuego3 {
+    width: 95%;
+    margin: 0px auto;
+}
+
+header {
+    width: 90%;
+    margin-left: 5%;
+    text-align: right;
+    line-height: 85px;
+    color: white;
+}
+
+h1 {
+    border-bottom: 3px solid rgba(217, 180, 180, 1);
+    font-size: 4ch;
+    text-align: center;
+}
+
+h2 {
+    text-align: left;
+    color: white;
+}
+
+#indicacionInicial {
+    text-align: left;
+    display: none;
+    color: white;
+
+}
+
+button {
+    cursor: pointer;
+}
+
+
+
+/* ----------------- Nombre -----------------*/
+
+
+#bienvenida {
+    margin-top: 15px;
+    text-align: center;
+    padding: 1px;
+    padding-top: 10px;
+    font-size: 2ch;
+}
+
+#ingresoNombreIndicacion {
+    color: white;
+    font-size: 2ch;
+}
+
+#ingresoNombre {
+    border: solid 3px black;
+    margin: 30px 0px;
+    border-radius: 12px;
+    color: rgb(0, 0, 0);
+}
+
+#ingresoBoton {
+    display: inline-flex;
+    background: black;
+    border: none;
+    color: rgba(164, 177, 180, 1);
+    position: relative;
+    border-radius: 50px;
+    padding: 10px 10px;
+    font-size: 2ch;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 30px;
+    height: 40px;
+    width: 150px;
+}
+
+.ingresoBoton span {
+    transition: .4s ease-in-out all;
+    position: absolute;
+    left: 27%;
+    bottom: 6px;
+}
+
+.ingresoBoton:hover span {
+    left: 10px;
+    color: white;
+}
+
+.ingresoBoton .iconoBoton {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    left: -40px;
+    top: 6px;
+    transition: .3s ease-in-out all;
+    opacity: 0;
+}
+
+.ingresoBoton:hover .iconoBoton{
+    left: 100px;
+    opacity: 1;
+    color: white;
+}
+
+.arrowRight {
+    width: 30px;
+    height: 30px;
+    filter:invert(1);
+}
+
+
+/* ----------------- Inicio -----------------*/
+
+
+#indicacionInicial {
+    text-align: left;
+    display: none;
+    color: white;
+
+} 
+
+
+/* ----------------- Footer -----------------*/
+
+
+footer {
+    position: absolute;
+    bottom: 30px;
+    color: white;
+    height: 30px;
+    width: 150px;
+    left: 50px;
+}
+
+footer:hover .arrowLeft, footer:hover span{    
+    opacity: 1;
+    padding-left:10px;
+}
+
+footer span {
+    color: white;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 25px; 
+}
+
+footer .arrowLeft {
+    color: white;
+    position: absolute;
+    bottom: 4px;
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+    opacity: 0;
+    transition: .3s ease all;
+    left:-30px;;
+}
+
+

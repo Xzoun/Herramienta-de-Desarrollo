@@ -15,11 +15,19 @@ const favoritos = document.getElementById("favoritos")
 const pagFavoritos = document.getElementById("pagFavoritos")
 
 pagSeries.addEventListener("click",()=>{
-    peliculas.style.display = "none";
     series.style.display = "block";
+    peliculas.style.display = "none";  
+    canales.style.display = "none";
 })
 
 pagPeliculas.addEventListener("click",()=>{
     series.style.display = "none";
     peliculas.style.display = "block";
+    canales.style.display = "none";
+})
+
+pagCanales.addEventListener("click",()=>{
+    series.style.display = "none";
+    peliculas.style.display = "none";
+    canales.style.display = "block";
 })

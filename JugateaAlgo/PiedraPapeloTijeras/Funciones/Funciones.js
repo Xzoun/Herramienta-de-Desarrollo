@@ -110,8 +110,8 @@ export function puntoFc(player, maquina) {
 
 export function bienvenidaFc(){
     const bienvenidainicial = document.getElementById("bienvenida");
-    bienvenidainicial.addEventListener("submit", function funcion(event) {
-        event.preventDefault();
+    bienvenidainicial.addEventListener("submit", (e) =>{
+        e.preventDefault();
         let puntaje = 0,
             puntajeIA = 0,
             cont = 0;
@@ -125,7 +125,7 @@ export function bienvenidaFc(){
 
 export function iniciarFc() {
     const Botoninicial = document.getElementById("Botoninicial");
-    Botoninicial.addEventListener("click", function funcion(event) {
+    Botoninicial.addEventListener("click", () =>{
         document.getElementById("rachaactual").textContent = 0;
         let puntaje = 0,
             puntajeIA = 0,

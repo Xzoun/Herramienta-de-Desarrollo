@@ -242,6 +242,10 @@
 
 @media (min-width: 768px) { 
 
+
+/* ----------------- General -----------------*/
+
+
     * {
         margin: 0px;
     }
@@ -279,19 +283,19 @@
         color: white;
     }
 
+    button {
+        cursor: pointer;
+    }
+
+    /* ----------------- Inicio -----------------*/
+
 
     #indicacioninicial {
         text-align: left;
         display: none;
         color: white;
 
-    }
-
-    button {
-        cursor: pointer;
-    }
-
-    
+    } 
 
     #bienvenida {
         margin-top: 15px;

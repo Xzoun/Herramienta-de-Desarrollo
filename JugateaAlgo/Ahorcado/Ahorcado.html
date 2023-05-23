@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <link rel="stylesheet" href="Css\Style juego3.css">
+</head>
+
+<body>
+    <div id="todoJuego3">
+        <header>
+            <h1>Ahorcado</h1>
+        </header>
+        <form id="bienvenida">
+            <header>
+                <h2> Buenas! </h2>
+            </header>
+            <div class="ingresoSolicitud">
+                <label for="ingresoNombre" id="ingresonNmbreIndicacion">Por favor ingresa tu nombre</label>
+                <input id="ingresoNombre" name="ingresoNombre"></input>
+            </div>
+            <button id="ingresoBoton" class="ingresoBoton" class="ingresoSolicitud">
+                <div class="iconoBoton">
+                    <img class="arrowRight" src="..\Cosas\Arrow right.png"></img>
+                </div>
+                <span>Cargar</span>
+            </button>
+        </form>
+
+        <header>
+            <h2 id="indicacionInicial">Bien, ahora presiona una letra</h2>
+        </header>
+
+        <script type="module" src="juego3.js"></script>
+
+
+        <footer>
+            <a href="..\JugateaAlgo.html">
+                <div id="atras">
+                    <img class="arrowLeft" src="../Cosas/Arrow left.png"></img>
+                    <span>Volver</span>
+                </div>
+            </a>
+        </footer>
+    </div>
+</body>
+
+</html>
