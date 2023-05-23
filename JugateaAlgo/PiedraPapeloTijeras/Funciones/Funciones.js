@@ -11,14 +11,16 @@ export function interfazFc(cont) {
         //Interfaz General - Inicio        
     case 1:
         document.getElementById("reglamento").style.display = "none";
-        document.getElementById("tablero").style.display = "block";
-        document.getElementById("tablero").style.visibility = "visible";
+        
+        
         document.getElementById("idbotones").style.display = "block";
         document.getElementById("indicacioninicial").style.display = "block";
         document.getElementById("atras").style.display = "block";
         break;
         //Pantalla - Racha
     case 2:
+        document.getElementById("tablero").style.display = "block";
+        document.getElementById("tablero").style.visibility = "visible";
         document.querySelector(".pantalla").style.visibility = "visible";
         document.getElementById("racha").style.display = "block";
         document.getElementById("indicacioninicial").style.display = "none";

@@ -87,10 +87,10 @@ setTimeout(() => {
     function mover() {
         unircuerpo();
         Snake[0].mover();
-        // if (Snake[0].x >= juegocanvas.width) { findeljuego(); game0ver(intervalodejuego); }
-        // else if (Snake[0].x < 0) { findeljuego(); game0ver(intervalodejuego); }
-        // else if (Snake[0].y >= juegocanvas.height) { findeljuego(); game0ver(intervalodejuego); }
-        // else if (Snake[0].y < 0) { findeljuego(); game0ver(intervalodejuego); }
+        if (Snake[0].x >= juegocanvas.width) { findeljuego(); game0ver(intervalodejuego); }
+        else if (Snake[0].x < 0) { findeljuego(); game0ver(intervalodejuego); }
+        else if (Snake[0].y >= juegocanvas.height) { findeljuego(); game0ver(intervalodejuego); }
+        else if (Snake[0].y < 0) { findeljuego(); game0ver(intervalodejuego); }
         for (let i = 1; i < Snake.length - 1; i++) {
             if (Snake.length > 1) {
                 if (Snake[0].x == Snake[i].x && Snake[0].y == Snake[i].y) {

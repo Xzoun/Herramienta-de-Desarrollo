@@ -3,6 +3,7 @@
         margin: 0px;
     }
 
+    /* ---------------------- General ---------------------- */
     body {
         background: rgb(2, 0, 36);
         background: linear-gradient(59deg,
@@ -37,216 +38,12 @@
         color: white;
     }
 
-    #indicacioninicial {
-        text-align: left;
-        display: none;
-        color: white;
-        font-size: 2ch;
-    }
+
 
     button {
         cursor: pointer;
     }
-
-    #racha {
-        position: relative;
-        width: 250px;
-        margin-left:-30px;
-        display: none;
-    }
-
-    #racha1 {
-        text-align: center;
-        margin-left: 8%;
-    }
-
-    #rachaactual {
-        position: absolute;
-        top: 0px;
-        left: 300px;
-        text-align: right;
-    }
-
-    #bienvenida {
-        margin-top: 15px;
-        text-align: center;
-        padding: 1px;
-        padding-top: 10px;
-        font-size: 2ch;
-    }
-
-    #ingresonombreindicacion {
-        color: white;
-        font-size: 2ch;
-    }
-
-    #ingresonombre {
-        border: solid 3px black;
-        margin: 30px 0px;
-        border-radius: 12px;
-        color: rgb(0, 0, 0);
-    }
-
-    #ingresoboton {
-        text-align: center;
-        background: black;
-        border: none;
-        color: white;
-        font-weight: bold;
-        position: relative;
-        border-radius: 12px;
-        font-size: 2ch;
-        margin-top: 40px;
-        transition: .3s ease all;
-    }
-
-
-    #ingresonombre {
-        border: solid 3px black;
-        margin: 30px 0px;
-        border-radius: 12px;
-    }
-
-    #ingresoformulario {
-        margin-bottom: 15px;
-        background-color: wheat;
-    }
-
-    #reglamento {
-        padding: 1rem;
-        color: white;
-        width: 300px;
-        text-align: justify;
-        border-width: 3px;
-        border-style: solid;
-        margin: 10px auto;
-        border-image:
-            linear-gradient(to bottom,
-                rgba(244, 192, 85, 1),
-                rgba(247, 232, 55, 1),
-                rgba(125, 233, 208, 1),
-                rgb(92, 226, 222),
-                rgb(67, 83, 223),
-                rgb(171, 82, 212),
-                rgba(217, 180, 217, 1),
-                rgb(245, 208, 208),
-                rgba(0, 0, 0, 0)) 1 100%;
-        display: none;
-        overflow: scroll;
-    }
-    #reglamento h2{
-        font-size: 2ch;
-        margin-top: -40px;
-        text-align: center;
-    }
-
-    #reglamento h3 {
-        font-size: 1.8ch;
-    }
-
-    #reglamento p {
-        font-size: 1.5ch;
-    }
-
-    #ingresoboton {
-        display: inline-flex;
-        background: black;
-        border: none;
-        color: rgba(164, 177, 180, 1);
-        position: relative;
-        border-radius: 50px;
-        padding: 10px 10px;
-        font-size: 2ch;
-        margin-right: 25%;
-        margin-left: 25%;
-        margin-top: 30px;
-        height: 40px;
-        width: 150px;
-    }
-
-    #idbotones {
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-        display: none;
-        font-size: 2ch;
-    }
-
-    #Botoninicial {
-        text-align: center;
-        background: black;
-        border: none;
-        position: absolute;
-        border-radius: 50px;
-        font-size: 2ch;
-        transition: .3s ease all;
-        right: 40px;
-        color: grey;
-        bottom:30px;
-    }
-
-    #Botoninicial:hover {
-        color: white;
-        padding: 10px 20px;
-        right: 50px;
-        bottom: 40px;
-        transition: .4s ease-in-out all;
-    }
-
-    .PPT {
-        text-align: center;
-        background: black;
-        border: none;
-        color: grey;
-        position: relative;
-        border-radius: 50px;
-        padding: 10px 15px;
-        font-size: 2ch;
-        margin: 10px;
-        margin-top: 10px;
-        margin-bottom: 35px;
-        transition: .3s ease all;
-    }
-
-    .PPT:hover {
-        color: white;
-    }
-
-    .ingresoboton span {
-        transition: .4s ease-in-out all;
-        position: absolute;
-        left: 27%;
-        bottom: 6px;
-
-    }
-
-    .ingresoboton:hover span {
-        left: 10px;
-        color: white;
-    }
-
-    .ingresoboton .iconoBoton {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        z-index: 2;
-        left: -40px;
-        top: 6px;
-        transition: .3s ease-in-out all;
-        opacity: 0;
-    }
-
-    .ingresoboton:hover .iconoBoton {
-        left: 100px;
-        opacity: 1;
-    }
-
-    .arrowright {
-        width: 30px;
-        height: 30px;
-        filter: invert(1);
-    }
-
+    
     #ingresoboton::before,
     .PPT::before,
     #Botoninicial::before,
@@ -290,14 +87,226 @@
         }
     }
 
-    .interfazgeneral {      
+    /* ---------------------- Inicio ---------------------- */
+
+    #bienvenida {
+        margin-top: 15px;
+        text-align: center;
+        padding: 1px;
+        padding-top: 10px;
+        font-size: 2ch;
+    }
+
+    #ingresonombreindicacion {
+        color: white;
+        font-size: 2ch;
+    }
+
+    #ingresonombre {
+        border: solid 3px black;
+        margin: 30px 0px;
+        border-radius: 12px;
+        color: rgb(0, 0, 0);
+    }
+
+    #ingresoboton {
+        text-align: center;
+        background: black;
+        border: none;
+        color: white;
+        font-weight: bold;
+        position: relative;
+        border-radius: 12px;
+        font-size: 2ch;
+        margin-top: 40px;
+        transition: .3s ease all;
+    }
+
+    #ingresonombre {
+        border: solid 3px black;
+        margin: 30px 0px;
+        border-radius: 12px;
+    }
+
+    #ingresoformulario {
+        margin-bottom: 15px;
+        background-color: wheat;
+    }
+
+    #ingresoboton {
+        display: inline-flex;
+        background: black;
+        border: none;
+        color: rgba(164, 177, 180, 1);
+        position: relative;
+        border-radius: 50px;
+        padding: 10px 10px;
+        font-size: 2ch;
+        margin-right: 25%;
+        margin-left: 25%;
+        margin-top: 30px;
+        height: 40px;
+        width: 150px;
+    }
+
+    .ingresoboton span {
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 27%;
+        bottom: 6px;
+
+    }
+
+    .ingresoboton:hover span {
+        left: 10px;
+        color: white;
+    }
+
+    .ingresoboton .iconoBoton {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        z-index: 2;
+        left: -40px;
+        top: 6px;
+        transition: .3s ease-in-out all;
+        opacity: 0;
+    }
+
+    .ingresoboton:hover .iconoBoton {
+        left: 100px;
+        opacity: 1;
+    }
+
+    .arrowright {
+        width: 30px;
+        height: 30px;
+        filter: invert(1);
+    }
+
+    #reglamento {
+        padding: 1rem;
+        color: white;
+        width: 300px;
+        text-align: justify;
+        border-width: 3px;
+        border-style: solid;
+        margin: 10px auto;
+        border-image:
+            linear-gradient(to bottom,
+                rgba(244, 192, 85, 1),
+                rgba(247, 232, 55, 1),
+                rgba(125, 233, 208, 1),
+                rgb(92, 226, 222),
+                rgb(67, 83, 223),
+                rgb(171, 82, 212),
+                rgba(217, 180, 217, 1),
+                rgb(245, 208, 208),
+                rgba(0, 0, 0, 0)) 1 100%;
+        display: none;
+        overflow: scroll;
+    }
+
+    #reglamento h2 {
+        font-size: 2ch;
+        margin-top: -40px;
+        text-align: center;
+    }
+
+    #reglamento h3 {
+        font-size: 1.8ch;
+    }
+
+    #reglamento p {
+        font-size: 1.5ch;
+    }
+
+    #Botoninicial {
+        text-align: center;
+        background: black;
+        border: none;
+        position: absolute;
+        border-radius: 50px;
+        font-size: 2ch;
+        transition: .3s ease all;
+        right: 40px;
+        color: grey;
+        bottom: 30px;
+    }
+
+    #Botoninicial:hover {
+        color: white;
+        padding: 10px 20px;
+        right: 50px;
+        bottom: 40px;
+        transition: .4s ease-in-out all;
+    }  
+
+    #indicacioninicial {
+        text-align: left;
+        display: none;
+        color: white;
+        font-size: 2ch;
+    }
+
+    /* ---------------------- Juego ---------------------- */
+
+    #idbotones {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        display: none;
+        font-size: 2ch;
+    }   
+
+    .PPT {
+        text-align: center;
+        background: black;
+        border: none;
+        color: grey;
+        position: relative;
+        border-radius: 50px;
+        padding: 10px 15px;
+        font-size: 2ch;
+        margin: 10px;
+        margin-top: 10px;
+        margin-bottom: 35px;
+        transition: .3s ease all;
+    }
+
+    .PPT:hover {
+        color: white;
+    }
+
+    /* ---------------------- Puntuación ---------------------- */
+
+    #racha {
+        position: relative;
+        width: 250px;
+        margin-left: -30px;
+        display: none;
+    }
+
+    #racha1 {
+        text-align: center;
+        margin-left: 8%;
+    }
+
+    #rachaactual {
+        position: absolute;
+        top: 0px;
+        left: 300px;
+        text-align: right;
+    } 
+
+    .interfazgeneral {
         width: 100%;
         margin-top: 90px;
         position: relative;
     }
 
     #tablero {
-        display: none;     
+        display: none;
     }
 
     .pantalla {
@@ -308,7 +317,7 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        top:-220px;
+        top: -220px;
         width: 100%;
         height: 20px;
         box-shadow: 4px 4px 10px rgb(124, 30, 179),
@@ -323,10 +332,10 @@
     .Styletablero {
         position: relative;
         width: 255px;
-        top:-120px;
+        top: -120px;
         max-height: 60px;
-        left:60px;
-       }
+        left: 60px;
+    }
 
     .Styletablero th {
         color: rgb(255, 255, 255);
@@ -365,7 +374,7 @@
         height: 90px;
         position: relative;
         z-index: -1;
-    }  
+    }
 
     .A1 {
         color: white;
@@ -389,7 +398,7 @@
         border: none;
         color: grey;
         position: absolute;
-        top:50px;
+        top: 50px;
         border-radius: 50px;
         display: none;
         font-size: 2ch;
@@ -411,8 +420,8 @@
         border: none;
         color: grey;
         position: absolute;
-        top:-20px;
-        left:10px;
+        top: -20px;
+        left: 10px;
         border-radius: 50px;
         display: none;
         font-size: 2ch;
@@ -503,12 +512,13 @@
         width: 100px;
         margin-right: 25%;
         margin-left: 25%;
-        margin: 10px 20%;        
+        margin: 10px 20%;
         border-radius: 12px;
         transition: .3s ease all;
         border-radius: 50px;
     }
-    #no{
+
+    #no {
         margin-bottom: 150px;
     }
 
@@ -698,16 +708,19 @@
                 rgba(0, 0, 0, 0)) 1 100%;
         display: none;
     }
-    #reglamento h2{
-        margin-top:-10px;
+
+    #reglamento h2 {
+        margin-top: -10px;
         text-align: center;
     }
-    #reglamento h3{
-        margin-top:-10px;
-        margin-bottom:-10px;
+
+    #reglamento h3 {
+        margin-top: -10px;
+        margin-bottom: -10px;
     }
-    #reglamento h4{
-        margin-bottom:10px;
+
+    #reglamento h4 {
+        margin-bottom: 10px;
     }
 
     #ingresoboton {
@@ -743,7 +756,7 @@
         font-size: 3ch;
         transition: .3s ease all;
         right: 120px;
-        bottom:0px;
+        bottom: 0px;
         color: grey;
     }
 
@@ -887,7 +900,7 @@
 
     .Styletablero {
         position: relative;
-        width: 255px;
+        width: 88%;
         max-height: 60px;
         margin-left: 15px;
     }
@@ -935,7 +948,7 @@
     .bordetablero::before {
         content: "";
         height: 90px;
-        width: 290px;
+        width: 100%;
         position: absolute;
         background: linear-gradient(200deg,
                 rgba(244, 192, 85, 1),
@@ -1150,11 +1163,11 @@
 
 }
 
-@media (min-width: 1200px){
-    *{
+@media (min-width: 1200px) {
+    * {
         margin: 0px;
     }
-
+  /*-------------------- General --------------------*/
     body {
         background: rgb(2, 0, 36);
         background: linear-gradient(59deg,
@@ -1189,205 +1202,8 @@
         color: white;
     }
 
-    #indicacioninicial {
-        text-align: left;
-        display: none;
-        color: white;
-    }
-
     button {
         cursor: pointer;
-    }
-
-    #racha {
-        position: relative;
-        width: 250px;
-        margin: 0px 25%;
-        display: none;
-    }
-
-    #racha1 {
-
-        text-align: center;
-        margin-left: 8%;
-    }
-
-    #rachaactual {
-        position: absolute;
-        top: 0px;
-        left: 300px;
-        text-align: right;
-    }
-
-    #bienvenida {
-        margin-top: 15px;
-        text-align: center;
-        padding: 1px;
-        padding-top: 10px;
-        font-size: 2ch;
-    }
-
-    #ingresonombreindicacion {
-        color: white;
-        font-size: 2ch;
-    }
-
-    #ingresonombre {
-        border: solid 3px black;
-        margin: 30px 0px;
-        border-radius: 12px;
-        color: rgb(0, 0, 0);
-    }
-
-    #ingresoboton {
-        text-align: center;
-        background: black;
-        border: none;
-        color: white;
-        font-weight: bold;
-        position: relative;
-        border-radius: 12px;
-        font-size: 2ch;
-        margin-top: 40px;
-        transition: .3s ease all;
-    }
-
-
-    #ingresonombre {
-        border: solid 3px black;
-        margin: 30px 0px;
-        border-radius: 12px;
-    }
-
-    #ingresoformulario {
-        margin-bottom: 15px;
-        background-color: wheat;
-    }
-
-    #reglamento {
-        position: relative;
-        padding: 1rem;
-        color: white;
-        width: 1000px;
-        text-align: justify;
-        border-width: 3px;
-        border-style: solid;
-        margin: 50px auto;
-        height:700px;
-        font-size: 2.5ch;
-        border-image:
-     
-            linear-gradient(to bottom,
-                rgba(244, 192, 85, 1),
-                rgba(247, 232, 55, 1),
-                rgba(125, 233, 208, 1),
-                rgb(92, 226, 222),
-                rgb(67, 83, 223),
-                rgb(171, 82, 212),
-                rgba(217, 180, 217, 1),
-                rgb(245, 208, 208),
-                rgba(0, 0, 0, 0)) 1 100%;
-        display: none;
-    }
-
-    #ingresoboton {
-        display: inline-flex;
-        background: black;
-        border: none;
-        color: rgba(164, 177, 180, 1);
-        position: relative;
-        border-radius: 50px;
-        padding: 10px 10px;
-        font-size: 2ch;
-        margin-right: 25%;
-        margin-left: 25%;
-        margin-top: 30px;
-        height: 40px;
-        width: 150px;
-    }
-
-    #idbotones {
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-        display: none;
-        font-size: 2ch;
-    }
-
-    #Botoninicial {
-        text-align: center;
-        background: black;
-        border: none;
-        position: absolute;
-        border-radius: 50px;
-        font-size: 3ch;
-        transition: .3s ease all;
-        right: 2%;
-        color: grey;
-        bottom:10%;
-    }
-
-    #Botoninicial:hover {
-        color: white;
-        padding: 10px 20px;
-        right: 3%;
-        bottom: 11%;
-        transition: .4s ease-in-out all;
-    }
-
-    .PPT {
-        text-align: center;
-        background: black;
-        border: none;
-        color: grey;
-        position: relative;
-        border-radius: 50px;
-        padding: 20px 40px;
-        font-size: 3ch;
-        margin: 10px;
-        margin-top: 80px;
-        margin-bottom: 35px;
-        transition: .3s ease all;
-    }
-
-    .PPT:hover {
-        color: white;
-        padding: 25px 70px;
-    }
-
-    .ingresoboton span {
-        transition: .4s ease-in-out all;
-        position: absolute;
-        left: 27%;
-        bottom: 6px;
-
-    }
-
-    .ingresoboton:hover span {
-        left: 10px;
-        color: white;
-    }
-
-    .ingresoboton .iconoBoton {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        z-index: 2;
-        left: -40px;
-        top: 6px;
-        transition: .3s ease-in-out all;
-        opacity: 0;
-    }
-
-    .ingresoboton:hover .iconoBoton {
-        left: 100px;
-        opacity: 1;
-    }
-
-    .arrowright {
-        width: 30px;
-        height: 30px;
-        filter: invert(1);
     }
 
     #ingresoboton::before,
@@ -1433,6 +1249,196 @@
         }
     }
 
+      /*-------------------- Inicio --------------------*/
+    #bienvenida {
+        margin-top: 15px;
+        text-align: center;
+        padding: 1px;
+        padding-top: 10px;
+        font-size: 2ch;
+    }
+
+    #ingresonombreindicacion {
+        color: white;
+        font-size: 2ch;
+    }
+
+    #ingresonombre {
+        border: solid 3px black;
+        margin: 30px 0px;
+        border-radius: 12px;
+        color: rgb(0, 0, 0);
+    }
+
+    #ingresonombre {
+        border: solid 3px black;
+        margin: 30px 0px;
+        border-radius: 12px;
+    }
+
+    #ingresoformulario {
+        margin-bottom: 15px;
+        background-color: wheat;
+    }
+
+    #ingresoboton {
+        display: inline-flex;
+        background: black;
+        border: none;
+        color: rgba(164, 177, 180, 1);
+        position: relative;
+        border-radius: 50px;
+        padding: 10px 10px;
+        font-size: 2ch;
+        margin-right: 25%;
+        margin-left: 25%;
+        margin-top: 30px;
+        height: 40px;
+        width: 150px;
+    }
+
+    .ingresoboton span {
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 27%;
+        bottom: 6px;
+
+    }
+
+    .ingresoboton:hover span {
+        left: 10px;
+        color: white;
+    }
+
+    .ingresoboton .iconoBoton {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        z-index: 2;
+        left: -40px;
+        top: 6px;
+        transition: .3s ease-in-out all;
+        opacity: 0;
+    }
+
+    .ingresoboton:hover .iconoBoton {
+        left: 100px;
+        opacity: 1;
+    }
+
+    .arrowright {
+        width: 30px;
+        height: 30px;
+        filter: invert(1);
+    }
+
+    #reglamento {
+        position: relative;
+        padding: 1rem;
+        color: white;
+        width: 1000px;
+        text-align: justify;
+        border-width: 3px;
+        border-style: solid;
+        margin: 50px auto;
+        height: 700px;
+        font-size: 2.5ch;
+        border-image:
+
+            linear-gradient(to bottom,
+                rgba(244, 192, 85, 1),
+                rgba(247, 232, 55, 1),
+                rgba(125, 233, 208, 1),
+                rgb(92, 226, 222),
+                rgb(67, 83, 223),
+                rgb(171, 82, 212),
+                rgba(217, 180, 217, 1),
+                rgb(245, 208, 208),
+                rgba(0, 0, 0, 0)) 1 100%;
+        display: none;
+    }
+
+    #Botoninicial {
+        text-align: center;
+        background: black;
+        border: none;
+        position: absolute;
+        border-radius: 50px;
+        font-size: 3ch;
+        transition: .3s ease all;
+        right: 2%;
+        color: grey;
+        bottom: 10%;
+    }
+
+    #Botoninicial:hover {
+        color: white;
+        padding: 10px 20px;
+        right: 3%;
+        bottom: 11%;
+        transition: .4s ease-in-out all;
+    }
+
+    #indicacioninicial {
+        text-align: left;
+        display: none;
+        color: white;
+    }
+
+   /*-------------------- Puntuación --------------------*/
+
+    #racha {
+        position: relative;
+        width: 250px;
+        margin: 0px 25%;
+        display: none;
+    }
+
+    #racha1 {
+
+        text-align: center;
+        margin-left: 8%;
+    }
+
+    #rachaactual {
+        position: absolute;
+        top: 0px;
+        left: 300px;
+        text-align: right;
+    }
+
+     /*-------------------- Juego --------------------*/
+
+ #idbotones {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        display: none;
+        font-size: 2ch;
+    }
+
+ 
+    .PPT {
+        text-align: center;
+        background: black;
+        border: none;
+        color: grey;
+        position: relative;
+        border-radius: 50px;
+        padding: 20px 40px;
+        font-size: 3ch;
+        margin: 10px;
+        margin-top: 80px;
+        margin-bottom: 35px;
+        transition: .3s ease all;
+    }
+
+    .PPT:hover {
+        color: white;
+        padding: 25px 70px;
+    }
+  
+
     .interfazgeneral {
         display: flex;
         width: 100%;
@@ -1469,7 +1475,7 @@
 
     .Styletablero {
         position: relative;
-        width: 255px;
+        width: 88%;
         max-height: 60px;
         margin-left: 15px;
     }
@@ -1489,7 +1495,7 @@
         z-index: 1;
         color: white;
         height: 15px;
-        width: 150px;
+        width: 255px;
     }
 
     #celdamarcadorIA,
@@ -1517,7 +1523,7 @@
     .bordetablero::before {
         content: "";
         height: 90px;
-        width: 290px;
+        width: 95%;
         position: absolute;
         background: linear-gradient(200deg,
                 rgba(244, 192, 85, 1),
@@ -1560,6 +1566,8 @@
         display: none;
         text-align: center;
     }
+
+
 
     #KO {
         text-align: center;

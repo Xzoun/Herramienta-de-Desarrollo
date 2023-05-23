@@ -49,8 +49,8 @@
     #fixedDiv {
         background: rgb(0, 0, 0);
         background: linear-gradient(180deg,
-                rgba(0, 0, 0, 0.9974836713812324) 80%,
-                rgba(0, 0, 0, 0) 95%);
+                rgba(0, 0, 0, 0.9974836713812324) 35%,
+                rgba(0, 0, 0, 0) 100%);
         position: relative;
         width: 110%;
         height: 40px;
@@ -1055,8 +1055,8 @@
     #fixedDiv {
         background: rgb(0, 0, 0);
         background: linear-gradient(180deg,
-                rgba(0, 0, 0, 0.9974836713812324) 80%,
-                rgba(0, 0, 0, 0) 95%);
+                rgba(0, 0, 0, 0.9974836713812324) 35%,
+                rgba(0, 0, 0, 0) 100%);
         position: relative;
         width: 110%;
         height: 50px;
@@ -2036,8 +2036,8 @@
     #fixedDiv {
         background: rgb(0, 0, 0);
         background: linear-gradient(180deg,
-                rgba(0, 0, 0, 0.9974836713812324) 80%,
-                rgba(0, 0, 0, 0) 95%);
+                rgba(0, 0, 0, 0.9974836713812324) 35%,
+                rgba(0, 0, 0, 0)100%);
        position: relative;
         width: 100%;
         height: 90px;
