@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muro</title>
+    <link rel="stylesheet" href="Css\Muro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav id="banner">
+        <ul>
+            <li id="volver">
+                <a href="..\index.html">
+                    <div id="atras">
+                        <img class="arrowleft" src="/Muro/Cosas/Arrow left.png"></img>
+                        <span>Atras</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/channel/UCmDgrjDhdFktnWrzVwKOFaQ" target="_blank">
+                    <img id="YoutubeIcon" src="./Cosas/redes/Youtube.png"></img>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/lebenitez_/?next=%2F" target="_blank">
+                    <img id="InstagramIcon" src="./Cosas/redes/Instagram.png"></img>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/lebenitez_" target="_blank">
+                    <img id="TwitterIcon" src="./Cosas/redes/Twitter.png"></img>
+                </a>
+            </li>
+            <li>
+                <a href=" https://www.twitch.tv/xzoun" target="_blank">
+                    <img id="TwitchIcon" src="./Cosas/redes/Twitch.png"></img>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <form id="formulario">
+        <h2>Caracteres: <span id="caracteres">400</span></h2>
+        <textarea name = "comentario" onkeyup="caracteres(this);" id="comentario" placeholder="Ingresar comentario" 
+        minlength="20" maxlength="400" required ></textarea>
+        <button id="comentar" type="submit" for="comentario">Comentar</button>
+
+    </form>
+    <div id="muro">
+        <div class="comentarioDiv">
+            <div class="comentario">
+                <p class="contenido">Es una verga tu página</p>
+                <p class="tiempo">Hace 2 semanas</p>
+            </div>
+            <div class="likesDiv">
+                <img class="like" src="/Muro/Cosas/Up.png">
+                <div class="likes">3</div>
+                <img class="like" src="/Muro/Cosas/Down.png">
+            </div>
+        </div>
+    </div>
+    <script>
+        function caracteres(obj) {
+            // document.getElementById("caracteres").innerHTML = obj.value.length+' characters';
+                var maxLength = 400;
+                var ingresados = obj.value.length;
+                var caracteresActuales = (maxLength - ingresados);              
+                    document.getElementById("caracteres").innerHTML = caracteresActuales ;                
+            }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script type="module" src="Muro.js"></script>
+</body>
+
+</html>

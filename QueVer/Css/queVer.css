@@ -100,7 +100,10 @@ li:hover {
   }
 }
 
+
 /*-------------- Página --------------*/
+
+
 #series {
   display: block;
 }
@@ -115,6 +118,7 @@ li:hover {
 
 
 /*-------------- Recomendacion principal --------------*/
+
 
 .favorita {
   position: relative;
@@ -188,7 +192,9 @@ li:hover {
   color: white;
 }
 
+
 /*-------------- Carrusel --------------*/
+
 
 .carrusel {
   width: 100%;
@@ -286,7 +292,9 @@ li:hover {
   max-height: 100%;
 }
 
+
 /*-------------- Footer --------------*/
+
 
 footer {
   height: 10px;

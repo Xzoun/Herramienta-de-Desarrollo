@@ -8,7 +8,7 @@ const ocultarChiste = document.getElementById("puntuarJoke");
 ocultarChiste.addEventListener("click", puntuarJoke,{once:true});
 const puntuacionstr = document.getElementById("puntosJoke").innerText;
 let puntuacion = Math.floor(puntuacionstr);
-
+console.log(ultimoingreso)
 function joke() {
     document.getElementById("linkjuegos").style.display = "none";
     document.getElementById("click1").style.display = "none";
