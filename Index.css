@@ -58,7 +58,7 @@ body {
     }
 
     &.Dark #liContenedores #contenedores li:hover a {
-        color: rgb(255, 189, 189);
+        color: #ffbdbd;
     }
 
     &.Dark a {
@@ -72,10 +72,18 @@ body {
     &.Dark #newNoteBtn:hover {
         filter: invert(99%) sepia(34%) saturate(2770%) hue-rotate(290deg) brightness(95%) contrast(117%);
     }
+
+    &.Dark #start a{
+        filter: invert(1);
+    }
+
+    &.Dark #start a:hover{
+        filter: invert(70%) sepia(18%) saturate(511%) hue-rotate(313deg) brightness(103%) contrast(123%);
+    }
 }
 
 #start {
-    height: 510px;
+    height: 520px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,11 +91,6 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
     font-weight: 800;
-}
-
-#start h2,
-#start p {
-    display: none;
 }
 
 #start a {
