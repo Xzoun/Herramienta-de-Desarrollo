@@ -5,10 +5,9 @@ var likes = document.getElementById('likesDiv');
 var contador = 1;
 
 formulario.addEventListener('submit', function (event) {
-  let fechaActual = new Date();
   event.preventDefault();
+  let fechaActual = new Date(); 
   var contenidoComentario = comentario.value;
-
   var nuevoComentario = {
     id: contador,
     contenido: contenidoComentario,
@@ -24,9 +23,9 @@ formulario.addEventListener('submit', function (event) {
     '<p class="tiempo">' + nuevoComentario.fecha + '</p>' +
     '</div>' +
     '<div class="likesDiv" >' +
-    '<img class="like" src="/Muro/Cosas/Up.png"/>' +
+    '<img class="like" src="./Muro/Cosas/Up.png"/>' +
     '<div class="likes">' + nuevoComentario.likes + '</div>' +
-    '<img class="like" src="/Muro/Cosas/Down.png"/>' +
+    '<img class="like" src="./Muro/Cosas/Down.png"/>' +
     '</div>' + '</div>';
 
   muro.insertAdjacentHTML('afterbegin', comentarioHTML);
@@ -45,39 +44,47 @@ function fecha(creacion) {
   console.log(ultimoIngreso)
   console.log(creacion)
   console.log(ultimoIngreso - creacion)
-  console.log((ultimoIngreso - creacion)/60000)
+  console.log((ultimoIngreso - creacion) / 60000)
   console.log(minutos)
   console.log(horas)
   console.log(dias)
 
   if (minutos < 1) {
     return "Justo ahora.";
-  } else if (horas < 1) {
-    return minutos + " minutos.";
+  } else if (minutos ==  1) {
+    return "Hace 1 minuto.";
+  } else if (horas < 1) {   
+    return "Hace" + minutos + " minutos.";
   } else if (horas < 24) {
-    return horas + " horas.";
+    return "Hace" + horas + " horas.";
   } else {
-    if (dias < 14) {
-      return dias + " dias."
-    } else if (dias < 58) {
+    if (dias == 1){
+      return  "Hace 1 día."
+    }else if (dias < 14) {
+      return "Hace "+ dias + " días."
+    } else if (dias < 60) {
       let semanas = Math.floor(dias / 7);
-
-      return semanas + " semanas."
+      return  "Hace " + semanas + " semanas."
     } else if (dias < 365) {
       let meses = Math.floor(dias / 30);
-      return meses + " meses."
+      return "Hace" + meses + " meses."
     } else {
-      if (Math.floor(dias % 365) == 1) {
-        let meses = Math.floor(dias / 30);
-        return "1 año y " + meses + " meses."
-      } else {
-        let años = Math.floor(dias / 365);
-        return años + " años."
+      if (Math.floor(dias / 365) == 1) {
+        let meses = Math.floor((dias - 365) / 30);
+        if (meses < 1) {
+          return "Hace 1 año."
+        } else if (meses < 2) {
+          return "Hace 1 año y 1 mes."
+        } else if (eses < 12) {
+          return "Hace 1 año y " + meses + " meses."
+        } else {
+          let años = Math.floor(dias / 365);
+          return "Hace" + años + " años."
+        }
       }
     }
   }
 }
-
 //likes.addEventListener('click', function (event) {
 // }, { once: true });
 

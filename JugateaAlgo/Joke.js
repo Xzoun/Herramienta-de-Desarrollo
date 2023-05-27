@@ -4,45 +4,23 @@ const inicio = 1682910022560,
     dias = Math.trunc((ultimoingreso - inicio) / 8.64e+7),
     chiste = document.getElementById("jokeBoton");
 chiste.addEventListener("click", joke,{once:true});
-const ocultarChiste = document.getElementById("puntuarJoke");
-ocultarChiste.addEventListener("click", puntuarJoke,{once:true});
-const puntuacionstr = document.getElementById("puntosJoke").innerText;
-let puntuacion = Math.floor(puntuacionstr);
-console.log(ultimoingreso)
+const ocultarChiste = document.getElementById("volver");
+ocultarChiste.addEventListener("click", ocultarJoke,{once:true});
 function joke() {
     document.getElementById("linkjuegos").style.display = "none";
     document.getElementById("click1").style.display = "none";
     document.querySelector(".click2").style.display = "none";
-    document.getElementById("jokeInterfaz").style.display = "block"
-    document.getElementById("puntuarJoke").style.display ="block"
+    document.getElementById("jokeInterfaz").style.display = "flex"
+    document.getElementById("volver").style.display ="block"
     document.getElementById("joke").innerText = chistes[dias]
     document.getElementById("dia").innerText = "Dia # " + dias;
 }
-function puntuarJoke(){
+function ocultarJoke(){
     document.getElementById("linkjuegos").style.display = "block";
     document.getElementById("click1").style.display = "none";
     document.querySelector(".click2").style.display = "none";
     document.getElementById("jokeInterfaz").style.display = "none"
-    document.getElementById("puntuarJoke").style.display ="none"
-}
-
-document.getElementById("abajo").addEventListener("click", restarJoke);
-document.getElementById("puntosJoke").addEventListener("click",neutralJoke);
-document.getElementById("arriba").addEventListener("click", sumarJoke);
-
-function restarJoke() {
-    puntuacion = -1;
-    document.getElementById("puntosJoke").innerText = puntuacion;
-}
-
-function neutralJoke(){
-    puntuacion = 0;
-    document.getElementById("puntosJoke").innerText = puntuacion;
-}
-
-function sumarJoke() {
-    puntuacion = 1;
-    document.getElementById("puntosJoke").innerText = puntuacion;
+    document.getElementById("volver").style.display ="none"
 }
 
 const chistes = [ 

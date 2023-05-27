@@ -1,0 +1,732 @@
+/*--------------------------- Start || General ---------------------------*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 400;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    text-indent: 4%;
+}
+
+body {
+    font-family: 'Catamaran', sans-serif;
+    background: rgb(1, 189, 194);
+    background: linear-gradient(131deg,
+            rgba(1, 189, 194, 1) 18%,
+            rgba(82, 180, 204, 1) 33%,
+            rgba(68, 132, 129, 1) 95%);
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+
+    &.Dark {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(131deg,
+                rgba(0, 0, 0) 18%,
+                rgba(82, 180, 204, 0.9) 90%,
+                rgba(68, 132, 129, 0.8) 95%);
+        color: white;
+
+    }
+
+    &.Dark #banner {
+        background-color: rgb(255, 189, 189);
+    }
+
+    &.Dark #banner a {
+        color: black;
+    }
+
+    &.Dark #banner a:hover {
+        color: rgb(255, 189, 189);
+    }
+
+    &.Dark #liContenedores #contenedores li a {
+        color: rgb(255, 255, 255);
+    }
+
+    &.Dark #liContenedores #contenedores li:hover a {
+        color: rgb(255, 189, 189);
+    }
+
+    &.Dark a {
+        color: white;
+    }
+
+    &.Dark #newNoteBtn {
+        filter: invert(0);
+    }
+
+    &.Dark #newNoteBtn:hover {
+        filter: invert(99%) sepia(34%) saturate(2770%) hue-rotate(290deg) brightness(95%) contrast(117%);
+    }
+}
+
+#start {
+    height: 510px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-weight: 800;
+}
+
+#start h2,
+#start p {
+    display: none;
+}
+
+#start a {
+    height: 10%;
+    width: 10%;
+    position: absolute;
+    bottom: 1%;
+    left: 45%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+#start a:hover {
+    filter: invert(1);
+}
+
+#all {
+    transition: .5s ease-in-out all;
+}
+
+
+/*-------------- Scroll Bar --------------*/
+
+
+body::-webkit-scrollbar {
+    width: 7px;
+    height: 0px;
+    border-right: 10px solid rgba(0, 0, 0, 0.2);
+    margin-right: 3px;
+}
+
+body:hover::-webkit-scrollbar-thumb {
+    background: rgb(170, 165, 170);
+    border-radius: 12px;
+    filter: blur(1px);
+    border-right: 10px solid rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    width: 7px;
+    background: rgb(55, 56, 56);
+    border-right: 10px solid rgba(0, 0, 0, 0.2);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*--------------------------- Fixed Nav ---------------------------*/
+
+#banner {
+    width: 100%;
+    top: 0%;
+    font-weight: 800;
+    z-index: 200;
+    background-color: rgb(255, 189, 189);
+}
+
+#banner nav {
+    padding: 1% 2%;
+    background: rgb(82, 180, 204);
+    background: linear-gradient(180deg,
+            rgb(82, 180, 204) 5%,
+            rgb(82, 180, 204, 0.8) 25%,
+            rgb(82, 180, 204, 0.5) 75%,
+            rgb(82, 180, 204, 0.2) 95%,
+            rgb(0, 0, 0, 0.1) 100%);
+}
+
+#banner nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+#banner li a {
+    color: white;
+}
+
+#banner li:hover a {
+    cursor: pointer;
+    color: rgb(255, 189, 189);
+}
+
+#contenedores {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    position: absolute;
+    background: rgba(255, 255, 0, 0.2);
+    background: linear-gradient(10deg,
+            rgb(82, 180, 204) 5%,
+            rgb(82, 180, 204, 0.8) 15%,
+            rgb(82, 180, 204, 0.5) 30%,
+            rgb(255, 189, 189, 1) 40%,
+            rgb(0, 0, 0, 0.2) 50%,
+            rgb(0, 0, 0, 0) 80%,
+            rgb(255, 189, 189, 0) 100%);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#liContenedores:hover #contenedores {
+    visibility: visible;
+    opacity: 1;
+}
+
+#liContenedores #contenedores li a {
+    color: black;
+}
+
+#liContenedores #contenedores li:hover a {
+    color: white;
+}
+
+.nav {
+    padding: 4% 5%;
+    position: relative;
+    top: 60px;
+    scroll-margin-top: 20px;
+    margin: 1%;
+}
+
+#darkButton {
+    position: relative;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 2px solid rgb(255, 189, 189);
+    display: flex;
+    background-color: black;
+}
+
+#darkButton:hover #darkMode {
+    display: block;
+}
+
+#darkMode {
+    opacity: 0.6;
+    display: none;
+    position: absolute;
+    right: -50px;
+    top: -10px;
+    background-color: aliceblue;
+}
+
+.darkButtonIcons {
+    width: 20px;
+    height: 20px;
+    transition: .3s ease-in-out all;
+}
+
+#lightIcon {
+    filter: invert(1);
+}
+
+
+/*--------------------------- Presentación ----------------------------*/
+
+
+#presentacion {
+    margin: 0% 7%;
+    background-color: rgba(0, 255, 255, 0.185);
+    border-radius: 50px;
+    scroll-margin-top: 60px;
+    font-size: 90%;
+}
+
+
+/*--------------------------- dropZone ----------------------------*/
+
+
+#dropZone {
+    position: relative;
+    height: 120px;
+    width: 80%;
+    top: 60px;
+    left: 10%;
+    background-color: rgb(255, 255, 255, 0.1);
+    z-index: 100;
+    border-radius: 12px;
+}
+
+
+/*--------------------------- Proyectos ----------------------------*/
+
+
+/*--------------------------- Contribuir ----------------------------*/
+
+
+#cont1 {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#cont2 {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+#cont2:hover{
+    color:black;
+    background-color: rgba(255,255,255,0.6);
+}
+
+
+/*--------------------------- Atajos ----------------------------*/
+
+
+#contList {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+#contList ul {
+    width: 38%;
+    text-align: center;
+    background: rgb(255, 255, 255, 0.0);
+    border-radius: 50px;
+    margin: 3% 6%;
+ 
+}
+
+#contList h2 {
+    border-bottom: solid 1px rgb(255, 189, 189, 1);
+}
+
+#contList ul li {
+    text-align: left;
+    padding-left: 10%;
+}
+
+#contList:hover a:hover {
+    background: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.9) 18%,
+            rgba(0, 0, 0, 0) 100%);
+    padding-right: 50%;
+    border-left: rgb(255, 255, 255) solid 3px;
+    color: white;
+}
+
+
+/*--------------------------- Notas - Contenedor principal----------------------------*/
+
+
+#notas {
+    width: 87%;
+    min-height: auto;
+
+}
+
+#nuevaNota {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 120px);
+    padding: 4px;
+    gap: 4px;
+    border-radius: 12px;
+    min-height: 150px;
+    background-color: rgba(0, 255, 255, 0.185);
+    border-radius: 12px;
+    padding-top: 60px;
+    padding-right: 20%;
+    position: relative;
+
+}
+
+#noteTittle {
+    position: absolute;
+    top: 10px;
+    left: 2%;
+    z-index: 2;
+    filter: invert(1);
+}
+
+#newNoteBtn {
+    position: absolute;
+    left: 30%;
+    top: 10px;
+    width: 180px;
+    background-color: rgb(0, 0, 0, 0);
+    border: 3px solid rgb(0, 0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.7ch;
+    filter: invert(1);
+}
+
+#newNoteBtn:hover {
+    cursor: pointer;
+    filter: invert(99%) sepia(34%) saturate(2770%) hue-rotate(290deg) brightness(95%) contrast(117%);
+}
+
+#newNoteBtn img {
+    width: 30px;
+    height: 30px;
+}
+
+#referencias {
+    position: absolute;
+    right: 2%;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#referencias input {
+    margin-bottom: 3px;
+    border: none;
+    outline: none;
+}
+
+#referencias h2 {
+    filter: invert(1);
+}
+
+
+/*--------------------------- Notas - Contenedores----------------------------*/
+
+
+.dropZone {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 120px);
+    gap: 24px;
+}
+
+.drag {
+    background: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(0deg,
+            rgba(255, 255, 255, 0.5) 10%,
+            rgba(255, 255, 255, 0.5) 85%);
+    border-radius: 12px;
+    transition: .3s ease-in-out all;
+    border: grey dashed 2px;
+}
+
+#dropZone1 {
+    top: 50px;
+    left: 250px;
+    position: absolute;
+    display: none;
+}
+
+#dropZone2 {
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    width: 120px;
+    height: 120px;
+}
+
+#dropZone2:hover {
+    right: 80px;
+    bottom: 80px;
+}
+
+
+/*--------------------------- Notas ----------------------------*/
+
+
+.note {
+    background: rgba(255, 255, 0, 0.5);
+    height: 120px;
+    width: 120px;
+    box-sizing: border-box;
+    padding: 5px;
+    border: none;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: (0, 0, 7px, rgba(0, 0, 0, ));
+    outline: none;
+}
+
+.color1 {
+    background: linear-gradient(215deg,
+            rgb(216, 0, 0) 0%,
+            rgb(139, 0, 0) 10%);
+}
+
+.color2 {
+    background: linear-gradient(215deg,
+            rgb(97, 124, 216) 0%,
+            rgb(61, 100, 139) 10%);
+    color: white;
+}
+
+.color3 {
+    background: linear-gradient(215deg,
+            rgb(255, 189, 189, 1) 0%,
+            rgb(158, 117, 117) 10%);
+}
+
+.color4 {
+    background: linear-gradient(215deg,
+            rgb(140, 0, 255, 1) 0%,
+            rgb(79, 0, 143) 10%);
+    color: white;
+}
+
+.color5 {
+    background: linear-gradient(215deg,
+            rgb(255, 196, 1) 0%,
+            rgb(195, 150, 0)10%);
+}
+
+.color6 {
+    background: linear-gradient(215deg,
+           rgb(144, 141, 141) 0%,
+            rgb(0, 0, 0) 10%);
+            color:white;
+}
+
+.color7 {
+    background: linear-gradient(215deg,
+            rgb(248, 80, 0),
+    rgb(170, 54, 0)10%);
+}
+
+.color8 {
+    background: linear-gradient(215deg,
+            rgb(200, 255, 0) 0%,
+            rgb(117, 150, 0) 10%);
+}
+
+.color9 {
+    background: linear-gradient(215deg,
+            rgb(255, 255, 255) 0%,
+            rgb(161, 161, 161) 10%);
+}
+
+.note:hover {
+    height: 150px;
+    width: 150px;
+    background-color: rgb(255, 196, 1);
+    z-index: 1;
+    padding: 10px;
+    font-size: 2ch;
+}
+
+.color1:hover {
+    background: #d80000;
+    color: black
+}
+
+.color2:hover {
+    background: rgb(97, 124, 216, 1);
+    color: white;
+}
+
+.color3:hover {
+    background: rgb(255, 189, 189, 1);
+    color: black;
+}
+
+.color4:hover {
+    background: rgb(140, 0, 255, 1);
+    color: white;
+}
+
+.color5:hover {
+    background: rgb(255, 196, 1);
+    color: black;
+}
+
+.color6:hover {
+    background: rgb(37,37,37);
+    color: white;
+}
+
+.color7:hover {
+    background:  rgb(248, 80, 0);
+    color: black;
+}
+
+.color8:hover {
+    background: rgb(200, 255, 0);
+    color: black;
+}
+
+.color9:hover {
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+
+
+/*--------------------------- Menu - Notas ----------------------------*/
+
+
+#dobleclick {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    display: none;
+    z-index: 220;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+#menuNotas {
+    position: relative;
+    border-radius: 12px;
+    border: rgb(0, 0, 0) 3px solid;
+    width: 320px;
+    height: 360px;
+    margin: 10% auto;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg,
+            rgba(255, 255, 255, 1) 18%,
+            rgba(0, 255, 255, 0.485) 76%);
+    font-weight: 800;
+    font-size: 4ch;
+}
+
+#cancelar {
+    position: absolute;
+    bottom: 10px;
+    right: 10%;
+    width: 25%;
+    height: 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: rgba(255, 255, 0, 0.2);
+    background: linear-gradient(25deg,
+            rgba(11, 139, 139, 0.625) 0%,
+            rgba(255, 255, 255, 0.600) 60%);
+    z-index: 30;
+}
+
+#cancelar:hover,
+#eliminar:hover {
+    border: solid 3px black;
+}
+
+#eliminar {
+    position: absolute;
+    bottom: 10px;
+    width: 30%;
+    height: 30px;
+    right: 37.5%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: rgba(255, 255, 0, 0.2);
+    background: linear-gradient(25deg,
+            rgba(11, 139, 139, 0.625) 0%,
+            rgba(255, 255, 255, 0.600) 60%);
+}
+
+#paletaColores {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 90px);
+    padding: 0px;
+    gap: 2px;
+    margin: 5% 7%;
+    cursor: pointer;
+}
+
+.paletaColor{
+    border-radius: 100%;
+    height: 90px;
+}
+
+/*--------------------------- Footer || Contacto ----------------------------*/
+
+
+#contacto ul {
+    display: flex;
+    justify-content: space-around;
+    height: 140px;    
+}
+
+#contacto li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:100px;
+    height: 70px;
+    padding:20px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 12px;
+}
+
+#contacto li:hover {
+    background-color: rgba(255,255,255,0.6);
+    color:black;
+}
+
+#twitterIcon,
+#instagramIcon,
+#twitchIcon,
+#whatsAppIcon {
+    width: 35px;
+    height: 35px;
+}
+
+#youtubeIcon {
+    width: 50px;
+    height: 35px;
+}
+
+#whatsAppIcon {
+    filter: invert(55%) sepia(87%) saturate(3652%) hue-rotate(103deg) brightness(98%) contrast(101%);
+}
+
+#instagramIcon {
+    visibility: visible;
+    left: 180px;
+    opacity: 1;
+    filter: invert(32%) sepia(58%) saturate(987%) hue-rotate(352deg) brightness(90%) contrast(86%)
+}
+
+#twitterIcon {
+    visibility: visible;
+    left: 230px;
+    opacity: 1;
+    filter:
+        invert(45%) sepia(97%) saturate(1728%) hue-rotate(164deg) brightness(100%) contrast(103%);
+}
+
+#final {
+    text-align: right;
+    padding: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom:20px;
+}

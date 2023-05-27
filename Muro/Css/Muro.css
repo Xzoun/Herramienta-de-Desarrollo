@@ -4,6 +4,7 @@
 #banner {
   position: fixed;
   top: 0px;
+  left: 0px;
   height: 50px;
   width: 100%;
   background: rgb(201, 186, 186);
@@ -139,8 +140,8 @@ body::-webkit-scrollbar-thumb:hover,
 #formulario h2 {
   font-size: 2ch;
   text-align: right;
-  opacity: 0.5;
   margin: 2% 20% 0% auto;
+  color :rgb(201, 186, 186);
 }
 
 #comentario {

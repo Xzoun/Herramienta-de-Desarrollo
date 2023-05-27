@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jugate a algo</title>
-    <link rel="stylesheet" href="Css\Jugate a algo.css">
+    <link rel="stylesheet" href="./JugateaAlgo/Css/Jugate a algo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap" rel="stylesheet">
@@ -18,9 +18,9 @@
             <h1>Jugate a algo</h1>
         </header>
         <div id="linkjuegos">
-            <a href="Viborita/Viborita.html">
-                <div id="divjuego1">
-                    <div><img src="Viborita/Cosas/Snake.png" id="imgj1"></div>
+            <a href="./JugateaAlgo/Viborita/Viborita.html">
+                <div class="juegos">
+                    <div><img src="./JugateaAlgo/Viborita/Cosas/Snake.png" id="imgj1"></div>
                     <div id="descripcionjuego1">
                         <h2 class="nombrejuego">Viborita</h2>
                         <p class="parrafo">No dejes que se estrelle! Un clasico en el que podras elegir
@@ -28,9 +28,9 @@
                     </div>
                 </div>
             </a>
-            <a href="PiedraPapeloTijeras/PiedraPapeloTijeras.html">
-                <div id="divjuego2">
-                    <div> <img src="PiedraPapeloTijeras/Cosas/juego2.png" id="imgj2"></div>
+            <a href="./JugateaAlgo/PiedraPapeloTijeras/PiedraPapeloTijeras.html">
+                <div class="juegos">
+                    <div> <img src="./JugateaAlgo/PiedraPapeloTijeras/Cosas/juego2.png" id="imgj2"></div>
                     <div id="descripcionjuego2">
                         <h2 class="nombrejuego">Piedra, Papel o Tijeras?</h2>
                         <p class="parrafo">Un juego vs I.A. en el que dependeras del azar y de
@@ -38,9 +38,9 @@
                     </div>
                 </div>
             </a>
-            <a href="Ahorcado/Ahorcado.html">
-                <div id="divjuego3">
-                    <div> <img src="Ahorcado/Cosas/juego3.png"></div>
+            <a href="./JugateaAlgo/Ahorcado/Ahorcado.html">
+                <div class="juegos">
+                    <div> <img src="./JugateaAlgo/Ahorcado/Cosas/juego3.png"></div>
                     <div id="descripcionjuego3">
                         <h2 class="nombrejuego">Ahorcado</h2>
                         <p class="parrafo">En este clásico se deberá buscar una palabra eligiendo
@@ -49,8 +49,8 @@
                 </div>
             </a>
             <a href="JugateaAlgo.html">
-                <div id="divjuego4">
-                    <div><img src="PiedraPapeloTijeras/Cosas/juego2.png"></div>
+                <div class="juegos">
+                    <div><img src="./JugateaAlgo/PiedraPapeloTijeras/Cosas/juego2.png"></div>
                     <div id="descripcionjuego4">
                         <h2 class="nombrejuego">Juego 4</h2>
                         <p class="parrafo">Este juego todavia no se penso!</p>
@@ -58,8 +58,8 @@
                 </div>
             </a>
             <a href="JugateaAlgo.html">
-                <div id="divjuego5">
-                    <div><img src="PiedraPapeloTijeras/Cosas/juego2.png"></div>
+                <div class="juegos">
+                    <div><img src="./JugateaAlgo/PiedraPapeloTijeras/Cosas/juego2.png"></div>
                     <div id="descripcionjuego5">
                         <h2 class="nombrejuego">Juego 5</h2>
                         <p class="parrafo">Este juego todavia no se penso!</p>
@@ -71,25 +71,23 @@
         <h3 class="rainbow-text" id="click1">Joke of the day! Wanna hear it?</h3>
         <button class="click2" id="jokeBoton">Sure!</button>
 
-        <script type="module" src="Joke.js"></script>
+       
         <div id="jokeInterfaz">
-            <h2 id="dia"></h2>
-            <h2 id="joke"></h2>
-            <div id="puntuacionJoke">
-                <img id="arriba" src="Cosas\Up.png">
-                <p id="puntosJoke"></p>
-                <img id="abajo" src="Cosas\Down.png">
+            <div id="chiste">
+                <h2 id="dia"></h2>
+                <h2 id="joke"></h2>
             </div>
+            <button id="volver">Volver</button>
         </div>
-        <button id="puntuarJoke">Votar</button>
+
         <footer>
             <a href="..\index.html">
-                <div id="atras">
-                    <img class="arrowleft" src="Cosas\Arrow left.png"></img>
-                    <span>Atras</span>
-                </div>
+                <img class="arrowleft" src="./JugateaAlgo/Cosas/Arrow left.png"></img>
             </a>
         </footer>
+
+        <script type="module" src="./JugateaAlgo/Joke.js"></script>
+
     </div>
 
 </body>

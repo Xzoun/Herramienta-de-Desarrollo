@@ -1,10 +1,10 @@
 const contNotas = document.getElementById("nuevaNota");
-const newnoteBtn = document.getElementById("newNotebtn");
+const newnoteBtn = document.getElementById("newNoteBtn");
 const dropZone = document.getElementById("dropZone");
 const dropZone1 = document.getElementById("dropZone1");
 const dropZone2 = document.getElementById("dropZone2");
 
-notas().forEach(note => {
+cargarNotas().forEach(note => {
   const noteElement = funciones(note.id, note.content, note.divDestino, note.currentLocation, note.color);
   switch (note.divDestino) {
     case "dropZone":
@@ -62,7 +62,7 @@ notas().forEach(note => {
 
 newnoteBtn.addEventListener("click", agregar());
 
-export function notas() {
+export function cargarNotas() {
   return JSON.parse(localStorage.getItem("LeoBenitez-notas") || "[]");
 }
 
@@ -116,7 +116,7 @@ function funciones(id, content, divDestino, currentLocation, color) {
 
 function agregar() {
   return function () {
-    const notasActuales = notas();
+    const notasActuales = cargarNotas();
     const noteObject = {
       id: Math.floor(Math.random() * 100000000000),
       content: "",
@@ -132,7 +132,7 @@ function agregar() {
 }
 
 function actualizar(id, newContent) {
-  const notasActuales = notas();
+  const notasActuales = cargarNotas();
   const targetNote = notasActuales.find(note => note.id == id);
 
   if (targetNote) {
@@ -143,8 +143,8 @@ function actualizar(id, newContent) {
 
 function eliminar(id, element) {
 
-  const notasActuales1 = notas().filter(note => note.id != id);
-  const notasActuales = notas();
+  const notasActuales1 = cargarNotas().filter(note => note.id != id);
+  const notasActuales = cargarNotas();
   const targetNote = notasActuales.find(note => note.id == id);
 
   switch (targetNote.divDestino) {
@@ -166,11 +166,12 @@ function eliminar(id, element) {
 }
 
 function mover(id, element, divDestino, currentLocation) {
-  const notasActuales = notas();
+  const notasActuales = cargarNotas();
   const targetNote = notasActuales.find(note => note.id === id);
 
   const dragHandler = (e) => {
     e.preventDefault();
+
   };
 
   element.addEventListener("dragend", e => {
@@ -287,7 +288,7 @@ function mover(id, element, divDestino, currentLocation) {
 }
 
 function colores(id, element) {
-  const notasActuales = notas();
+  const notasActuales = cargarNotas();
   const targetNote = notasActuales.find(note => note.id == id);
   const menu = document.getElementById("dobleclick");
   const paletaColores = document.querySelectorAll(".paletaColor")

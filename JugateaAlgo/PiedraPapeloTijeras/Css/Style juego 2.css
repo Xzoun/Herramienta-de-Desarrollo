@@ -43,7 +43,7 @@
     button {
         cursor: pointer;
     }
-    
+
     #ingresoboton::before,
     .PPT::before,
     #Botoninicial::before,
@@ -240,7 +240,7 @@
         right: 50px;
         bottom: 40px;
         transition: .4s ease-in-out all;
-    }  
+    }
 
     #indicacioninicial {
         text-align: left;
@@ -257,7 +257,7 @@
         margin-top: 20px;
         display: none;
         font-size: 2ch;
-    }   
+    }
 
     .PPT {
         text-align: center;
@@ -297,7 +297,7 @@
         top: 0px;
         left: 300px;
         text-align: right;
-    } 
+    }
 
     .interfazgeneral {
         width: 100%;
@@ -1167,7 +1167,8 @@
     * {
         margin: 0px;
     }
-  /*-------------------- General --------------------*/
+
+    /*-------------------- General --------------------*/
     body {
         background: rgb(2, 0, 36);
         background: linear-gradient(59deg,
@@ -1187,19 +1188,20 @@
         width: 90%;
         margin-left: 5%;
         text-align: right;
-        line-height: 85px;
+        line-height: 10rem;
         color: white;
     }
 
     h1 {
-        border-bottom: 3px solid rgba(217, 180, 180, 1);
-        font-size: 4ch;
+        border-bottom: 0.5rem solid rgba(217, 180, 180, 1);
+        font-size: 4rem;
         text-align: center;
     }
 
     h2 {
         text-align: left;
         color: white;
+        font-size: 4rem;
     }
 
     button {
@@ -1249,31 +1251,25 @@
         }
     }
 
-      /*-------------------- Inicio --------------------*/
+    /*-------------------- Inicio --------------------*/
     #bienvenida {
         margin-top: 15px;
         text-align: center;
         padding: 1px;
         padding-top: 10px;
-        font-size: 2ch;
+        font-size: 4rem;
     }
 
     #ingresonombreindicacion {
         color: white;
-        font-size: 2ch;
     }
 
     #ingresonombre {
         border: solid 3px black;
         margin: 30px 0px;
-        border-radius: 12px;
+        border-radius: 50px;
         color: rgb(0, 0, 0);
-    }
-
-    #ingresonombre {
-        border: solid 3px black;
-        margin: 30px 0px;
-        border-radius: 12px;
+        font-size: 1.5ch;
     }
 
     #ingresoformulario {
@@ -1289,24 +1285,24 @@
         position: relative;
         border-radius: 50px;
         padding: 10px 10px;
-        font-size: 2ch;
         margin-right: 25%;
         margin-left: 25%;
-        margin-top: 30px;
-        height: 40px;
-        width: 150px;
+        margin-top: 4rem;
+        height: 4rem;
+        width: 15rem;
+        font-size: 1ch;
     }
 
     .ingresoboton span {
         transition: .4s ease-in-out all;
         position: absolute;
         left: 27%;
-        bottom: 6px;
-
+        top: 0.5rem;
+        font-size: 2ch;
     }
 
     .ingresoboton:hover span {
-        left: 10px;
+        left: 4px;
         color: white;
     }
 
@@ -1315,20 +1311,20 @@
         align-items: center;
         position: absolute;
         z-index: 2;
-        left: -40px;
-        top: 6px;
+        left: -4rem;
+        top: 0px;
         transition: .3s ease-in-out all;
         opacity: 0;
     }
 
     .ingresoboton:hover .iconoBoton {
-        left: 100px;
+        left: 10rem;
         opacity: 1;
     }
 
     .arrowright {
-        width: 30px;
-        height: 30px;
+        width: 4rem;
+        height: 4rem;
         filter: invert(1);
     }
 
@@ -1385,7 +1381,7 @@
         color: white;
     }
 
-   /*-------------------- Puntuación --------------------*/
+    /*-------------------- Puntuación --------------------*/
 
     #racha {
         position: relative;
@@ -1407,9 +1403,9 @@
         text-align: right;
     }
 
-     /*-------------------- Juego --------------------*/
+    /*-------------------- Juego --------------------*/
 
- #idbotones {
+    #idbotones {
         width: 100%;
         text-align: center;
         margin-top: 20px;
@@ -1417,7 +1413,7 @@
         font-size: 2ch;
     }
 
- 
+
     .PPT {
         text-align: center;
         background: black;
@@ -1437,7 +1433,7 @@
         color: white;
         padding: 25px 70px;
     }
-  
+
 
     .interfazgeneral {
         display: flex;
@@ -1710,6 +1706,7 @@
         height: 30px;
         width: 150px;
         left: 50px;
+        font-size: 2rem;
     }
 
     footer:hover .arrowleft,

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leo Benitez</title>
     <link rel="icon" type="img/png" href="Cosas\Rick.png">
-    <link rel="stylesheet" href="Css\Index.css">
+    <link rel="stylesheet" href="Index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap" rel="stylesheet">
@@ -15,203 +15,268 @@
 
 <body>
 
-    <div id="Banner">
-        <nav id="fixedNav">
-            <ul id="fixedDiv"><li><button id="fixNavBtn"> <img id="fixImg" src="Cosas\Pin.png"></img></button></li>
-                <li><button id="DarkButton">
-                        <img id="DarkIcon" src="Cosas\Darkmode.png"></img>
-                        <img id="LightIcon" src="Cosas\Lightmode.png"></img>
-                        <span id="Darkmode">Dark mode</span>
-                    </button></li>
-                <li><a id="juegos" href="JugateaAlgo/JugateaAlgo.html">Jugate a algo</a></li>
-                <li><a id="queVer" href="QueVer/QueVer.html">Recomendaciones</a></li>
-                <li><a id="muro" href="Muro/Muro.html">Muro</a></li>                
+    <div id=startBackground>
+        <div id="start">
+            <h1><span class="typed"></span></h1>           
+            <a id="startContinue"><img src="Cosas/Imagenes/Down.png" alt="Continuar"></a>
+        </div>
+    </div>
+    <header id="banner">
+        <nav>
+            <ul>
+                <li><a href="#atajos">Atajos</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contribuir">Contribuir</a></li>
+                <li id="liContenedores">
+                    <a href="#notas">Notas</a>
+                    <ul id="contenedores">
+                        <li><a href="#notas">Drop Zone Main</a></li>
+                        <li><a href="#dropZoneUbi">Drop Zone 1</a></li>
+                        <li><a href="#dropZone1">Drop Zone 2</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#contacto">Contacto</a></li>
+                <li>
+                    <button id="darkButton">
+                        <img id="darkIcon" class="darkButtonIcons" src="./Cosas/Imagenes/Darkmode.png"></img>
+                        <img id="lightIcon" class="darkButtonIcons" src="./Cosas/Imagenes/Lightmode.png"></img>
+                        <span id="darkMode">Activar</span>
+                    </button>
+                </li>
             </ul>
         </nav>
-    </div>
-    <a href="#Banner"><img id="Rick" src="Cosas\Rick.png"></img></a>
+    </header>
 
-    <div id="atajos">
-        <ul>
-            <li id="c1">
-                <h2 class="cabecera">Páginas de css</h2>
-                <ul>
-                    <li> <a href="https://fonts.google.com/icons" target="_blank">Google icons</a></li>
-                    <li> <a href="https://iconape.com" target="_blank">Iconos varios</a></li>
-                    <li> <a href="https://cssgradient.io" target="_blank">Gradient</a></li>
-                    <li> <a href="https://codepen.io/sosuke/pen/Pjoqqp" target="_blank">Filter</a></li>
-                </ul>
-            </li>
-            <li id="c2">
-                <h2 class="cabecera">Cursos</h2>
-                <ul>
-                    <li><a href="https://lxp.eggcooperation.com/dashboard/643ecda5b98b91cfb34428bd">Egg - Front End</a>
-                    </li>
-                    <li><a href="https://lxp.eggcooperation.com/courses" target="_blank">Egg - Java</a></li>
-                </ul>
-            </li>
-            <li id="c3">
-                <h2 class="cabecera">Links útiles</h2>
-                <ul>
-                    <li><a href="https://developer.mozilla.org/" target="_blank">Mozilla</a></li>
-                    <li><a href="https://docs.oracle.com" target="_blank">Oracle</a></li>
-                    <li><a href="https://www.remove.bg/es/upload" target="_blank">Quitar fondo img</a></li>
-                    <li><a href="https://www.toptal.com/developers/keycode" target="_blank">KeyCode</a></li>
-                    <li><a href="https://github.com/Xzoun" target="_blank">Mi Github</a></li>
-                </ul>
-            </li>
-            <li id="c4">
-                <h2 class="cabecera">Cursos de Youtube</h2>
-                <ul>
-                    <li><a href="https://www.youtube.com/watch?v=tyx05coXixw&list=PLyvsggKtwbLX06iMtXnRGX5lyjiiMaT2y"
-                            target="_blank">Appde Android</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=lc-xGhUf02Q&list=PLpOqH6AE0tNgW6TUTB-EmLShymWufcNS5"
-                            target="_blank">html canvas</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=94s7b83ixb4&list=PLYxATQ-ow631sNpUoZUrbyL4aNsCiayrl"
-                            target="_blank">Css</a>
-                    </li>
-                    <li><a href="https://www.youtube.com/watch?v=z95mZVUcJ-E&list=PLE8uP447fYpiBqMVF1hdWl9uFeVEeXRTm"
-                            target="_blank">JavaScript </a></li>
-                </ul>
-            </li>
-        </ul>
+    <div id="presentacion" class="nav">
+
+        <h2>Hola, bienvenid@</h2>
+        <p>
+            Mi nombre es Leonel, soy una persona dedicada y estoy
+            constantemente aprendiendo. Tengo 27 años y experiencia en varias áreas como
+            ventas, atención al público, administración y recursos humanos.
+            Hice cursos de francés, canto, guitarra, teatro y hasta uno de electricidad.
+        </p>
+        <h2>Ah variadito... Y de programación?</h2>
+        <p>
+            Mi primer contacto con la programación fue en 2023, inicié en un curso sobre
+            lógica de programación, luego pasé a uno de Java y ahora estoy en otro sobre
+            Front End.
+            Considero que tengo un gran futuro en el área y que recién estoy dando mis primeros
+            pasos en este basto mundo de las teclas.
+        </p>
+        <h2>Que objetivos esperas cumplir?</h2>
+        <p>
+            Esta página es un poco mi herramienta de trabajo, y un poco mi CV como
+            programador. La uso constantemente desde el editor de código y
+            decidí compartirla y actualizarla casi diariamente porque tengo varios
+            proyectos en los que estoy trabajando.
+        </p>
+        <p> Mi objetivo es <span style="font-weight: 800;">desarrollarme profesionalmente </span>como desarrollador full
+            stack y
+            continuar aprendiendo siempre.</p>
     </div>
 
-    <div id="bulto1"></div>
+    <div id="dropZoneUbi" class="nav">
+        <h2>Drop Zone</h2>
+    </div>
+    <div id="dropZone" class="dropZone"></div>
 
-    <div id="swap" class="one">
-        <div id="presentacion">
-            <h2>Que es esto?</h2>
-            <p>
-                Esta página es un poco mi herramienta de trabajo, y un poco mi CV como
-                programador. Uso constantemente esta página desde el editor de código y
-                decidí compartirla y actualizarla casi diariamente porque tengo varios
-                proyectos en los que estoy trabajando.
-            </p>
-            <h2>Y vos sos?</h2>
-            <p>
-                Hola, buenas! Mi nombre es Leonel, soy una persona dedicada y estoy
-                constantemente aprendiendo. Tengo 26 años y experiencia en varias áreas como
-                ventas, atención al público, administración y recursos humanos.
-                Hice cursos de francés, canto, guitarra, teatro y hasta uno de electricidad.
-            </p>
-            <h2>Ah variadito... Y de programación?</h2>
-            <p>
-                Mi primer contacto con la programación fue en 2023, inicié en un curso sobre
-                lógica de programación, luego pasé a uno de Java y ahora estoy en otro sobre
-                Front End.
-                Considero que tengo un gran futuro en el área y que recién estoy dando mis primeros
-                pasos en este basto mundo de las teclas.
-            </p>
+    <div id="atajos" class="nav">
+        <h2>Atajos</h2>
+        <div id="contList">
+            <ul>
+                <h2>Páginas de css</h2>
+                <li> <a href="https://fonts.google.com/icons" target="_blank">Google icons</a></li>
+                <li> <a href="https://iconape.com" target="_blank">Iconos varios</a></li>
+                <li> <a href="https://cssgradient.io" target="_blank">Gradient</a></li>
+                <li> <a href="https://codepen.io/sosuke/pen/Pjoqqp" target="_blank">Filter</a></li>
+                <li> <a href=" https://flexboxfroggy.com/#es" target="_blank">Flex-Box</a></li>
+                <li><a href="https://coolors.co/664e4c-b2cede-8cdfd6-6dc0d5-335c67" target="_blank">Paleta de
+                        Colores</a></li>
+            </ul>
+            <ul>
+                <h2>Cursos</h2>
+                <li><a href="https://lxp.eggcooperation.com/dashboard/643ecda5b98b91cfb34428bd">Egg - Front
+                        End</a>
+                </li>
+                <li><a href="https://lxp.eggcooperation.com/courses" target="_blank">Egg - Java</a></li>
+            </ul>
+            <ul>
+                <h2>Links útiles</h2>
+                <li><a href="https://developer.mozilla.org/" target="_blank">Mozilla</a></li>
+                <li><a href="https://docs.oracle.com" target="_blank">Oracle</a></li>
+                <li><a href="https://www.remove.bg/es/upload" target="_blank">Quitar fondo img</a></li>
+                <li><a href="https://www.toptal.com/developers/keycode" target="_blank">KeyCode</a></li>
+                <li><a href="https://github.com/Xzoun" target="_blank">Mi Github</a></li>
+                <li><a href="https://openai.com/blog/chatgpt" target="_blank"><img src="">Chat GPT</a></li>
+            </ul>
+            <ul>
+                <h2>Cursos de Youtube</h2>
+                <li><a href="https://www.youtube.com/watch?v=tyx05coXixw&list=PLyvsggKtwbLX06iMtXnRGX5lyjiiMaT2y"
+                        target="_blank">Appde Android</a></li>
+                <li><a href="https://www.youtube.com/watch?v=lc-xGhUf02Q&list=PLpOqH6AE0tNgW6TUTB-EmLShymWufcNS5"
+                        target="_blank">html canvas</a></li>
+                <li><a href="https://www.youtube.com/watch?v=94s7b83ixb4&list=PLYxATQ-ow631sNpUoZUrbyL4aNsCiayrl"
+                        target="_blank">Css</a></li>
+                <li><a href="https://www.youtube.com/watch?v=z95mZVUcJ-E&list=PLE8uP447fYpiBqMVF1hdWl9uFeVEeXRTm"
+                        target="_blank">JavaScript </a></li>
+            </ul>
         </div>
-
-        <div id="notasFunc">
-            <img src="Cosas/fondo-notas.png">
-            <h2>Funcionalidades de las notas</h2>
-            <h3>Menú</h3>
-            <p> Recuerda que puedes utilizar el Doble click para acceder al menú de tus notas.</p>
-            <h3>Eliminar</h3>
-            <p>Usa esta opción para eliminar tus notas viejas.</p>
-            <h3>Drag and Drop</h3>
-            <p>Arrastralas para ubicarlas en un área delimitada diferente!</p>
-            <h3>Color</h3>
-            <p>Tambien puedes elegir un color para el tipo de nota que vas a
-                utilizar. </p>
-            <p> Ejemplo:</p>
-            <p>
-                "Trabajo" = "blanco" - "Hoy" = "rojo" - "Facultad" = "amarillo"
-            </p>
-            <p>
-                "Realizar el envío del pedido 345" => nota blanca
-            </p>
-            <p>
-                "Comprar leche","ir al cajero" => notas rojas
-            </p>
-            <p>
-                "Parcial el 26/5" => nota amarilla
-            </p>
-        </div>
-
-        <div id="chat-gpt">
-            <h2>Uno que está bueno tener a mano!</h2>
-            <a id="chat-gpt-img" href="https://openai.com/blog/chatgpt" target="_blank"><img
-                    src="Cosas/Chat-GPT-logo.png"></a>
-        </div>
-
-        <div class="opcion" id="one"></div>
-        <div class="opcion" id="two"></div>
-        <div class="opcion" id="three"></div>
     </div>
 
-    <div id="notas">
+    <div id="proyectos" class="nav">
+        <h2>Proyectos</h2>
+        <div id="swap" class="one">
+            <div class="proyects" id="one"> <a id="juegos" href="JugateaAlgo.html">Jugate a algo</a></div>
+            <div class="proyects" id="two"> <a id="queVer" href="QueVer.html">Recomendaciones</a></div>
+            <div class="proyects" id="three"> <a id="muro" href="Muro.html">Muro</a> </div>
+            <div class="proyects" id="three">
+                <div id="notasFunc">
+                    <img src="" />
+                    <h3>Funcionalidades de las notas</h3>
+                    <h4>Menú</h4>
+                    <p> Recuerda que puedes utilizar el Doble click para acceder al menú de tus notas.</p>
+                    <h4>Eliminar</h4>
+                    <p>Usa esta opción para eliminar tus notas viejas.</p>
+                    <h4>Drag and Drop</h4>
+                    <p>Arrastralas para ubicarlas en un área delimitada diferente!</p>
+                    <h4>Color</h4>
+                    <p>Tambien puedes elegir un color para el tipo de nota que vas a
+                        utilizar. </p>
+                    <p> Ejemplo:</p>
+                    <p>
+                        "Trabajo" = "blanco" - "Hoy" = "rojo" - "Facultad" = "amarillo"
+                    </p>
+                    <p>
+                        "Realizar el envío del pedido 345" => nota blanca
+                    </p>
+                    <p>
+                        "Comprar leche","ir al cajero" => notas rojas
+                    </p>
+                    <p>
+                        "Parcial el 26/5" => nota amarilla
+                    </p>
+
+                </div>
+
+                <div id="dropZone1" class="dropZone"></div>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div id="contribuir" class="nav">
+        <h2>Contribuir</h2>
+        <div id="cont1">
+            <a href="https://ceneka.net/lebenitezCoding_" target="_blank">
+                <div id="cont2">
+                    <img src="Cosas/Imagenes/redes/MercadoPago.png">
+                    <h2>Realizar aporte</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="notas" class="nav">
+
         <div id="nuevaNota">
-            <h2>Notas</h2>
-            <button id="newNotebtn"><img src="Cosas/newNote.png"></img></button>
+            <h2 id="noteTittle">Notas</h2>
+            <button id="newNoteBtn">
+                <img src="./Cosas/Imagenes/newNote.png"></img>
+                <h2>Nueva nota</h2>
+            </button>
+            <div id="referencias">
+                <h2>Referencias</h2>
+                <input class="color1" type="text">
+                <input class="color2" type="text">
+                <input class="color3" type="text">
+                <input class="color4" type="text">
+                <input class="color5" type="text">
+                <input class="color6" type="text">
+                <input class="color7" type="text">
+                <input class="color8" type="text">
+                <input class="color9" type="text">
+            </div>
         </div>
-        <div id="dropZone" class="dropZone"></div>
-        <div id="dropZone1" class="dropZone"></div>
+
         <div id="dropZone2" class="dropZone"></div>
+
         <div id="dobleclick">
             <div id="menuNotas">
                 <button id="eliminar">Eliminar Nota</button>
                 <button id="cancelar">Cancelar</button>
                 <div id="paletaDisplay">
                     <div id="paletaColores">
-                        <div data-color="colorOne" class="paletaColor" id="color1"></div>
-                        <div data-color="colorTwo" class="paletaColor" id="color2"></div>
-                        <div data-color="colorThree" class="paletaColor" id="color3"></div>
-                        <div data-color="colorFour" class="paletaColor" id="color4"></div>
-                        <div data-color="colorFive" class="paletaColor" id="color5"></div>
-                        <div data-color="colorSix" class="paletaColor" id="color6"></div>
-                        <div data-color="colorSeven" class="paletaColor" id="color7"></div>
-                        <div data-color="colorEight" class="paletaColor" id="color8"></div>
-                        <div data-color="colorNine" class="paletaColor" id="color9"></div>
+                        <div data-color="colorOne" class="paletaColor color1"></div>
+                        <div data-color="colorTwo" class="paletaColor color2"></div>
+                        <div data-color="colorThree" class="paletaColor color3"></div>
+                        <div data-color="colorFour" class="paletaColor color4"></div>
+                        <div data-color="colorFive" class="paletaColor color5"></div>
+                        <div data-color="colorSix" class="paletaColor color6"></div>
+                        <div data-color="colorSeven" class="paletaColor color7"></div>
+                        <div data-color="colorEight" class="paletaColor color8"></div>
+                        <div data-color="colorNine" class="paletaColor color9"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="bulto"></div>
-
     <footer>
-        <nav id="redes">
-            <ul>
-                <li>
-                    <img id="redesimg" src="Cosas\Redes.png"></img>
-                    <span>Redes!</span>
-                </li>
-                <li>
+        <div id="contacto" class="nav">
+            <h2>Contato</h2>
+            <nav>
+                <ul>
+                    <a href="https://wa.me/541136719834" target="_blank">
+                        <li>
+                            <img id="whatsAppIcon" src="./Cosas/Imagenes/redes/WhatsApp.png"></img>
+                            <h3 id="whatsApp">Leo Benitez</h3>
+                        </li>
+                    </a>
+                </ul>
+            </nav>
+            <h2>Redes</h2>
+            <nav>
+                <ul>
                     <a href="https://www.youtube.com/channel/UCmDgrjDhdFktnWrzVwKOFaQ" target="_blank">
-                        <img id="YoutubeIcon" src="Cosas\Youtube.png"></img>
-                        <span id="Youtube">lebenitez_</span>
+                        <li>
+                            <img id="youtubeIcon" src="./Cosas/Imagenes/redes/Youtube.png"></img>
+                            <h3 id="youtube">lebenitez_</h3>
+                        </li>
                     </a>
-                </li>
-                <li>
                     <a href="https://www.instagram.com/lebenitez_/?next=%2F" target="_blank">
-                        <img id="InstagramIcon" src="Cosas\Instagram.png"></img>
-                        <span id="Instagram">lebenitez_</span>
+                        <li>
+                            <img id="instagramIcon" src="./Cosas/Imagenes/redes/Instagram.png"></img>
+                            <h3 id="instagram">lebenitez_</h3>
+                        </li>
                     </a>
-                </li>
-                <li>
                     <a href="https://twitter.com/lebenitez_" target="_blank">
-                        <img id="TwitterIcon" src="Cosas\Twitter.png"></img>
-                        <span id="Twitter">Lein</span>
+                        <li>
+                            <img id="twitterIcon" src="./Cosas/Imagenes/redes/Twitter.png"></img>
+                            <h3 id="twitter">Lein</h3>
+                        </li>
                     </a>
-                </li>
-                <a href=" https://www.twitch.tv/xzoun" target="_blank">
-                    <img id="TwitchIcon" src="Cosas\Twitch.png"></img>
-                    <span id="Twitch">Xzoun</span>
-                </a>
-            </ul>
-        </nav>
-
-
+                    <a href=" https://www.twitch.tv/xzoun" target="_blank">
+                        <li>
+                            <img id="twitchIcon" src="./Cosas/Imagenes/redes/Twitch.png"></img>
+                            <h3 id="twitch">Xzoun</h3>
+                        </li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+        <a href="Muro.html" target="_blank"><img>
+            <h3 id="final">No olvides dejar un comentario, saludos!</h3>
+        </a>
     </footer>
 
-    <div id="bulto2"></div>
-
-    <script type="module" src="Index.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script type="module" src="./Index.js"></script>
 
 </body>
 

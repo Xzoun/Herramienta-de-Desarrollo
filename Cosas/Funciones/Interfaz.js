@@ -1,57 +1,56 @@
-export function interfaz(){
+
+export function interfaz() {
 }
 
-const FixButton = document.getElementById("fixNavBtn");
-FixButton.addEventListener("click",()=>{
-    FixButton.classList.toggle("fixed")
-    const nav = document.getElementById("fixedNav")
-    nav.classList.toggle("fixed");
-    const navDiv = document.getElementById("fixedDiv")
-    navDiv.classList.toggle("fixed");
-    const redes = document.getElementById("redes")
-    redes.classList.toggle("fixed");
-}, { passive: true })
+//---------------------------Starting---------------------------
 
-const DarkButton = document.getElementById("DarkButton");
-DarkButton.addEventListener("click", () => {
-    document.body.classList.toggle("Dark");
-    DarkButton.classList.toggle("activado");
-    const juegos = document.getElementById("juegos");
-    juegos.classList.toggle("Dark");
-    const queVer = document.getElementById("queVer");
-    queVer.classList.toggle("Dark");
-    const css = document.getElementById("atajos");
-    css.classList.toggle("Dark");
-    const redes = document.getElementById("redes");
-    redes.classList.toggle("Dark");
-    const imagengpt = document.getElementById("chat-gpt-img");
-    imagengpt.classList.toggle("Dark");
-}, { passive: true })
+const banner = document.getElementById("banner");
+const presentacion = document.getElementById("presentacion")
+var once = false;
 
-const opcion1 =document.getElementById("one");
-const opcion2 =document.getElementById("two");
-const opcion3 =document.getElementById("three");
-opcion1.addEventListener("click",()=>{     
-    document.getElementById("presentacion").style.display = "block"
-    document.getElementById("notasFunc").style.display = "none"
-    document.getElementById("chat-gpt").style.display = "none"
-    document.getElementById("one").style.background = "black"
-    document.getElementById("two").style.background = "white"
-    document.getElementById("three").style.background = "white"
+window.addEventListener("scroll", () => {
+    const start = document.getElementById("start");
+    const scroll = window.scrollY;
+    
+
+    if (!once && scroll >=start.offsetHeight) {        
+        banner.style.position = "fixed";
+        start.style.display = "none"
+        window.scrollTo({top: 0});
+        once = true;
+    }
+
 })
-opcion2.addEventListener("click",()=>{
-    document.getElementById("presentacion").style.display = "none"
-    document.getElementById("notasFunc").style.display = "block"
-    document.getElementById("chat-gpt").style.display = "none"
-    document.getElementById("one").style.background = "white"
-    document.getElementById("two").style.background = "black"
-    document.getElementById("three").style.background = "white"
+
+const downBtn = document.getElementById("startContinue");
+downBtn.addEventListener("click", () => {
+    banner.style.position = "fixed"
+    presentacion.scrollIntoView({
+        behavior: "smooth"
+    })
+
 })
-opcion3.addEventListener("click",()=>{
-    document.getElementById("presentacion").style.display = "none"
-    document.getElementById("notasFunc").style.display = "none"
-    document.getElementById("chat-gpt").style.display = "block"
-    document.getElementById("one").style.background = "white"
-    document.getElementById("two").style.background = "white"
-    document.getElementById("three").style.background = "black"
-})
+
+//---------------------------Dark mode---------------------------
+
+
+
+const DarkButton = document.getElementById("darkButton");
+DarkButton.addEventListener("click", darkMode);
+
+
+
+function darkMode(){
+        document.body.classList.toggle("Dark");
+        DarkButton.classList.toggle("activado");
+        if(document.body.classList.contains("Dark")){
+            document.getElementById("darkMode").innerText= "Desactivar"
+            document.getElementById("darkIcon").style.filter = "invert(1)";
+            document.getElementById("lightIcon").style.filter = "invert(0)";
+            
+        }else{
+            document.getElementById("darkMode").innerText= "Activar"
+            document.getElementById("darkIcon").style.filter = "invert(0)";
+            document.getElementById("lightIcon").style.filter = "invert(1)";
+        }        
+}

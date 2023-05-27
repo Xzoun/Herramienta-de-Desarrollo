@@ -1,501 +1,72 @@
-* {
-    margin: 0px auto;
-    width: 100%;
-}
-@media (max-width : 767px) {
-body {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(59deg,
-            rgba(2, 0, 36, 1) 0%,
-            rgba(164, 177, 180, 1) 100%);
-    font-family: 'Catamaran', sans-serif;
-    height: 640px;
-}
 
-header {
-    margin-top: 20px;
-    width: 90%;
-    margin-left: 5%;
-    text-align: right;
-    line-height: 55px;
-    color: white;
-}
 
-h1 {
-    border-bottom: 3px solid rgba(217, 180, 180, 1);
-    font-size: 3ch;
-    width: 75%;
-    margin-left: 25%
-}
 
-h2 {
-    font-size: 3ch;
-    text-align: left;
-}
 
-h3 {
-    font-size: 3ch;
-    text-align: center;
-}
+    /*--------------------------- General ----------------------------*/
+    * {
+        margin: 0%;
+        padding: 0%;
+    }
 
-p {
-    font-size: 2ch;
-    text-align: justify;
-}
-
-#linkjuegos {
-    margin-top: 60px;
-    width: 80%;
-    float: left;
-    overflow-x: fixed;
-    overflow-y: scroll;
-    height: 350px;
-}
-
-#linkjuegos:hover {
-    padding-right: 150px;
-}
-
-a {
-    text-decoration: none;
-}
-
-img {
-    height: 60px;
-    width: 60px;
-    margin-left: 10px;
-}
-#imgj1{
-    filter: invert(72%) sepia(82%) saturate(436%) hue-rotate(28deg) brightness(110%) contrast(103%);
-}
-#imgj2{
-    filter:invert(1);
-}
-#divjuego1,
-#divjuego2,
-#divjuego3,
-#divjuego4,
-#divjuego5 {
-    display: flex;
-    transition: .3s ease all;
-    height: 100px;
-    width: 95%;
-    color: white;
-    z-index: 1;
-    position: relative;
-}
-
-#descripcionjuego1,
-#descripcionjuego2,
-#descripcionjuego3,
-#descripcionjuego4,
-#descripcionjuego5 {
-    width: 2500px;
-    z-index: 2;
-}
-
-.parrafo {
-    opacity: 0;
-    position: absolute;
-    top: 30px;
-    left:80px;
-    width: 200px;
-    height: 70%;
-    font-size: 2ch;
-}
-
-.nombrejuego {
-    position: absolute;
-    top: 10px;
-    left:80px;
-}
-
-#divjuego1:hover,
-#divjuego2:hover,
-#divjuego3:hover,
-#divjuego4:hover,
-#divjuego5:hover {
-    color: rgb(255, 255, 255);
-    background: rgb(244, 192, 85);
-    background: linear-gradient(3deg,
-            rgba(244, 192, 85, 1) 4%,
-            rgba(247, 232, 55, 1) 8%,
-            rgba(125, 233, 208, 1) 12%,
-            rgb(92, 226, 222) 16%,
-            rgb(67, 83, 223) 20%,
-            rgb(171, 82, 212) 24%,
-            rgba(217, 180, 217, 1) 28%,
-            rgb(245, 208, 208) 32%,
-            rgb(160, 158, 158) 36%,
-            rgb(2, 0, 36)96%);
-    transition: .3s ease all;
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 150px;
-    padding-right: 50px;
-
-}
-
-#descripcionjuego1:hover>p,
-#descripcionjuego2:hover>p,
-#descripcionjuego3:hover>p,
-#descripcionjuego4:hover>p,
-#descripcionjuego5:hover>p {
-    opacity: 1;
-    color: white;
-}
-
-#descripcionjuego1:hover>h2,
-#descripcionjuego2:hover>h2,
-#descripcionjuego3:hover>h2,
-#descripcionjuego4:hover>h2,
-#descripcionjuego5:hover>h2 {
-    opacity: 0;
-}
-
-.rainbow-text,
-#jokeInterfaz #dia {
-    background-image: linear-gradient(130deg,
-            rgba(244, 192, 85, 1) 4%,
-            rgba(247, 232, 55, 1) 8%,
-            rgba(125, 233, 208, 1) 12%,
-            rgb(92, 226, 222) 16%,
-            rgb(67, 83, 223) 20%,
-            rgb(171, 82, 212) 24%,
-            rgba(217, 180, 217, 1) 28%,
-            rgb(245, 208, 208) 32%,
-            white 36%);
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: blur(1px);
-    rotate: 335deg;
-    position: absolute;
-    text-align: left;
-    width: 220px;
-    font-size: 3ch;
-}
-
-.rainbow-text {
-    right: 50px;
-    top: 220px;
-}
-
-#jokeBoton {
-    position: absolute;
-    left: 83%;
-    top: 310px;
-    width: 50px;
-    border-radius: 100%;
-    height: 50px;
-    background-color: rgba(255, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-#jokeBoton:hover {
-    background-color: rgba(255, 0, 0, 0.5);
-}
-
-#jokeInterfaz {
-    position: relative;
-    height: 200px;
-    width: 350px;
-    top: 40px;
-    border-radius: 12px;
-    display: none;
-    overflow: hidden;
-}
-
-#jokeInterfaz:hover {
-    overflow-y: visible;
-    padding-right: 150px;
-    transition: .4s ease-in-out all;
-    padding-bottom: 60px;
-}
-
-#jokeInterfaz #dia {
-    top: 150px;
-    left: 0px;
-}
-
-#jokeInterfaz #joke {
-    position: absolute;
-    text-align: center;
-    width: 320px;
-    top: 12px;
-    left: 12px;
-    font-size: 2ch;
-    border-radius: 12px;
-    background-color: rgba(240, 248, 255, 0.2);
-
-}
-
-#jokeInterfaz #puntuacionJoke {
-    position: relative;
-    left: -50px;
-    top: 120px;
-    width: 25px;
-}
-
-#puntuacionJoke p {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 40px;
-    font-weight: 800;
-    left: 10px;
-    text-align: center;
-    cursor: pointer;
-}
-
-#abajo,
-#arriba {
-    width: 30px;
-    margin: 10px;
-    height: 30px;
-    cursor: pointer;
-}
-
-#puntuarJoke {
-    position: absolute;
-    bottom: 150px;
-    width: 60px;
-    border-radius: 100%;
-    height: 60px;
-    left: 49%;
-    background-color: rgba(255, 0, 0, 0.1);
-    cursor: pointer;
-    display: none;
-}
-
-#puntuarJoke:hover {
-    background-color: rgba(255, 0, 0, 0.5);
-}
-
-#abajo:hover,
-#arriba:hover,
-#puntuacionJoke p:hover {
-    background-color: rgba(240, 248, 255, 0.2);
-    border-radius: 12px;
-}
-
-footer {
-    position: absolute;
-    bottom: -150px;
-
-    height: 30px;
-    width: 150px;
-    left: 10px;
-}
-
-footer:hover .arrowleft,
-footer:hover span {
-    opacity: 1;
-    padding-left: 10px;
-
-}
-
-footer span {
-    color: white;
-    position: absolute;
-    left: 30px;
-    bottom: 2px;
-    height: 25px;
-}
-
-footer .arrowleft {
-    position: absolute;
-    bottom: 4px;
-    width: 25px;
-    height: 25px;
-    filter: invert(1);
-    opacity: 0;
-    transition: .3s ease all;
-    left: -10px;
-}
-}
-
-@media (min-width: 768px) and (max-width : 1199px){
     body {
         background: rgb(2, 0, 36);
         background: linear-gradient(59deg,
                 rgba(2, 0, 36, 1) 0%,
                 rgba(164, 177, 180, 1) 100%);
         font-family: 'Catamaran', sans-serif;
-        height: 790px;
     }
-    
-    header {
-        margin-top: 20px;
-        width: 90%;
-        margin-left: 5%;
-        text-align: right;
-        line-height: 85px;
-        color: white;
+
+    a {
+        text-decoration: none;
+        color: black;
     }
-    
+
     h1 {
-        border-bottom: 3px solid rgba(217, 180, 180, 1);
-        font-size: 4ch;
-        width: 75%;
-        margin-left: 25%
-    }
-    
-    h2 {
-        font-size: 3ch;
-        text-align: left;
-    }
-    
-    h3 {
-        font-size: 3ch;
         text-align: center;
+        padding: 20px;
     }
-    
-    p {
-        font-size: 2ch;
-        text-align: justify;
-    }
-    
-    #linkjuegos {
-        margin-top: 60px;
-        width: 80%;
-        float: left;
-        overflow-x: fixed;
-        overflow-y: scroll;
-        height: 350px;
-    }
-    
-    #linkjuegos::-webkit-scrollbar,
-    #jokeInterfaz::-webkit-scrollbar,
-    body::-webkit-scrollbar,
-    #jokeInterfaz #joke::-webkit-scrollbar {
+
+
+    /*--------------------------- General ----------------------------*/
+
+
+    body::-webkit-scrollbar {
         width: 5px;
         height: 0px;
         background: fixed;
-    
     }
-    
-    #linkjuegos:hover::-webkit-scrollbar-thumb,
-    #jokeInterfaz:hover::-webkit-scrollbar-thumb,
-    body:hover::-webkit-scrollbar-thumb,
-    #jokeInterfaz #joke:hover::-webkit-scrollbar-thumb {
+
+    body:hover::-webkit-scrollbar-thumb {
         background: rgb(245, 208, 208);
-    
         border-radius: 12px;
         filter: blur(1px);
     }
-    
-    #linkjuegos::-webkit-scrollbar-thumb:hover,
-    #jokeInterfaz::-webkit-scrollbar-thumb:hover,
-    body::-webkit-scrollbar-thumb:hover,
-    #jokeInterfaz #joke::-webkit-scrollbar-thumb:hover {
+
+    body::-webkit-scrollbar-thumb:hover {
         width: 7px;
     }
-    
-    #linkjuegos::-webkit-scrollbar-corner,
-    #jokeInterfaz::-webkit-scrollbar-corner,
-    #jokeInterfaz #joke::-webkit-scrollbar-corner {
-        background: fixed;
-    }
-    
-    #linkjuegos:hover {
-        padding-right: 150px;
-    }
-    
-    a {
-        text-decoration: none;
-    }
-    
+
+
+    /*--------------------------- Logos || Imagenes ----------------------------*/
+
     img {
         height: 95px;
         width: 95px;
-        margin-left: 40px;
+        margin-left: 20%;
     }
-    #imgj1{
+
+    #imgj1 {
         filter: invert(72%) sepia(82%) saturate(436%) hue-rotate(28deg) brightness(110%) contrast(103%);
     }
-    #imgj2{
-        filter:invert(1);
+
+    #imgj2 {
+        filter: invert(1);
     }
-    #divjuego1,
-    #divjuego2,
-    #divjuego3,
-    #divjuego4,
-    #divjuego5 {
-        display: flex;
-        transition: .3s ease all;
-        height: 100px;
-        width: 95%;
-        color: white;
-        z-index: 1;
-        position: relative;
-    }
-    
-    #descripcionjuego1,
-    #descripcionjuego2,
-    #descripcionjuego3,
-    #descripcionjuego4,
-    #descripcionjuego5 {
-        width: 2500px;
-        z-index: 2;
-    }
-    
-    .parrafo {
-        opacity: 0;
-        position: absolute;
-        top: 30px;
-        width: 700px;
-        height: 70%;
-    }
-    
-    .nombrejuego {
-        position: absolute;
-        top: 30px;
-    }
-    
-    #divjuego1:hover,
-    #divjuego2:hover,
-    #divjuego3:hover,
-    #divjuego4:hover,
-    #divjuego5:hover {
-        color: rgb(255, 255, 255);
-        background: rgb(244, 192, 85);
-        background: linear-gradient(3deg,
-                rgba(244, 192, 85, 1) 4%,
-                rgba(247, 232, 55, 1) 8%,
-                rgba(125, 233, 208, 1) 12%,
-                rgb(92, 226, 222) 16%,
-                rgb(67, 83, 223) 20%,
-                rgb(171, 82, 212) 24%,
-                rgba(217, 180, 217, 1) 28%,
-                rgb(245, 208, 208) 32%,
-                rgb(160, 158, 158) 36%,
-                rgb(2, 0, 36)96%);
-        transition: .3s ease all;
-        border-radius: 1000px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-right: 150px;
-    
-    }
-    
-    #descripcionjuego1:hover>p,
-    #descripcionjuego2:hover>p,
-    #descripcionjuego3:hover>p,
-    #descripcionjuego4:hover>p,
-    #descripcionjuego5:hover>p {
-        opacity: 1;
-        color: white;
-    }
-    
-    #descripcionjuego1:hover>h2,
-    #descripcionjuego2:hover>h2,
-    #descripcionjuego3:hover>h2,
-    #descripcionjuego4:hover>h2,
-    #descripcionjuego5:hover>h2 {
-        opacity: 0;
-    }
-    
+
+
+    /*--------------------------- Joke || Boton ----------------------------*/
+
+
     .rainbow-text,
     #jokeInterfaz #dia {
         background-image: linear-gradient(130deg,
@@ -518,12 +89,13 @@ footer .arrowleft {
         width: 220px;
         font-size: 3ch;
     }
-    
+
     .rainbow-text {
         right: 50px;
         top: 220px;
+        z-index: -1;
     }
-    
+
     #jokeBoton {
         position: absolute;
         left: 83%;
@@ -534,35 +106,31 @@ footer .arrowleft {
         background-color: rgba(255, 0, 0, 0.1);
         cursor: pointer;
     }
-    
+
     #jokeBoton:hover {
         background-color: rgba(255, 0, 0, 0.5);
     }
-    
+
+
+    /*--------------------------- Joke || Interfaz ----------------------------*/
+
+
+
     #jokeInterfaz {
-        position: relative;
-        height: 200px;
-        width: 350px;
-        top: 40px;
-        border-radius: 12px;
         display: none;
-        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+
     }
-    
-    #jokeInterfaz:hover {
-        overflow-y: visible;
-        padding-right: 150px;
-        transition: .4s ease-in-out all;
-        padding-bottom: 60px;
-    }
-    
+
     #jokeInterfaz #dia {
-        top: 0px;
-        left: 312px;
-    }
-    
-    #jokeInterfaz #joke {
         position: absolute;
+        top: 200px;
+        left: 512px;
+    }
+
+    #jokeInterfaz #joke {
         text-align: center;
         width: 320px;
         top: 12px;
@@ -570,435 +138,86 @@ footer .arrowleft {
         font-size: 2ch;
         border-radius: 12px;
         background-color: rgba(240, 248, 255, 0.2);
-    
-    }
-    
-    #jokeInterfaz #puntuacionJoke {
-        position: relative;
-        left: 250px;
-        top: 65px;
-        width: 25px;
-    }
-    
-    #puntuacionJoke p {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        top: 40px;
-        font-weight: 800;
-        left: 10px;
-        text-align: center;
-        cursor: pointer;
-    }
-    
-    #abajo,
-    #arriba {
-        width: 30px;
-        margin: 10px;
-        height: 30px;
-        cursor: pointer;
-    }
-    
-    #puntuarJoke {
-        position: absolute;
-        bottom: 150px;
-        width: 60px;
-        border-radius: 100%;
-        height: 60px;
-        left: 49%;
-        background-color: rgba(255, 0, 0, 0.1);
-        cursor: pointer;
-        display: none;
-    }
-    
-    #puntuarJoke:hover {
-        background-color: rgba(255, 0, 0, 0.5);
-    }
-    
-    #abajo:hover,
-    #arriba:hover,
-    #puntuacionJoke p:hover {
-        background-color: rgba(240, 248, 255, 0.2);
-        border-radius: 12px;
-    }
-    
-    footer {
-        position: absolute;
-        bottom: 30px;
-        color: white;
-        height: 30px;
-        width: 150px;
-        left: 80px;
-    }
-    
-    footer:hover .arrowleft,
-    footer:hover span {
-        opacity: 1;
-        padding-left: 10px;
-    }
-    
-    footer span {
-        color: white;
-        position: absolute;
-        left: 30px;
-        bottom: 0px;
-        height: 25px;
-    }
-    
-    footer .arrowleft {
-        position: absolute;
-        bottom: 4px;
-        width: 25px;
-        height: 25px;
-        filter: invert(1);
-        opacity: 0;
-        transition: .3s ease all;
-        left: -40px;
-    }
-} 
 
-@media (min-width :1200px) {
-    body {
-        background: rgb(2, 0, 36);
-        background: linear-gradient(59deg,
-                rgba(2, 0, 36, 1) 0%,
-                rgba(164, 177, 180, 1) 100%);
-        font-family: 'Catamaran', sans-serif;
-        height: 1300px;
+    }
+
+    #volver {
+
+        border-radius: 100%;
+        width: 60px;
+        height: 60px;
+        background-color: rgba(255, 0, 0, 0.1);
+        cursor: pointer;
+        display: none;
+        margin-top: 50px;
+    }
+
+    #volver:hover {
+        background-color: rgba(255, 0, 0, 0.5);
     }
     
-    header {
-        margin-top: 20px;
-        width: 90%;
-        margin-left: 5%;
-        text-align: right;
-        line-height: 150px;
-        color: white;
-    }
-    
-    h1 {
-        border-bottom: 3px solid rgba(217, 180, 180, 1);
-        font-size: 6ch;
-        width: 75%;
-        margin-left: 25%
-    }
-    
-    h2 {
-        font-size: 4ch;
-        text-align: left;
-    }
-    
-    h3 {
-        font-size: 4ch;
-        text-align: center;
-    }
-    
-    p {
-        font-size: 2ch;
-        text-align: justify;
-    }
-    
-    #linkjuegos {
-        margin-top: 60px;
-        width: 80%;
-        float: left;
-        overflow-x: fixed;
-        overflow-y: scroll;
-        height: 900px;
-    }
-    
-    #linkjuegos::-webkit-scrollbar,
-    #jokeInterfaz::-webkit-scrollbar,
-    body::-webkit-scrollbar,
-    #jokeInterfaz #joke::-webkit-scrollbar {
-        width: 5px;
-        height: 0px;
-        background: fixed;
-    
-    }
-    
-    #linkjuegos:hover::-webkit-scrollbar-thumb,
-    #jokeInterfaz:hover::-webkit-scrollbar-thumb,
-    body:hover::-webkit-scrollbar-thumb,
-    #jokeInterfaz #joke:hover::-webkit-scrollbar-thumb {
-        background: rgb(245, 208, 208);
-    
-        border-radius: 12px;
-        filter: blur(1px);
-    }
-    
-    #linkjuegos::-webkit-scrollbar-thumb:hover,
-    #jokeInterfaz::-webkit-scrollbar-thumb:hover,
-    body::-webkit-scrollbar-thumb:hover,
-    #jokeInterfaz #joke::-webkit-scrollbar-thumb:hover {
-        width: 7px;
-    }
-    
-    #linkjuegos::-webkit-scrollbar-corner,
-    #jokeInterfaz::-webkit-scrollbar-corner,
-    #jokeInterfaz #joke::-webkit-scrollbar-corner {
-        background: fixed;
-    }
-    
-    #linkjuegos:hover {
-        padding-right: 150px;
-    }
-    
-    a {
-        text-decoration: none;
-    }
-    
-    img {
-        height: 150px;
-        width: 150px;
-        margin-left: 40px;
-    }
-    #imgj1{
-        filter: invert(72%) sepia(82%) saturate(436%) hue-rotate(28deg) brightness(110%) contrast(103%);
-    }
-    #imgj2{
-        filter:invert(1);
-    }
-    #divjuego1,
-    #divjuego2,
-    #divjuego3,
-    #divjuego4,
-    #divjuego5 {
+
+    /*--------------------------- Juegos ----------------------------*/
+
+
+    .juegos {
         display: flex;
-        transition: .3s ease all;
-        height: 160px;
-        width: 95%;
-        color: white;
-        z-index: 1;
-        position: relative;
+        margin-left: 30px;
+        width: 70%;
+        background-color: rgb(4, 4, 3, 0);
     }
-    
-    #descripcionjuego1,
-    #descripcionjuego2,
-    #descripcionjuego3,
-    #descripcionjuego4,
-    #descripcionjuego5 {
-        width: 2500px;
-        z-index: 2;
-    }
-    
-    .parrafo {
-        opacity: 0;
-        position: absolute;
-        top: 30px;
-        width: 700px;
-        height: 70%;
-        font-size: 3ch;
-    }
-    
-    .nombrejuego {
-        position: absolute;
-        top: 30px;
-    }
-    
-    #divjuego1:hover,
-    #divjuego2:hover,
-    #divjuego3:hover,
-    #divjuego4:hover,
-    #divjuego5:hover {
+
+    .juegos:hover {
         color: rgb(255, 255, 255);
-        background: rgb(244, 192, 85);
+        background: rgb(244, 192, 85,0.8);
         background: linear-gradient(3deg,
-                rgba(244, 192, 85, 1) 4%,
-                rgba(247, 232, 55, 1) 8%,
-                rgba(125, 233, 208, 1) 12%,
-                rgb(92, 226, 222) 16%,
-                rgb(67, 83, 223) 20%,
-                rgb(171, 82, 212) 24%,
-                rgba(217, 180, 217, 1) 28%,
-                rgb(245, 208, 208) 32%,
-                rgb(160, 158, 158) 36%,
-                rgb(2, 0, 36)96%);
-        transition: .3s ease all;
-        border-radius: 1000px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-right: 150px;
-    
+                rgba(244, 192, 85,0.8) 4%,
+                rgba(247, 232, 55,0.8) 8%,
+                rgba(125, 233, 208,0.8) 12%,
+                rgb(92, 226, 222,0.8) 16%,
+                rgb(67, 83, 223,0.8) 20%,
+                rgb(171, 82, 212,0.8) 24%,
+                rgba(217, 180, 217, 0.8) 28%,
+                rgb(245, 208, 208, 0.8 )32%,
+                rgb(160, 158, 158, 0.8) 36%,
+                rgb(2, 0, 36, 0.8)96%);
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
     }
-    
-    #descripcionjuego1:hover>p,
-    #descripcionjuego2:hover>p,
-    #descripcionjuego3:hover>p,
-    #descripcionjuego4:hover>p,
-    #descripcionjuego5:hover>p {
-        opacity: 1;
-        color: white;
-    }
-    
-    #descripcionjuego1:hover>h2,
-    #descripcionjuego2:hover>h2,
-    #descripcionjuego3:hover>h2,
-    #descripcionjuego4:hover>h2,
-    #descripcionjuego5:hover>h2 {
+
+    .juegos p {
         opacity: 0;
-    }
-    
-    .rainbow-text,
-    #jokeInterfaz #dia {
-        background-image: linear-gradient(130deg,
-                rgba(244, 192, 85, 1) 4%,
-                rgba(247, 232, 55, 1) 8%,
-                rgba(125, 233, 208, 1) 12%,
-                rgb(92, 226, 222) 16%,
-                rgb(67, 83, 223) 20%,
-                rgb(171, 82, 212) 24%,
-                rgba(217, 180, 217, 1) 28%,
-                rgb(245, 208, 208) 32%,
-                white 36%);
-        background-clip: border-box;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: blur(2px);
-        rotate: 335deg;
-        position: absolute;
-        text-align: left;
-        width: 350px;
-        font-size: 4ch;
-    }
-    
-    .rainbow-text {
-        right: 50px;
-        top: 300px;
-    }
-    
-    #jokeBoton {
-        position: absolute;
-        left: 83%;
-        top: 450px;
-        width: 80px;
-        border-radius: 100%;
-        height: 80px;
-        background-color: rgba(255, 0, 0, 0.1);
-        cursor: pointer;
-    }
-    
-    #jokeBoton:hover {
-        background-color: rgba(255, 0, 0, 0.5);
-    }
-    
-    #jokeInterfaz {
-        position: relative;
-        height: 500px;
-        width: 800px;
-        top: 40px;
-        border-radius: 12px;
-        display: none;
-        overflow: hidden;
-    }
-    
-    #jokeInterfaz:hover {
-        overflow-y: visible;
-        padding: 10px;
-        transition: .4s ease-in-out all;
-        padding-bottom: 60px;
-    }
-    
-    #jokeInterfaz #dia {
-        top: 0px;
-        left: 400px;
-    }
-    
-    #jokeInterfaz #joke {
-        position: absolute;
-        text-align: center;
-        width: 400px;
-        top: 40px;
-        padding: 10px;
-        font-size: 3ch;
-        border-radius: 12px;
-        background-color: rgba(240, 248, 255, 0.2);
-    }
-    
-    #jokeInterfaz #puntuacionJoke {
-        position: relative;
-        left: 250px;
-        top: 65px;
-        width: 25px;
-    }
-    
-    #puntuacionJoke p {
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        top: 50px;
+        margin-left: 30px;
         font-weight: 800;
-        font-size: 4ch;
-        left: 10px;
-        text-align: center;
-        cursor: pointer;
     }
-    
-    #abajo,
-    #arriba {
-        width: 60px;
-        margin: 10px;
-        height: 60px;
-        cursor: pointer;
-    }
-    
-    #puntuarJoke {
-        position: absolute;
-        bottom: 400px;
-        width: 120px;
-        border-radius: 100%;
-        height: 120px;
-        left: 49%;
-        font-size: 3ch;
-        background-color: rgba(255, 0, 0, 0.1);
-        cursor: pointer;
-        display: none;
-        box-shadow: (0,0,7px,150px, black);
-    }
-    
-    #puntuarJoke:hover {
-        background-color: rgba(255, 0, 0, 0.5);
-    }
-    
-    #abajo:hover,
-    #arriba:hover,
-    #puntuacionJoke p:hover {
-        background-color: rgba(240, 248, 255, 0.2);
-        border-radius: 12px;
-    }
-    
-    footer {
-        position: absolute;
-        bottom: -300px;
-        color: white;
-        height: 30px;
-        width: 150px;
-        left: 80px;
-    }
-    
-    footer:hover .arrowleft,
-    footer:hover span {
+
+    .juegos:hover p {
         opacity: 1;
-        padding-left: 10px;
-    }
-    
-    footer span {
         color: white;
-        position: absolute;
-        left: 50px;
-        bottom: 0px;
-        height: 50px;
-        font-size: 3ch;
     }
-    
-    footer .arrowleft {
-        position: absolute;
-        bottom: 4px;
-        width: 50px;
-        height: 50px;
-        filter: invert(1);
-        opacity: 0;
-        transition: .3s ease all;
-        left: -40px;
+
+    .juegos h2 {
+        margin-left: 30px;
     }
+
+
+
+/*--------------------------- Juegos ----------------------------*/
+
+
+footer {
+    display: flex;
+}
+
+footer:hover .arrowleft {
+    opacity: 1;
+    padding-left: 10px;
+}
+
+footer .arrowleft {
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+    opacity: 0;
+    transition: .3s ease all;
 }
