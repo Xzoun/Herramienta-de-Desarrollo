@@ -4,6 +4,8 @@ const dropZone = document.getElementById("dropZone");
 const dropZone1 = document.getElementById("dropZone1");
 const dropZone2 = document.getElementById("dropZone2");
 
+
+
 cargarNotas().forEach(note => {
   const noteElement = funciones(note.id, note.content, note.divDestino, note.currentLocation, note.color);
   switch (note.divDestino) {
@@ -60,7 +62,14 @@ cargarNotas().forEach(note => {
   }
 });
 
+
+
 newnoteBtn.addEventListener("click", agregar());
+const referencias = document.getElementById("referencias");
+cargarReferencias();
+referencias.addEventListener("input", () => {
+  guardarReferencias();
+});
 
 export function cargarNotas() {
   return JSON.parse(localStorage.getItem("LeoBenitez-notas") || "[]");
@@ -68,6 +77,7 @@ export function cargarNotas() {
 
 function guardar(notes) {
   localStorage.setItem("LeoBenitez-notas", JSON.stringify(notes));
+
 }
 
 function funciones(id, content, divDestino, currentLocation, color) {
@@ -384,4 +394,52 @@ function colores(id, element) {
     colorNuevo.addEventListener("click", colorHandler);
   });
 }
+
+function cargarReferencias() {
+  var inputsJSON = localStorage.getItem('notesReferencias');
+
+  if (inputsJSON) {
+    var referenciasVar = JSON.parse(inputsJSON);
+
+    document.getElementById('color1').value = referenciasVar.color1;
+    document.getElementById('color2').value = referenciasVar.color2;
+    document.getElementById('color3').value = referenciasVar.color3;
+    document.getElementById('color4').value = referenciasVar.color4;
+    document.getElementById('color5').value = referenciasVar.color5;
+    document.getElementById('color6').value = referenciasVar.color6;
+    document.getElementById('color7').value = referenciasVar.color7;
+    document.getElementById('color8').value = referenciasVar.color8;
+    document.getElementById('color9').value = referenciasVar.color9;
+
+  }
+}
+
+function guardarReferencias() {
+
+  var color1 = document.getElementById('color1').value;
+  var color2 = document.getElementById('color2').value;
+  var color3 = document.getElementById('color3').value;
+  var color4 = document.getElementById('color4').value;
+  var color5 = document.getElementById('color5').value;
+  var color6 = document.getElementById('color6').value;
+  var color7 = document.getElementById('color7').value;
+  var color8 = document.getElementById('color8').value;
+  var color9 = document.getElementById('color9').value;
+
+  var notesReferencias = {
+    color1: color1,
+    color2: color2,
+    color3: color3,
+    color4: color4,
+    color5: color5,
+    color6: color6,
+    color7: color7,
+    color8: color8,
+    color9: color9
+  };
+  var inputsJSON = JSON.stringify(notesReferencias);
+  localStorage.setItem('notesReferencias', inputsJSON);
+}
+
+
 
