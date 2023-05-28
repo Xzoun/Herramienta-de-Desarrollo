@@ -308,7 +308,7 @@ html {
 /*--------------------------- Proyectos ----------------------------*/
 #proyectosCont {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px 50px 350px 50px 50px;
+    grid-template-rows: 50px 50px 350px 50px 100px;
     display: grid;
     gap: 2%;
 }
@@ -378,6 +378,7 @@ html {
 
 .descripcionP {
     display: none;
+    padding: 5px;
 }
 
 
@@ -948,7 +949,7 @@ html {
 
     /*--------------------------- Proyectos ---------------------------*/
     #proyectosCont {
-        grid-template-rows: 150px 150px 1050px 150px 150px;
+        grid-template-rows: 150px 150px 1050px 150px 300px;
     }
 
     /*--------------------------- Notas ---------------------------*/

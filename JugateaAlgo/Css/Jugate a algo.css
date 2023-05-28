@@ -202,22 +202,34 @@
 
 
 
-/*--------------------------- Juegos ----------------------------*/
+/*-------------- Footer --------------*/
 
 
 footer {
-    display: flex;
-}
-
-footer:hover .arrowleft {
+    height: 10px;
+    width: 150px;
+  }
+  
+  footer:hover .arrowleft,
+  footer:hover span {
     opacity: 1;
     padding-left: 10px;
-}
-
-footer .arrowleft {
+  }
+  
+  footer span {
+    position: absolute;
+    color: white;
+    font-size: large;
+  }
+  
+  a {
+    font-style: none;
+  }
+  
+  footer .arrowleft {
     width: 25px;
     height: 25px;
-    filter: invert(1);
     opacity: 0;
     transition: .3s ease all;
-}
+    filter: invert(1);
+  }
