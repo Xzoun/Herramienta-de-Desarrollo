@@ -30,6 +30,7 @@ body {
     width: 100%;
     margin: 0%;
     padding: 0%;
+    overflow-y: hidden;
 
     &.Dark {
         background: rgb(35, 33, 33);
@@ -38,11 +39,10 @@ body {
                 rgba(82, 180, 204, 0.9) 90%,
                 rgba(68, 132, 129, 0.8) 95%);
         color: white;
-
     }
 
     &.Dark #banner {
-        background-color: rgb(255, 189, 189);
+        background-color: rgb(158, 117, 117);
     }
 
     &.Dark #banner a {
@@ -51,6 +51,10 @@ body {
 
     &.Dark #banner a:hover {
         color: rgb(255, 189, 189);
+    }
+
+    &.Dark #banner button {
+        border: solid 3px rgb(158, 117, 117);
     }
 
     &.Dark #liContenedores #contenedores li a {
@@ -82,26 +86,48 @@ body {
     }
 }
 
-#start {
-    height: 520px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    font-weight: 800;
+#startBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(1, 189, 194);
+    background: linear-gradient(131deg,
+            rgba(1, 189, 194, 1) 18%,
+            rgba(82, 180, 204, 1) 33%,
+            rgba(68, 132, 129, 1) 95%);
+    z-index: 600;
 }
 
+#start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    height: 500px;
+}
+
+#start h1 {
+    z-index: 601;
+}
+
+
 #start a {
-    height: 10%;
-    width: 10%;
     position: absolute;
     bottom: 1%;
-    left: 45%;
+    left: 40%;
+    right: 40%;
+    text-align: center;
     background-color: rgba(0, 0, 0, 0);
     border: none;
     cursor: pointer;
+    z-index: 601;
+    border-radius: 12px;
+}
+
+#start a img {
+    width: 40%;
+    height: auto;
 }
 
 #start a:hover {
@@ -113,24 +139,28 @@ body {
 }
 
 
+
 /*-------------- Scroll Bar --------------*/
 
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+#descripcion::-webkit-scrollbar {
     width: 7px;
     height: 0px;
     border-right: 10px solid rgba(0, 0, 0, 0.2);
     margin-right: 3px;
 }
 
-body:hover::-webkit-scrollbar-thumb {
+body:hover::-webkit-scrollbar-thumb,
+#descripcion:hover::-webkit-scrollbar-thumb {
     background: rgb(170, 165, 170);
     border-radius: 12px;
     filter: blur(1px);
     border-right: 10px solid rgba(0, 0, 0, 0.2);
 }
 
-body::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover,
+#descripcion::-webkit-scrollbar-thumb:hover {
     width: 7px;
     background: rgb(55, 56, 56);
     border-right: 10px solid rgba(0, 0, 0, 0.2);
@@ -219,7 +249,7 @@ html {
     position: relative;
     border-radius: 50px;
     cursor: pointer;
-    border: 2px solid rgb(255, 189, 189);
+    border: 3px solid rgb(255, 189, 189);
     display: flex;
     background-color: black;
 }
@@ -276,7 +306,89 @@ html {
 
 
 /*--------------------------- Proyectos ----------------------------*/
+#proyectosCont {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px 50px 350px 50px 50px;
+    display: grid;
+    gap: 2%;
+}
 
+.proyectos {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 8px rgba(0, 0, 0, 0.6) solid;
+    background-color: #2e2e2e;
+    color: white;
+}
+
+.proyectos a {
+    color: white;
+}
+
+.proyectos a:hover {
+    color: #ffbdbd;
+}
+
+#p1 {
+    grid-column: 1/3;
+    text-align: center;
+}
+
+#horaActual {
+    text-align: center;
+    font-size: 2ch;
+}
+
+#p3 {
+    text-align: center;
+}
+
+#p4 {
+    text-align: center;
+}
+
+#descripcion {
+    grid-area: 2/3/4/3;
+    transition: .5s ease-in-out all;
+    overflow-y: scroll;
+
+    &.proyecto1 #descripcionP1,
+    &.proyecto2 #descripcionP2,
+    &.proyecto3 #descripcionP3 {
+        display: block;
+    }
+
+    &.proyecto1 #abrirDescP1,
+    &.proyecto2 #abrirDescP2,
+    &.proyecto3 #abrirDescP3 {
+        rotate: 90deg;
+    }
+}
+
+.descripcionContP {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    cursor: pointer;
+}
+
+.descripcionContP:hover img {
+    filter: invert(1);
+}
+
+.descripcionP {
+    display: none;
+}
+
+
+#notasFunc {
+    grid-area: 3/1/4/3;
+}
+
+#p7 {
+    grid-column: 1/4;
+    text-align: center;
+}
 
 /*--------------------------- Contribuir ----------------------------*/
 
@@ -346,7 +458,6 @@ html {
 #notas {
     width: 87%;
     min-height: auto;
-
 }
 
 #nuevaNota {
@@ -362,7 +473,6 @@ html {
     padding-top: 60px;
     padding-right: 20%;
     position: relative;
-
 }
 
 #noteTittle {
@@ -403,7 +513,6 @@ html {
     top: 10px;
     display: flex;
     flex-direction: column;
-
 }
 
 #referencias input {
@@ -475,8 +584,8 @@ html {
 
 .color1 {
     background: linear-gradient(215deg,
-            rgb(216, 0, 0) 0%,
-            rgb(139, 0, 0) 10%);
+            rgb(212, 26, 26) 0%,
+            rgb(142, 6, 6) 10%);
 }
 
 .color2 {
@@ -540,7 +649,7 @@ html {
 }
 
 .color1:hover {
-    background: #d80000;
+    background: rgb(212, 26, 26);
     color: black
 }
 
@@ -585,7 +694,6 @@ html {
 }
 
 
-
 /*--------------------------- Menu - Notas ----------------------------*/
 
 
@@ -598,29 +706,56 @@ html {
     display: none;
     z-index: 220;
     background-color: rgba(0, 255, 255, 0.8);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #menuNotas {
-    position: relative;
-    border-radius: 12px;
-    border: rgb(0, 0, 0) 3px solid;
-    width: 320px;
-    height: 360px;
-    margin: 10% auto;
     background: rgb(255, 255, 255);
     background: linear-gradient(0deg,
             rgba(255, 255, 255, 1) 18%,
             rgba(0, 255, 255, 0.485) 76%);
     font-weight: 800;
     font-size: 4ch;
+    border-radius: 12px;
+    border: rgb(0, 0, 0) 3px solid;
+    width: 70%;
+    margin: 10% 15%;
+}
+
+#paletaColores {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    overflow: hidden;
+    gap: 5px;
+    padding: 5%;
+    min-height: 150px;
+}
+
+#menuBotones {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 99%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.paletaColor {
+    display: flex;
+    flex-grow: 1;
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 100px;
+    cursor: pointer;
 }
 
 #cancelar {
-    position: absolute;
-    bottom: 10px;
-    right: 10%;
-    width: 25%;
-    height: 30px;
+    width: 30%;
+    height: 50%;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -631,17 +766,9 @@ html {
     z-index: 30;
 }
 
-#cancelar:hover,
-#eliminar:hover {
-    border: solid 3px black;
-}
-
 #eliminar {
-    position: absolute;
-    bottom: 10px;
     width: 30%;
-    height: 30px;
-    right: 37.5%;
+    height: 50%;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -651,23 +778,12 @@ html {
             rgba(255, 255, 255, 0.600) 60%);
 }
 
-#paletaColores {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 90px);
-    padding: 0px;
-    gap: 2px;
-    margin: 5% 7%;
-    cursor: pointer;
+#cancelar:hover,
+#eliminar:hover {
+    border: solid 3px black;
 }
 
-.paletaColor {
-    border-radius: 100%;
-    height: 90px;
-}
+
 
 /*--------------------------- Footer || Contacto ----------------------------*/
 
@@ -734,10 +850,25 @@ html {
     margin-bottom: 20px;
 }
 
+/*--------------------------- Resposive ---------------------------*/
+
+
 @media (max-width: 768px) {
+
+    #start a {
+        border-radius: 5px;
+    }
 
     body {
         font-size: 1.5ch;
+    }
+
+    .nav {
+        top: 40px;
+    }
+
+    #presentacion {
+        border-radius: 12px;
     }
 
     #contacto li {
@@ -783,44 +914,44 @@ html {
 
 @media (min-width: 1200px) {
 
-    #banner button {
-        height: 60px;
-        width: 120px;
-        border:5px solid  rgb(255, 189, 189);
-    }
-    #banner button img{
-        width: auto;
-        height: 55px;
-    }
-
-    #start {
-        height: 2100px;
-        justify-content: center;
-    }
+    /*--------------------------- Generales || Inicio || Barra nav ---------------------------*/
 
     body {
         font-size: 5ch;
     }
 
-    #contribuir img {
-        width: 70%;
-        height: auto;
+    #start {
+        align-items: start;
+        padding-top: 30%;
     }
 
-    #contacto li {
-        width: 210px;
-        height: 150px;
-        padding: 20px;
-        font-size: 1.2ch;
+    #start {
+        height: 1500px;
+        border: #ffbdbd solid 3px;
+        z-index: 6001;
     }
 
-    #referencias {
-        width: 20%;
+    #banner button {
+        height: 60px;
+        width: 120px;
+        border: 5px solid rgb(255, 189, 189);
     }
 
-    #referencias input {
-        height: 30px;
+    #banner button img {
+        width: auto;
+        height: 55px;
     }
+
+    .nav {
+        top: 150px;
+    }
+
+    /*--------------------------- Proyectos ---------------------------*/
+    #proyectosCont {
+        grid-template-rows: 150px 150px 1050px 150px 150px;
+    }
+
+    /*--------------------------- Notas ---------------------------*/
 
     .note {
         height: 200px;
@@ -833,6 +964,7 @@ html {
         width: 250px;
     }
 
+    /*--------------------------- Notas || Drop Zones ---------------------------*/
     #newNoteBtn {
         width: 28%;
         justify-content: center;
@@ -853,10 +985,10 @@ html {
     }
 
     #nuevaNota {
-        width: 90%;
+        width: 80%;
         grid-template-columns: repeat(auto-fill, 200px);
         gap: 1%;
-        padding: 70px;
+        padding-top: 70px;
         min-height: 300px;
     }
 
@@ -864,4 +996,44 @@ html {
         font-size: 2ch;
     }
 
+    #referencias {
+        width: 20%;
+    }
+
+    #referencias input {
+        height: 30px;
+    }
+
+    /*--------------------------- Notas || Menu  ---------------------------*/
+    #menuNotas {
+        margin-top: 5%;
+    }
+
+    #paletaColores {
+        min-height: 400px;
+    }
+
+    #menuBotones {
+        height: 200px;
+    }
+
+    #menuBotones button {
+        font-size: 1.5ch;
+        border-radius: 50px;
+        overflow: hidden;
+    }
+
+
+/*--------------------------- Footer || Contacto ---------------------------*/
+#contribuir img {
+    width: 70%;
+    height: auto;
+}
+
+#contacto li {
+    width: 210px;
+    height: 150px;
+    padding: 20px;
+    font-size: 1.2ch;
+}
 }

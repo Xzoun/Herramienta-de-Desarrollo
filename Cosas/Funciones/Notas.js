@@ -67,6 +67,7 @@ cargarNotas().forEach(note => {
 newnoteBtn.addEventListener("click", agregar());
 const referencias = document.getElementById("referencias");
 cargarReferencias();
+
 referencias.addEventListener("input", () => {
   guardarReferencias();
 });
@@ -117,7 +118,7 @@ function funciones(id, content, divDestino, currentLocation, color) {
 
   element.addEventListener("dblclick", () => {
     document.body.style.overflow = "hidden";
-    menu.style.display = "block";
+    menu.style.display = "flex";
     colores(id, element);
   });
 

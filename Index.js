@@ -1,5 +1,6 @@
 import { cargarNotas } from "./Cosas/Funciones/Notas.js"
 import {interfaz} from "./Cosas/Funciones/Interfaz.js"
+import {Proyectos} from"./Cosas/Funciones/Proyectos.js"
 
 const typed = new Typed('.typed', {
     strings:[
@@ -13,3 +14,4 @@ const typed = new Typed('.typed', {
     typeSpeed:75,
     backSpeed:75
 });
+

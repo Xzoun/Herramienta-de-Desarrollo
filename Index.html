@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+    <div id="startBackground"></div>
     <div id="start">
         <h1><span class="typed"></span></h1>
         <a id="startContinue"><img src="Cosas/Imagenes/Down.png" alt="Continuar" /></a>
@@ -31,7 +31,7 @@
                     <ul id="contenedores">
                         <li><a href="#notas">Drop Zone Main</a></li>
                         <li><a href="#dropZoneUbi">Drop Zone 1</a></li>
-                        <li><a href="#dropZone1">Drop Zone 2</a></li>
+                        <!-- <li><a href="#dropZone1">Drop Zone 2</a></li> -->
                     </ul>
                 </li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -57,9 +57,8 @@
         </p>
         <h2>Ah variadito... Y de programación?</h2>
         <p>
-            Mi primer contacto con la programación fue en 2023, inicié en un curso sobre
-            lógica de programación, luego pasé a uno de Java y ahora estoy en otro sobre
-            Front End.
+            Mi primer contacto con la programación fue en 2023, realicé en un curso sobre
+            lógica de programación, actualmente estoy en uno de Java y otro de Front End.
             Considero que tengo un gran futuro en el área y que recién estoy dando mis primeros
             pasos en este basto mundo de las teclas.
         </p>
@@ -125,45 +124,92 @@
 
     <div id="proyectos" class="nav">
         <h2>Proyectos</h2>
-        <div id="swap" class="one">
-            <div class="proyects" id="one"> <a id="juegos" href="JugateaAlgo.html">Jugate a algo</a></div>
-            <div class="proyects" id="two"> <a id="queVer" href="QueVer.html">Recomendaciones</a></div>
-            <div class="proyects" id="three"> <a id="muro" href="Muro.html">Muro</a> </div>
-            <div class="proyects" id="three">
-                <div id="notasFunc">
-                    <img src="" />
-                    <h3>Funcionalidades de las notas</h3>
-                    <h4>Menú</h4>
-                    <p> Recuerda que puedes utilizar el Doble click para acceder al menú de tus notas.</p>
-                    <h4>Eliminar</h4>
-                    <p>Usa esta opción para eliminar tus notas viejas.</p>
-                    <h4>Drag and Drop</h4>
-                    <p>Arrastralas para ubicarlas en un área delimitada diferente!</p>
-                    <h4>Color</h4>
-                    <p>Tambien puedes elegir un color para el tipo de nota que vas a
-                        utilizar. </p>
-                    <p> Ejemplo:</p>
-                    <p>
-                        "Trabajo" = "blanco" - "Hoy" = "rojo" - "Facultad" = "amarillo"
-                    </p>
-                    <p>
-                        "Realizar el envío del pedido 345" => nota blanca
-                    </p>
-                    <p>
-                        "Comprar leche","ir al cajero" => notas rojas
-                    </p>
-                    <p>
-                        "Parcial el 26/5" => nota amarilla
-                    </p>
+        <div id="proyectosCont">
 
+            <h2 id="p1" class="proyectos">
+                <a id="juegos" href="JugateaAlgo.html">Jugate a algo</a>
+            </h2>
+
+            <h2 id="horaActual" class="proyectos"></h2>
+
+            <h2 id="p3" class="proyectos">
+                <a id="queVer" href="QueVer.html">Recomendaciones</a>
+            </h2>
+
+            <h2 id="p4" class="proyectos">
+                <a id="muro" href="Muro.html">Muro</a>
+            </h2>
+
+            <div id="descripcion" class="proyectos">
+                <h3>Descripciones</h3>
+                <div id="proyecto1" class="descripcionContP" data-p="p1">
+                    <img id="abrirDescP1" data-p="p1" src="./Cosas/Imagenes/Right.png" alt="">
+                    <h3 data-p="p1">Jugate a algo.</h3>
                 </div>
-
-                <div id="dropZone1" class="dropZone"></div>
-
+                <div id="descripcionP1" class="descripcionP">
+                    <p>
+                        Es el primer proyecto que inicié, un juego de piedra papel o tijeras.
+                        Buscando profundizar en JavaScript, desde el manejo de las funciones,
+                        pasando por la interacción con el usuario hasta el desarrollo de lógica
+                    </p>
+                    <h4>La viborita</h4>
+                    <p>
+                        Este juego es para aprender Canvas. Continúa en desarrollo debido a errores en
+                        la detección de colisiones y el modo por niveles que consistirá en resolver
+                        laberintos.
+                    </p>
+                </div>
+                <div id="proyecto2" class="descripcionContP" data-p="p2">
+                    <img id="abrirDescP2" data-p="p2" src="./Cosas/Imagenes/Right.png" alt="">
+                    <h3 data-p="p2">Que ver??</h3>
+                </div>
+                <div id="descripcionP2" class="descripcionP">
+                    <p>
+                        En este segundo proyecto busco aprender más sobre diseño, css, html y javaScript.
+                        Replicando el diseño de una de las principales páginas de contenido multimedia me
+                        parece una buena forma de aprender del trabajo de los demás.
+                        Continúa en desarrollo por falta de tiempo.
+                    </p>
+                </div>
+                <div id="proyecto3" class="descripcionContP" data-p="p3">
+                    <img id="abrirDescP3" src="./Cosas/Imagenes/Right.png" alt="" data-p="p3">
+                    <h3 data-p="p3">Muro.</h3>
+                </div>
+                <div id="descripcionP3" class="descripcionP">
+                    <p>
+                        El objetivo claramente es aprender SQL y conocer las opiniones que
+                        me puedan aportar algo como desarrolador.
+                        Continúa en desarrollo.
+                    </p>
+                </div>
             </div>
+
+            <div id="notasFunc" class="proyectos">
+                <h3>Funcionalidades de las notas</h3>
+                <h4>Menú</h4>
+                <p> Recuerda que puedes utilizar el Doble click para acceder al menú de tus notas.</p>
+                <h4>Eliminar</h4>
+                <p>Usa esta opción para eliminar tus notas viejas.</p>
+                <h4>Drag and Drop</h4>
+                <p>Arrastralas para ubicarlas en un área delimitada diferente!</p>
+                <h4>Color</h4>
+                <p>Tambien puedes elegir un color para el tipo de nota que vas a
+                    utilizar. </p>
+                <p> Ejemplo:</p>
+                <p>
+                    "Trabajo" = "blanco" - "Hoy" = "rojo" - "Facultad" = "amarillo"
+                </p>
+            </div>
+
+            <h2 id="p7" class="proyectos">Por venir</h2>
+
+            <h2 id="p8" class="proyectos">Tienda de ventas real</h2>
+
+            <div id="p9" class="proyectos"></div>
+
+            <div id="p10" class="proyectos"></div>
+
         </div>
-
-
 
 
     </div>
@@ -190,15 +236,15 @@
             </button>
             <div id="referencias">
                 <h2>Referencias</h2>
-                <input class="color1" type="text" id="color1" />
-                <input class="color2" type="text" id="color2" />
-                <input class="color3" type="text" id="color3" />
-                <input class="color4" type="text" id="color4" />
-                <input class="color5" type="text" id="color5" />
-                <input class="color6" type="text" id="color6" />
-                <input class="color7" type="text" id="color7" />
-                <input class="color8" type="text" id="color8" />
-                <input class="color9" type="text" id="color9" />
+                <input class="color1" type="text" id="color1" placeholder="Supermercado" />
+                <input class="color2" type="text" id="color2" placeholder="Estudios" />
+                <input class="color3" type="text" id="color3" placeholder="Trabajo" />
+                <input class="color4" type="text" id="color4" placeholder="Ocio" />
+                <input class="color5" type="text" id="color5" placeholder="To do list">
+                <input class="color6" type="text" id="color6" placeholder="Ayuda memoria" />
+                <input class="color7" type="text" id="color7" placeholder="A corto plazo" />
+                <input class="color8" type="text" id="color8" placeholder="A largo plazo" />
+                <input class="color9" type="text" id="color9" placeholder="Ideas dudosas" />
             </div>
         </div>
 
@@ -206,20 +252,20 @@
 
         <div id="dobleclick">
             <div id="menuNotas">
-                <button id="eliminar">Eliminar Nota</button>
-                <button id="cancelar">Cancelar</button>
-                <div id="paletaDisplay">
-                    <div id="paletaColores">
-                        <div data-color="colorOne" class="paletaColor color1"></div>
-                        <div data-color="colorTwo" class="paletaColor color2"></div>
-                        <div data-color="colorThree" class="paletaColor color3"></div>
-                        <div data-color="colorFour" class="paletaColor color4"></div>
-                        <div data-color="colorFive" class="paletaColor color5"></div>
-                        <div data-color="colorSix" class="paletaColor color6"></div>
-                        <div data-color="colorSeven" class="paletaColor color7"></div>
-                        <div data-color="colorEight" class="paletaColor color8"></div>
-                        <div data-color="colorNine" class="paletaColor color9"></div>
-                    </div>
+                <div id="paletaColores">
+                    <div data-color="colorOne" class="paletaColor color1"></div>
+                    <div data-color="colorTwo" class="paletaColor color2"></div>
+                    <div data-color="colorThree" class="paletaColor color3"></div>
+                    <div data-color="colorFour" class="paletaColor color4"></div>
+                    <div data-color="colorFive" class="paletaColor color5"></div>
+                    <div data-color="colorSix" class="paletaColor color6"></div>
+                    <div data-color="colorSeven" class="paletaColor color7"></div>
+                    <div data-color="colorEight" class="paletaColor color8"></div>
+                    <div data-color="colorNine" class="paletaColor color9"></div>
+                </div>
+                <div id="menuBotones">
+                    <button id="eliminar">Eliminar Nota</button>
+                    <button id="cancelar">Cancelar</button>
                 </div>
             </div>
         </div>
