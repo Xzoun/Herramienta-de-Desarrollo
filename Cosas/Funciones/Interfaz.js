@@ -14,7 +14,7 @@ window.addEventListener("scroll", () => {
     const scroll = window.scrollY;
     
 
-    if (!once && scroll >=start.offsetHeight) {        
+    if (!once && scroll >=startBackground.offsetHeight/2) {        
         banner.style.position = "fixed";
         start.style.display = "none"
         startBackground.style.display = "none"
