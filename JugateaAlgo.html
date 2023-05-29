@@ -14,14 +14,15 @@
 
 <body>
     <div id="Todo">
+        <div id="fondo"></div>
         <header>
             <h1>Jugate a algo</h1>
         </header>
         <div id="linkjuegos">
             <a href="./JugateaAlgo/Viborita/Viborita.html">
                 <div class="juegos">
-                    <div><img src="./JugateaAlgo/Viborita/Cosas/Snake.png" id="imgj1"></div>
-                    <div id="descripcionjuego1">
+                    <div class="imagen"><img src="./JugateaAlgo/Viborita/Cosas/Snake.png" id="imgj1"></div>
+                    <div class="descripcion">
                         <h2 class="nombrejuego">Viborita</h2>
                         <p class="parrafo">No dejes que se estrelle! Un clasico en el que podras elegir
                             entre este modo, Contrareloj o por Niveles.</p>
@@ -30,8 +31,8 @@
             </a>
             <a href="./JugateaAlgo/PiedraPapeloTijeras/PiedraPapeloTijeras.html">
                 <div class="juegos">
-                    <div> <img src="./JugateaAlgo/PiedraPapeloTijeras/Cosas/juego2.png" id="imgj2"></div>
-                    <div id="descripcionjuego2">
+                    <div class="imagen"> <img src="./JugateaAlgo/PiedraPapeloTijeras/Cosas/juego2.png" id="imgj2"></div>
+                    <div class="descripcion">
                         <h2 class="nombrejuego">Piedra, Papel o Tijeras?</h2>
                         <p class="parrafo">Un juego vs I.A. en el que dependeras del azar y de
                             tus decisiones a la hora de activar las mejoras!</p>
@@ -40,8 +41,8 @@
             </a>
             <a href="./JugateaAlgo/Ahorcado/Ahorcado.html">
                 <div class="juegos">
-                    <div> <img src="./JugateaAlgo/Ahorcado/Cosas/juego3.png"></div>
-                    <div id="descripcionjuego3">
+                    <div class="imagen"> <img src="./JugateaAlgo/Ahorcado/Cosas/juego3.png"></div>
+                    <div class="descripcion">
                         <h2 class="nombrejuego">Ahorcado</h2>
                         <p class="parrafo">En este clásico se deberá buscar una palabra eligiendo
                             letras hasta completarla o morir ahorcado.</p>
@@ -50,8 +51,8 @@
             </a>
             <a href="JugateaAlgo.html">
                 <div class="juegos">
-                    <div><img src="./JugateaAlgo/PiedraPapeloTijeras/Cosas/juego2.png"></div>
-                    <div id="descripcionjuego4">
+                    <div class="imagen"><img src="./JugateaAlgo/PiedraPapeloTijeras/Cosas/juego2.png"></div>
+                    <div class="descripcion">
                         <h2 class="nombrejuego">Juego 4</h2>
                         <p class="parrafo">Este juego todavia no se penso!</p>
                     </div>
@@ -59,8 +60,8 @@
             </a>
             <a href="JugateaAlgo.html">
                 <div class="juegos">
-                    <div><img src="./JugateaAlgo/PiedraPapeloTijeras/Cosas/juego2.png"></div>
-                    <div id="descripcionjuego5">
+                    <div class="imagen"><img src="./JugateaAlgo/PiedraPapeloTijeras/Cosas/juego2.png"></div>
+                    <div class="descripcion">
                         <h2 class="nombrejuego">Juego 5</h2>
                         <p class="parrafo">Este juego todavia no se penso!</p>
                     </div>
@@ -71,7 +72,7 @@
         <h3 class="rainbow-text" id="click1">Joke of the day! Wanna hear it?</h3>
         <button class="click2" id="jokeBoton">Sure!</button>
 
-       
+
         <div id="jokeInterfaz">
             <div id="chiste">
                 <h2 id="dia"></h2>
@@ -81,12 +82,11 @@
         </div>
 
         <footer>
-            <a href="Index.html">
-                <div id="atras">
-                    <img class="arrowleft" src="./QueVer/Cosas/Imagenes/Arrow left.png"></img>
-                    <span>Atras</span>
-                </div>
-            </a>
+            <div id="atras">
+                <a href="Index.html">
+                    <img class="arrowleft" src="./QueVer/Cosas/Imagenes/Arrow left.png"> <span>Atras</span></img>
+                </a>
+            </div>
         </footer>
 
         <script type="module" src="./JugateaAlgo/Joke.js"></script>

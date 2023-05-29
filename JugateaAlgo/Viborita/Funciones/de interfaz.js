@@ -1,14 +1,13 @@
 export function interfazFc(cont) {
     //Elegir modo de juego
     if (cont == 0) {
-        document.getElementById("indicacioninicial").style.display = "block"
-        document.getElementById("mododejuegobotones").style.display = "block"
+        document.getElementById("modoBotons").style.display = "flex"
         document.getElementById("bienvenida").style.display = "none"
         //Interfaz General - Inicio        
     } else if (cont == 1) {
-        document.getElementById("juegoCanvas").style.display = "block"
-        document.getElementById("racha").style.display = "block"
-        document.getElementById("mododejuegobotones").style.display = "none"
+        document.getElementById("canvasContenedor").style.display = "block"
+        document.getElementById("racha").style.display = "grid"
+        document.getElementById("modoBotons").style.display = "none"
         document.getElementById("findeljuego").style.display = "none"
         //reglamento
     } else if (cont == 2) {
@@ -17,9 +16,9 @@ export function interfazFc(cont) {
 
         //Fin del juego
     } else if (cont == 3) {
-        document.getElementById("racha").style.display = "block"
-        document.getElementById("findeljuego").style.display = "block"
-        document.getElementById("juegoCanvas").style.display = "none"
+        document.getElementById("racha").style.display = "grid"
+        document.getElementById("findeljuego").style.display = "flex"
+        document.getElementById("canvasContenedor").style.display = "none"
         document.getElementById("pantalla").style.display = "none"
         document.getElementById("vida").style.display = "none"
         
@@ -28,7 +27,7 @@ export function interfazFc(cont) {
         document.getElementById("despedida").style.display = "block"
         document.getElementById("despedida").innerText = "Gracias por jugar " + nombre + ", hasta pronto!"
         document.getElementById("findeljuego").style.display = "none"
-        document.getElementById("juegoCanvas").style.display = "none"
+        document.getElementById("canvasContenedor").style.display = "none"
     }
 }
 

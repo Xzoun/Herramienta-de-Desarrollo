@@ -41,6 +41,10 @@ body {
         color: white;
     }
 
+    &.Dark #start h1{
+        filter: invert(1);
+    }
+
     &.Dark #banner {
         background-color: rgb(158, 117, 117);
     }
@@ -76,14 +80,6 @@ body {
     &.Dark #newNoteBtn:hover {
         filter: invert(99%) sepia(34%) saturate(2770%) hue-rotate(290deg) brightness(95%) contrast(117%);
     }
-
-    &.Dark #start a {
-        filter: invert(1);
-    }
-
-    &.Dark #start a:hover {
-        filter: invert(70%) sepia(18%) saturate(511%) hue-rotate(313deg) brightness(103%) contrast(123%);
-    }
 }
 
 #startBackground {
@@ -110,7 +106,6 @@ body {
 #start h1 {
     z-index: 601;
 }
-
 
 #start a {
     position: absolute;
@@ -308,7 +303,7 @@ html {
 /*--------------------------- Proyectos ----------------------------*/
 #proyectosCont {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px 50px 350px 50px 100px;
+    grid-template-rows: 50px 50px 350px auto auto;
     display: grid;
     gap: 2%;
 }
@@ -339,11 +334,11 @@ html {
     font-size: 2ch;
 }
 
-#p3 {
-    text-align: center;
-}
-
-#p4 {
+#p3,
+#p4,
+#p8,
+#p9,
+#p10 {
     text-align: center;
 }
 
@@ -371,15 +366,7 @@ html {
 
 #p7 {
     grid-column: 1/4;
-    text-align: center;
-}
-
-#p8 {
-    text-align: center;
-}
-
-#p9 {
-    text-align: center;
+    padding-left: 5%;
 }
 
 .descripcionContP {
@@ -397,8 +384,6 @@ html {
     display: none;
     padding: 5px;
 }
-
-
 
 
 /*--------------------------- Contribuir ----------------------------*/
@@ -569,6 +554,7 @@ html {
     bottom: 10px;
     width: 120px;
     height: 120px;
+    z-index: 600;
 }
 
 #dropZone2:hover {
@@ -886,10 +872,14 @@ html {
 
     /*--------------------------- Proyectos ---------------------------*/
     #proyectosCont {
-        grid-template-columns: 45% 45%;
-        grid-template-rows: 60px 60px 60px 50px 80px;
+        grid-template-columns: 48.5% 48.5%;
+        grid-template-rows: 60px 60px 60px auto 80px;
         display: grid;
         gap: 2%;
+    }
+
+    .proyectos {
+        border-radius: solid rgba(0, 0, 0, 0.6) 3px;
     }
 
     #p1 {
@@ -929,7 +919,7 @@ html {
 
     #p8 {
         grid-row: 5/6;
-        grid-column: 1/2;
+        grid-column: 1/2
     }
 
     #p9 {
@@ -1023,7 +1013,11 @@ html {
 
     /*--------------------------- Proyectos ---------------------------*/
     #proyectosCont {
-        grid-template-rows: 150px 150px 1050px 150px 300px;
+        grid-template-rows: 150px 150px 1050px auto 150px;
+    }
+
+    .proyectos {
+        border-radius: 12px;
     }
 
     /*--------------------------- Notas ---------------------------*/
@@ -1064,7 +1058,7 @@ html {
         grid-template-columns: repeat(auto-fill, 200px);
         gap: 1%;
         padding-top: 70px;
-        min-height: 300px;
+        min-height: 320px;
     }
 
     #nuevaNota h2 {

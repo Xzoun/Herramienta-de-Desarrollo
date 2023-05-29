@@ -1,0 +1,205 @@
+/*--------------------------- Interfaz ----------------------------*/
+
+#juego {
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+    width: 90%;
+}
+
+#botonera {
+    width: 300px;
+    display: none;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s ease-in-out all;
+}
+
+.botonMobile {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+}
+
+.botonMobile img {
+    width: 100px;
+    height: 100px;
+}
+
+#ArrowUp {
+    grid-column: 2/3;
+}
+
+#ArrowRight {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    rotate:90deg;
+}
+
+#ArrowDown {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+#ArrowLeft {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    rotate:90deg;
+}
+
+/*--------------------------- Interfaz || Centro ----------------------------*/
+#canvasContenedor {
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+canvas {
+    background: rgb(157, 217, 60);
+}
+
+#findeljuego {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+}
+
+#si,
+#no {
+    width: 70px;
+    height: 35px;
+    margin: 0%;
+    padding: 0%;
+}
+
+#si:hover,
+#no:hover {
+    color: white;
+    transition: .4s ease ease-in-out all;
+}
+
+/*--------------------------- Interfaz || Puntuacion ----------------------------*/
+
+#rachaCont {
+    margin-top: 5%;
+    width: 25%;
+    height: 140px;
+}
+
+#racha {
+    display: grid;
+    color: white;
+    text-align: center;
+    gap: 1%;
+    grid-template-columns: auto auto;
+    grid-template-rows: 35px 35px 35px;
+    align-items: start;
+}
+
+.racha {
+    background-color: black;
+    border-radius: 12px;
+}
+
+#puntuacion {
+    grid-column: 1/3;
+}
+
+#nombre {
+    background-color: black;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+#rachaactual {
+    background-color: black;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+#pantalla {
+    grid-column: 1/3;
+}
+
+/*--------------------------- Fin del juego ----------------------------*/
+
+#despedida {
+    transition: .3s ease all;
+    height: 240px;
+    width: 240px;
+    display: none;
+    text-align: center;
+    padding-top: 10%;
+}
+
+@media (max-width: 768px) {
+    /*--------------------------- General ----------------------------*/
+
+    #juego {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*--------------------------- Botonera mobile ----------------------------*/
+
+    #botonera {
+        display: grid;
+    }
+
+
+    .centro {
+        width: 300px;
+        height: 300px;
+    }
+
+    #cambiarmodoCont {
+        width: 90%;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    #rachaCont {
+        width: 90%;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+
+
+    #racha {
+        display: grid;
+        color: white;
+        text-align: center;
+        gap: 1%;
+        grid-template-columns: auto auto;
+        grid-template-rows: 70px 70px 70px;
+        align-items: start;
+    }
+
+    #si,
+    #no {
+        width: 120px;
+        height: 70px;
+        margin: 0%;
+        padding: 0%;
+    }
+
+    #findeljuego {
+
+        font-size: 1.5ch;
+    }
+
+    #despedida {
+
+        font-size: 1.5ch;
+    }
+}

@@ -3,7 +3,7 @@ import { crearObstaculo } from "../Funciones/de modo supervivencia.js"
 import { findeljuego } from "../Funciones/de interfaz.js"
 const juegocanvas = document.getElementById("juegoCanvas"),
     ctx = juegocanvas.getContext("2d");
-
+const botonera = document.getElementById("botonera");
 let contador = -1;
 
 function limpiarcanvas(ctx) {
@@ -20,9 +20,11 @@ function inicio() {
             ctx.textAlign = "start"
             ctx.fillText("3", 140, 150)
             ctx.stroke();
+            botonera.style.opacity = "0"
             break;
         case 1:
             limpiarcanvas(ctx)
+            botonera.style.opacity = "0.8"
             break;
         case 2:
             ctx.beginPath();
@@ -31,9 +33,11 @@ function inicio() {
             ctx.textAlign = "start"
             ctx.fillText("2", 140, 150)
             ctx.stroke();
+            botonera.style.opacity = "0.5"
             break;
         case 3:
             limpiarcanvas(ctx)
+            botonera.style.opacity = "0"
             break;
         case 4:
             ctx.beginPath();
@@ -42,14 +46,17 @@ function inicio() {
             ctx.textAlign = "start"
             ctx.fillText("1", 140, 150)
             ctx.stroke();
+            botonera.style.opacity = "0.2"
             break;
         case 5:
+            botonera.style.opacity = "0"
             limpiarcanvas(ctx)
             clearInterval(intervaloinicio)
     }
 }
 
 let intervaloinicio = setInterval(inicio, 500)
+
 setTimeout(() => {
 
     document.getElementById("rachaactual").innerText = 0;
@@ -81,6 +88,17 @@ setTimeout(() => {
         else if (e.key === "ArrowRight" && Snake[0].direccion != 0) Snake[0].direccion = 2;
     })
 
+    botonera.addEventListener("click", (e) => {
+        let boton = e.target.closest("button");
+        if (boton) {
+            let direccion = boton.getAttribute("data-direccion");
+
+            if (direccion === "ArrowUp" && Snake[0].direccion != 3) Snake[0].direccion = 1;
+            else if (direccion === "ArrowLeft" && Snake[0].direccion != 2) Snake[0].direccion = 0;
+            else if (direccion === "ArrowDown" && Snake[0].direccion != 1) Snake[0].direccion = 3;
+            else if (direccion === "ArrowRight" && Snake[0].direccion != 0) Snake[0].direccion = 2;
+        }
+    })
 
     let ponerObstaculos = function obstaculos() {
         segundero++;
@@ -134,15 +152,15 @@ setTimeout(() => {
                 } else if (segundero >= 45 && segundero < 120 && segundero % 5 == 0) {
                     cont = 1;
                     puntuacion += 2;
-                    for (let i in Obstaculo) {Obstaculo[i].moverObstaculos(cont) }
+                    for (let i in Obstaculo) { Obstaculo[i].moverObstaculos(cont) }
                 } else if (segundero > 120 && segundero < 300 && segundero % 4 == 0) {
                     cont = 1;
-                    puntuacion += 3; 
+                    puntuacion += 3;
                     for (let i in Obstaculo) { Obstaculo[i].moverObstaculos(cont) }
                 } else if (segundero > 300 && segundero % 3 == 0) {
                     cont = 1;
-                    puntuacion += 5; 
-                    for (let i in Obstaculo) {Obstaculo[i].moverObstaculos(cont) }
+                    puntuacion += 5;
+                    for (let i in Obstaculo) { Obstaculo[i].moverObstaculos(cont) }
                 }
         }
     }
@@ -196,12 +214,12 @@ setTimeout(() => {
             if (o.x < j.x + 10 && o.x + o.w > j.x && o.y < j.y + 10 && o.y + o.h > j.y) {
                 vidas--;
                 Snake.pop();
-                Obstaculo.splice(i, 1,new crearObstaculo());
+                Obstaculo.splice(i, 1, new crearObstaculo());
                 document.getElementById("mensaje").innerText = "Te alcanzo un asteroide"
                 document.getElementById("vidas").innerText = vidas;
             }
             if (o.x < b.xz + b.nz && o.x + o.w > b.xz && o.y < b.yz + b.mz && o.y + o.h > b.yz) {
-                Obstaculo.splice(i, 1,new crearObstaculo());
+                Obstaculo.splice(i, 1, new crearObstaculo());
                 console.log("colision Bunker")
                 document.getElementById("mensaje").innerText = "Golpearon el Bunker"
             }
@@ -221,54 +239,6 @@ setTimeout(() => {
     }
 
 }, 3500)
-// for (let i in Obstaculo) {
-//    const {hit} = colisiones(Obstaculo[i], Snake[0])
-//     if(hit==true){
-//     vidas--;
-//     Snake.pop();
-//     Obstaculo.splice(i,1);
-//     Obstaculo[i] = new crearObstaculo()
-//     document.getElementById("vidas").innerText = vidas;
-//     }
-// }
-// for (let i in Obstaculo) {
-//     const j = Snake[0]
-//     const b = bonus
-//     const o = Obstaculo[i]
-//     const { hit } = colision(j, o)
-
-//     if (hit == true) {
-//         console.log(Obstaculo[0])
-//         vidas--;
-//         document.getElementById("vidas").innerText = vidas;
-//         Snake.pop();
-//         Obstaculo.splice(i, 1);
-//         Obstaculo[i] = new crearObstaculo()
-//         console.log("colision")
-//         document.getElementById("mensaje").innerText = "Te alcanzó un asteroide"
-//     }
-// function colision(a, b) {
-//     var hit = false
-//     if (b.x + b.n >= a.x && b.x < a.x + a.n) {
-//         if (b.y + b.m >= a.y && b.y < a.y + a.m) {
-//             hit = true;
-//         }
-//     }
-//     if (b.x <= a.x && b.x + b.n >= a.x + a.n) {
-//         if (b.y <= a.y && b.y + b.m >= a.y + a.m) {
-//             hit = true
-//         }
-//     }
-//     if (a.x <= b.x && a.x + a.n >= b.x + b.n) {
-//         if (a.y <= b.y && a.y + a.m >= b.y + b.m) {
-//             hit = true
-//         }
-//     }
-//     return hit;
-// }
-
-
-
 
 
 

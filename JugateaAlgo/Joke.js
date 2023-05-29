@@ -87,7 +87,7 @@ const chistes = [
 
 "— ¿Te gusta el rock progresivo?\n"+"— Cada vez más.",
 
-"— Hola, soy paraguayo y quiero pedirle la mano de su hija para casarme con ella./n"+
+"— Hola, soy paraguayo y quiero pedirle la mano de su hija para casarme con ella.\n"+
 "— ¿Para qué?\n"+"- Paraguayo.",
 
 "¿Cómo se despiden los químicos? Ácido un placer.",

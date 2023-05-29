@@ -4,37 +4,42 @@ import { findeljuego } from "../Funciones/de interfaz.js"
 
 const juegocanvas = document.getElementById("juegoCanvas"),
     ctx = juegocanvas.getContext("2d");
-
+const botonera = document.getElementById("botonera");
 let contador = -1;
 
 function limpiarcanvas(ctx) {
     ctx.clearRect(0, 0, 300, 300);
 }
 
-function inicio(){
-    contador++; 
+function inicio() {
+
+    contador++;
     switch (contador) {
-        case 0:                      
+        case 0:
             ctx.beginPath();
             ctx.fillStyle = "black"
             ctx.font = "bold 24px verdana"
             ctx.textAlign = "start"
             ctx.fillText("3", 140, 150)
             ctx.stroke();
+            botonera.style.opacity="0.8"
             break;
-        case 1:           
-            limpiarcanvas(ctx)           
+        case 1:
+            limpiarcanvas(ctx)
+            botonera.style.opacity="0"
             break;
-        case 2:                   
+        case 2:
             ctx.beginPath();
             ctx.fillStyle = "black"
             ctx.font = "bold 24px verdana"
             ctx.textAlign = "start"
             ctx.fillText("2", 140, 150)
             ctx.stroke();
+            botonera.style.opacity="0.5"
             break;
         case 3:
-            limpiarcanvas(ctx)       
+            limpiarcanvas(ctx)
+            botonera.style.opacity="0"
             break;
         case 4:
             ctx.beginPath();
@@ -43,8 +48,10 @@ function inicio(){
             ctx.textAlign = "start"
             ctx.fillText("1", 140, 150)
             ctx.stroke();
+            botonera.style.opacity="0.2"
             break;
         case 5:
+            botonera.style.opacity="0"
             limpiarcanvas(ctx)
             clearInterval(intervaloinicio)
     }
@@ -71,6 +78,19 @@ setTimeout(() => {
         else if (e.key === "ArrowRight" && Snake[0].direccion != 0) Snake[0].direccion = 2;
     })
 
+
+    botonera.addEventListener("click", (e) => {
+        let boton = e.target.closest("button");
+        if (boton) {
+            let direccion = boton.getAttribute("data-direccion");       
+
+            if (direccion === "ArrowUp" && Snake[0].direccion != 3) Snake[0].direccion = 1;
+            else if (direccion === "ArrowLeft" && Snake[0].direccion != 2) Snake[0].direccion = 0;
+            else if (direccion === "ArrowDown" && Snake[0].direccion != 1) Snake[0].direccion = 3;
+            else if (direccion === "ArrowRight" && Snake[0].direccion != 0) Snake[0].direccion = 2;
+        }
+    })
+
     let intervalodejuego = setInterval(juego, fps)
 
     function juego() {
@@ -85,6 +105,7 @@ setTimeout(() => {
     }
 
     function mover() {
+        
         unircuerpo();
         Snake[0].mover();
         if (Snake[0].x >= juegocanvas.width) { findeljuego(); game0ver(intervalodejuego); }

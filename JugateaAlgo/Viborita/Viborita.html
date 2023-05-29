@@ -9,52 +9,63 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>La Viborita</title>
         <link rel="stylesheet" href="Css\Style juego 1.css">
+        <link rel="stylesheet" href="../Css/Jugate a algo.css">
     </head>
 
     <body>
+        <div id="fondo"></div>
         <header>
             <h1>Snake: La Viborita</h1>
         </header>
+
         <form id="bienvenida">
-            <header>
-                <h2> Buenas! </h2>
-            </header>
+            <h2> Buenas! </h2>
             <div class="ingresosolicitud">
-                <label for="ingresonombre" id="ingresonombreindicacion">Por favor ingresa tu nombre</label>
+                <label for="ingresonombre" id="ingresonombreindicacion">Ingresá tu nombre</label>
                 <input id="ingresonombre" name="ingresonombre"></input>
             </div>
-            <button id="ingresoboton" class="ingresoboton" class="ingresosolicitud">
-                <div class="iconoBoton">
-                    <img class="arrowright" src="..\Cosas\Arrow right.png"></img>
-                </div>
-                <span>Cargar</span>
+            <div>
+                <button id="ingresoboton" class="botons" class="ingresosolicitud">
+                    <div class="iconoBoton">
+                        <img class="arrowright" src="..\Cosas\Arrow right.png"></img>
+                    </div>
+                    <span>Cargar</span>
+            </div>
             </button>
         </form>
 
-        <header>
-            <h2 id="indicacioninicial">Bien, ahora elegi el modo de juego</h2>
-        </header>
-        <div id="mododejuegobotones">
-            <a href="../Viborita/MododeJuego/modosupervivencia.html"><button class="PPT" value="modo supervivencia"><span>Modo Supervivencia</span></button></a>
-            <a href="../Viborita/MododeJuego/modoclasico.html"><button class="PPT" value="modo niveles"><span>Modo por Niveles</span></button></a>
-            <a href="../Viborita/MododeJuego/modoclasico.html"><button class="PPT" value="modo clasico"><span>Modo Clasico</span></button></a>
+        <div id="modoBotones">
+            <h2> Bien, ahora elegí el modo de juego </h2>
+            <div>
+                <a href="./MododeJuego/modosupervivencia.html">
+                    <button class="botons modo1">Modo Supervivencia</button>
+                </a>
+            </div>
+            <div>
+                <a href="./MododeJuego/modoclasico.html">
+                    <button class="botons modo2">Modo por Niveles</button>
+                </a>
+            </div>
+            <div>
+                <a href="./MododeJuego/modoclasico.html">
+                    <button class="botons modo3">Modo Clásico</button>
+                </a>
+            </div>
         </div>
-        <div id="informacion">
-            <div id="eleccion"></div>
-            <div id="tiempo"></div>
-        </div>
-        
-        <script type="module" id="juego1" src="juego 1.js"></script>
+</div>
+</form>
 
-        <footer>
-            <a href="../../JugateaAlgo.html">
-                <div id="atras">
-                    <img class="arrowleft" src="../Cosas/Arrow left.png"></img>
-                    <span>Volver</span>
-                </div>
-            </a>
-        </footer>
-    </body>
+<script type="module" id="juego1" src="juego 1.js"></script>
+
+<footer>
+    <div id="atras">
+        <a href="../../JugateaAlgo.html">
+            <img class="arrowleft" src="../Cosas/Arrow left.png"></img>
+            <span>Volver</span>
+        </a>
+    </div>
+</footer>
+</body>
 </div>
 
 </html>

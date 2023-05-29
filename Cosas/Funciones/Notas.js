@@ -182,7 +182,6 @@ function mover(id, element, divDestino, currentLocation) {
 
   const dragHandler = (e) => {
     e.preventDefault();
-
   };
 
   element.addEventListener("dragend", e => {

@@ -12,7 +12,6 @@ window.addEventListener("scroll", () => {
     const start = document.getElementById("start");
     const startBackground = document.getElementById("startBackground")
     const scroll = window.scrollY;
-    
 
     if (!once && scroll >=startBackground.offsetHeight/2) {        
         banner.style.position = "fixed";
@@ -22,6 +21,7 @@ window.addEventListener("scroll", () => {
         once = true;
         document.body.style.overflow = "scroll";
     }
+
 
 })
 
