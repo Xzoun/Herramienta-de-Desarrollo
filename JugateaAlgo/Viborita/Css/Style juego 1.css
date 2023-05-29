@@ -1,4 +1,3 @@
-
 /*--------------------------- General || Boton ----------------------------*/
 
 .botons {
@@ -86,14 +85,14 @@
     filter: invert(1);
 }
 
-h2{
+h2 {
     text-align: left;
     padding: 2%;
 }
 
-.botons:hover {    
+.botons:hover {
     color: white;
- }
+}
 
 
 /*--------------------------- Inicio ----------------------------*/
@@ -106,7 +105,7 @@ h2{
     margin-bottom: 80px;
 }
 
-#ingresonombreindicacion{
+#ingresonombreindicacion {
     font-size: 2ch;
 }
 
@@ -171,7 +170,7 @@ h2{
 }
 
 /*--------------------------- Interfaz || modo de juego----------------------------*/
-#cambiarmodo {    
+#cambiarmodo {
     margin-top: 20%;
     border-radius: 12px;
     transition: .3s ease-in-out all;
@@ -207,4 +206,60 @@ h2{
 #cambiarmodo:hover .cambiarmodo {
     display: flex;
     color: grey;
+}
+
+/*--------------------------- Botonera mobile ----------------------------*/
+#botonera {
+    width: 300px;
+    display: none;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s ease-in-out all;
+}
+
+.botonMobile {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+}
+
+.botonMobile img {
+    width: 100px;
+    height: 100px;
+}
+
+#ArrowUp {
+    grid-column: 2/3;
+}
+
+#ArrowRight {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    rotate: 90deg;
+}
+
+#ArrowDown {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+#ArrowLeft {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    rotate: 90deg;
+}
+
+#canvasContenedor {
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    #botonera {
+        display: grid;
+    }
 }

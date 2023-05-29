@@ -7,55 +7,7 @@
     width: 90%;
 }
 
-#botonera {
-    width: 300px;
-    display: none;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    border-radius: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: .5s ease-in-out all;
-}
-
-.botonMobile {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-}
-
-.botonMobile img {
-    width: 100px;
-    height: 100px;
-}
-
-#ArrowUp {
-    grid-column: 2/3;
-}
-
-#ArrowRight {
-    grid-column: 3/4;
-    grid-row: 2/3;
-    rotate:90deg;
-}
-
-#ArrowDown {
-    grid-column: 2/3;
-    grid-row: 3/4;
-}
-
-#ArrowLeft {
-    grid-column: 1/2;
-    grid-row: 2/3;
-    rotate:90deg;
-}
-
 /*--------------------------- Interfaz || Centro ----------------------------*/
-#canvasContenedor {
-    width: 300px;
-    height: 300px;
-    position: relative;
-}
 
 canvas {
     background: rgb(157, 217, 60);
@@ -146,13 +98,7 @@ canvas {
         flex-direction: column;
         align-items: center;
     }
-
-    /*--------------------------- Botonera mobile ----------------------------*/
-
-    #botonera {
-        display: grid;
-    }
-
+   
 
     .centro {
         width: 300px;
@@ -163,6 +109,7 @@ canvas {
         width: 90%;
         padding: 0%;
         margin: 0%;
+        order: 3;
     }
 
     #rachaCont {

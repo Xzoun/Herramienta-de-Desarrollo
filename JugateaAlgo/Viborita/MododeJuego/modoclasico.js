@@ -79,7 +79,7 @@ setTimeout(() => {
     })
 
 
-    botonera.addEventListener("click", (e) => {
+    botonera.addEventListener("touchstart", (e) => {
         let boton = e.target.closest("button");
         if (boton) {
             let direccion = boton.getAttribute("data-direccion");       
