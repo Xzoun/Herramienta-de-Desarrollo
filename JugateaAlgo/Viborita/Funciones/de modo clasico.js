@@ -8,7 +8,7 @@ export class crearComida {
         ctx.fillStyle = "red"
         ctx.fillRect(this.x, this.y, 10, 10)
     }
-    
+
     nuevacomida() {
         this.x = Math.floor(Math.random() * 30) * 10
         this.y = Math.floor(Math.random() * 30) * 10
@@ -17,18 +17,22 @@ export class crearComida {
 
 export function puntuacion() {
     let puntuacion = document.getElementById("rachaactual").innerText
+    let fondoPuntuacion = document.getElementById("rachaactual")
+    let mensaje = document.getElementById("mensaje")
     let puntos = Math.floor(puntuacion)
     if (puntos >= 0 && puntos <= 9) {
         puntos += 1
-        document.getElementById("rachaactual").innerText = puntos
+        fondoPuntuacion.innerText = puntos
     } else if (puntos >= 10 && puntos <= 29) {
         puntos += 2
-        document.getElementById("rachaactual").innerText = puntos
-        document.getElementById("mensaje").innerText = "Boost + 2 puntos"
+        fondoPuntuacion.innerText = puntos
+        mensaje.innerText = "Boost + 2 puntos"
+        mensaje.classList.add("botons")
+        fondoPuntuacion.classList.add("botons")
     } else if (puntos >= 30) {
         puntos += 4
-        document.getElementById("rachaactual").innerText = puntos
-        document.getElementById("mensaje").innerText = "Boost + 4 puntos"
+        fondoPuntuacion.innerText = puntos
+        mensaje.innerText = "Boost + 4 puntos"
     }
 }
 
@@ -38,7 +42,7 @@ export function puntuacion() {
 //     let fps = 1000/15
 //     if (puntos >=10) {
 //        fps = 500/15
-//     } 
+//     }
 //     return fps
 // }
 // function velocidad (){
@@ -46,7 +50,7 @@ export function puntuacion() {
 //     let puntos = Math.floor(puntuacion)
 //     if (puntos = 10) {
 //         requestAnimationFrame(intervalodejuego)
-//     } 
+//     }
 // }
 
 

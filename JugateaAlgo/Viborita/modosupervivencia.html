@@ -8,18 +8,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>La Viborita</title>
-        <link rel="stylesheet" href="../../Css/Jugate a algo.css">
-        <link rel="stylesheet" href="../Css/Style juego 1.css">
-        <link rel="stylesheet" href="../Css/Style modoSupervivencia.css">
+        <link rel="stylesheet" href="../Css/Jugate a algo.css">
+        <link rel="stylesheet" href="./Css/Style juego 1.css">
+        <link rel="stylesheet" href="./Css/Style modoSupervivencia.css">
     </head>
 
     <body>
+
         <div id="fondo"></div>
+
         <header>
             <h1>Snake: Supervivencia</h1>
         </header>
 
         <div id="juego">
+
             <div id="cambiarmodoCont">
                 <div id="cambiarmodo" value="cambiarmodo" class="botons">
                     <p>Cambiar modo</p>
@@ -27,52 +30,57 @@
                     <a href="modoclasico.html"><button class="cambiarmodo">Por Niveles</button></a>
                 </div>
             </div>
+
             <div id="canvasContenedor">
-                <canvas id="juegoCanvas" width="300" height="300"></canvas>
+                <canvas id="juegoCanvas" class="centro" width="300" height="300"></canvas>
                 <div id="botonera">
                     <button id="ArrowUp" class="botonMobile" data-direccion="ArrowUp"><img data-direccion="ArrowUp"
-                            src="../../Cosas/Up.png" alt=""></button>
+                            src="../Cosas/Up.png" alt=""></button>
                     <button id="ArrowRight" class="botonMobile" data-direccion="ArrowRight"><img
-                            data-direccion="ArrowUp" src="../../Cosas/Up.png" alt=""></button>
+                            data-direccion="ArrowUp" src="../Cosas/Up.png" alt=""></button>
                     <button id="ArrowDown" class="botonMobile" data-direccion="ArrowDown"><img data-direccion="ArrowUp"
-                            src="../../Cosas/Down.png" alt=""></button>
+                            src="../Cosas/Down.png" alt=""></button>
                     <button id="ArrowLeft" class="botonMobile" data-direccion="ArrowLeft"><img data-direccion="ArrowUp"
-                            src="../../Cosas/Down.png" alt=""></button>
+                            src="../Cosas/Down.png" alt=""></button>
                 </div>
             </div>
+
+            <div id="findeljuego" class="centro">
+                <h2>Jugas otra?</h2>
+                <div id="sino">
+                    <a href="modosupervivencia.html"><button class="botons" id=si value="si">Dale!</button></a>
+                    <button class="botons" id="no" value="no">Nono</button>
+                </div>
+            </div>
+
+            <h2 id="despedida" class="centro"></h2>
+
             <div id="racha">
-                <div id="pantalla">
-                    <div id="mensaje"></div>
-                </div>
-                <div id="vida">
+
+                <div id="puntuacion" class="racha">Puntuacion</div>
+
+                <div id="vida" class="racha">
                     <div id="vidas"></div>
-                    <img src="../Cosas/vida.png" id="corazon">
+                    <img src="./Cosas/vida.png" id="corazon">
                 </div>
-                <div id="racha1">
-                    <div id="puntuacion">Puntuacion</div>
+
+                <div id="tablero" class="racha">
                     <div id="nombre"></div>
                     <div id="rachaactual"></div>
                 </div>
+
+                <div id="pantalla" class="racha">
+                    <div id="mensaje"></div>
+                </div>
+
             </div>
         </div>
-        <div id="findeljuego">
-            <header>
-                <h2>Jugas otra?</h2>
-            </header>
-            <div id="sino">
-                <a href="modosupervivencia.html"><button class="botons" id=si value="si">Dale!</button></a>
-                <button class="botons" id="no" value="no">Nono</button>
-            </div>
-        </div>
-
-
-        <h2 id="despedida"></h2>
 
         <footer>
             <div id="atras">
                 <a href="../../../JugateaAlgo.html">
-                    <img class="arrowleft" src="../../Cosas/Arrow left.png"></img>
-                    <span>Salir</span>
+                    <img class="back" src="../Cosas/Arrow left.png"></img>
+                    <span>Jugate a algo</span>
                 </a>
             </div>
         </footer>

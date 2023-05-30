@@ -3,14 +3,10 @@
 .botons {
     cursor: pointer;
     background: black;
+    color: white;
     border: none;
-    color: rgba(164, 177, 180, 1);
     position: relative;
     border-radius: 50px;
-    font-size: 2.5ch;
-    height: 40px;
-    width: 280px;
-    margin: 5% 0%;
 }
 
 .botons::before {
@@ -53,6 +49,7 @@
 
 .botons:hover span {
     left: 10px;
+    color: white;
 }
 
 .botons span {
@@ -94,9 +91,7 @@ h2 {
     color: white;
 }
 
-
 /*--------------------------- Inicio ----------------------------*/
-
 
 #bienvenida {
     text-align: center;
@@ -128,54 +123,42 @@ h2 {
     width: 150px;
 }
 
-
 /*--------------------------- Modo de juego ----------------------------*/
-
 
 #modoBotones {
     display: none;
     flex-direction: column;
     margin-bottom: 80px;
     align-items: center;
+  
 }
 
-/*-------------- Footer --------------*/
-
-
-#atras {
-    width: 150px;
-    transition: .3s ease-in-out all;
+.modo{
+width:max(800px,auto);
+margin: 10px;
+font-size: 2ch;
+padding:10px;
+color: rgb(188, 188, 188);
 }
 
-#atras a {
+/*--------------------------- Interfaz de juego----------------------------*/
+
+#juego {
     display: flex;
-    align-items: end;
-    justify-content: left;
-    width: 150px;
+    justify-content: center;
+    gap: 5%;
+    padding: 5%;
+    width: 90%;
 }
 
-#atras img {
-    height: 20px;
-    width: 20px;
-    opacity: 0;
-}
+/*--------------------------- Interfaz || Izquierda ----------------------------*/
 
-#atras:hover {
-    padding-left: 10px;
-    filter: invert(1);
-}
-
-#atras:hover img {
-    opacity: 1;
-}
-
-/*--------------------------- Interfaz || modo de juego----------------------------*/
 #cambiarmodo {
     margin-top: 20%;
     border-radius: 12px;
     transition: .3s ease-in-out all;
     width: 100%;
-    padding: 2% 2%;
+    padding:10px 2%;
     border-radius: 8px;
 }
 
@@ -195,7 +178,7 @@ h2 {
 }
 
 #cambiarmodo:hover {
-    padding-bottom: 50%;
+    padding-bottom: 10%;
 }
 
 #cambiarmodo:hover p {
@@ -208,7 +191,45 @@ h2 {
     color: grey;
 }
 
-/*--------------------------- Botonera mobile ----------------------------*/
+/*--------------------------- Interfaz || Centro || fin del juego ----------------------------*/
+
+#findeljuego {
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+    width: 300px;
+    height: 300px;
+    padding-top: 30px;
+}
+
+#si,
+#no {
+    color: rgb(172, 172, 172);
+    padding: 10px;
+    width: 75px;
+}
+
+#si:hover,
+#no:hover {
+    color: white;
+    transition: .4s ease ease-in-out all;
+}
+
+/*--------------------------- Interfaz || Centro || mensaje final ----------------------------*/
+
+#despedida {
+    transition: .3s ease all;
+    height: 240px;
+    width: 240px;
+    display: none;
+    text-align: center;
+    padding-top: 10%;
+}
+
+/*--------------------------- Responsive || Botonera mobile ----------------------------*/
+
 #botonera {
     width: 300px;
     display: none;
@@ -259,7 +280,47 @@ h2 {
 }
 
 @media (max-width: 768px) {
+
     #botonera {
         display: grid;
+    }
+/*--------------------------- Interfaz ----------------------------*/
+    #juego {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+   
+
+    .centro {
+        width: 300px;
+        height: 300px;
+    }
+
+    #cambiarmodoCont {
+        width: 90%;
+        padding: 0%;
+        margin: 0%;
+        order: 3;
+    }
+
+}
+
+@media (min-width:1200px){
+    #si,
+    #no {
+        width: 120px;
+        height: 70px;
+        margin: 0%;
+        padding: 0%;
+    }
+
+    #findeljuego {
+
+        font-size: 1.5ch;
+    }
+
+    #despedida {
+        font-size: 1.5ch;
     }
 }

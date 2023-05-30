@@ -233,13 +233,15 @@ h1 {
 #atras {
     width: 150px;
     transition: .3s ease-in-out all;
+    padding-bottom: 20px;
+    font-weight: 800;
+    padding-bottom: 20px;
 }
 
 #atras a {
     display: flex;
     align-items: center;
     justify-content: left;
-    width: 150px;    
 }
 
 #atras img {
@@ -253,7 +255,7 @@ h1 {
     filter: invert(1);
 }
 
-#atras:hover img{
+#atras:hover img {
     opacity: 1;
 }
 
@@ -268,37 +270,45 @@ h1 {
     }
 
     .juegos p {
-        opacity: 1;        
+        opacity: 1;
     }
-   
+
     .rainbow-text {
-      position: static;
-      rotate: 0deg;
-      text-align: center;
-      margin-left: 5%;
+        position: static;
+        rotate: 0deg;
+        text-align: center;
+        margin-left: 5%;
     }
-    
+
     #jokeBoton {
         position: static;
         cursor: pointer;
         margin-left: 80%;
         rotate: 335deg;
     }
+
 }
 
 @media (min-width: 1200px) {
-    body{
+    body {
         font-size: 5ch;
     }
-    .rainbow-text{
+
+    .rainbow-text {
         height: 200px;
         width: 20%;
     }
-    #jokeBoton{
-        top:600px;
+
+    #jokeBoton {
+        top: 600px;
         width: 120px;
-        left:87%;
+        left: 87%;
         height: 120px;
+        font-size: 2ch;
+    }
+
+    #atras {
+        width: 500px;
         font-size: 2ch;
     }
 }

@@ -1,9 +1,10 @@
-import { cuerpoPropiedades, zona } from "../Funciones/de juego.js"
-import { crearObstaculo } from "../Funciones/de modo supervivencia.js"
-import { findeljuego } from "../Funciones/de interfaz.js"
+import { cuerpoPropiedades, zona } from "./Funciones/de juego.js"
+import { crearObstaculo } from "./Funciones/de modo supervivencia.js"
+import { findeljuego } from "./Funciones/de interfaz.js"
 const juegocanvas = document.getElementById("juegoCanvas"),
     ctx = juegocanvas.getContext("2d");
 const botonera = document.getElementById("botonera");
+const mensaje = document.getElementById("mensaje");
 let contador = -1;
 
 function limpiarcanvas(ctx) {
@@ -55,8 +56,6 @@ function inicio() {
     }
 }
 
-let intervaloinicio = setInterval(inicio, 500)
-
 setTimeout(() => {
 
     document.getElementById("rachaactual").innerText = 0;
@@ -92,7 +91,6 @@ setTimeout(() => {
         let boton = e.target.closest("button");
         if (boton) {
             let direccion = boton.getAttribute("data-direccion");
-
             if (direccion === "ArrowUp" && Snake[0].direccion != 3) Snake[0].direccion = 1;
             else if (direccion === "ArrowLeft" && Snake[0].direccion != 2) Snake[0].direccion = 0;
             else if (direccion === "ArrowDown" && Snake[0].direccion != 1) Snake[0].direccion = 3;
@@ -105,6 +103,9 @@ setTimeout(() => {
         let cont = 0;
         const j = Snake[0]
         const b = bonus
+
+        //Este bonus borra la pantalla cuando no deberia, hay que llamarlo especificamente durante el evento bonus
+        
         bonuspuntos(j, b);
 
         document.getElementById("rachaactual").innerText = (segundero + puntuacion);
@@ -112,16 +113,11 @@ setTimeout(() => {
             case 7:
                 Obstaculo[0].moverObstaculos()
                 cont = 1; bonus.crearBonus(cont);
-                console.log(Obstaculo)
                 break;
             case 12:
                 cont = 0; for (let i in Obstaculo) { Obstaculo[i].moverObstaculos(cont) }
                 Obstaculo[1] = new crearObstaculo()
                 cont = 2; bonus.crearBonus(cont);
-                setTimeout(() => {
-                    console.log(Obstaculo)
-                }, 1000);
-
                 break;
             case 37:
                 for (let i in Obstaculo) { Obstaculo[i].moverObstaculos() }
@@ -165,7 +161,8 @@ setTimeout(() => {
         }
     }
 
-    var intervalo = setInterval(ponerObstaculos, 1000)
+    
+
     function juego() {
         mover()
         colisiones()
@@ -195,17 +192,20 @@ setTimeout(() => {
         if (j.x < b.xz + b.nz && j.x + 10 > b.xz && j.y < b.yz + b.mz && j.y + 10 > b.yz) {
             puntuacion += 50;
             auxiliar += 50;
-            document.getElementById("mensaje").innerText = "+ " + auxiliar + " puntos"
+            document.getElementById("mensaje").classList.add("botons")
+            document.getElementById("mensaje").innerText = "+ " + auxiliar + " puntos"        
         } else {
             let cont = 2; bonus.crearBonus(cont);
-            setTimeout(() => {
+            setTimeout(() => { 
                 document.getElementById("mensaje").innerText = " "
+                document.getElementById("mensaje").classList.remove("botons")               
                 auxiliar = 0;
             }, 1000);
         }
     }
 
     function colisiones() {
+        let vida = document.getElementById("vida")
         //(𝑥1 + ancho1) > 𝑥2 && 𝑥1 < (𝑥2 + ancho2) && (𝑦1 + alto1) > 𝑦2 && 𝑦1 < (𝑦2 + alto2)
         for (let i in Obstaculo) {
             const o = Obstaculo[i];
@@ -215,13 +215,19 @@ setTimeout(() => {
                 vidas--;
                 Snake.pop();
                 Obstaculo.splice(i, 1, new crearObstaculo());
-                document.getElementById("mensaje").innerText = "Te alcanzo un asteroide"
+                mensaje.classList.add("botons")
+                mensaje.innerText = "Te alcanzo un asteroide"
                 document.getElementById("vidas").innerText = vidas;
+                document.getElementById("juegoCanvas").classList.add("vidaMenos")
+                setTimeout(() => {
+                    document.getElementById("juegoCanvas").classList.remove("vidaMenos")
+                }, 500)
             }
             if (o.x < b.xz + b.nz && o.x + o.w > b.xz && o.y < b.yz + b.mz && o.y + o.h > b.yz) {
                 Obstaculo.splice(i, 1, new crearObstaculo());
                 console.log("colision Bunker")
-                document.getElementById("mensaje").innerText = "Golpearon el Bunker"
+                mensaje.innerText = "Golpearon el Bunker"
+                mensaje.classList.add("botons")
             }
         }
         if (vidas === 0) {
@@ -238,8 +244,11 @@ setTimeout(() => {
         }
     }
 
+    var intervalo = setInterval(ponerObstaculos, 1000)
+
 }, 3500)
 
+let intervaloinicio = setInterval(inicio, 500)
 
 
 

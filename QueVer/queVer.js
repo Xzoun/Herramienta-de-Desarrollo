@@ -1,8 +1,6 @@
-import {pagina} from "./Cosas/Funciones/pagina.js"
-
+import { pagina } from "./Cosas/Funciones/pagina.js"
 
 // ---------- Banner ---------- 
-
 
 const lupita = document.getElementById("botonBuscar");
 const buscador = document.getElementById("buscador");
@@ -28,10 +26,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-
 // ---------- Carrusel series de Netflix ---------- 
-
-
 
 const netflixSeries = document.querySelectorAll(".netflixS");
 const grupo = document.getElementById("divGrupo");

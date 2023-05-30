@@ -1,6 +1,6 @@
-import { cuerpoPropiedades } from "../Funciones/de juego.js"
-import { crearComida, puntuacion } from "../Funciones/de modo clasico.js";
-import { findeljuego } from "../Funciones/de interfaz.js"
+import { cuerpoPropiedades } from "./Funciones/de juego.js"
+import { crearComida, puntuacion } from "./Funciones/de modo clasico.js";
+import { findeljuego } from "./Funciones/de interfaz.js"
 
 const juegocanvas = document.getElementById("juegoCanvas"),
     ctx = juegocanvas.getContext("2d");

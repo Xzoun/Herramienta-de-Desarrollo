@@ -73,12 +73,12 @@ body {
         color: white;
     }
 
-    &.Dark #newNoteBtn {
-        filter: invert(0);
+    &.Dark #newNoteBtn{
+       filter: invert(0);
     }
 
-    &.Dark #newNoteBtn:hover {
-        filter: invert(99%) sepia(34%) saturate(2770%) hue-rotate(290deg) brightness(95%) contrast(117%);
+    &.Dark #newNoteBtn:hover img{
+        filter: invert(1);
     }
 }
 
@@ -285,25 +285,12 @@ html {
 }
 
 
-/*--------------------------- dropZone ----------------------------*/
-
-
-#dropZone {
-    position: relative;
-    height: 120px;
-    width: 80%;
-    top: 60px;
-    left: 10%;
-    background-color: rgb(255, 255, 255, 0.1);
-    z-index: 100;
-    border-radius: 12px;
-}
-
-
 /*--------------------------- Proyectos ----------------------------*/
+
+
 #proyectosCont {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px 50px 350px auto auto;
+    grid-template-rows: 50px 50px 350px auto 100px;
     display: grid;
     gap: 2%;
 }
@@ -448,337 +435,7 @@ html {
 }
 
 
-/*--------------------------- Notas - Contenedor principal----------------------------*/
 
-
-#notas {
-    width: 87%;
-    min-height: auto;
-}
-
-#nuevaNota {
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 120px);
-    padding: 4px;
-    gap: 4px;
-    border-radius: 12px;
-    min-height: 150px;
-    background-color: rgba(0, 255, 255, 0.185);
-    border-radius: 12px;
-    padding-top: 60px;
-    padding-right: 20%;
-    position: relative;
-}
-
-#noteTittle {
-    position: absolute;
-    top: 10px;
-    left: 2%;
-    z-index: 2;
-    filter: invert(1);
-}
-
-#newNoteBtn {
-    position: absolute;
-    left: 30%;
-    top: 10px;
-    width: 180px;
-    background-color: rgb(0, 0, 0, 0);
-    border: 3px solid rgb(0, 0, 0, 0);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.7ch;
-    filter: invert(1);
-}
-
-#newNoteBtn:hover {
-    cursor: pointer;
-    filter: invert(99%) sepia(34%) saturate(2770%) hue-rotate(290deg) brightness(95%) contrast(117%);
-}
-
-#newNoteBtn img {
-    width: 30px;
-    height: 30px;
-}
-
-#referencias {
-    position: absolute;
-    right: 2%;
-    top: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-#referencias input {
-    margin-bottom: 3px;
-    border: none;
-    outline: none;
-}
-
-#referencias h2 {
-    filter: invert(1);
-}
-
-
-/*--------------------------- Notas - Contenedores----------------------------*/
-
-
-.dropZone {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 120px);
-    gap: 24px;
-}
-
-.drag {
-    background: rgba(0, 0, 0, 0.2);
-    background: linear-gradient(0deg,
-            rgba(255, 255, 255, 0.5) 10%,
-            rgba(255, 255, 255, 0.5) 85%);
-    border-radius: 12px;
-    transition: .3s ease-in-out all;
-    border: grey dashed 2px;
-}
-
-#dropZone1 {
-    top: 50px;
-    left: 250px;
-    position: absolute;
-    display: none;
-}
-
-#dropZone2 {
-    position: fixed;
-    right: 20px;
-    bottom: 10px;
-    width: 120px;
-    height: 120px;
-    z-index: 600;
-}
-
-#dropZone2:hover {
-    right: 80px;
-    bottom: 80px;
-}
-
-
-/*--------------------------- Notas ----------------------------*/
-
-
-.note {
-    background: rgba(255, 255, 0, 0.5);
-    height: 120px;
-    width: 120px;
-    box-sizing: border-box;
-    padding: 5px;
-    border: none;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: (0, 0, 7px, rgba(0, 0, 0, ));
-    outline: none;
-}
-
-.color1 {
-    background: linear-gradient(215deg,
-            rgb(212, 26, 26) 0%,
-            rgb(142, 6, 6) 10%);
-}
-
-.color2 {
-    background: linear-gradient(215deg,
-            rgb(97, 124, 216) 0%,
-            rgb(61, 100, 139) 10%);
-    color: white;
-}
-
-.color3 {
-    background: linear-gradient(215deg,
-            rgb(255, 189, 189, 1) 0%,
-            rgb(158, 117, 117) 10%);
-}
-
-.color4 {
-    background: linear-gradient(215deg,
-            rgb(140, 0, 255, 1) 0%,
-            rgb(79, 0, 143) 10%);
-    color: white;
-}
-
-.color5 {
-    background: linear-gradient(215deg,
-            rgb(255, 196, 1) 0%,
-            rgb(195, 150, 0)10%);
-}
-
-.color6 {
-    background: linear-gradient(215deg,
-            rgb(144, 141, 141) 0%,
-            rgb(0, 0, 0) 10%);
-    color: white;
-}
-
-.color7 {
-    background: linear-gradient(215deg,
-            rgb(248, 80, 0),
-            rgb(170, 54, 0)10%);
-}
-
-.color8 {
-    background: linear-gradient(215deg,
-            rgb(200, 255, 0) 0%,
-            rgb(117, 150, 0) 10%);
-}
-
-.color9 {
-    background: linear-gradient(215deg,
-            rgb(255, 255, 255) 0%,
-            rgb(161, 161, 161) 10%);
-}
-
-.note:hover {
-    height: 150px;
-    width: 150px;
-    background-color: rgb(255, 196, 1);
-    z-index: 1;
-    padding: 10px;
-    font-size: 2ch;
-}
-
-.color1:hover {
-    background: rgb(212, 26, 26);
-    color: black
-}
-
-.color2:hover {
-    background: rgb(97, 124, 216, 1);
-    color: white;
-}
-
-.color3:hover {
-    background: rgb(255, 189, 189, 1);
-    color: black;
-}
-
-.color4:hover {
-    background: rgb(140, 0, 255, 1);
-    color: white;
-}
-
-.color5:hover {
-    background: rgb(255, 196, 1);
-    color: black;
-}
-
-.color6:hover {
-    background: rgb(37, 37, 37);
-    color: white;
-}
-
-.color7:hover {
-    background: rgb(248, 80, 0);
-    color: black;
-}
-
-.color8:hover {
-    background: rgb(200, 255, 0);
-    color: black;
-}
-
-.color9:hover {
-    background: rgb(255, 255, 255);
-    color: black;
-}
-
-
-/*--------------------------- Menu - Notas ----------------------------*/
-
-
-#dobleclick {
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    display: none;
-    z-index: 220;
-    background-color: rgba(0, 255, 255, 0.8);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#menuNotas {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(0deg,
-            rgba(255, 255, 255, 1) 18%,
-            rgba(0, 255, 255, 0.485) 76%);
-    font-weight: 800;
-    font-size: 4ch;
-    border-radius: 12px;
-    border: rgb(0, 0, 0) 3px solid;
-    width: 70%;
-    margin: 10% 15%;
-}
-
-#paletaColores {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    overflow: hidden;
-    gap: 5px;
-    padding: 5%;
-    min-height: 150px;
-}
-
-#menuBotones {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 99%;
-    height: 50px;
-    overflow: hidden;
-}
-
-.paletaColor {
-    display: flex;
-    flex-grow: 1;
-    max-width: 400px;
-    max-height: 400px;
-    border-radius: 100px;
-    cursor: pointer;
-}
-
-#cancelar {
-    width: 30%;
-    height: 50%;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    background: rgba(255, 255, 0, 0.2);
-    background: linear-gradient(25deg,
-            rgba(11, 139, 139, 0.625) 0%,
-            rgba(255, 255, 255, 0.600) 60%);
-    z-index: 30;
-}
-
-#eliminar {
-    width: 30%;
-    height: 50%;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    background: rgba(255, 255, 0, 0.2);
-    background: linear-gradient(25deg,
-            rgba(11, 139, 139, 0.625) 0%,
-            rgba(255, 255, 255, 0.600) 60%);
-}
-
-#cancelar:hover,
-#eliminar:hover {
-    border: solid 3px black;
-}
 
 
 
@@ -791,7 +448,8 @@ html {
 
 #contacto ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 2%;
 }
 
 #contacto li {
@@ -811,10 +469,7 @@ html {
     color: black;
 }
 
-#twitterIcon,
-#instagramIcon,
-#twitchIcon,
-#whatsAppIcon {
+.squareIcon {
     width: auto;
     height: 70%;
 }
@@ -931,40 +586,7 @@ html {
         display: none;
     }
 
-    /*--------------------------- Notas ---------------------------*/
-    .note {
-        height: 80px;
-        width: 80px;
-    }
-
-    .note:hover {
-        height: 100px;
-        width: 100px;
-    }
-
-    /*--------------------------- Notas || Contenedor  ---------------------------*/
-    #nuevaNota {
-        grid-template-columns: repeat(auto-fill, 80px);
-        gap: 1%;
-    }
-
-    #newNoteBtn {
-        width: 40%;
-        justify-content: center;
-    }
-
-    #referencias {
-        width: 20%;
-    }
-
-    #referencias h2 {
-        visibility: hidden;
-    }
-
-    .dropZone {
-        grid-template-columns: repeat(auto-fill, 80px);
-        gap: 1%;
-    }
+  
 
     /*--------------------------- Footer || Contacto ---------------------------*/
     #contacto li {
@@ -1012,6 +634,7 @@ html {
     }
 
     /*--------------------------- Proyectos ---------------------------*/
+
     #proyectosCont {
         grid-template-rows: 150px 150px 1050px auto 150px;
     }
@@ -1020,88 +643,16 @@ html {
         border-radius: 12px;
     }
 
-    /*--------------------------- Notas ---------------------------*/
-
-    .note {
-        height: 200px;
-        width: 200px;
-        font-size: 1.5ch;
-    }
-
-    .note:hover {
-        height: 250px;
-        width: 250px;
-    }
-
-    /*--------------------------- Notas || Drop Zones ---------------------------*/
-    #newNoteBtn {
-        width: 28%;
-        justify-content: center;
-    }
-
-    #newNoteBtn img {
-        height: 28%;
-        width: auto;
-    }
-
-    .dropZone {
-        grid-template-columns: repeat(auto-fill, 200px);
-        gap: 1%;
-    }
-
-    #dropZone {
-        height: 200px;
-    }
-
-    #nuevaNota {
-        width: 80%;
-        grid-template-columns: repeat(auto-fill, 200px);
-        gap: 1%;
-        padding-top: 70px;
-        min-height: 320px;
-    }
-
-    #nuevaNota h2 {
-        font-size: 2ch;
-    }
-
-    #referencias {
-        width: 20%;
-    }
-
-    #referencias input {
-        height: 30px;
-    }
-
-    /*--------------------------- Notas || Menu  ---------------------------*/
-    #menuNotas {
-        margin-top: 5%;
-    }
-
-    #paletaColores {
-        min-height: 400px;
-    }
-
-    #menuBotones {
-        height: 200px;
-    }
-
-    #menuBotones button {
-        font-size: 1.5ch;
-        border-radius: 50px;
-        overflow: hidden;
-    }
-
-
     /*--------------------------- Footer || Contacto ---------------------------*/
+
     #contribuir img {
         width: 70%;
         height: auto;
     }
 
     #contacto li {
-        width: 210px;
-        height: 150px;
+        width: 290px;
+        height: 200px;
         padding: 20px;
         font-size: 1.2ch;
     }
