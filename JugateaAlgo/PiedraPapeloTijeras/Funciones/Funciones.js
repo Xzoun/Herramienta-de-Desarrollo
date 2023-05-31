@@ -1,3 +1,5 @@
+var eleccionPantalla =   document.getElementById("eleccionPantalla");
+
 export function interfazFc(cont) {
     //Reglamento
     switch(cont){
@@ -14,16 +16,18 @@ export function interfazFc(cont) {
         
         
         document.getElementById("idbotones").style.display = "block";
-        document.getElementById("indicacioninicial").style.display = "block";
+        document.getElementById("indicacionInicial").style.display = "block";
         document.getElementById("atras").style.display = "block";
         break;
         //Pantalla - Racha
     case 2:
+        eleccionPantalla.style.display = "block";
+        document.getElementById("elegiste").style.display = "block";
         document.getElementById("tablero").style.display = "block";
         document.getElementById("tablero").style.visibility = "visible";
         document.querySelector(".pantalla").style.visibility = "visible";
         document.getElementById("racha").style.display = "block";
-        document.getElementById("indicacioninicial").style.display = "none";
+        document.getElementById("indicacionInicial").style.display = "none";
         document.getElementById("fire").style.display = "none";
         document.getElementById("KO").style.display = "none";
         break;

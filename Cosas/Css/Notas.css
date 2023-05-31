@@ -378,6 +378,15 @@
         grid-template-columns: repeat(auto-fill, 80px);
         gap: 1%;
     }
+
+    #dropZone2 {
+        right: -30px;
+        bottom: -30px;
+    }
+    #dropZone2:hover {
+        right: 20px;
+        bottom: 20px;
+    }
 }
     
     @media (min-width: 1200px) {

@@ -1,6 +1,4 @@
 /*--------------------------- Start || General ---------------------------*/
-
-
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +28,7 @@ body {
     width: 100%;
     margin: 0%;
     padding: 0%;
-    overflow-y: hidden;
+
 
     &.Dark {
         background: rgb(35, 33, 33);
@@ -41,7 +39,7 @@ body {
         color: white;
     }
 
-    &.Dark #start h1{
+    &.Dark #start h1 {
         filter: invert(1);
     }
 
@@ -73,11 +71,11 @@ body {
         color: white;
     }
 
-    &.Dark #newNoteBtn{
-       filter: invert(0);
+    &.Dark #newNoteBtn {
+        filter: invert(0);
     }
 
-    &.Dark #newNoteBtn:hover img{
+    &.Dark #newNoteBtn:hover img {
         filter: invert(1);
     }
 }
@@ -133,10 +131,7 @@ body {
     transition: .5s ease-in-out all;
 }
 
-
-
 /*-------------- Scroll Bar --------------*/
-
 
 body::-webkit-scrollbar,
 #descripcion::-webkit-scrollbar {
@@ -272,9 +267,7 @@ html {
     filter: invert(1);
 }
 
-
 /*--------------------------- Presentación ----------------------------*/
-
 
 #presentacion {
     margin: 0% 7%;
@@ -284,9 +277,7 @@ html {
     font-size: 90%;
 }
 
-
 /*--------------------------- Proyectos ----------------------------*/
-
 
 #proyectosCont {
     grid-template-columns: repeat(3, 1fr);
@@ -363,7 +354,7 @@ html {
     cursor: pointer;
 }
 
-.descripcionContP:hover img {
+.desplegar:hover {
     filter: invert(1);
 }
 
@@ -372,9 +363,7 @@ html {
     padding: 5px;
 }
 
-
 /*--------------------------- Contribuir ----------------------------*/
-
 
 #cont1 {
     display: flex;
@@ -396,9 +385,7 @@ html {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-
 /*--------------------------- Atajos ----------------------------*/
-
 
 #contList {
     display: flex;
@@ -433,11 +420,6 @@ html {
     border-left: rgb(255, 255, 255) solid 3px;
     color: white;
 }
-
-
-
-
-
 
 /*--------------------------- Footer || Contacto ----------------------------*/
 
@@ -504,12 +486,16 @@ html {
 
 /*--------------------------- Resposive ---------------------------*/
 
-
 @media (max-width: 768px) {
+
     /*--------------------------- Generales || Inicio || Barra nav ---------------------------*/
 
     body {
         font-size: 1.5ch;
+    }
+
+    #banner{
+        width:100%;
     }
 
     #start a {
@@ -521,11 +507,13 @@ html {
     }
 
     /*--------------------------- Presentacion ---------------------------*/
+
     #presentacion {
         border-radius: 12px;
     }
 
     /*--------------------------- Proyectos ---------------------------*/
+
     #proyectosCont {
         grid-template-columns: 48.5% 48.5%;
         grid-template-rows: 60px 60px 60px auto 80px;
@@ -586,17 +574,19 @@ html {
         display: none;
     }
 
-  
+    .desplegar {
+        width: 20px;
+        height: 20px;
+    }
 
     /*--------------------------- Footer || Contacto ---------------------------*/
+
     #contacto li {
         width: 70px;
         height: 50px;
         padding: 5px;
         font-size: 0.7ch;
     }
-
-
 }
 
 @media (min-width: 1200px) {

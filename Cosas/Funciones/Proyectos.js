@@ -24,7 +24,6 @@ const contDescrProy = document.getElementById("descripcion");
 
 contDescrProy.addEventListener("click", (e) => {
   const descripcion = e.target.getAttribute("data-p");
-  console.log(descripcion)
   switch (descripcion) {
     case "p1":
       contDescrProy.classList.toggle("proyecto1");

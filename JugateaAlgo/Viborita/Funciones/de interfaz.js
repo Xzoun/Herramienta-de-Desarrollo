@@ -24,7 +24,7 @@ export function interfazFc(cont) {
         
     } else if (cont == 4) {
         let nombre = document.getElementById("nombre").innerText || "Player 1";
-        document.getElementById("despedida").style.display = "block"
+        document.getElementById("despedida").style.display = "flex"
         document.getElementById("despedida").innerText = "Gracias por jugar " + nombre + ", hasta pronto!"
         document.getElementById("findeljuego").style.display = "none"
         document.getElementById("canvasContenedor").style.display = "none"

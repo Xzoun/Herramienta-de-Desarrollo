@@ -1,0 +1,145 @@
+/*--------------------------- General || Boton ----------------------------*/
+
+.botons {
+    cursor: pointer;
+    background: black;
+    color: white;
+    border: none;
+    position: relative;
+    border-radius: 50px;
+}
+
+.botons::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+            rgba(244, 192, 85, 1),
+            rgba(247, 232, 55, 1),
+            rgba(125, 233, 208, 1),
+            rgb(92, 226, 222),
+            rgb(67, 83, 223),
+            rgb(171, 82, 212),
+            rgba(217, 180, 217, 1),
+            rgb(245, 208, 208));
+    background-size: 600%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0
+    }
+}
+
+.botons:hover span {
+    left: 10px;
+    color: white;
+}
+
+.botons span {
+    transition: .4s ease-in-out all;
+    position: absolute;
+    left: 27%;
+    bottom: 6px;
+}
+
+.botons .iconoBoton {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    left: -40px;
+    top: 6px;
+    transition: .3s ease-in-out all;
+    opacity: 0;
+}
+
+.botons:hover .iconoBoton {
+    left: 100px;
+    opacity: 1;
+    color: white;
+}
+
+.arrowright {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
+
+h2 {
+    text-align: left;
+    padding: 2%;
+}
+
+.botons:hover {
+    color: white;
+}
+
+/*--------------------------- Inicio ----------------------------*/
+
+#bienvenida {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+#ingresonombreindicacion {
+    font-size: 2ch;
+}
+
+#ingresonombre {
+    border: solid 3px black;
+    margin: 30px 0px;
+    padding: 0.5%;
+    border-radius: 12px;
+    outline: none;
+}
+
+#ingresoboton {
+    background: black;
+    border: none;
+    color: rgba(164, 177, 180, 1);
+    position: relative;
+    border-radius: 50px;
+    font-size: 2.5ch;
+    height: 40px;
+    width: 150px;
+}
+
+#indicacionInicial{
+    display:none;
+}
+/*--------------------------- Modo de juego || Viborita ----------------------------*/
+
+#modoBotones {
+    display: none;
+    flex-direction: column;
+    margin-bottom: 80px;
+    align-items: center;
+
+}
+
+.modo {
+    width: max(800px, auto);
+    margin: 10px;
+    font-size: 2ch;
+    padding: 10px;
+    color: rgb(188, 188, 188);
+}
