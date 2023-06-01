@@ -345,7 +345,7 @@
 
 @media (max-width: 768px) {
 
-      .note {
+    .note {
         height: 80px;
         width: 80px;
     }
@@ -383,13 +383,14 @@
         right: -30px;
         bottom: -30px;
     }
+
     #dropZone2:hover {
         right: 20px;
         bottom: 20px;
     }
 }
-    
-    @media (min-width: 1200px) {
+
+@media (min-width: 1200px) {
     .note {
         height: 200px;
         width: 200px;
@@ -419,6 +420,16 @@
 
     #dropZone {
         height: 200px;
+    }
+
+    #dropZone2 {
+        right: 100px;
+        bottom: 100px;
+    }
+
+    #dropZone2:hover {
+        right: 140px;
+        bottom: 140px;
     }
 
     #nuevaNota {
@@ -459,4 +470,4 @@
         border-radius: 50px;
         overflow: hidden;
     }
-    }
+}

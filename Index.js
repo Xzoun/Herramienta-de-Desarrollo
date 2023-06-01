@@ -15,3 +15,8 @@ const typed = new Typed('.typed', {
     backSpeed:75
 });
 
+const imprimir = (texto) =>{
+    console.log(texto)
+}
+imprimir("hola mundo")
+

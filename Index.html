@@ -17,7 +17,7 @@
 <body>
     <div id="startBackground"></div>
     <div id="start">
-        <h1><span class="typed"></span></h1>
+        <h1 class="typed"></h1>
         <a id="startContinue"><img src="Cosas/Imagenes/Down.png" alt="Continuar" /></a>
     </div>
 
@@ -26,7 +26,7 @@
             <ul>
                 <li><a href="#atajos">Atajos</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contribuir">Contribuir</a></li>
+                <li><a href="#acercaDe">Acerca de</a></li>
                 <li id="liContenedores">
                     <a href="#notas">Notas</a>
                     <ul id="contenedores">
@@ -49,49 +49,27 @@
 
     <div id="presentacion" class="nav">
 
-        <h2>Hola, bienvenid@</h2>
-        <p>
-            Mi nombre es Leonel, soy una persona dedicada y estoy
-            constantemente aprendiendo. Tengo 27 años y experiencia en varias áreas como
-            ventas, atención al público, administración y recursos humanos.
-            Hice cursos de francés, canto, guitarra, teatro y hasta uno de electricidad.
-        </p>
-        <h2>Ah variadito... Y de programación?</h2>
-        <p>
-            Mi primer contacto con la programación fue en 2023, realicé en un curso sobre
-            lógica de programación, actualmente estoy en uno de Java y otro de Front End.
-            Considero que tengo un gran futuro en el área y que recién estoy dando mis primeros
-            pasos en este basto mundo de las teclas.
-        </p>
-        <h2>Que objetivos esperas cumplir?</h2>
-        <p>
-            Esta página es un poco mi herramienta de trabajo, y un poco mi CV como
-            programador. La uso constantemente desde el editor de código y
-            decidí compartirla y actualizarla casi diariamente porque tengo varios
-            proyectos en los que estoy trabajando.
-        </p>
-        <p> Mi objetivo es <span style="font-weight: 800;">desarrollarme profesionalmente </span>como desarrollador full
-            stack y
-            continuar aprendiendo siempre.</p>
+
     </div>
 
     <div id="dropZoneUbi" class="nav">
         <h2>Drop Zone</h2>
     </div>
-    <div id="dropZone" class="dropZone"></div>
+    <div id="dropZone" class="dropZone" aria-placeholder="Arrastre sus notas aquí"></div>
 
     <div id="atajos" class="nav">
         <h2>Atajos</h2>
         <div id="contList">
             <ul>
-                <h2>Páginas de css</h2>
+                <h2>Front End</h2>
                 <li> <a href="https://fonts.google.com/icons" target="_blank">Google icons</a></li>
                 <li> <a href="https://iconape.com" target="_blank">Iconos varios</a></li>
                 <li> <a href="https://cssgradient.io" target="_blank">Gradient</a></li>
                 <li> <a href="https://codepen.io/sosuke/pen/Pjoqqp" target="_blank">Filter</a></li>
                 <li> <a href=" https://flexboxfroggy.com/#es" target="_blank">Flex-Box</a></li>
-                <li><a href="https://coolors.co/664e4c-b2cede-8cdfd6-6dc0d5-335c67" target="_blank">Paleta de
-                        Colores</a></li>
+                <li><a href="https://color.adobe.com/es/create/color-wheel" target="_blank">Paleta de Colores</a></li>
+                <li><a href="https://www.youtube.com/watch?v=oBntkyvWy74" target="_blank">MokittApp - Diseño</a></li>
+                
             </ul>
             <ul>
                 <h2>Cursos</h2>
@@ -125,20 +103,20 @@
     <div id="proyectos" class="nav">
         <h2>Proyectos</h2>
         <div id="proyectosCont">
-
-            <h2 id="p1" class="proyectos">
-                <a id="juegos" href="JugateaAlgo.html">Jugate a algo</a>
-            </h2>
-
-            <h2 id="horaActual" class="proyectos"></h2>
-
-            <h2 id="p3" class="proyectos">
-                <a id="queVer" href="QueVer.html">Qué ver??</a>
-            </h2>
-
-            <h2 id="p4" class="proyectos">
-                <a id="muro" href="Muro.html">Muro</a>
-            </h2>
+            <div id="p1" class="proyectos centerCont">
+                <div class="center"> <a id="juegos" href="JugateaAlgo.html">Jugate a algo</a> </div>
+            </div>
+            <div class="proyectos centerCont">
+                <div class="center">
+                    <h2 id="horaActual"></h2>
+                </div>
+            </div>
+            <div class="proyectos centerCont">
+                <div class="center"> <a id="queVer" href="QueVer.html">Qué ver??</a> </div>
+            </div>
+            <div class="proyectos centerCont">
+                <div class="center"><a id="muro" href="Muro.html">Muro</a></div>
+            </div>
 
             <div id="descripcion" class="proyectos">
                 <h3>Descripciones</h3>
@@ -172,7 +150,7 @@
                     </p>
                 </div>
                 <div id="proyecto3" class="descripcionContP" data-p="p3">
-                    <img id="abrirDescP3" data-p="p3" class="desplegar" src="./Cosas/Imagenes/Right.png"  alt="">
+                    <img id="abrirDescP3" data-p="p3" class="desplegar" src="./Cosas/Imagenes/Right.png" alt="">
                     <h3 data-p="p3">Muro.</h3>
                 </div>
                 <div id="descripcionP3" class="descripcionP">
@@ -197,28 +175,61 @@
                     utilizar con las referencias totalmente personalizables. </p>
             </div>
             <div id="dropZone1" class="dropZone"></div>
-            <h2 id="p7">Porvenir</h2>
-
-            <h2 id="p8" class="proyectos">Tienda de ventas real</h2>
-
-            <h2 id="p9" class="proyectos">Ahorcado Multijugador online</h2>
-            <h2 id="p10" class="proyectos">Subir el elo! d:</h2>
+            <div id="p7">
+                <h2>Porvenir</h2>
+            </div>
+            <div id="p8" class="proyectos centerCont">
+                <div class="center">Tienda de ventas real</div>
+            </div>
+            <div id="p9" class="proyectos centerCont">
+                <div class="center">Ahorcado Multijugador online</div>
+            </div>
+            <div id="p10" class="proyectos centerCont">
+                <div class="center">Subir el elo! d:</div>
+            </div>
         </div>
 
 
+    </div>    
+
+    <div id="acercaDe" class="nav">
+    <h2>Hola, bienvenid@</h2>
+    <p>
+        Mi nombre es Leonel, soy una persona dedicada y estoy
+        constantemente aprendiendo. Tengo 27 años y experiencia en varias áreas como
+        ventas, atención al público, administración y recursos humanos.
+        Hice cursos de francés, canto, guitarra, teatro y hasta uno de electricidad.
+    </p>
+    <h2>Ah variadito... Y de programación?</h2>
+    <p>
+        Mi primer contacto con la programación fue en 2023, realicé en un curso sobre
+        lógica de programación, actualmente estoy en uno de Java y otro de Front End.
+        Considero que tengo un gran futuro en el área y que recién estoy dando mis primeros
+        pasos en este basto mundo de las teclas.
+    </p>
+    <h2>Que objetivos esperas cumplir?</h2>
+    <p>
+        Esta página es un poco mi herramienta de trabajo, y un poco mi CV como
+        programador. La uso constantemente desde el editor de código y
+        decidí compartirla y actualizarla casi diariamente porque tengo varios
+        proyectos en los que estoy trabajando.
+    </p>
+    <p> Mi objetivo es <span style="font-weight: 800;">desarrollarme profesionalmente </span>como desarrollador full
+        stack y
+        continuar aprendiendo siempre.</p>
     </div>
 
-    <div id="contribuir" class="nav">
-        <h2>Contribuir</h2>
-        <div id="cont1">
-            <a href="https://ceneka.net/lebenitezCoding_" target="_blank">
-                <div id="cont2">
-                    <img src="Cosas/Imagenes/redes/MercadoPago.png">
-                    <h2>Realizar aporte</h2>
-                </div>
-            </a>
-        </div>
+    <div class="nav">
+    <h2>Contribuir</h2>
+    <div id="cont1">
+        <a href="https://ceneka.net/lebenitezCoding_" target="_blank">
+            <div id="cont2">
+                <img src="Cosas/Imagenes/redes/MercadoPago.png">
+                <h2>Realizar aporte</h2>
+            </div>
+        </a>
     </div>
+</div>
 
     <div id="notas" class="nav">
 
@@ -298,7 +309,7 @@
                             <img id="youtubeIcon" src="./Cosas/Imagenes/redes/Youtube.png"></img>
                             <h3 id="youtube">lebenitez_</h3>
                         </li>
-                    </a>                   
+                    </a>
                     <a href="https://twitter.com/lebenitez_" target="_blank">
                         <li>
                             <img id="twitterIcon" src="./Cosas/Imagenes/redes/Twitter.png" class="squareIcon"></img>
