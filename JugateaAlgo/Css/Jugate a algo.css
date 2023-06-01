@@ -1,6 +1,5 @@
 /*--------------------------- General ----------------------------*/
 
-
 * {
     margin: 0%;
     padding: 0%;
@@ -205,7 +204,6 @@ h1 {
     font-size: 2ch;
     border-radius: 12px;
     background-color: rgba(240, 248, 255, 0.2);
-
 }
 
 #volver {

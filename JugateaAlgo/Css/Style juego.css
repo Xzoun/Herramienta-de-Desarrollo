@@ -32,7 +32,6 @@
     animation: glowing 20s linear infinite;
 }
 
-
 @keyframes glowing {
     0% {
         background-position: 0 0;
@@ -55,23 +54,21 @@
 .botons span {
     transition: .4s ease-in-out all;
     position: absolute;
-    left: 27%;
+    left: 22%;
     bottom: 6px;
 }
 
 .botons .iconoBoton {
-    display: flex;
-    align-items: center;
     position: absolute;
     z-index: 2;
-    left: -40px;
+    left: 0%;
     top: 6px;
     transition: .3s ease-in-out all;
     opacity: 0;
 }
 
 .botons:hover .iconoBoton {
-    left: 100px;
+    left: 75%;
     opacity: 1;
     color: white;
 }
@@ -126,6 +123,55 @@ h2 {
 #indicacionInicial{
     display:none;
 }
+
+/*--------------------------- Responsive ----------------------------*/
+
+@media (max-width: 767px) {
+    #ingresoboton {
+        background: black;
+        border: none;
+        color: rgba(164, 177, 180, 1);
+        position: relative;
+        border-radius: 50px;
+        height: 20px;
+        width: 75px;
+        font-size: 2ch;
+    }
+    .botons .iconoBoton {       
+        top:2px;
+    }
+    .botons span{
+        top:2px;
+    }
+    .arrowright{
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #ingresoboton {
+        background: black;
+        border: none;
+        color: rgba(164, 177, 180, 1);
+        position: relative;
+        border-radius: 50px;
+        height: 60px;
+        width: 240px;
+       font-size: 2ch;
+    }
+    .botons .iconoBoton {       
+        top:6px;
+    }
+    .botons span{
+        top:6px;
+    }
+    .arrowright{
+        width: 50px;
+        height: 50px;
+    }
+}
+
 /*--------------------------- Modo de juego || Viborita ----------------------------*/
 
 #modoBotones {
@@ -143,3 +189,4 @@ h2 {
     padding: 10px;
     color: rgb(188, 188, 188);
 }
+

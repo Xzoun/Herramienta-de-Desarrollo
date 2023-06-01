@@ -1,176 +1,223 @@
+// ----------------------- Import || Funciones -----------------------
+
 import {
     interfazFc,
     maquinaFc,
-    tableroFc,
-    puntoFc,
-    bienvenidaFc,
-    iniciarFc
+    puntoFc
 } from "./Funciones/Funciones.js";
-let ocultarinterfaz = interfazFc,
-    eleccionmaquina = maquinaFc,
-    cargartablero = tableroFc,
-    punto = puntoFc,
-    bienvenidainicial = bienvenidaFc,
-    iniciar = iniciarFc;
-let racha = 0,
-    puntaje = 0,
-    puntajeIA = 0;
-bienvenidainicial();
-var eleccionPantalla = document.getElementById("eleccionPantalla"),
-    eleccionIAPantalla = document.getElementById("eleccionIAPantalla");
 
-let fireactivado = false;
-const idbotones = document.getElementById("idbotones");
-idbotones.addEventListener("click", (e) => {
-    const eleccion = e.target.value;  
-    eleccionPantalla.textContent = eleccion;
-    let cont = 2;
-    ocultarinterfaz(cont);
-    let contadorpantalla = 0;
-    let { maquina } = eleccionmaquina();
-    eleccionIAPantalla.innerText = maquina;
-    let player = eleccionPantalla.innerText;
-    let nombre = document.getElementById("celdanombre").innerText;
-    let { marcador, marcadorIA } = punto(player, maquina);
-    document.getElementById("puntousuario").innerText = nombre + " sumas " + marcador;
-    document.getElementById("puntoIA").innerText = "I.A. suma " + marcadorIA;
-    let puntoactualstr = document.getElementById("infoguardada").textContent;
-    let puntoactual = Math.floor(puntoactualstr);
+let cambiarInterfaz = interfazFc,
+    eleccionMaquina = maquinaFc,
+    punto = puntoFc;
 
-    if (puntoactual == 0) {
-        racha += 1;
-        puntajeIA = (puntajeIA + 1);
-        puntaje = (puntaje + 1);
-    } else if (puntoactual == 1) {
-        puntaje = (puntaje + 1);
-        racha += 1;
-    } else {
-        racha = 0;
-        puntajeIA = (puntajeIA + 1);
-    }
-    if (racha == 0) {
-        cont = 2;
-        ocultarinterfaz(cont);
-    } else if (racha >= 3 && racha < 7) {
-        cont = 3;
-        ocultarinterfaz(cont);
-    } else if (racha >= 7) {
-        cont = 4;
-        ocultarinterfaz(cont);
-    }
-    let empate = "Suman los dos";
-    const firebutton = document.getElementById("fire");
+// ----------------------- Variables -----------------------
+//html
+var nombre = document.getElementById("celdanombre").innerText,
+    puntoActual = document.getElementById("punto"),
+    elegiste = document.getElementById("elegiste"),
+    eligioIA = document.getElementById("eligioIA");
 
-    firebutton.addEventListener("click", function (event) {
-        console.log("estoy on fire");
-        fireactivado = true
-        eleccionPantalla.innerText = "Fire in the hole!";
-        eleccionPantalla.style.display = "block";
+// juego
+var eleccion,
+    ganadorPunto;
+
+// boost
+var racha = 0,
+    contadorPantalla,
+    fireActive = false
+
+// Marcador
+var puntaje = 0,
+    puntajeIA = 0,
+    cont;
+
+const opciones = document.getElementById("opciones");
+
+// ----------------------- Interfaz Inicial -----------------------
+
+document.getElementById("bienvenida").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    var nombre = document.getElementById("ingresonombre").value || "Player 1";
+    document.getElementById("celdanombre").textContent = nombre;
+
+    cont = 0;
+    cambiarInterfaz(cont);
+
+}, { once: true })
+
+document.getElementById("botonInicial").addEventListener("click", () => {
+
+    let cont = 1;
+    cambiarInterfaz(cont);
+
+}, { once: true })
+
+// ----------------------- Juego -----------------------
+
+opciones.addEventListener("click", (e) => {
+
+    // ----------------------- Juego || Boost -----------------------   
+
+    document.getElementById("fire").addEventListener("click", function (event) {
+        fireActive = true;
+        puntoActual.innerText = "Fire in the hole!";
+        puntoActual.style.display = "block";
     }, { once: true });
-    if (fireactivado == true) {
-        eleccionPantalla.textContent = e.target.value;
-        let ganadorpuntoStr = document.getElementById("infoguardada").innerText;
-        let ganadorpunto = Math.floor(ganadorpuntoStr);
-        if (ganadorpunto < 0) {
-            document.getElementById("puntoIA").innerText = "Fallaste, restas 2!";
-            fireactivado = false;
-            puntaje = puntaje - 2;
-        } else if (ganadorpunto == 0) {
-            empate = "Empate, sumas 3";
-            fireactivado = false;
-            puntaje = puntaje + 2;
-            puntajeIA = puntajeIA - 1;
-        } else if (ganadorpunto > 0) {
-            document.getElementById("puntousuario").innerText = "Excelente, sumas 3";
-            fireactivado = false;
-            puntaje = puntaje + 2;
-        }
-    }
 
-    const KObutton = document.getElementById("KO");
-    KObutton.addEventListener("click", function (event) {
-        eleccionPantalla.innerText = " Victoria por Knock Out!";
-        eleccionPantalla.style.display = "block";
+
+    document.getElementById("KO").addEventListener("click", function (event) {
+        puntoActual.innerText = " Victoria por Knock Out!";
+        puntoActual.style.display = "block";
         setTimeout(() => {
             findeljuego()
         }, 300);
     }, { once: true });
 
+    // ----------------------- Juego -----------------------
+
+    contadorPantalla = 0;
+
+    cont = 2;
+    cambiarInterfaz(cont);
+    eleccion = e.target.innerText;
+
+    let { maquina } = eleccionMaquina();
+    console.log(eleccion)
+    document.getElementById("eleccionIAPantalla").innerText = maquina;
+    document.getElementById("eleccionPantalla").innerText = eleccion;
+
+    ganadorPunto = punto(eleccion, maquina);
+
+    if (racha >= 3 && fireActive) {
+        switch (ganadorPunto) {
+            case -1:
+                racha = 0;
+                puntaje -= 2;
+                puntajeIA++;
+
+                puntoActual.innerText = " Fallaste. Restas 2 puntos.\n I.A. Suma 1 punto."
+                break;
+            case 0:
+                racha++;
+                puntaje += 3;
+                puntoActual.innerText = " Empate. Sumas 3 puntos."
+                break;
+            case 1:
+                racha++;
+                puntaje += 3;
+                puntoActual.innerText = " Acertaste! Sumas 3 puntos."
+                break;
+        }
+    } else {
+        switch (ganadorPunto) {
+            case -1:
+                racha = 0;
+                puntajeIA++;
+                puntoActual.innerText = " I.A. Suma 1 punto."
+                break;
+            case 0:
+                racha++;
+                puntaje++;
+                puntajeIA++;
+                puntoActual.innerText = " Empate. Sumas 1 punto."
+                break;
+            case 1:
+                racha++;
+                puntaje++;
+                puntoActual.innerText = "Sumas 1 punto."
+                break;
+        }
+
+        if (racha >= 3) {
+            cont = 3;
+            if (racha >= 7) {
+                cont = 4;
+            }
+        } else {
+            cont = 2
+            fireActive = false;
+        }
+
+        cambiarInterfaz(cont);
+    }
+
+    // ----------------------- Tablero -----------------------
+
+    setTimeout(() => {
+        document.getElementById("celdaMarcador").innerText = puntaje;
+        document.getElementById("celdaMarcadorIA").innerText = puntajeIA;
+    }, 1500);
+
+    // ----------------------- Pantalla -----------------------
+
+    puntoActual.style.display = "none";
+    elegiste.style.display = "block";
+
+    var buclepantalla = function pantalla() {
+        elegiste.style.display = "none";
+        eligioIA.style.display = "none";
+
+        contadorPantalla++;
+        if (contadorPantalla == 1) {
+            elegiste.style.display = "none";
+            eligioIA.style.display = "block";
+        } else if (contadorPantalla == 2) {
+            puntoActual.style.display = "block";
+        } else if (contadorPantalla == 3) {
+            puntoActual.style.display = "none";
+            clearInterval(intervalo);
+        }
+    }
+    var intervalo = setInterval(buclepantalla, 1000);
+
+    // ----------------------- Ganador -----------------------
+
     if (puntaje >= 10 && puntajeIA >= 10) {
         setTimeout(() => {
             findeljuego(),
-            eleccionPantalla.innerText = nombre + ", fue un empate..."
+                eleccionPantalla.innerText = nombre + ", fue un empate..."
         }, 1550);
     } else if (puntaje >= 10 && puntajeIA >= 10) {
         setTimeout(() => {
             findeljuego(),
-            eleccionPantalla.innerText = nombre + ", fue un empate..."
+                eleccionPantalla.innerText = nombre + ", fue un empate..."
         }, 1550);
     } else if (puntaje < 10 && puntajeIA >= 10) {
         setTimeout(() => {
             findeljuego(),
-            eleccionPantalla.innerText = nombre + ", Perdiste :("
+                eleccionPantalla.innerText = nombre + ", Perdiste :("
         }, 1550);
     } else if (puntaje >= 10 && puntajeIA < 10) {
         setTimeout(() => {
             findeljuego(),
-            eleccionPantalla.innerText = nombre + ", Ganaste! :D"
+                eleccionPantalla.innerText = nombre + ", Ganaste! :D"
         }, 1550);
     }
 
-    var buclepantalla = function pantalla() {
-        eleccionIAPantalla.style.display = "none";
-        document.getElementById("eligioIA").style.display = "none";
-        document.getElementById("puntoIA").style.display = "none";
-        document.getElementById("puntousuario").style.display = "none";
-        contadorpantalla++;
-        if (contadorpantalla == 1) {
-            eleccionPantalla.style.display = "none";
-            document.getElementById("elegiste").style.display = "none";
-            eleccionIAPantalla.style.display = "block";
-            document.getElementById("eligioIA").style.display = "block";
-        } else if (contadorpantalla == 2) {
-            let punto = document.getElementById("infoguardada").innerText;
-            if (punto == 1) {
-                document.getElementById("puntousuario").style.display = "block";
-            } else if (punto == 0) {
-                document.getElementById("puntoIA").innerText = empate;
-                document.getElementById("puntoIA").style.display = "block";
-            } else if (punto == -1) {
-                document.getElementById("puntoIA").style.display = "block";
-            }
-        } else if (contadorpantalla == 3) {
-            clearInterval(intervalo);
-        }
-    }
     setTimeout(() => {
         cont = 2;
-        cargartablero(puntaje, puntajeIA, cont)
+        // cargartablero(puntaje, puntajeIA, cont)
         document.getElementById("rachaactual").innerText = racha;
     }, 1000);
-    var intervalo = setInterval(buclepantalla, 500);
 })
-
-
-
 
 function findeljuego() {
     const reinicio = document.getElementById("sino");
     reinicio.childNodes.forEach((eleccion) => {
         let cont = 5;
-        ocultarinterfaz(cont);
+        cambiarInterfaz(cont);
         eleccion.addEventListener("click", (e) => {
             let respuesta = e.target.value;
             if (respuesta == "si") {
                 puntaje = 0;
                 puntajeIA = 0;
                 cont = 0;
-                ocultarinterfaz(cont);
-                iniciar();
+                cambiarInterfaz(cont);
             } else if (respuesta == "no") {
                 cont = 6;
-                ocultarinterfaz(cont);
+                cambiarInterfaz(cont);
             }
         }, { once: true })
     })
-} 
+}

@@ -28,7 +28,8 @@ body {
     width: 100%;
     margin: 0%;
     padding: 0%;
-
+    overflow-y: scroll; 
+    scroll-behavior: smooth;  
 
     &.Dark {
         background: rgb(35, 33, 33);

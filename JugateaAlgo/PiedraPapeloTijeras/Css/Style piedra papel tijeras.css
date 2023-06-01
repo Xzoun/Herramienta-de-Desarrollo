@@ -1,3 +1,17 @@
+/*--------------------------- General ----------------------------*/
+
+#fondo { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgb(1, 189, 194);
+    background: linear-gradient(131deg,
+            rgba(1, 189, 194, 1) 18%,
+            rgba(82, 180, 204, 1) 33%,
+            rgba(68, 132, 129, 1) 95%);
+}
+
 #reglamento {
     padding: 0% 5%;
     margin: 5% 5% 0% 5%;
@@ -18,8 +32,9 @@
     display: none;
 }
 
-#Botoninicial {
-    background: black;
+/*--------------------------- Inicio ----------------------------*/
+
+#botonInicial {
     border: none;
     border-radius: 50px;
     transition: .3s ease all;
@@ -31,13 +46,24 @@
     font-weight: 700;
 }
 
-#Botoninicial:hover {
-    transform: scale(1.2);
-    transform-origin: center;
-
-    color:   rgb(255, 255, 255);
+#botonInicial:hover {
+    color: rgb(255, 255, 255);
 }
 
+#opciones {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+    font-size: 2ch;
+}
+
+.Boost {
+    margin: 20px;
+    flex: 1;
+}
+
+/*--------------------------- Racha ----------------------------*/
 
 #racha {
     position: relative;
@@ -60,44 +86,19 @@
     text-align: right;
 }
 
-#idbotones {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    display: none;
-    font-size: 2ch;
-}
-
-
-
-
-
-
-
-
-
+/*--------------------------- Pantalla ----------------------------*/
 
 .interfazgeneral {
     display: flex;
     width: 100%;
     margin-top: 40px;
-    position: relative;
 }
 
-#tablero {
+#pantalla {
     display: none;
-    flex: 1;
-    margin: 20px;
-}
-
-.pantalla {
     border: solid 3px rgb(208, 72, 241);
     background-color: black;
-    visibility: hidden;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     height: 90px;
     margin: 20px 10px;
     box-shadow: 4px 4px 10px rgb(124, 30, 179),
@@ -106,9 +107,12 @@
     margin: 20px;
 }
 
-.Boost {
-    margin: 20px;
+/*--------------------------- Tablero ----------------------------*/
+
+#tablero {
+    display: none;
     flex: 1;
+    margin: 20px;
 }
 
 .Styletablero {
@@ -283,6 +287,8 @@
     display: none;
     text-align: center;
 }
+
+/*-------------- Responsive --------------*/
 
 @media (max-width: 767px) {}
 

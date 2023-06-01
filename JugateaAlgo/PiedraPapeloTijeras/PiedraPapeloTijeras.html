@@ -14,23 +14,24 @@
 </head>
 
 <body>
+    <div id="fondo"></div>
     <header>
         <h1>Piedra, Papel o Tijeras?</h1>
     </header>
-    <form id="bienvenida">   
-            <h2> Buenas! </h2>  
+    <form id="bienvenida">
+        <h2> Buenas! </h2>
         <div class="ingresosolicitud">
-            <label for="ingresonombre" id="ingresonombreindicacion">Por favor ingresa tu nombre</label>
-            <input id="ingresonombre" name="ingresonombre">
+            <label for="ingresonombre" id="ingresonombreindicacion">Ingresá tu nombre</label>
+            <input id="ingresonombre" name="ingresonombre"></input>
         </div>
-        <div class="ingresosolicitud">
-            <button id="ingresoboton" class="botons">
+        <div>
+            <button id="ingresoboton" class="botons" class="ingresosolicitud">
                 <div class="iconoBoton">
                     <img class="arrowright" src="..\Cosas\Arrow right.png"></img>
                 </div>
                 <span>Cargar</span>
-            </button>
         </div>
+        </button>
     </form>
 
         <div id="racha">
@@ -58,24 +59,25 @@
         <h4>K.O.</h4>
         <p>Reclama la victoria!</p>
         <div>Racha: 7 puntos.</div>
-        <button id="Botoninicial" class="botons">Let's Play!</button>
+        <button id="botonInicial" class="botons">Let's Play!</button>
     </div>
-    <div id="idbotones">
-        <button class="botons PPT" id="boton1" value="Piedra">Piedra</button>
-        <button class="botons PPT" id="boton2" value="Papel">Papel</button>
-        <button class="botons PPT" id="boton3" value="Tijera">Tijera</button>
+
+    <div id="opciones">
+        <button class="botons PPT" >Piedra</button>
+        <button class="botons PPT" >Papel</button>
+        <button class="botons PPT" >Tijera</button>
     </div>
+
     <div id="findeljuego">
-        <header>
-            <h2>Jugas otra?</h2>
-        </header>
+        <h2>Jugas otra?</h2>
         <div id="sino">
             <button id=si value="si" class="botons">Dale!</button>
             <button id=no value="no" class="botons">Nono</button>
         </div>
     </div>
+
     <div class="interfazGeneral">
-        <div id="infoguardada"></div>
+
         <div id="tablero" class="bordetablero">
             <table class="Styletablero">
                 <tr>
@@ -86,22 +88,21 @@
                     <td id="celdaIA"> I. A. </td>
                 </tr>
                 <tr>
-                    <td id="celdamarcador"></td>
-                    <td id="celdamarcadorIA"></td>
+                    <td id="celdaMarcador"></td>
+                    <td id="celdaMarcadorIA"></td>
                 </tr>
             </table>
         </div>
-        <div class="pantalla">
-            <div id="elegiste" class="A1">Elegiste</div>
-            <div id="eligioIA" class="A1">I.A. Eligio</div>
-            <div id="eleccionPantalla" class="A1"></div>
-            <div id="eleccionIAPantalla" class="A1"></div>
-            <div id="puntousuario" class="A1"></div>
-            <div id="puntoIA" class="A1"></div>
+
+        <div id="pantalla">
+            <div id="elegiste" class="A1">Elegiste <span id="eleccionPantalla"></span></div>
+            <div id="eligioIA" class="A1">I.A. Eligio <span id="eleccionIAPantalla"></span></div>
+            <div id="punto" class="A1"></div>
         </div>
+
         <div class="Boost">
-            <button id="fire" id="idbotones" value="fire" class="formatoboost botons">Fire</button>
-            <button id="KO" id="idbotones" value="KO" class="formatoboost botons">K.O.</button>
+            <button id="fire" value="fire" class="formatoboost botons">Fire</button>
+            <button id="KO" value="KO" class="formatoboost botons">K.O.</button>
         </div>
     </div>
     <script type="module" id="formatojuego2" src="juego2.js"></script>
