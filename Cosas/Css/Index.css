@@ -4,18 +4,8 @@
     padding: 0;
 }
 
-a {
-    text-decoration: none;
-    font-weight: 400;
-    color: black;
-}
-
-ul {
-    list-style: none;
-}
-
-p {
-    text-indent: 4%;
+#all {
+    transition: .5s ease-in-out all;
 }
 
 body {
@@ -35,6 +25,20 @@ body {
                 #3B85E3 33%);
         color: white;
     }
+
+    &.Dark body:hover::-webkit-scrollbar-thumb,
+    &.Dark #descripcion:hover::-webkit-scrollbar-thumb {
+        background-color: #3994E3;
+        border-radius: 12px;
+    }
+
+    &.Dark body::-webkit-scrollbar-thumb:hover,
+    &.Dark #descripcion::-webkit-scrollbar-thumb:hover {
+        width: 7px;
+        background-color: #ffbdbd;
+        border-radius: 12px;
+    }
+
 
     &.Dark #start h1 {
         filter: invert(1);
@@ -76,6 +80,20 @@ body {
     &.Dark #newNoteBtn:hover img {
         filter: invert(1);
     }
+}
+
+a {
+    text-decoration: none;
+    font-weight: 400;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    text-indent: 4%;
 }
 
 #startBackground {
@@ -122,10 +140,6 @@ body {
     filter: invert(1);
 }
 
-#all {
-    transition: .5s ease-in-out all;
-}
-
 /*-------------- Scroll Bar --------------*/
 
 body::-webkit-scrollbar,
@@ -133,21 +147,19 @@ body::-webkit-scrollbar,
     width: 7px;
     height: 0px;
     margin-right: 3px;
+    background-color: #2e2e2e;
 }
 
 body:hover::-webkit-scrollbar-thumb,
 #descripcion:hover::-webkit-scrollbar-thumb {
-    background: #53D1FA;
+    background-color: #53D1FA;
     border-radius: 12px;
-    filter: blur(1px);
-    border-right: 10px solid rgba(0, 0, 0, 0.2);
 }
 
 body::-webkit-scrollbar-thumb:hover,
 #descripcion::-webkit-scrollbar-thumb:hover {
     width: 7px;
-    background:  #00bfff;
-    border-right: 10px solid rgba(0, 0, 0, 0.2);
+    background-color: #FAA852;
     border-radius: 12px;
 }
 
@@ -166,7 +178,14 @@ html {
 #banner nav {
     padding: 1% 2%;
     background-color: #53D1FA;
-    box-shadow: 0 0 4px 0.2px  #53D1FA;
+    box-shadow: 0 0 4px 0.2px #53D1FA;
+}
+
+#logo {
+    position: absolute;
+    left: 10px;
+    height: 30px;
+    filter: invert(88%) sepia(27%) saturate(2607%) hue-rotate(319deg) brightness(99%) contrast(99%)
 }
 
 #banner nav ul {

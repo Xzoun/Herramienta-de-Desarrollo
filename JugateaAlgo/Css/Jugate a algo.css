@@ -32,23 +32,23 @@ h1 {
 
 /*--------------------------- Scroll Bar ----------------------------*/
 
-
-body::-webkit-scrollbar {
-    width: 5px;
+body::-webkit-scrollbar{
+    width: 7px;
     height: 0px;
-    background: fixed;
+    margin-right: 3px;
+    background-color: #2e2e2e;
 }
 
 body:hover::-webkit-scrollbar-thumb {
-    background: rgb(245, 208, 208);
+    background-color: #53D1FA;
     border-radius: 12px;
-    filter: blur(1px);
 }
 
 body::-webkit-scrollbar-thumb:hover {
     width: 7px;
+    background-color: #FAA852;
+    border-radius: 12px;
 }
-
 
 /*--------------------------- Header ----------------------------*/
 
