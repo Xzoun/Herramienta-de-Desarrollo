@@ -7,11 +7,9 @@
 
 body {
     font-family: 'Catamaran', sans-serif;
-    background: rgb(1, 189, 194);
     background: linear-gradient(131deg,
-            rgba(1, 189, 194, 1) 18%,
-            rgba(82, 180, 204, 1) 33%,
-            rgba(68, 132, 129, 1) 95%);
+    #53D1FA 18%,
+    #3B85E3 33%);
 }
 
 #fondo { 
