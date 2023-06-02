@@ -20,11 +20,9 @@ p {
 
 body {
     font-family: 'Catamaran', sans-serif;
-    background: rgb(1, 189, 194);
     background: linear-gradient(131deg,
-            rgba(1, 189, 194, 1) 18%,
-            rgba(82, 180, 204, 1) 33%,
-            rgba(68, 132, 129, 1) 95%);
+            #53D1FA 18%,
+            #3B85E3 33%);
     width: 100%;
     margin: 0%;
     padding: 0%;
@@ -32,11 +30,9 @@ body {
     scroll-behavior: smooth;
 
     &.Dark {
-        background: rgb(35, 33, 33);
         background: linear-gradient(131deg,
-                rgba(35, 33, 33) 18%,
-                rgba(82, 180, 204, 0.9) 90%,
-                rgba(68, 132, 129, 0.8) 95%);
+                #3994E3 18%,
+                #3B85E3 33%);
         color: white;
     }
 
@@ -44,8 +40,9 @@ body {
         filter: invert(1);
     }
 
-    &.Dark #banner {
-        background-color: rgb(158, 117, 117);
+    &.Dark #banner nav {
+        background-color: #3994E3;
+        box-shadow: 0 0 4px 0.2px #3994E3;
     }
 
     &.Dark #banner a {
@@ -53,11 +50,11 @@ body {
     }
 
     &.Dark #banner a:hover {
-        color: rgb(255, 189, 189);
+        color: #ffbdbd;
     }
 
     &.Dark #banner button {
-        border: solid 3px rgb(158, 117, 117);
+        border: solid 3px #ffbdbd;
     }
 
     &.Dark #liContenedores #contenedores li a {
@@ -85,11 +82,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgb(1, 189, 194);
-    background: linear-gradient(131deg,
-            rgba(1, 189, 194, 1) 18%,
-            rgba(82, 180, 204, 1) 33%,
-            rgba(68, 132, 129, 1) 95%);
+    background: #3B85E3 33%;
     z-index: 600;
 }
 
@@ -139,13 +132,12 @@ body::-webkit-scrollbar,
 #descripcion::-webkit-scrollbar {
     width: 7px;
     height: 0px;
-    border-right: 10px solid rgba(0, 0, 0, 0.2);
     margin-right: 3px;
 }
 
 body:hover::-webkit-scrollbar-thumb,
 #descripcion:hover::-webkit-scrollbar-thumb {
-    background: rgb(170, 165, 170);
+    background: #53D1FA;
     border-radius: 12px;
     filter: blur(1px);
     border-right: 10px solid rgba(0, 0, 0, 0.2);
@@ -154,8 +146,9 @@ body:hover::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb:hover,
 #descripcion::-webkit-scrollbar-thumb:hover {
     width: 7px;
-    background: rgb(55, 56, 56);
+    background:  #00bfff;
     border-right: 10px solid rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
 }
 
 html {
@@ -166,21 +159,14 @@ html {
 
 #banner {
     width: 100%;
+    z-index: 600;
     top: 0%;
-    font-weight: 800;
-    z-index: 200;
-    background-color: rgb(255, 189, 189);
 }
 
 #banner nav {
     padding: 1% 2%;
-    background: rgb(82, 180, 204);
-    background: linear-gradient(180deg,
-            rgb(82, 180, 204) 5%,
-            rgb(82, 180, 204, 0.8) 25%,
-            rgb(82, 180, 204, 0.5) 75%,
-            rgb(82, 180, 204, 0.2) 95%,
-            rgb(0, 0, 0, 0.1) 100%);
+    background-color: #53D1FA;
+    box-shadow: 0 0 4px 0.2px  #53D1FA;
 }
 
 #banner nav ul {
@@ -191,11 +177,13 @@ html {
 
 #banner li a {
     color: white;
+    font-weight: 400;
 }
 
 #banner li:hover a {
     cursor: pointer;
-    color: rgb(255, 189, 189);
+    color: #FAA852;
+    font-weight: 800;
 }
 
 #contenedores {
@@ -242,7 +230,7 @@ html {
     position: relative;
     border-radius: 50px;
     cursor: pointer;
-    border: 3px solid rgb(255, 189, 189);
+    border: 3px solid #FA9F4B;
     display: flex;
     background-color: black;
 }
@@ -272,13 +260,7 @@ html {
 
 /*--------------------------- Presentación ----------------------------*/
 
-#presentacion {
-    margin: 0% 7%;
-    background-color: rgba(0, 255, 255, 0.185);
-    border-radius: 50px;
-    scroll-margin-top: 60px;
-    font-size: 90%;
-}
+
 
 /*--------------------------- Proyectos ----------------------------*/
 
@@ -364,21 +346,21 @@ html {
 #cont1 {
     display: flex;
     justify-content: center;
-
 }
 
 #cont2 {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    box-shadow: 1px 1px 0.1px 0.2px black
 }
 
 #cont2:hover {
     color: black;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /*--------------------------- Atajos ----------------------------*/
@@ -412,9 +394,19 @@ html {
     background: linear-gradient(90deg,
             rgba(0, 0, 0, 0.9) 18%,
             rgba(0, 0, 0, 0) 100%);
-    padding-right: 50%;
+    padding-right: 40%;
     border-left: rgb(255, 255, 255) solid 3px;
     color: white;
+}
+
+/*--------------------------- Acerca De ----------------------------*/
+
+#acercaDe {
+    margin: 4% 7% 0 7%;
+    background-color: rgba(0, 255, 255, 0.185);
+    border-radius: 50px;
+    scroll-margin-top: 60px;
+    font-size: 90%;
 }
 
 /*--------------------------- Footer || Contacto ----------------------------*/
@@ -438,12 +430,13 @@ html {
     width: 140px;
     height: 100px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 12px;
+    box-shadow: 1px 1px 0.1px 0.2px black;
 }
 
 #contacto li:hover {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.9);
     color: black;
 }
 
@@ -607,7 +600,7 @@ html {
     .nav {
         top: 150px;
     }
-    
+
     /*--------------------------- Proyectos ---------------------------*/
 
     #proyectosCont {

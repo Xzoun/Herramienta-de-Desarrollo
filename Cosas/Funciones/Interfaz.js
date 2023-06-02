@@ -6,33 +6,20 @@ export function interfaz() {
 
 const banner = document.getElementById("banner");
 const presentacion = document.getElementById("presentacion")
-var once = false;
-
-window.addEventListener("scroll", () => {
-    const start = document.getElementById("start");
-    const startBackground = document.getElementById("startBackground")
-    const scroll = window.scrollY;
-
-    if (!once && scroll >=startBackground.offsetHeight/2) {        
-        banner.style.position = "fixed";
-        start.style.display = "none"
-        startBackground.style.display = "none"
-        window.scrollTo({top: 0});
-        once = true;
-        document.body.style.overflow = "scroll";
-    }
-
-
-})
+const startBackground = document.getElementById("startBackground")
 
 const downBtn = document.getElementById("startContinue");
 downBtn.addEventListener("click", () => {
-    banner.style.position = "fixed"
-    presentacion.scrollIntoView({
-        behavior: "smooth"
-    })
+  document.body.style.overflow = "scroll";
+  startBackground.style.display = "none"; 
+  start.style.display = "none";
+  banner.style.position = "fixed";
 
-})
+  presentacion.scrollIntoView({    
+    behavior: "smooth"
+  })
+
+},{once:true})
 
 //---------------------------Dark mode---------------------------
 

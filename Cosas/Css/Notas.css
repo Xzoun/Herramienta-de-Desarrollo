@@ -19,6 +19,7 @@
     padding-top: 60px;
     padding-right: 20%;
     position: relative;
+    box-shadow: 1px 1px 0.1px 0.2px #3B85E3;
 }
 
 #noteTittle {
@@ -79,6 +80,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 120px);
     gap: 24px;
+    box-shadow: 1px 1px 0.1px 0.2px black;
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 12px;
+
 }
 
 #dropZone {
@@ -86,10 +91,9 @@
     height: 120px;
     width: 80%;
     top: 60px;
-    left: 10%;
-    background-color: rgb(255, 255, 255, 0.1);
+    left: 10%; 
     z-index: 100;
-    border-radius: 12px;
+    padding: 10px;
 }
 
 #dropZone1 {
@@ -101,11 +105,11 @@
 
 #dropZone2 {
     position: fixed;
-    right: 20px;
+    right: 20px;  
     bottom: 10px;
     width: 120px;
     height: 120px;
-    z-index: 600;
+    z-index: 100;
 }
 
 #dropZone2:hover {
@@ -137,6 +141,7 @@
     border-radius: 12px;
     box-shadow: (0, 0, 7px, rgba(0, 0, 0, ));
     outline: none;
+    box-shadow: 1px 1px 0.1px 0.2px #3B85E3;
 }
 
 .color1 {
@@ -261,7 +266,7 @@
     height: 100%;
     width: 100%;
     display: none;
-    z-index: 220;
+    z-index: 900;
     background-color: rgba(0, 255, 255, 0.8);
     flex-direction: column;
     justify-content: center;
@@ -279,6 +284,7 @@
     border: rgb(0, 0, 0) 3px solid;
     width: 70%;
     margin: 10% 15%;
+    
 }
 
 #paletaColores {
