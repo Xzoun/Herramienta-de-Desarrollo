@@ -21,24 +21,11 @@ body {
 
     &.Dark {
         background: linear-gradient(131deg,
-                #3994E3 18%,
-                #3B85E3 33%);
+        #3994E3 18%,
+                #3B85E3 33%,
+                black 99.9%);
         color: white;
     }
-
-    &.Dark body:hover::-webkit-scrollbar-thumb,
-    &.Dark #descripcion:hover::-webkit-scrollbar-thumb {
-        background-color: #3994E3;
-        border-radius: 12px;
-    }
-
-    &.Dark body::-webkit-scrollbar-thumb:hover,
-    &.Dark #descripcion::-webkit-scrollbar-thumb:hover {
-        width: 7px;
-        background-color: #ffbdbd;
-        border-radius: 12px;
-    }
-
 
     &.Dark #start h1 {
         filter: invert(1);
@@ -53,33 +40,15 @@ body {
         color: black;
     }
 
-    &.Dark #banner a:hover {
-        color: #ffbdbd;
-    }
-
-    &.Dark #banner button {
-        border: solid 3px #ffbdbd;
-    }
-
-    &.Dark #liContenedores #contenedores li a {
-        color: rgb(255, 255, 255);
-    }
 
     &.Dark #liContenedores #contenedores li:hover a {
-        color: #ffbdbd;
-    }
-
+        color: #FAA852;
+    } 
+    
     &.Dark a {
         color: white;
     }
 
-    &.Dark #newNoteBtn {
-        filter: invert(0);
-    }
-
-    &.Dark #newNoteBtn:hover img {
-        filter: invert(1);
-    }
 }
 
 a {
@@ -181,13 +150,6 @@ html {
     box-shadow: 0 0 4px 0.2px #53D1FA;
 }
 
-#logo {
-    position: absolute;
-    left: 10px;
-    height: 30px;
-    filter: invert(88%) sepia(27%) saturate(2607%) hue-rotate(319deg) brightness(99%) contrast(99%)
-}
-
 #banner nav ul {
     display: flex;
     justify-content: right;
@@ -211,10 +173,8 @@ html {
     transition: visibility 0s, opacity 0.5s;
     position: absolute;
     background: rgba(255, 255, 0, 0.2);
-    background: linear-gradient(10deg,
-            rgb(82, 180, 204) 5%,
-            rgb(82, 180, 204, 0.8) 15%,
-            rgb(82, 180, 204, 0.5) 30%,
+    background: linear-gradient(5deg,
+            #3994E3 30%,
             rgb(255, 189, 189, 1) 40%,
             rgb(0, 0, 0, 0.2) 50%,
             rgb(0, 0, 0, 0) 80%,
@@ -230,11 +190,11 @@ html {
 }
 
 #liContenedores #contenedores li a {
-    color: black;
+    color: white;
 }
 
 #liContenedores #contenedores li:hover a {
-    color: white;
+    color: #FAA852;
 }
 
 .nav {
@@ -303,7 +263,7 @@ html {
 }
 
 .proyectos a:hover {
-    color: #ffbdbd;
+    color: #FAA852;
 }
 
 #p1 {
@@ -400,7 +360,8 @@ html {
 }
 
 #contList h2 {
-    border-bottom: solid 1px rgb(255, 189, 189, 1);
+    border-bottom: solid 1px #FAA852;
+    ;
 }
 
 #contList ul li {
@@ -422,7 +383,7 @@ html {
 
 #acercaDe {
     margin: 4% 7% 0 7%;
-    background-color: rgba(0, 255, 255, 0.185);
+    background-color: rgba(255, 255, 255, 0.185);
     border-radius: 50px;
     scroll-margin-top: 60px;
     font-size: 90%;
