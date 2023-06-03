@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leo Benitez</title>
+    <title>Le Benitez!</title>
     <link rel="icon" type="img/png" href="./Cosas/Imagenes/pc.ico">
     <link rel="stylesheet" href="./Cosas/Css/Index.css">
     <link rel="stylesheet" href="./Cosas/Css/Notas.css">
@@ -22,11 +22,11 @@
     </div>
 
     <header id="banner">
-        <nav>           
+        <nav>
             <ul>
-                <li><a href="#atajos">Atajos</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#acercaDe">Acerca de</a></li>
+                <li data-e="atajos"><a data-e="atajos" href="#atajos">Atajos</a></li>
+                <li data-e="proyectos"><a data-e="proyectos" href="#proyectos">Proyectos</a></li>
+                <li data-e="acercaDe"><a data-e="acercaDe" href="#acercaDe">Acerca de</a></li>
                 <li id="liContenedores">
                     <a href="#notas">Notas</a>
                     <ul id="contenedores">
@@ -35,7 +35,7 @@
                         <!-- <li><a href="#dropZone1">Drop Zone 2</a></li> -->
                     </ul>
                 </li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li data-e="contacto"><a data-e="contacto" href="#contacto">Contacto</a></li>
                 <li>
                     <button id="darkButton">
                         <img id="darkIcon" class="darkButtonIcons" src="./Cosas/Imagenes/Darkmode.png"></img>
@@ -69,7 +69,7 @@
                 <li> <a href=" https://flexboxfroggy.com/#es" target="_blank">Flex-Box</a></li>
                 <li><a href="https://color.adobe.com/es/create/color-wheel" target="_blank">Paleta de Colores</a></li>
                 <li><a href="https://www.youtube.com/watch?v=oBntkyvWy74" target="_blank">MokittApp - Diseño</a></li>
-                
+
             </ul>
             <ul>
                 <h2>Cursos</h2>
@@ -106,15 +106,15 @@
             <div id="p1" class="proyectos centerCont">
                 <div class="center"> <a id="juegos" href="JugateaAlgo.html">Jugate a algo</a> </div>
             </div>
-            <div class="proyectos centerCont">
+            <div id="p2" class="proyectos centerCont">
                 <div class="center">
                     <h2 id="horaActual"></h2>
                 </div>
             </div>
-            <div class="proyectos centerCont">
+            <div id="p3" class="proyectos centerCont">
                 <div class="center"> <a id="queVer" href="QueVer.html">Qué ver??</a> </div>
             </div>
-            <div class="proyectos centerCont">
+            <div id="p4" class="proyectos centerCont">
                 <div class="center"><a id="muro" href="Muro.html">Muro</a></div>
             </div>
 
@@ -122,7 +122,7 @@
                 <h3>Descripciones</h3>
                 <div id="proyecto1" class="descripcionContP" data-p="p1">
                     <img id="abrirDescP1" data-p="p1" class="desplegar" src="./Cosas/Imagenes/Right.png" alt="">
-                    <h3 data-p="p1">Jugate a algo.</h3>
+                    <h4 data-p="p1">Jugate a algo.</h4>
                 </div>
                 <div id="descripcionP1" class="descripcionP">
                     <p>
@@ -139,7 +139,7 @@
                 </div>
                 <div id="proyecto2" class="descripcionContP" data-p="p2">
                     <img id="abrirDescP2" data-p="p2" class="desplegar" src="./Cosas/Imagenes/Right.png" alt="">
-                    <h3 data-p="p2">Qué ver??</h3>
+                    <h4 data-p="p2">Qué ver??</h4>
                 </div>
                 <div id="descripcionP2" class="descripcionP">
                     <p>
@@ -151,7 +151,7 @@
                 </div>
                 <div id="proyecto3" class="descripcionContP" data-p="p3">
                     <img id="abrirDescP3" data-p="p3" class="desplegar" src="./Cosas/Imagenes/Right.png" alt="">
-                    <h3 data-p="p3">Muro.</h3>
+                    <h4 data-p="p3">Muro.</h4>
                 </div>
                 <div id="descripcionP3" class="descripcionP">
                     <p>
@@ -185,51 +185,60 @@
                 <div class="center">Ahorcado Multijugador online</div>
             </div>
             <div id="p10" class="proyectos centerCont">
-                <div class="center">Subir el elo! d:</div>
+                <div class="center">Subir el elo!</div>
+                <img src="./Cosas/Imagenes/redes/nerdEmoji.png" alt="">
+            </div>
+            <div id="p11" class="proyectos centerCont">
+                <div class="center">Elección de idiomas</div>
             </div>
         </div>
-
-
-    </div>    
+    </div>
 
     <div id="acercaDe" class="nav">
-    <h2>Hola, bienvenid@</h2>
-    <p>
-        Mi nombre es Leonel, soy una persona dedicada y estoy
-        constantemente aprendiendo. Tengo 27 años y experiencia en varias áreas como
-        ventas, atención al público, administración y recursos humanos.
-        Hice cursos de francés, canto, guitarra, teatro y hasta uno de electricidad.
-    </p>
-    <h2>Ah variadito... Y de programación?</h2>
-    <p>
-        Mi primer contacto con la programación fue en 2023, realicé en un curso sobre
-        lógica de programación, actualmente estoy en uno de Java y otro de Front End.
-        Considero que tengo un gran futuro en el área y que recién estoy dando mis primeros
-        pasos en este basto mundo de las teclas.
-    </p>
-    <h2>Que objetivos esperas cumplir?</h2>
-    <p>
-        Esta página es un poco mi herramienta de trabajo, y un poco mi CV como
-        programador. La uso constantemente desde el editor de código y
-        decidí compartirla y actualizarla casi diariamente porque tengo varios
-        proyectos en los que estoy trabajando.
-    </p>
-    <p> Mi objetivo es <span style="font-weight: 800;">desarrollarme profesionalmente </span>como desarrollador full
-        stack y
-        continuar aprendiendo siempre.</p>
+        <h2>Acerca de</h2>
+        <div id="descripcionPersonal">
+            <h2>Hola, bienvenid@</h2>
+            <br>
+            <p>
+                Mi nombre es Leonel y soy una persona dedicada que se encuentra en constante aprendizaje.
+                A lo largo de mi trayectoria, he adquirido experiencia en diversas áreas, como ventas, atención
+                al público, administración y recursos humanos. Además, he explorado una variedad de intereses,
+                desde tomar cursos de francés, canto, guitarra y teatro, hasta aventurarme en el mundo de la
+                electricidad.
+            </p>
+            <br>
+            <p>
+                Sin embargo, mi verdadera pasión y descubrimiento ha sido la programación. Mi primer acercamiento
+                fue en 2023, cuando realicé un curso de lógica de programación. Desde entonces, he estado inmerso
+                en cursos de lógica, Java y Front-End. Considero que estoy dando mis primeros pasos en este vasto
+                mundo de las teclas, pero siento que tengo un gran futuro en el área.
+            </p>
+            <br>
+            <p>
+                Esta página no solo es mi herramienta de trabajo, sino también mi CV como programador. La utilizo
+                constantemente desde el editor de código y he decidido compartirla y actualizarla casi a diario para
+                documentar los diversos proyectos en los que estoy trabajando.
+            </p>
+            <br>
+            <p>
+                Mi objetivo principal es desarrollarme profesionalmente como desarrollador Full Stack y continuar
+                aprendiendo de forma constante. Estoy emocionado por las oportunidades que el campo de la programación
+                ofrece y estoy comprometido a expandir mis conocimientos y habilidades para alcanzar nuevas metas.
+            </p>
+        </div>
     </div>
 
     <div class="nav">
-    <h2>Contribuir</h2>
-    <div id="cont1">
-        <a href="https://ceneka.net/lebenitezCoding_" target="_blank">
-            <div id="cont2">
-                <img src="Cosas/Imagenes/redes/MercadoPago.png">
-                <h2>Realizar aporte</h2>
-            </div>
-        </a>
+        <h2>Contribuir</h2>
+        <div id="cont1">
+            <a href="https://ceneka.net/lebenitezCoding_" target="_blank">
+                <div id="cont2">
+                    <img src="Cosas/Imagenes/redes/MercadoPago.png">
+                    <h2>Realizar aporte</h2>
+                </div>
+            </a>
+        </div>
     </div>
-</div>
 
     <div id="notas" class="nav">
 

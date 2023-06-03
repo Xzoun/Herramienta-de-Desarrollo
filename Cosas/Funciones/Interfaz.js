@@ -21,6 +21,11 @@ downBtn.addEventListener("click", () => {
 
 },{once:true})
 
+//---------------------------Banner---------------------------
+banner.addEventListener("click",(e)=>{
+  
+const eleccion = e.target.getAttribute("data-e");
+});
 //---------------------------Dark mode---------------------------
 
 
@@ -70,5 +75,8 @@ function cargarModoNocturno() {
 function guardarModoNocturno(modoNocturno) {
   localStorage.setItem('darkMode', modoNocturno);
 }
+
+
+
 
 

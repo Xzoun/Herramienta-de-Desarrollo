@@ -21,7 +21,7 @@ body {
 
     &.Dark {
         background: linear-gradient(131deg,
-        #3994E3 18%,
+                #3994E3 18%,
                 #3B85E3 33%,
                 black 99.9%);
         color: white;
@@ -43,8 +43,8 @@ body {
 
     &.Dark #liContenedores #contenedores li:hover a {
         color: #FAA852;
-    } 
-    
+    }
+
     &.Dark a {
         color: white;
     }
@@ -159,12 +159,13 @@ html {
 #banner li a {
     color: white;
     font-weight: 400;
+
 }
 
 #banner li:hover a {
     cursor: pointer;
-    color: #FAA852;
     font-weight: 800;
+    color: #FAA852;
 }
 
 #contenedores {
@@ -222,9 +223,10 @@ html {
     opacity: 0.6;
     display: none;
     position: absolute;
-    right: -50px;
+    right: -10px;
     top: -10px;
     background-color: aliceblue;
+    border-radius: 12px;
 }
 
 .darkButtonIcons {
@@ -237,6 +239,10 @@ html {
     filter: invert(1);
 }
 
+.seleccionado {
+    color: #FAA852;
+}
+
 /*--------------------------- Presentación ----------------------------*/
 
 
@@ -245,7 +251,7 @@ html {
 
 #proyectosCont {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px 50px 350px auto 100px;
+    grid-template-rows: 50px 50px 350px auto 50px 50px;
     display: grid;
     gap: 2%;
 }
@@ -295,6 +301,13 @@ html {
     }
 }
 
+#descripcion h3 {
+    position: sticky;
+    top: 0;
+    background-color: #2e2e2e;
+    z-index: 2;
+}
+
 #notasFunc {
     grid-area: 3/1/4/3;
 }
@@ -318,6 +331,22 @@ html {
 .descripcionP {
     display: none;
     padding: 5px;
+}
+
+#p10 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+
+#p10 img {
+    width: auto;
+    height: 30px;
+}
+
+#p11 {
+    grid-column: 1/4;
 }
 
 /*--------------------------- Contribuir ----------------------------*/
@@ -381,18 +410,16 @@ html {
 
 /*--------------------------- Acerca De ----------------------------*/
 
-#acercaDe {
-    margin: 4% 7% 0 7%;
+#descripcionPersonal {
     background-color: rgba(255, 255, 255, 0.185);
-    border-radius: 50px;
-    scroll-margin-top: 60px;
-    font-size: 90%;
+    border-radius: 12px;
+    padding: 5% 5%;
+    margin: 0% 5%;
 }
 
 /*--------------------------- Footer || Contacto ----------------------------*/
 
 #contacto {
-    width: 90%;
     overflow: hidden;
 }
 
@@ -485,9 +512,10 @@ html {
 
     #proyectosCont {
         grid-template-columns: 48.5% 48.5%;
-        grid-template-rows: 60px 60px 60px auto 80px;
+        grid-template-rows: 60px 60px 60px auto 80px 80px;
         display: grid;
         gap: 2%;
+        margin-bottom: 10px;
     }
 
     .proyectos {
@@ -499,8 +527,9 @@ html {
         grid-column: 1/2;
     }
 
-    #horaActual {
+    #p2 {
         display: none;
+        border: none;
     }
 
     #p3 {
@@ -518,10 +547,16 @@ html {
         grid-column: 2/3;
     }
 
+    .desplegar {
+        width: 20px;
+        height: 20px;
+    }
+
     #notasFunc {
         grid-row: 4/7;
         grid-column: 1/3;
         display: none;
+        border: none;
     }
 
     #p7 {
@@ -540,12 +575,18 @@ html {
     }
 
     #p10 {
-        display: none;
+        grid-row: 6/7;
+        grid-column: 1/2;
     }
 
-    .desplegar {
-        width: 20px;
-        height: 20px;
+    #p10 img {
+        width: 30px;
+        height: auto;
+    }
+
+    #p11 {
+        grid-row: 6/7;
+        grid-column: 2/3;
     }
 
     /*--------------------------- Footer || Contacto ---------------------------*/
@@ -584,11 +625,16 @@ html {
     /*--------------------------- Proyectos ---------------------------*/
 
     #proyectosCont {
-        grid-template-rows: 150px 150px 1050px auto 150px;
+        grid-template-rows: 150px 150px 1050px auto 150px 150px;
     }
 
     .proyectos {
         border-radius: 12px;
+    }
+
+    #p10 img {
+        height: auto;
+        width: 60px;
     }
 
     /*--------------------------- Footer || Contacto ---------------------------*/
