@@ -16,8 +16,8 @@ export class crearComida {
 }
 
 export function puntuacion() {
-    let puntuacion = document.getElementById("rachaactual").innerText
-    let fondoPuntuacion = document.getElementById("rachaactual")
+    let puntuacion = document.getElementById("rachaActual").innerText
+    let fondoPuntuacion = document.getElementById("rachaActual")
     let mensaje = document.getElementById("mensaje")
     let puntos = Math.floor(puntuacion)
     if (puntos >= 0 && puntos <= 9) {

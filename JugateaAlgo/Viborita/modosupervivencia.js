@@ -58,7 +58,7 @@ function inicio() {
 
 setTimeout(() => {
 
-    document.getElementById("rachaactual").innerText = 0;
+    document.getElementById("rachaActual").innerText = 0;
     document.getElementById("nombre").innerText = window.name || "jugador 1";
     document.getElementById("vidas").innerText = 3;
 
@@ -108,7 +108,7 @@ setTimeout(() => {
         
         bonuspuntos(j, b);
 
-        document.getElementById("rachaactual").innerText = (segundero + puntuacion);
+        document.getElementById("rachaActual").innerText = (segundero + puntuacion);
         switch (segundero) {
             case 7:
                 Obstaculo[0].moverObstaculos()

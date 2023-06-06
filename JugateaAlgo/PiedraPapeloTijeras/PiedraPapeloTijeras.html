@@ -20,12 +20,12 @@
     </header>
     <form id="bienvenida">
         <h2> Buenas! </h2>
-        <div class="ingresosolicitud">
-            <label for="ingresonombre" id="ingresonombreindicacion">Ingresá tu nombre</label>
-            <input id="ingresonombre" name="ingresonombre"></input>
+        <div class="ingresoSolicitud">
+            <label for="ingresoNombre" id="ingresoNombreIndicacion">Ingresá tu nombre</label>
+            <input id="ingresoNombre" name="ingresoNombre"></input>
         </div>
         <div>
-            <button id="ingresoboton" class="botons" class="ingresosolicitud">
+            <button id="ingresoBoton" class="ingresoSolicitud botons">
                 <div class="iconoBoton">
                     <img class="arrowright" src="..\Cosas\Arrow right.png"></img>
                 </div>
@@ -34,11 +34,15 @@
         </button>
     </form>
 
-        <div id="racha">
+    <div id="racha">
+        <div>
             <h2 id="racha1"> Racha:</h2>
-            <h2 id="rachaactual">0</h2>
         </div>
-        <h2 id="indicacionInicial"> Bien, ahora elige una opcion</h2>
+        <div>
+            <h2 id="rachaActual">0</h2>
+        </div>
+    </div>
+    <h2 id="indicacionInicial"> Bien, ahora elige una opcion</h2>
 
     <div id="reglamento">
         <h2>Reglamento</h2>
@@ -63,12 +67,12 @@
     </div>
 
     <div id="opciones">
-        <button class="botons PPT" >Piedra</button>
-        <button class="botons PPT" >Papel</button>
-        <button class="botons PPT" >Tijera</button>
+        <button class="botons PPT">Piedra</button>
+        <button class="botons PPT">Papel</button>
+        <button class="botons PPT">Tijera</button>
     </div>
 
-    <div id="findeljuego">
+    <div id="finDelJuego">
         <h2>Jugas otra?</h2>
         <div id="sino">
             <button id=si value="si" class="botons">Dale!</button>
@@ -76,15 +80,15 @@
         </div>
     </div>
 
-    <div class="interfazGeneral">
+    <div id="interfazGeneral">
 
         <div id="tablero" class="bordetablero">
-            <table class="Styletablero">
+            <table class="StyleTablero botons">
                 <tr>
                     <th colspan="2"> Score </th>
                 </tr>
                 <tr>
-                    <td id="celdanombre"> </td>
+                    <td id="celdaNombre"> </td>
                     <td id="celdaIA"> I. A. </td>
                 </tr>
                 <tr>
@@ -94,17 +98,20 @@
             </table>
         </div>
 
+        <div id="boost">
+            <button id="fire" value="fire" class="formatoBoost botons" disabled>Fire</button>
+            <button id="KO" value="KO" class="formatoBoost botons" disabled>K.O.</button>
+        </div>
+
+
         <div id="pantalla">
             <div id="elegiste" class="A1">Elegiste <span id="eleccionPantalla"></span></div>
             <div id="eligioIA" class="A1">I.A. Eligio <span id="eleccionIAPantalla"></span></div>
             <div id="punto" class="A1"></div>
         </div>
 
-        <div class="Boost">
-            <button id="fire" value="fire" class="formatoboost botons">Fire</button>
-            <button id="KO" value="KO" class="formatoboost botons">K.O.</button>
-        </div>
     </div>
+
     <script type="module" id="formatojuego2" src="juego2.js"></script>
 
     <footer>

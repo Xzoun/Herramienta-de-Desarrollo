@@ -68,7 +68,7 @@ setTimeout(() => {
     Snake[0] = new cuerpoPropiedades()
     Snake[0].direccion = 2;
 
-    document.getElementById("rachaactual").innerText = 0;
+    document.getElementById("rachaActual").innerText = 0;
     document.getElementById("nombre").innerText = window.name;
 
     document.addEventListener("keyup", (e) => {

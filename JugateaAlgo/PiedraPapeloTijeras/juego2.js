@@ -12,10 +12,12 @@ let cambiarInterfaz = interfazFc,
 
 // ----------------------- Variables -----------------------
 //html
-var nombre = document.getElementById("celdanombre").innerText,
+var nombre = document.getElementById("celdaNombre").innerText,
     puntoActual = document.getElementById("punto"),
     elegiste = document.getElementById("elegiste"),
-    eligioIA = document.getElementById("eligioIA");
+    eligioIA = document.getElementById("eligioIA"),
+    fireButton = document.getElementById("fire"),
+    KOButton = document.getElementById("KO");
 
 // juego
 var eleccion,
@@ -38,8 +40,8 @@ const opciones = document.getElementById("opciones");
 document.getElementById("bienvenida").addEventListener("submit", (e) => {
     e.preventDefault();
 
-    var nombre = document.getElementById("ingresonombre").value || "Player 1";
-    document.getElementById("celdanombre").textContent = nombre;
+    var nombre = document.getElementById("ingresoNombre").value || "Player 1";
+    document.getElementById("celdaNombre").textContent = nombre;
 
     cont = 0;
     cambiarInterfaz(cont);
@@ -59,14 +61,15 @@ opciones.addEventListener("click", (e) => {
 
     // ----------------------- Juego || Boost -----------------------   
 
-    document.getElementById("fire").addEventListener("click", function (event) {
+    fireButton.addEventListener("click", function (event) {
         fireActive = true;
         puntoActual.innerText = "Fire in the hole!";
         puntoActual.style.display = "block";
+
     }, { once: true });
 
 
-    document.getElementById("KO").addEventListener("click", function (event) {
+    KOButton.addEventListener("click", function (event) {
         puntoActual.innerText = " Victoria por Knock Out!";
         puntoActual.style.display = "block";
         setTimeout(() => {
@@ -83,7 +86,7 @@ opciones.addEventListener("click", (e) => {
     eleccion = e.target.innerText;
 
     let { maquina } = eleccionMaquina();
-    console.log(eleccion)
+
     document.getElementById("eleccionIAPantalla").innerText = maquina;
     document.getElementById("eleccionPantalla").innerText = eleccion;
 
@@ -95,7 +98,9 @@ opciones.addEventListener("click", (e) => {
                 racha = 0;
                 puntaje -= 2;
                 puntajeIA++;
-
+                fireButton.classList.remove("fireActivate");
+                KOButton.classList.remove("fireActivate");
+                fireButton.disabled = true;
                 puntoActual.innerText = " Fallaste. Restas 2 puntos.\n I.A. Suma 1 punto."
                 break;
             case 0:
@@ -115,6 +120,9 @@ opciones.addEventListener("click", (e) => {
                 racha = 0;
                 puntajeIA++;
                 puntoActual.innerText = " I.A. Suma 1 punto."
+                fireButton.classList.remove("fireActivate");
+                KOButton.classList.remove("fireActivate");
+                fireButton.disabled = true;
                 break;
             case 0:
                 racha++;
@@ -131,8 +139,12 @@ opciones.addEventListener("click", (e) => {
 
         if (racha >= 3) {
             cont = 3;
+            fireButton.disabled = false;
+            fireButton.classList.add("fireActivate");
             if (racha >= 7) {
                 cont = 4;
+                KOButton.disabled = false;
+                fireButton.classList.add("KOActivate");
             }
         } else {
             cont = 2
@@ -198,7 +210,7 @@ opciones.addEventListener("click", (e) => {
     setTimeout(() => {
         cont = 2;
         // cargartablero(puntaje, puntajeIA, cont)
-        document.getElementById("rachaactual").innerText = racha;
+        document.getElementById("rachaActual").innerText = racha;
     }, 1000);
 })
 

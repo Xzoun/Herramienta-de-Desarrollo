@@ -1,35 +1,33 @@
 var pantalla = document.getElementById("pantalla"),
     reglamento = document.getElementById("reglamento"),
     opciones = document.getElementById("opciones"),
-    indicacionInicial =  document.getElementById("indicacionInicial"),
+    indicacionInicial = document.getElementById("indicacionInicial"),
+    visuales = document.getElementById("interfazGeneral"),
+    atrasButton = document.getElementById("atras"),
     ganador;
 
 export function interfazFc(cont) {
     switch (cont) {
 
         case 0:  //Reglamento
-            document.getElementById("atras").style.display = "none";
+        atrasButton.style.display = "none";
             reglamento.style.display = "block";
             document.getElementById("bienvenida").style.display = "none";
-            document.getElementById("findeljuego").style.display = "none";
+            document.getElementById("finDelJuego").style.display = "none";
             break;
 
         case 1:  //Interfaz General - Inicio     
             reglamento.style.display = "none";
             opciones.style.display = "flex";
             indicacionInicial.style.display = "block";
-            document.getElementById("atras").style.display = "block";
+            atrasButton.style.display = "block";
             break;
 
         case 2:    //Pantalla - Racha
-            pantalla.style.display = "block";
             indicacionInicial.style.display = "none";
-            document.getElementById("tablero").style.display = "block";
-            document.getElementById("tablero").style.visibility = "visible";
-            document.getElementById("racha").style.display = "block";
-            
-            document.getElementById("fire").style.display = "none";
-            document.getElementById("KO").style.display = "none";
+
+            document.getElementById("racha").style.display = "flex";
+            visuales.style.display = "grid";
             break;
 
         case 3:    //Boost fire
@@ -41,12 +39,12 @@ export function interfazFc(cont) {
             break;
 
         case 5:   //Jugar de nuevo?
-            document.getElementById("tablero").style.display = "none";            
+            document.getElementById("tablero").style.display = "none";
             document.getElementById("racha").style.display = "none";
             document.getElementById("mensaje").style.display = "block";
             document.getElementById("fire").style.display = "none";
             document.getElementById("KO").style.display = "none";
-            document.getElementById("findeljuego").style.display = "block";
+            document.getElementById("finDelJuego").style.display = "block";
             pantalla.style.display = "none";
             opciones.style.display = "none";
             break;
