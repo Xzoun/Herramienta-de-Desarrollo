@@ -1,5 +1,72 @@
-/*-------------- Banner --------------*/
+/*--------------------------- General ----------------------------*/
 
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  font-family: 'Catamaran', sans-serif;
+  background: linear-gradient(131deg,
+  #53D1FA 18%,
+  #3B85E3 33%);
+}
+
+#fondo { 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: #FAA852;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+/*--------------------------- Scroll Bar ----------------------------*/
+
+body::-webkit-scrollbar, #comentario::-webkit-scrollbar {
+  width: 7px;
+  height: 0px;
+  margin-right: 3px;
+  background-color: #2e2e2e;
+}
+
+body:hover::-webkit-scrollbar-thumb, #comentario:hover::-webkit-scrollbar-thumb {
+  background-color: #53D1FA;
+  border-radius: 12px;
+}
+
+body::-webkit-scrollbar-thumb:hover,#comentario::-webkit-scrollbar-thumb:hover {
+  width: 7px;
+  background-color: #FAA852;
+  border-radius: 12px;
+}
+
+/*--------------------------- Header ----------------------------*/
+
+h1 {
+  background: rgb(244, 192, 85, 0.8);
+  background: linear-gradient(3deg,
+          rgba(244, 192, 85, 0.2) 4%,
+          rgba(247, 232, 55, 0.2) 8%,
+          rgba(125, 233, 208, 0.2) 12%,
+          rgb(92, 226, 222, 0.2) 16%,
+          rgb(67, 83, 223, 0.5) 20%,
+          rgb(171, 82, 212, 0.5) 24%,
+          rgba(217, 180, 217, 0.5) 28%,
+          rgb(245, 208, 208, 0.2)32%,
+          rgb(160, 158, 158, 0.2) 36%,
+          rgb(2, 0, 36, 0.2)96%);
+}
+
+/*--------------------------- Banner ----------------------------*/
 
 #banner {
   position: fixed;
@@ -7,11 +74,6 @@
   left: 0px;
   height: 50px;
   width: 100%;
-  background: rgb(201, 186, 186);
-  background: linear-gradient(180deg,
-      rgb(201, 186, 186) 5%,
-      rgb(201, 186, 186,0.5) 55%,
-      rgba(0, 0, 0, 0) 100%);
   z-index: 200;
 }
 
@@ -62,7 +124,7 @@ a {
   left: 30px;
   height: 25px;
   text-decoration: none;
-  color: black;
+  color:black;
 }
 
 #banner .arrowleft {
@@ -72,64 +134,7 @@ a {
   height: 25px;
   opacity: 0;
   transition: .3s ease all;
-}
-
-/*-------------- General --------------*/
-
-
-body {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(59deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(164, 177, 180, 1) 100%);
-  margin-top: 50px;
-  padding: 0;
-  justify-content: center;
-  min-height: 100vh;
-  font-family: 'Catamaran', sans-serif;
-}
-
-
-/*-------------- Scroll Bar --------------*/
-
-
-body::-webkit-scrollbar {
-  width: 7px;
-  height: 0px;
-  border-right: 10px solid rgba(0, 0, 0, 0.2);
-  margin-right: 3px;
-}
-
-body:hover::-webkit-scrollbar-thumb {
-  background: rgb(170, 165, 170);
-  border-radius: 12px;
-  filter: blur(1px);
-  border-right: 10px solid rgba(0, 0, 0, 0.2);
-}
-
-body::-webkit-scrollbar-thumb:hover,
-#comentario::-webkit-scrollbar-thumb:hover {
-  width: 7px;
-  background: rgb(55, 56, 56);
-  border-right: 10px solid rgba(0, 0, 0, 0.2);
-}
-
-#comentario::-webkit-scrollbar {
-  width: 7px;
-  height: 0px;
-  border-right: 10px solid rgba(255, 255, 255, 0.2);
-  margin-right: 3px;
-
-}
-
-#comentario:hover::-webkit-scrollbar-thumb {
-  background: rgba(216, 78, 78, 0.9974836713812324);
-  ;
-  border-radius: 12px;
-  filter: blur(1px);
-  border-right: 10px solid rgba(0, 0, 0, 0.2);
-}
-
+ }
 
 /*-------------- Comentar --------------*/
 
@@ -141,33 +146,35 @@ body::-webkit-scrollbar-thumb:hover,
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex: 2;
   padding-bottom: 10%;
+  margin-top: 60px;
 }
 
 #formulario h2 {
   font-size: 2ch;
   text-align: right;
   margin: 2% 20% 0% auto;
-  color :rgb(201, 186, 186);
+  color: #FAA852;
 }
 
 #comentario {
+  padding: 1%;
   width: 60%;
   height: 60px;
   resize: none;
   margin: 0 20%;
   background-color: rgba(55, 53, 53, 0.875);
-  color: rgb(201, 186, 186);
+  color: #FAA852;
   outline: none;
 }
 
 #comentario::placeholder {
-  color: rgb(201, 186, 186);
+  color: #FAA852;
 }
 
 #comentar {
   margin-right: 15%;
   float: right;
-  background-color: rgb(201, 186, 186);
+  background-color: rgba(250, 168, 82,0.8);
   cursor: pointer;
   color: black;
   border-radius: 50px;
@@ -177,7 +184,7 @@ body::-webkit-scrollbar-thumb:hover,
 }
 
 #comentar:hover {
-  background: rgb(169, 60, 60);
+  background-color: rgba(250, 168, 82);
 }
 
 
@@ -216,20 +223,25 @@ body::-webkit-scrollbar-thumb:hover,
   background-color: rgba(55, 53, 53, 0.875);
   max-width: 85%;
   border-bottom-left-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .comentario .contenido {
   overflow: hidden;
-  color: rgb(201, 186, 186);
+  color: #FAA852;
   word-wrap: break-word;
+
 }
 
 .comentario .tiempo {
   font-size: 12px;
   font-weight: 800;
-  color: rgb(201, 186, 186);
+  color: #FAA852;
   display: flex;
   justify-content: end;
+  border-top: #FAA852 1px solid;
 }
 
 .likes {
