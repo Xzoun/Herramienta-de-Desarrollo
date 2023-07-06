@@ -298,6 +298,7 @@ html {
     &.proyecto2 #abrirDescP2,
     &.proyecto3 #abrirDescP3 {
         rotate: 90deg;
+        filter: invert(80%) sepia(26%) saturate(1372%) hue-rotate(324deg) brightness(100%) contrast(97%);
     }
 }
 
@@ -324,9 +325,15 @@ html {
     cursor: pointer;
 }
 
-.desplegar:hover {
-    filter: invert(1);
+.desplegar {
+    filter: invert(72%) sepia(18%) saturate(1316%) hue-rotate(154deg) brightness(98%) contrast(100%);
 }
+
+.desplegar:hover{
+    filter: invert(80%) sepia(26%) saturate(1372%) hue-rotate(324deg) brightness(100%) contrast(97%);
+}
+
+
 
 .descripcionP {
     display: none;
