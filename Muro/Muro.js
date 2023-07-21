@@ -1,38 +1,56 @@
+import { insertarComentario, actualizarLikes } from "./DB/SQL.js"
+
 var formulario = document.getElementById('formulario');
 var comentario = document.getElementById('comentario');
 var muro = document.getElementById('muro');
-var likes = document.getElementById('likesDiv');
-var contador = 1;
+var contador = 0;
 
 formulario.addEventListener('submit', function (event) {
   event.preventDefault();
   let fechaActual = new Date(); 
   var contenidoComentario = comentario.value;
-  var nuevoComentario = {
-    id: contador,
-    contenido: contenidoComentario,
-    fecha: fecha(fechaActual.getTime()),
-    likes: 0
-  };
 
   comentario.value = '';
 
   var comentarioHTML = '<div class="comentarioDiv">' +
     '<div class="comentario">' +
-    '<p class="contenido">' + nuevoComentario.contenido + '</p>' +
-    '<p class="tiempo">' + nuevoComentario.fecha + '</p>' +
+    '<p class="contenido">' + contenidoComentario + '</p>' +
+    '<p class="tiempo">' + fecha(fechaActual) + '</p>' +
     '</div>' +
     '<div class="likesDiv" >' +
-    '<img class="like" src="./Muro/Cosas/Up.png"/>' +
-    '<div class="likes">' + nuevoComentario.likes + '</div>' +
-    '<img class="like" src="./Muro/Cosas/Down.png"/>' +
+    '<img class="like plus_like" src="./Muro/Cosas/Up.png" onclick="incrementarLikes(' + contador + ')"/>' +
+    '<div class="likes">' + contador + '</div>' +
+    '<img class="like minus_like" src="./Muro/Cosas/Down.png" onclick="disminuirLikes(' + contador + ')"/>' +
     '</div>' + '</div>';
 
   muro.insertAdjacentHTML('afterbegin', comentarioHTML);
   document.getElementById("caracteres").innerHTML = 400;
+
+  insertarComentario(contenidoComentario);
 });
 
+
 function cargarComentarios() {
+  fetch('/obtener-comentarios')
+  .then(response => response.json())
+  .then(comentarios => {
+    // Ahora que tienes los comentarios, puedes mostrarlos en el muro
+    comentarios.forEach(comentario => {
+      var comentarioHTML = '<div class="comentarioDiv">' +
+        '<div class="comentario">' +
+        '<p class="contenido">' + comentario.contenido + '</p>' +
+        '<p class="tiempo">' + fecha(comentario.fecha) + '</p>' +
+        '</div>' +
+        '<div class="likesDiv" >' +
+        '<img class="like plus_like" src="./Muro/Cosas/Up.png" onclick="incrementarLikes(' +comentario.likes + ')"/>' +
+        '<div class="likes">' + comentario.likes + '</div>' +
+        '<img class="like minus_like" src="./Muro/Cosas/Down.png" onclick="disminuirLikes(' +comentario.likes  + ')"/>' +
+        '</div>' + '</div>';
+
+      muro.insertAdjacentHTML('afterbegin', comentarioHTML);
+    });
+  })
+  .catch(error => console.error('Error al cargar los comentarios:', error));
 }
 
 function fecha(creacion) {
@@ -85,11 +103,24 @@ function fecha(creacion) {
     }
   }
 }
-//likes.addEventListener('click', function (event) {
-// }, { once: true });
 
-window.addEventListener('load', function () {
-  //cargarComentarios();
-  // contador = comentarios.length;
-});
+function incrementarLikes(idComentario) {
+  var likesDiv = document.getElementById('likes_' + idComentario);
+  var likes = parseInt(likesDiv.textContent);
+  likes++;
+  likesDiv.textContent = likes;
+  actualizarLikes(idComentario, likes);
+}
+
+function disminuirLikes(idComentario) {
+  var likesDiv = document.getElementById('likes_' + idComentario);
+  var likes = parseInt(likesDiv.textContent);
+  likes--;
+  likesDiv.textContent = likes;
+  actualizarLikes(idComentario, likes);
+}
+
+window.addEventListener('load', cargarComentarios());
+
+
 
