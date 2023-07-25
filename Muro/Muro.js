@@ -19,7 +19,7 @@ formulario.addEventListener('submit', function (event) {
     '</div>' +
     '<div class="likesDiv" >' +
     '<img class="like plus_like" src="./Muro/Cosas/Up.png" onclick="incrementarLikes(' + contador + ')"/>' +
-    '<div class="likes">' + contador + '</div>' +
+    '<div class="likes_">' + contador + '</div>' +
     '<img class="like minus_like" src="./Muro/Cosas/Down.png" onclick="disminuirLikes(' + contador + ')"/>' +
     '</div>' + '</div>';
 
@@ -27,6 +27,7 @@ formulario.addEventListener('submit', function (event) {
   document.getElementById("caracteres").innerHTML = 400;
 
   insertarComentario(contenidoComentario);
+
 });
 
 
@@ -41,9 +42,9 @@ function cargarComentarios() {
         '<p class="contenido">' + comentario.contenido + '</p>' +
         '<p class="tiempo">' + fecha(comentario.fecha) + '</p>' +
         '</div>' +
-        '<div class="likesDiv" >' +
+        '<div class="likesDiv'+ idComentario+ '" >' +
         '<img class="like plus_like" src="./Muro/Cosas/Up.png" onclick="incrementarLikes(' +comentario.likes + ')"/>' +
-        '<div class="likes">' + comentario.likes + '</div>' +
+        '<div class="likes_">' + comentario.likes + '</div>' +
         '<img class="like minus_like" src="./Muro/Cosas/Down.png" onclick="disminuirLikes(' +comentario.likes  + ')"/>' +
         '</div>' + '</div>';
 

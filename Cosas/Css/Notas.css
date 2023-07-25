@@ -2,9 +2,15 @@
 body {
 
     &.Dark .dropZone,
-    &.Dark .note,
     &.Dark #nuevaNota {
         box-shadow: 1px 1px 0.1px 0.2px black;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    &.Dark #notas #nuevaNota #referencias h2,
+    &.Dark #notas #nuevaNota #noteTittle{
+        filter : invert(0);
     }
 
     &.Dark #newNoteBtn:hover img {
@@ -29,12 +35,12 @@ body {
     gap: 4px;
     border-radius: 12px;
     min-height: 150px;
-    background-color: rgba(255, 255, 255, 0.185);
+    background-color: rgba(0, 0, 0, 0.185);
     border-radius: 12px;
     padding-top: 60px;
     padding-right: 20%;
     position: relative;
-    box-shadow: 1px 1px 0.1px 0.2px #3B85E3;
+    box-shadow: 1px 1px 0.1px 0.2px #000000;
 }
 
 #noteTittle {
@@ -96,9 +102,9 @@ body {
     grid-template-columns: repeat(auto-fill, 120px);
     gap: 24px;
     box-shadow: 1px 1px 0.1px 0.2px black;
-    background-color: rgb(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0, 0.1);
     border-radius: 12px;
-    box-shadow: 1px 1px 0.1px 0.2px #3B85E3;
+    box-shadow: 1px 1px 0.1px 0.2px black;
 }
 
 #dropZone {
@@ -156,7 +162,7 @@ body {
     border-radius: 12px;
     box-shadow: (0, 0, 7px, rgba(0, 0, 0, ));
     outline: none;
-    box-shadow: 1px 1px 0.1px 0.2px #3B85E3;
+    box-shadow: 1px 1px 0.1px 0.2px black;
 }
 
 .color1 {

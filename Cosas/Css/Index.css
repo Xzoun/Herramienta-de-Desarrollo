@@ -12,7 +12,7 @@ body {
     font-family: 'Catamaran', sans-serif;
     background: linear-gradient(131deg,
             #53D1FA 18%,
-            #3B85E3 33%);
+            white 33%);
     width: 100%;
     margin: 0%;
     padding: 0%;
@@ -22,8 +22,7 @@ body {
     &.Dark {
         background: linear-gradient(131deg,
                 #3994E3 18%,
-                #3B85E3 33%,
-                black 99.9%);
+                black 33%);
         color: white;
     }
 
@@ -38,6 +37,12 @@ body {
 
     &.Dark #banner a {
         color: black;
+    }
+
+    &.Dark #cont2,
+    &.Dark #descripcionPersonal,
+    &.Dark #contacto li {
+        background-color: rgba(255, 255, 255, 0.5);
     }
 
 
@@ -329,7 +334,7 @@ html {
     filter: invert(72%) sepia(18%) saturate(1316%) hue-rotate(154deg) brightness(98%) contrast(100%);
 }
 
-.desplegar:hover{
+.desplegar:hover {
     filter: invert(80%) sepia(26%) saturate(1372%) hue-rotate(324deg) brightness(100%) contrast(97%);
 }
 
@@ -364,7 +369,7 @@ html {
 }
 
 #cont2 {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -375,7 +380,7 @@ html {
 
 #cont2:hover {
     color: black;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /*--------------------------- Atajos ----------------------------*/
@@ -418,7 +423,7 @@ html {
 /*--------------------------- Acerca De ----------------------------*/
 
 #descripcionPersonal {
-    background-color: rgba(255, 255, 255, 0.185);
+    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     padding: 5% 5%;
     margin: 0% 5%;
@@ -444,13 +449,13 @@ html {
     width: 140px;
     height: 100px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     box-shadow: 1px 1px 0.1px 0.2px black;
 }
 
 #contacto li:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.2);
     color: black;
 }
 

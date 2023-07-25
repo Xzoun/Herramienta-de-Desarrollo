@@ -2,9 +2,9 @@ const express = require('express');
 const mysql = require('mysql2');
 
 const app = express();
-const port = 6358;
+const port = process.env.PORT || 3000;
 
-// Configura los detalles de conexión a tu base de datos
+// Configura los detalles de conexión a tu base de datos en Railway
 const connection = mysql.createConnection({
     host: 'containers-us-west-105.railway.app',
     user: 'root',
@@ -12,16 +12,9 @@ const connection = mysql.createConnection({
     database: 'Comentarios',
 });
 
-// Establece la conexión
-connection.connect((err) => {
-    if (err) {
-        console.error('Error al conectar a la base de datos:', err);
-        return;
-    }
-    console.log('Conexión a la base de datos exitosa!');
-
-    // Realiza una consulta para obtener todos los comentarios
-    connection.query('select * from Comentarios order by id desc', (err, results, fields) => {
+// Ruta para obtener todos los comentarios desde la base de datos
+app.get('/obtener-comentarios', (req, res) => {
+    connection.query('SELECT * FROM Comentarios', (err, results, fields) => {
         if (err) {
             console.error('Error al obtener los comentarios:', err);
             return res.status(500).json({ error: 'Error al obtener los comentarios' });
@@ -31,44 +24,37 @@ connection.connect((err) => {
     });
 });
 
-// insertar contenido en la base
-export function insertarComentario(contenidoComentario) {
+// Ruta para insertar un nuevo comentario en la base de datos
+app.post('/insertar-comentario', (req, res) => {
+    const { contenidoComentario } = req.body;
     const query = 'INSERT INTO Comentarios (contenido, fecha) VALUES (?, NOW())';
     const values = [contenidoComentario];
 
     connection.query(query, values, (err, result) => {
         if (err) {
             console.error('Error al insertar el comentario:', err);
-            return;
+            return res.status(500).json({ error: 'Error al insertar el comentario' });
         }
-        console.log('Comentario insertado correctamente!');
+
+        return res.status(200).json({ message: 'Comentario insertado correctamente' });
     });
-}
+});
 
-// Ruta para obtener todos los comentarios desde la base de datos
-export function cargarComentarios() {
+// Ruta para actualizar los likes de un comentario en la base de datos
+app.post('/actualizar-likes', (req, res) => {
+    const { idComentario, likes } = req.body;
+    const query = `UPDATE Comentarios SET likes = ${likes} WHERE ID_Comentarios = ${idComentario};`;
 
-    connection.query('SELECT * FROM Comentarios', (err, results, fields) => {
+    connection.query(query, (err, result) => {
         if (err) {
-            console.error('Error al obtener los comentarios:', err);
-            return;
+            console.error('Error al actualizar los likes:', err);
+            return res.status(500).json({ error: 'Error al actualizar los likes' });
         }
-        console.log(results);
 
+        res.json({ message: 'Likes actualizados correctamente en el servidor' });
     });
-}
+});
 
-export function actualizarLikes(idComentario, likes) {
-    app.post('/actualizar-likes', (req, res) => {
-        const query = `UPDATE Comentarios SET likes = ${likes} WHERE ID_Comentarios = ${idComentario};`;
-
-        connection.query(query, (err, result) => {
-            if (err) {
-                console.error('Error al actualizar los likes:', err);
-                return res.status(500).json({ error: 'Error al actualizar los likes' });
-            }
-
-            res.json({ message: 'Likes actualizados correctamente en el servidor' });
-        });
-    });
-}
+app.listen(port, () => {
+    console.log(`API listening on port ${port}`);
+});
