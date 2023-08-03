@@ -10,6 +10,10 @@ Es un proyecto que refleja mi pasión, mis inicios en la programación y mi habi
 * Diseño moderno y atractivo con CSS para una presentación visualmente agradable.
 * Organización semántica en HTML para una estructura clara y accesible.
 
+### Link del proyecto: 
+
+* https://xzoun.github.io/Tryhardeando-el-inicio/Index.html
+
 ¡Explora el código y descubre cómo se ha desarrollado este proyecto! Agradezco cualquier comentario, sugerencia o contribución que puedas hacer para mejorarlo.
 
 ¡Gracias por visitar mi repositorio!
