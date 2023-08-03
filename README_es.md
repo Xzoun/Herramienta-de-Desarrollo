@@ -1,4 +1,4 @@
-# Tryhardeando el inicio
+# Empezando a esforzarse!
 
 En este repositorio, encontrarás una web desarrollada con lógica en lenguaje JavaScript, diseño en CSS y organización en HTML. 
 Es un proyecto que refleja mi pasión, mis inicios en la programación y mi habilidad para crear soluciones funcionales.
@@ -12,7 +12,7 @@ Es un proyecto que refleja mi pasión, mis inicios en la programación y mi habi
 
 ### Link del proyecto: 
 
-* https://xzoun.github.io/Porffolio/Index.html
+* https://xzoun.github.io/Portfolio/Index.html
 
 ¡Explora el código y descubre cómo se ha desarrollado este proyecto! Agradezco cualquier comentario, sugerencia o contribución que puedas hacer para mejorarlo.
 
