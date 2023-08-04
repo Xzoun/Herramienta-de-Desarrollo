@@ -39,7 +39,6 @@ body {
         color: black;
     }
 
-    &.Dark #cont2,
     &.Dark #descripcionPersonal,
     &.Dark #contacto li {
         background-color: rgba(255, 255, 255, 0.5);
@@ -54,6 +53,19 @@ body {
         color: white;
     }
 
+    &.Dark .cont2 {
+        box-shadow: 1px 1px 0.1px 0.2px white;
+    }
+
+    &.Dark .cont1,
+    &.Dark #MercadoPagoIcon,
+    &.Dark #GitHubIcon {
+        filter: invert(1);
+    }
+
+    &.Dark .cont2:hover #GitHubIcon {
+        filter: invert(0);
+        }
 }
 
 a {
@@ -338,8 +350,6 @@ html {
     filter: invert(80%) sepia(26%) saturate(1372%) hue-rotate(324deg) brightness(100%) contrast(97%);
 }
 
-
-
 .descripcionP {
     display: none;
     padding: 5px;
@@ -361,14 +371,14 @@ html {
     grid-column: 1/4;
 }
 
-/*--------------------------- Contribuir ----------------------------*/
+/*--------------------------- Otros Proyectos | Contribuir ----------------------------*/
 
-#cont1 {
+.cont1 {
     display: flex;
     justify-content: center;
 }
 
-#cont2 {
+.cont2 {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     display: flex;
@@ -381,6 +391,18 @@ html {
 #cont2:hover {
     color: black;
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+#MercadoPagoIcon,
+#GitHubIcon {
+    width: 70%;
+    height: auto;
+}
+
+.cont2:hover h2,
+.cont2:hover #GitHubIcon,
+.cont2:hover h3 {
+    filter: invert(1);
 }
 
 /*--------------------------- Atajos ----------------------------*/
@@ -650,11 +672,6 @@ html {
     }
 
     /*--------------------------- Footer || Contacto ---------------------------*/
-
-    #contribuir img {
-        width: 70%;
-        height: auto;
-    }
 
     #contacto li {
         width: 290px;
