@@ -271,3 +271,35 @@ a {
 .boton-utilizado:hover {
   opacity: 0.2;
 }
+
+
+/*-------------- Foter --------------*/
+
+
+footer {
+  height: 10px;
+  width: 150px;
+}
+
+footer:hover .arrowleft,
+footer:hover span {
+  opacity: 1;
+  padding-left: 10px;
+}
+
+footer span {
+  position: absolute;
+  font-size: large;
+  color: black;
+}
+
+a {
+  font-style: none;
+}
+
+footer .arrowleft {
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+  transition: .3s ease all;
+}
