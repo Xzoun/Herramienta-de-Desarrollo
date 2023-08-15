@@ -12,7 +12,7 @@ Es un proyecto que refleja mi pasión, mis inicios en la programación y mi habi
 
 ### Link del proyecto: 
 
-* https://xzoun.github.io/Portfolio/Index.html
+* https://xzoun.github.io/Portfolio/index.html
 
 ¡Explora el código y descubre cómo se ha desarrollado este proyecto! Agradezco cualquier comentario, sugerencia o contribución que puedas hacer para mejorarlo.
 
