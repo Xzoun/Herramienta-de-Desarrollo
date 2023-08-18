@@ -342,6 +342,8 @@ function mover(id, element, divDestino, currentLocation) {
 
 }
 
+  /*---------------- Colores ----------------*/
+
 function colores(id, element) {
   const notasActuales = cargarNotas();
   const targetNote = notasActuales.find(note => note.id == id);

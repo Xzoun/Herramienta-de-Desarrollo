@@ -1,92 +1,102 @@
-import { insertarComentario, actualizarLikes } from "./DB/SQL.js"
+const firebaseConfig = {
+  apiKey: "AIzaSyCKDGPkN6cr2zvH0nLaavaXu2cXFDAoNY4",
+  authDomain: "simplementealgo-justsomething.firebaseapp.com",
+  projectId: "simplementealgo-justsomething",
+}
 
-var formulario = document.getElementById('formulario');
-var comentario = document.getElementById('comentario');
-var muro = document.getElementById('muro');
-var contador = 0;
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+
+const formulario = document.getElementById('formulario'),
+  comentario = document.getElementById('comentario'),
+  muro = document.getElementById('muro');
+let contador = 0;
 
 formulario.addEventListener('submit', function (event) {
   event.preventDefault();
-  let fechaActual = new Date(); 
-  var contenidoComentario = comentario.value;
+
+  let fechaActual = new Date();
+  const contenidoComentario = comentario.value;
 
   comentario.value = '';
 
-  var comentarioHTML = '<div class="comentarioDiv">' +
-    '<div class="comentario">' +
-    '<p class="contenido">' + contenidoComentario + '</p>' +
-    '<p class="tiempo">' + fecha(fechaActual) + '</p>' +
-    '</div>' +
-    '<div class="likesDiv" >' +
-    '<img class="like plus_like" src="./Muro/Cosas/Up.png" onclick="incrementarLikes(' + contador + ')"/>' +
-    '<div class="likes_">' + contador + '</div>' +
-    '<img class="like minus_like" src="./Muro/Cosas/Down.png" onclick="disminuirLikes(' + contador + ')"/>' +
-    '</div>' + '</div>';
-
-  muro.insertAdjacentHTML('afterbegin', comentarioHTML);
   document.getElementById("caracteres").innerHTML = 400;
 
-  insertarComentario(contenidoComentario);
+  db.collection("muro").add({
+    contenido: contenidoComentario,
+    fecha: fechaActual,
+    likes: contador
+  })
+    .then((docRef) => {
+      console.log("Comentario de ID: ", docRef.idComentario);
+    })
+    .catch((error) => {
+      console.error("Error agregando el comentario: ", error);
+    });
 
+  cargarComentarios();
 });
 
 
 function cargarComentarios() {
-  fetch('/obtener-comentarios')
-  .then(response => response.json())
-  .then(comentarios => {
-    // Ahora que tienes los comentarios, puedes mostrarlos en el muro
-    comentarios.forEach(comentario => {
-      var comentarioHTML = '<div class="comentarioDiv">' +
-        '<div class="comentario">' +
-        '<p class="contenido">' + comentario.contenido + '</p>' +
-        '<p class="tiempo">' + fecha(comentario.fecha) + '</p>' +
-        '</div>' +
-        '<div class="likesDiv'+ idComentario+ '" >' +
-        '<img class="like plus_like" src="./Muro/Cosas/Up.png" onclick="incrementarLikes(' +comentario.likes + ')"/>' +
-        '<div class="likes_">' + comentario.likes + '</div>' +
-        '<img class="like minus_like" src="./Muro/Cosas/Down.png" onclick="disminuirLikes(' +comentario.likes  + ')"/>' +
-        '</div>' + '</div>';
+  db.collection("muro").orderBy("fecha", "asc").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (!validarComentario(doc.id)) {
+        var comentarioHTML = '<div class="comentarioDiv" data-id="' + doc.id + '" >' +
+          '<div class="comentario">' +
+          '<p class="contenido">' + doc.data().contenido + '</p>' +
+          '<p class="tiempo">' + fecha(doc.data().fecha) + '</p>' +
+          '</div>' +
+          '<div class="likesDiv' + doc.id + '">' +
+          '<img class="like plus_like" src="./Muro/Cosas/Up.png" data-id="' + doc.id + '" />' +
+          '<div class="likes_">' + doc.data().likes + '</div>' +
+          '<img class="like minus_like" src="./Muro/Cosas/Down.png" data-id="' + doc.id + '" />' +
+          '</div>' + '</div>';
 
-      muro.insertAdjacentHTML('afterbegin', comentarioHTML);
+        muro.insertAdjacentHTML('afterbegin', comentarioHTML);
+      }
     });
-  })
-  .catch(error => console.error('Error al cargar los comentarios:', error));
+  });
+}
+
+function validarComentario(idComentario) {
+  const comentarioDivs = document.getElementsByClassName("comentarioDiv");
+  for (const div of comentarioDivs) {
+    if (div.getAttribute("data-id") === idComentario) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function fecha(creacion) {
   let fechaActual = new Date();
+  let creacionFormato = new Date(creacion.seconds * 1000 + creacion.nanoseconds / 1000000);
   const ultimoIngreso = fechaActual.getTime(),
-    minutos = Math.floor((ultimoIngreso - creacion) / 60000),
-    horas = Math.floor((ultimoIngreso - creacion) / 3.6e+6),
-    dias = Math.floor((ultimoIngreso - creacion) / 8.64e+7);
-  console.log(ultimoIngreso)
-  console.log(creacion)
-  console.log(ultimoIngreso - creacion)
-  console.log((ultimoIngreso - creacion) / 60000)
-  console.log(minutos)
-  console.log(horas)
-  console.log(dias)
+    minutos = Math.floor((ultimoIngreso - creacionFormato) / 60000),
+    horas = Math.floor((ultimoIngreso - creacionFormato) / 3.6e+6),
+    dias = Math.floor((ultimoIngreso - creacionFormato) / 8.64e+7);
 
   if (minutos < 1) {
     return "Justo ahora.";
-  } else if (minutos ==  1) {
+  } else if (minutos < 2) {
     return "Hace 1 minuto.";
-  } else if (horas < 1) {   
-    return "Hace" + minutos + " minutos.";
+  } else if (horas < 1) {
+    return "Hace " + minutos + " minutos.";
   } else if (horas < 24) {
-    return "Hace" + horas + " horas.";
+    return "Hace " + horas + " horas.";
   } else {
-    if (dias == 1){
-      return  "Hace 1 día."
-    }else if (dias < 14) {
-      return "Hace "+ dias + " días."
+    if (dias == 1) {
+      return "Hace 1 día."
+    } else if (dias < 14) {
+      return "Hace " + dias + " días."
     } else if (dias < 60) {
       let semanas = Math.floor(dias / 7);
-      return  "Hace " + semanas + " semanas."
+      return "Hace " + semanas + " semanas."
     } else if (dias < 365) {
       let meses = Math.floor(dias / 30);
-      return "Hace" + meses + " meses."
+      return "Hace " + meses + " meses."
     } else {
       if (Math.floor(dias / 365) == 1) {
         let meses = Math.floor((dias - 365) / 30);
@@ -94,19 +104,31 @@ function fecha(creacion) {
           return "Hace 1 año."
         } else if (meses < 2) {
           return "Hace 1 año y 1 mes."
-        } else if (eses < 12) {
+        } else if (meses < 12) {
           return "Hace 1 año y " + meses + " meses."
         } else {
           let años = Math.floor(dias / 365);
-          return "Hace" + años + " años."
+          return "Hace " + años + " años."
         }
       }
     }
   }
 }
 
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('plus_like')) {
+    const idComentario = event.target.getAttribute('data-id');
+    incrementarLikes(idComentario);
+  } else if (event.target.classList.contains('minus_like')) {
+    const idComentario = event.target.getAttribute('data-id');
+    disminuirLikes(idComentario);
+  }
+});
+
+// ME FALTA TODAVIA MODIFICAR EL
+
 function incrementarLikes(idComentario) {
-  var likesDiv = document.getElementById('likes_' + idComentario);
+  var likesDiv = document.querySelector('[data-id="' + idComentario + '"] .likes_');
   var likes = parseInt(likesDiv.textContent);
   likes++;
   likesDiv.textContent = likes;
@@ -114,11 +136,25 @@ function incrementarLikes(idComentario) {
 }
 
 function disminuirLikes(idComentario) {
-  var likesDiv = document.getElementById('likes_' + idComentario);
+  var likesDiv = document.querySelector('[data-id="' + idComentario + '"] .likes_');
   var likes = parseInt(likesDiv.textContent);
   likes--;
   likesDiv.textContent = likes;
   actualizarLikes(idComentario, likes);
+}
+
+function actualizarLikes(idComentario, nuevoValor) {
+  // Obtén la referencia al documento
+  const comentarioRef = db.collection("muro").doc(idComentario);
+
+  // Actualiza el campo "likes"
+  return comentarioRef.update({ likes: nuevoValor })
+    .then(() => {
+      console.log("Likes actualizados en la base de datos.");
+    })
+    .catch((error) => {
+      console.error("Error al actualizar los likes:", error);
+    });
 }
 
 window.addEventListener('load', cargarComentarios());

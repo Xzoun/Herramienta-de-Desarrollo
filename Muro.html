@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script>
 
 </head>
 
@@ -45,18 +47,7 @@
         <button id="comentar" type="submit" for="comentario">Comentar</button>
 
     </form>
-    <div id="muro">
-        <div class="comentarioDiv">
-            <div class="comentario">
-                <p class="contenido">Es una verga tu página</p>
-                <p class="tiempo">Hace 2 semanas</p>
-            </div>
-            <div class="likesDiv">
-                <img class="like plus_like" src="./Muro/Cosas/Up.png" />
-                <div class="likes">3</div>
-                <img class="like minus_like" src="./Muro/Cosas/Down.png" />
-            </div>
-        </div>       
+    <div id="muro">       
     </div>
     <footer>
         <a href="index.html">
@@ -75,9 +66,7 @@
             document.getElementById("caracteres").innerHTML = caracteresActuales;
         }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script type="module" src="Muro/Muro.js"></script>
-
 </body>
 
 </html>

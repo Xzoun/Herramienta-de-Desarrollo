@@ -247,9 +247,11 @@ a {
   border-top: #FAA852 1px solid;
 }
 
-.likes {
+.likes_ {
   max-height: 33px;
   font-size: 2ch;
+  text-align: center;
+  font-weight: 800;
 }
 
 .like {
