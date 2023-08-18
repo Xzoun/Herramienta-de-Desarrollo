@@ -1,7 +1,7 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCKDGPkN6cr2zvH0nLaavaXu2cXFDAoNY4",
-  authDomain: "simplementealgo-justsomething.firebaseapp.com",
-  projectId: "simplementealgo-justsomething",
+  apiKey: "AIzaSyAWjoHn0ve89wtRN-NXsvXkRkD2px2ulKA",
+  authDomain: "lebenitez-portfolio.firebaseapp.com",
+  projectId: "lebenitez-portfolio"
 }
 
 firebase.initializeApp(firebaseConfig);
