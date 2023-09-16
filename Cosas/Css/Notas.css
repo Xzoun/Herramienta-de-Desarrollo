@@ -80,6 +80,7 @@ body {
     right: 2%;
     top: 10px;
     display: flex;
+    width: 18%;
     flex-direction: column;
 }
 

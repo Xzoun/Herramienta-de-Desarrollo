@@ -1,27 +1,6 @@
 
 export function interfaz() {
-}
-
-//---------------------------Starting---------------------------
-
-const banner = document.getElementById("banner");
-const presentacion = document.getElementById("presentacion")
-const startBackground = document.getElementById("startBackground")
-
-const downBtn = document.getElementById("startContinue");
-downBtn.addEventListener("click", () => {
-  document.body.style.overflow = "scroll";
-  startBackground.style.display = "none"; 
-  start.style.display = "none";
-  banner.style.position = "fixed";
-
-  presentacion.scrollIntoView({    
-    behavior: "smooth"
-  })
-
-},{once:true})
-
-//---------------------------Banner---------------------------
+};
 
 //---------------------------Dark mode---------------------------
 

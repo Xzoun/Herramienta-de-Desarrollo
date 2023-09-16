@@ -16,7 +16,6 @@ body {
     width: 100%;
     margin: 0%;
     padding: 0%;
-    overflow: hidden;
     scroll-behavior: smooth;
 
     &.Dark {
@@ -24,10 +23,6 @@ body {
                 #3994E3 18%,
                 black 33%);
         color: white;
-    }
-
-    &.Dark #start h1 {
-        filter: invert(1);
     }
 
     &.Dark #banner nav {
@@ -82,50 +77,6 @@ p {
     text-indent: 4%;
 }
 
-#startBackground {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #3B85E3 33%;
-    z-index: 600;
-}
-
-#start {
-    color: white;
-    font-weight: 800;
-    height: 510px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.typed {
-    z-index: 601;
-    text-align: center;
-}
-
-#start a {
-    position: absolute;
-    bottom: 1%;
-    left: 40%;
-    right: 40%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    cursor: pointer;
-    z-index: 601;
-    border-radius: 12px;
-}
-
-#start a img {
-    width: 40%;
-    height: auto;
-}
-
-#start a:hover {
-    filter: invert(1);
-}
-
 /*-------------- Scroll Bar --------------*/
 
 body::-webkit-scrollbar,
@@ -159,6 +110,7 @@ html {
     width: 100%;
     z-index: 600;
     top: 0%;
+    position: fixed;
 }
 
 #banner nav {
@@ -215,10 +167,17 @@ html {
     color: #FAA852;
 }
 
-.nav {
+.cont {
     padding: 4% 5%;
     position: relative;
     top: 60px;
+    scroll-margin-top: 20px;
+    margin: 1%;
+}
+
+.acercaDeCont{
+    padding: 4% 5%;
+    position: relative;
     scroll-margin-top: 20px;
     margin: 1%;
 }

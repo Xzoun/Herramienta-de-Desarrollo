@@ -1,7 +1,7 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyAWjoHn0ve89wtRN-NXsvXkRkD2px2ulKA",
-  authDomain: "lebenitez-portfolio.firebaseapp.com",
-  projectId: "lebenitez-portfolio"
+  apiKey: "AIzaSyCxs389TzDaFoyuv2IScEC3U-eh45SYHSs",
+  authDomain: "herramienta-de-desarrollo.firebaseapp.com",
+  projectId: "herramienta-de-desarrollo",
 }
 
 firebase.initializeApp(firebaseConfig);
@@ -41,6 +41,13 @@ formulario.addEventListener('submit', function (event) {
 
 function cargarComentarios() {
   db.collection("muro").orderBy("fecha", "asc").get().then((querySnapshot) => {
+
+    if (querySnapshot.empty) {
+      console.log("Lo sentimos, no se registran comentarios, dejá el primero!");
+      return;  // Detener la ejecución si no hay comentarios
+    }
+
+
     querySnapshot.forEach((doc) => {
       if (!validarComentario(doc.id)) {
         var comentarioHTML = '<div class="comentarioDiv" data-id="' + doc.id + '" >' +
@@ -124,8 +131,6 @@ document.addEventListener('click', function (event) {
     disminuirLikes(idComentario);
   }
 });
-
-// ME FALTA TODAVIA MODIFICAR EL
 
 function incrementarLikes(idComentario) {
   var likesDiv = document.querySelector('[data-id="' + idComentario + '"] .likes_');

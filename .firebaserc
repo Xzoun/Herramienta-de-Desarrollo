@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "lebenitez-portfolio"
-  }
+    "default": "herramienta-de-desarrollo",
+    "herramienta-de-desarrollo": "herramienta-de-desarrollo"
+  },
+  "targets": {},
+  "etags": {}
 }
