@@ -1,6 +1,3 @@
-export function Proyectos() {
-
-}
 var p2 = document.getElementById("horaActual");
 
 function obtenerHora() {

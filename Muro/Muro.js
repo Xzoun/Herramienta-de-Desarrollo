@@ -40,13 +40,10 @@ formulario.addEventListener('submit', function (event) {
 
 
 function cargarComentarios() {
+  let commentsExist = false;
+
   db.collection("muro").orderBy("fecha", "asc").get().then((querySnapshot) => {
-
-    if (querySnapshot.empty) {
-      console.log("Lo sentimos, no se registran comentarios, dejá el primero!");
-      return;  // Detener la ejecución si no hay comentarios
-    }
-
+    muro.innerHTML = '';
 
     querySnapshot.forEach((doc) => {
       if (!validarComentario(doc.id)) {
@@ -62,10 +59,16 @@ function cargarComentarios() {
           '</div>' + '</div>';
 
         muro.insertAdjacentHTML('afterbegin', comentarioHTML);
+        commentsExist = true;
       }
     });
+
+    if (!commentsExist) {
+      muro.insertAdjacentHTML('afterbegin', '<h2 class="center">Lo sentimos, no se registran comentarios. Dejá el primero!</h2>');
+    }
   });
 }
+
 
 function validarComentario(idComentario) {
   const comentarioDivs = document.getElementsByClassName("comentarioDiv");

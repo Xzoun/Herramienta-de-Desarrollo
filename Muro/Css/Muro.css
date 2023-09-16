@@ -10,7 +10,7 @@ body {
   background: linear-gradient(131deg,
       #53D1FA 18%,
       #3B85E3 33%);
-      min-height: 700px;
+  min-height: 700px;
 }
 
 #fondo {
@@ -130,7 +130,6 @@ a {
   width: 100%;
   background-color: rgba(2, 0, 36, 0);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex: 2;
   padding-bottom: 10%;
   margin-top: 60px;
@@ -168,6 +167,12 @@ a {
   text-align: center;
   padding: 1% 2%;
   margin-top: 2%;
+}
+
+.center {
+  text-align: center;
+  color: rgba(250, 168, 82, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #comentar:hover {

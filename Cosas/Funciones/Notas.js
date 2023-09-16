@@ -5,64 +5,71 @@ const dropZone2 = document.getElementById("dropZone1");
 const dropZone3 = document.getElementById("dropZone2");
 let touch = false;
 
+function cargarNotas() {
+  return JSON.parse(localStorage.getItem("LeoBenitez-notas")) || [];
+}
 
-cargarNotas().forEach(note => {
-  const noteElement = funciones(note.id, note.content, note.divDestino, note.currentLocation, note.color);
-  switch (note.divDestino) {
-    case "dropZone":
-      dropZone1.appendChild(noteElement)
-      break;
-    case "dropZone1":
-      dropZone2.appendChild(noteElement)
-      break;
-    case "dropZone2":
-      dropZone3.appendChild(noteElement)
-      break;
-    default:
-      contNotas.appendChild(noteElement)
-      break
-  }
-  switch (note.color) {
-    case "color1":
-      noteElement.classList.add("color1");
-      noteElement.classList.remove("color2", "color3", "color4", "color5", "color6", "color7", "color8", "color9")
-      break;
-    case "color2":
-      noteElement.classList.remove("color1", "color3", "color4", "color5", "color6", "color7", "color8", "color9")
-      noteElement.classList.add("color2");
-      break;
-    case "color3":
-      noteElement.classList.remove("color1", "color2", "color4", "color5", "color6", "color7", "color8", "color9")
-      noteElement.classList.add("color3")
-      break;
-    case "color4":
-      noteElement.classList.remove("color1", "color2", "color3", "color5", "color6", "color7", "color8", "color9")
-      noteElement.classList.add("color4");
-      break;
-    case "color5":
-      noteElement.classList.remove("color1", "color2", "color3", "color4", "color6", "color7", "color8", "color9")
-      noteElement.classList.add("color5");
-      break;
-    case "color6":
-      noteElement.classList.remove("color1", "color2", "color3", "color4", "color5", "color7", "color8", "color9")
-      noteElement.classList.add("color6");
-      break;
-    case "color7":
-      noteElement.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color8", "color9")
-      noteElement.classList.add("color7");
-      break;
-    case "color8":
-      noteElement.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color7", "color9")
-      noteElement.classList.add("color8");
-      break;
-    case "color9":
-      noteElement.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color7", "color8")
-      noteElement.classList.add("color9");
-      break;
-  }
-});
+window.onload = () => {
+  const notasGuardadas = cargarNotas();
 
+  notasGuardadas.forEach(note => {
+    const noteElement = funciones(note.id, note.content, note.divDestino, note.currentLocation, note.color);
+   
+    switch (note.divDestino) {
+      case "dropZone":
+        dropZone1.appendChild(noteElement)
+        break;
+      case "dropZone1":
+        dropZone2.appendChild(noteElement)
+        break;
+      case "dropZone2":
+        dropZone3.appendChild(noteElement)
+        break;
+      default:
+        contNotas.appendChild(noteElement)
+        break
+    }
 
+    switch (note.color) {
+      case "color1":
+        noteElement.classList.add("color1");
+        noteElement.classList.remove("color2", "color3", "color4", "color5", "color6", "color7", "color8", "color9")
+        break;
+      case "color2":
+        noteElement.classList.remove("color1", "color3", "color4", "color5", "color6", "color7", "color8", "color9")
+        noteElement.classList.add("color2");
+        break;
+      case "color3":
+        noteElement.classList.remove("color1", "color2", "color4", "color5", "color6", "color7", "color8", "color9")
+        noteElement.classList.add("color3")
+        break;
+      case "color4":
+        noteElement.classList.remove("color1", "color2", "color3", "color5", "color6", "color7", "color8", "color9")
+        noteElement.classList.add("color4");
+        break;
+      case "color5":
+        noteElement.classList.remove("color1", "color2", "color3", "color4", "color6", "color7", "color8", "color9")
+        noteElement.classList.add("color5");
+        break;
+      case "color6":
+        noteElement.classList.remove("color1", "color2", "color3", "color4", "color5", "color7", "color8", "color9")
+        noteElement.classList.add("color6");
+        break;
+      case "color7":
+        noteElement.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color8", "color9")
+        noteElement.classList.add("color7");
+        break;
+      case "color8":
+        noteElement.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color7", "color9")
+        noteElement.classList.add("color8");
+        break;
+      case "color9":
+        noteElement.classList.remove("color1", "color2", "color3", "color4", "color5", "color6", "color7", "color8")
+        noteElement.classList.add("color9");
+        break;
+    }
+  });
+}
 
 newnoteBtn.addEventListener("click", agregar());
 const referencias = document.getElementById("referencias");
@@ -71,10 +78,6 @@ cargarReferencias();
 referencias.addEventListener("input", () => {
   guardarReferencias();
 });
-
-export function cargarNotas() {
-  return JSON.parse(localStorage.getItem("LeoBenitez-notas") || "[]");
-}
 
 function guardar(notes) {
   localStorage.setItem("LeoBenitez-notas", JSON.stringify(notes));
@@ -117,7 +120,7 @@ function funciones(id, content, divDestino, currentLocation, color) {
     element.addEventListener("dragstart", dragStartHandler)
   }
 
-  function contClass(){
+  function contClass() {
     contNotas.classList.add("drag");
     dropZone1.classList.add("drag");
     dropZone2.classList.add("drag");
@@ -250,7 +253,7 @@ function mover(id, element, divDestino, currentLocation) {
 
   const dragEnter3Handler = e => {
   }
-  
+
   const dragOver3Handler = e => {
     e.preventDefault();
   };
@@ -342,7 +345,7 @@ function mover(id, element, divDestino, currentLocation) {
 
 }
 
-  /*---------------- Colores ----------------*/
+/*---------------- Colores ----------------*/
 
 function colores(id, element) {
   const notasActuales = cargarNotas();
