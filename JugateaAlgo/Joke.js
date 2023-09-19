@@ -13,7 +13,7 @@ function joke() {
     document.querySelector(".click2").style.display = "none";
     document.getElementById("jokeInterfaz").style.display = "flex"
     document.getElementById("volver").style.display = "block"
-    document.getElementById("joke").innerText = chistes[dias]
+    document.getElementById("joke").innerText = chistes[Math.floor(Math.random()*49)]
     document.getElementById("dia").innerText = "Dia # " + dias;
 }
 

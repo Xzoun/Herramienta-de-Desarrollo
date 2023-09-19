@@ -278,7 +278,13 @@
 
 #finDelJuego {
     display: none;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#sino {
+    display: flex;
 }
 
 /*-------------- Responsive --------------*/
@@ -309,9 +315,5 @@
     }
 
     /*--------------------------- Boost ----------------------------*/
-
-    .formatoBoost {
-        
-    }
 
 }

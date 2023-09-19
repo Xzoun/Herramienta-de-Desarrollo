@@ -1,20 +1,19 @@
+# Empezando a esforzarse!
 
-# Starting to Tryhard!
+En este repositorio, encontrarás una web desarrollada con lógica en lenguaje JavaScript, diseño en CSS y organización en HTML. 
+Es un proyecto que refleja mi pasión, mis inicios en la programación y mi habilidad para crear soluciones funcionales.
 
-In this repository, you will find a website developed with JavaScript logic, CSS design, and HTML structure. 
-It is a project that reflects my passion, my beginnings in programming, and my ability to create functional solutions.
+## Características del proyecto:
 
-## Project Features:
+* Portfolio. En esta web estan mis primeros proyectos. Algunos de ellos continuan en desarrollo.
+* Implementación de lógica en JavaScript para una experiencia interactiva y dinámica.
+* Diseño moderno y atractivo con CSS para una presentación visualmente agradable.
+* Organización semántica en HTML para una estructura clara y accesible.
 
-* Portfolio: This website showcases my initial projects, some of which are still in development.
-* Implementation of JavaScript logic for an interactive and dynamic experience.
-* Modern and attractive CSS design for visually pleasing presentation.
-* Semantic HTML organization for a clear and accessible structure.
+### Link del proyecto: 
 
-### Link to the project: 
+* https://herramienta-de-desarrollo.web.app/
 
-* https://lebenitez-portfolio.web.app/
+¡Explora el código y descubre cómo se ha desarrollado este proyecto! Agradezco cualquier comentario, sugerencia o contribución que puedas hacer para mejorarlo.
 
-Explore the code and discover how this project has been developed! I appreciate any feedback, suggestions, or contributions you can make to improve it.
-
-Thank you for visiting my repository!
+¡Gracias por visitar mi repositorio!

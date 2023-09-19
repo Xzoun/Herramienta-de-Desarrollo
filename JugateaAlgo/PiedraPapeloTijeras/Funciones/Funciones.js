@@ -41,16 +41,16 @@ export function interfazFc(cont) {
         case 5:   //Jugar de nuevo?
             document.getElementById("tablero").style.display = "none";
             document.getElementById("racha").style.display = "none";
-            document.getElementById("mensaje").style.display = "block";
+            document.getElementById("pantalla").style.display = "block";
             document.getElementById("fire").style.display = "none";
             document.getElementById("KO").style.display = "none";
-            document.getElementById("finDelJuego").style.display = "block";
+            document.getElementById("finDelJuego").style.display = "flex";
             pantalla.style.display = "none";
             opciones.style.display = "none";
             break;
 
         case 6:   //Fin del juego.
-            document.getElementById("mensaje").style.display = "none";
+            document.getElementById("pantalla").style.display = "none";
             let nombre = document.getElementById("celdanombre").textContent;
             document.getElementById("findeljuego").style.display = "none";
             document.getElementById("elegiste").style.display = "block";
