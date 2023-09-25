@@ -1,7 +1,9 @@
+const DarkButton = document.getElementById("darkButton"),
+  navLinks = document.querySelectorAll(".navbar-nav .nav-link"),
+  navbarCollapse = document.querySelector(".navbar-collapse");
+
 //---------------------------Dark mode---------------------------
 
-
-const DarkButton = document.getElementById("darkButton");
 DarkButton.addEventListener("click", darkMode);
 
 cargarModoNocturno();
@@ -13,13 +15,12 @@ function darkMode() {
   var modoNocturno = document.body.classList.contains("Dark");
 
   if (modoNocturno) {
-    document.getElementById("darkMode").innerText = "Desactivar";
-    document.getElementById("darkIcon").style.filter = "invert(1)";
-    document.getElementById("lightIcon").style.filter = "invert(0)";
+    document.getElementById("lightIcon").style.display = "none";
+    document.getElementById("darkIcon").style.display = "block";
   } else {
-    document.getElementById("darkMode").innerText = "Activar";
-    document.getElementById("darkIcon").style.filter = "invert(0)";
-    document.getElementById("lightIcon").style.filter = "invert(1)";
+    document.getElementById("lightIcon").style.display = "block";
+    document.getElementById("darkIcon").style.display = "none";
+
   }
   guardarModoNocturno(modoNocturno);
 }
@@ -33,13 +34,11 @@ function cargarModoNocturno() {
     DarkButton.classList.toggle("activado", modoNocturno === "true");
 
     if (modoNocturno === "true") {
-      document.getElementById("darkMode").innerText = "Desactivar";
-      document.getElementById("darkIcon").style.filter = "invert(1)";
-      document.getElementById("lightIcon").style.filter = "invert(0)";
+      document.getElementById("lightIcon").style.display = "none";
+      document.getElementById("darkIcon").style.display = "block";
     } else {
-      document.getElementById("darkMode").innerText = "Activar";
-      document.getElementById("darkIcon").style.filter = "invert(0)";
-      document.getElementById("lightIcon").style.filter = "invert(1)";
+      document.getElementById("lightIcon").style.display = "block";
+      document.getElementById("darkIcon").style.display = "none";
     }
   }
 }
@@ -48,7 +47,15 @@ function guardarModoNocturno(modoNocturno) {
   localStorage.setItem('darkMode', modoNocturno);
 }
 
+//--------------------------- Responsive ---------------------------
 
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (navbarCollapse.classList.contains("show")) {
+      navbarCollapse.classList.remove("show");
+    }
+  });
+});
 
 
 

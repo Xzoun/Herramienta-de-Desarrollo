@@ -9,6 +9,10 @@ body {
   background-color: black;
 }
 
+.logoNav {
+  width: 30px;
+}
+
 /*-------------- Barra de Scroll --------------*/
 
 body::-webkit-scrollbar {
@@ -41,6 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
       rgba(0, 0, 0, 0) 76%);
   position: fixed;
   z-index: 30;
+  top: 0;
   transition: .5s ease-in-out all;
 }
 
@@ -62,20 +67,20 @@ li:hover {
   border-bottom: solid white 1px;
 }
 
+/*-------------- Banner | Buscador --------------*/
 #search {
-  position: relative;
-  right: -10%;
+  position: absolute;
+  right: 20%;
+  top: 15px;
   width: 200px;
   border: none;
 }
 
 #buscador {
-  margin-left: 0%;
   visibility: hidden;
   width: 100%;
   outline: none;
   border: white 1px solid;
-  padding: 2% 2% 2% 28px;
 
   &.active {
     background-color: rgba(31, 27, 27, 0.89);
@@ -88,18 +93,24 @@ li:hover {
   rotate: 0deg;
   position: absolute;
   right: -15%;
-  padding: 2% 2% 2% 2%;
   filter: invert(1);
-  width: 25px;
-  height: 25px;
   cursor: pointer;
   transition: .3s ease-in-out all;
   display: flex;
   align-items: center;
+  width: 25px;
+  height: 25px;
 
   &.active {
     transform: translateX(-200px)
   }
+}
+
+.fixedTop{
+  position: fixed;
+  top: 0%;
+  right: 30%;
+  z-index: 40;
 }
 
 

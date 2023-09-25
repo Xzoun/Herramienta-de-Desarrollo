@@ -153,8 +153,9 @@ function agregar() {
       currentLocation: "",
       color: "color5"
     };
+    const nuevaNotaDiv = document.getElementById('nuevaNota');
     const noteElement = funciones(noteObject.id, noteObject.content, noteObject.divDestino, noteObject.currentLocation, noteObject.color);
-    contNotas.insertBefore(noteElement, newnoteBtn);
+    nuevaNotaDiv.insertBefore(noteElement, nuevaNotaDiv.querySelector('#newNoteBtn'));
     notasActuales.push(noteObject);
     guardar(notasActuales);
   };
@@ -227,7 +228,7 @@ function mover(id, element, divDestino, currentLocation) {
     e.preventDefault();
 
     if (dropZone1.childElementCount <= 3) {
-      dropZone.appendChild(element);
+      dropZone1.appendChild(element);
       targetNote.divDestino = "dropZone";
       guardar(notasActuales);
     }
@@ -357,7 +358,7 @@ function colores(id, element) {
   let color = "";
 
   document.body.style.overflow = "hidden";
-  menu.style.display = "block";
+  menu.style.display = "flex";
 
   volver.addEventListener("click", () => {
     eliminarNote.removeEventListener("click", eliminarHandler);

@@ -5,332 +5,390 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Benitez!</title>
+    <title>Herramienta de desarrollo</title>
     <link rel="icon" type="img/png" href="./Cosas/Imagenes/pc.ico">
     <link rel="stylesheet" href="./Cosas/Css/Index.css">
     <link rel="stylesheet" href="./Cosas/Css/Notas.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <header id="banner">
-        <nav>
-            <ul>
-                <li><a href="#acercaDe">Acerca de</a></li>
-                <li><a href="#atajos">Atajos</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li id="liContenedores">
-                    <a href="#notas">Notas</a>
-                    <ul id="contenedores">
-                        <li><a href="#notas">Notas Main</a></li>
-                        <li><a href="#dropZoneUbi">Notas</a></li>
-                        <!-- <li><a href="#dropZone1">Drop Zone 2</a></li> -->
+    <nav class="navContenedor">
+        <div class="nav">
+            <div class="logoContendeor">
+                <a href="https://portfolio-leb.web.app/" target="_blank"><img src="./Cosas/Imagenes/LeBenitez!.png"
+                        class="logoPersonal" alt="LeBenitez! Logo"></a>
+            </div>
+            <div class="enlaces">
+                <a href="#atajos">Atajos</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#acercaDe">Acerca de</a>
+                <li class="dropdown notesHide">
+                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Notas
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a class="dropdown-item" href="#notas">Notas Main</a></li>
+                        <li><a class="dropdown-item" href="#dropZoneUbi">Notas</a></li>
                     </ul>
                 </li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li>
-                    <button id="darkButton">
-                        <img id="darkIcon" class="darkButtonIcons" src="./Cosas/Imagenes/Darkmode.png"></img>
-                        <img id="lightIcon" class="darkButtonIcons" src="./Cosas/Imagenes/Lightmode.png"></img>
-                        <span id="darkMode">Activar</span>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <div id="acercaDe" class="acercaDeCont">
-        <h2>Hola, bienvenid@</h2>
-        <div id="descripcionPersonal">
-            <p>
-                Mi nombre es Leonel y soy una persona dedicada que se encuentra en constante aprendizaje.
-                A lo largo de mi trayectoria, he adquirido experiencia en diversas áreas, como ventas, atención
-                al público, administración y recursos humanos. Además, he explorado una variedad de intereses,
-                desde tomar cursos de francés, canto, guitarra y teatro, hasta aventurarme en el mundo de la
-                electricidad.
-            </p>
-            <p>
-                Sin embargo, mi verdadera pasión y descubrimiento ha sido la programación. Mi primer acercamiento
-                fue en 2023, cuando realicé un curso de lógica de programación. Desde entonces, he estado inmerso
-                en cursos de lógica, Java y Front-End. Considero que estoy dando mis primeros pasos en este vasto
-                mundo de las teclas, pero siento que tengo un gran futuro en el área.
-            </p>
-            <p>
-                Utilizo constantemente  esta web desde el editor de código y he decidido compartirla y actualizarla casi a diario para
-                documentar organizar los diversos proyectos en los que estoy trabajando.
-            </p>
-            <p>
-                Mi objetivo principal es desarrollarme profesionalmente como desarrollador Full Stack y continuar
-                aprendiendo de forma constante. Estoy emocionado por las oportunidades que el campo de la
-                programación
-                ofrece y estoy comprometido a expandir mis conocimientos y habilidades para alcanzar nuevas metas.
-            </p>
+                <a href="#contacto">Contacto</a>
+                <button id="darkButton">
+                    <span class="span">Dark mode</span>
+                    <img id="darkIcon" class="darkModeIcon" src="./Cosas/Imagenes/Darkmode.png"></img>
+                    <img id="lightIcon" class="darkModeIcon" src="./Cosas/Imagenes/Lightmode.png"></img>
+                </button>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <div id="atajos" class="cont">
-        <h2>Atajos</h2>
-        <div id="contList">
-            <ul>
-                <h2>Front End</h2>
-                <li> <a href="https://fonts.google.com/icons" target="_blank">Google icons</a></li>
-                <li> <a href="https://iconape.com" target="_blank">Iconos varios</a></li>
-                <li> <a href="https://cssgradient.io" target="_blank">Gradient</a></li>
-                <li> <a href="https://codepen.io/sosuke/pen/Pjoqqp" target="_blank">Filter</a></li>
-                <li> <a href=" https://flexboxfroggy.com/#es" target="_blank">Flex-Box</a></li>
-                <li><a href="https://color.adobe.com/es/create/color-wheel" target="_blank">Paleta de Colores</a></li>
-                <li><a href="https://www.youtube.com/watch?v=oBntkyvWy74" target="_blank">MokittApp - Diseño</a></li>
-
-            </ul>
-            <ul>
-                <h2>Cursos</h2>
-                <li><a href="https://lxp.eggcooperation.com/dashboard/643ecda5b98b91cfb34428bd">Egg - Front
-                        End</a>
-                </li>
-                <li><a href="https://lxp.eggcooperation.com/courses" target="_blank">Egg - Java</a></li>
-                <li><a href="https://aulasvirtuales.frba.utn.edu.ar/" target="_blank">UTN - Diseño Grafico Digital</a></li>
-            </ul>
-            <ul>
-                <h2>Links útiles</h2>
-                <li><a href="https://developer.mozilla.org/" target="_blank">Mozilla</a></li>
-                <li><a href="https://docs.oracle.com" target="_blank">Oracle</a></li>
-                <li><a href="https://www.remove.bg/es/upload" target="_blank">Quitar fondo img</a></li>
-                <li><a href="https://www.toptal.com/developers/keycode" target="_blank">KeyCode</a></li>
-                <li><a href="https://openai.com/blog/chatgpt" target="_blank"><img src="">Chat GPT</a></li>
-            </ul>
-            <ul>
-                <h2>Cursos de Youtube</h2>
-                <li><a href="https://www.youtube.com/watch?v=tyx05coXixw&list=PLyvsggKtwbLX06iMtXnRGX5lyjiiMaT2y"
-                        target="_blank">Appde Android</a></li>
-                <li><a href="https://www.youtube.com/watch?v=lc-xGhUf02Q&list=PLpOqH6AE0tNgW6TUTB-EmLShymWufcNS5"
-                        target="_blank">html canvas</a></li>
-                <li><a href="https://www.youtube.com/watch?v=94s7b83ixb4&list=PLYxATQ-ow631sNpUoZUrbyL4aNsCiayrl"
-                        target="_blank">Css</a></li>
-                <li><a href="https://www.youtube.com/watch?v=z95mZVUcJ-E&list=PLE8uP447fYpiBqMVF1hdWl9uFeVEeXRTm"
-                        target="_blank">JavaScript </a></li>
-            </ul>
+    <div class="page">
+        <div class="contenedor inicial">
+            <h2>Buenas!</h2>
+            <div class="subContenedor">
+                <h4>Bienvenido a mi herramienta de desarrollo</h4>
+                <p> Aquí encontrarás una recopilación de enlaces útiles a diversas herramientas y documentación para
+                    facilitar tu día a día.</p>
+                <p>Además, te ofrecemos acceso a proyectos previos que he desarrollado,
+                    incluyendo juegos, recomendaciones audiovisuales y un espacio interactivo con un muro de comentarios
+                    donde puedes compartir tus ideas y opiniones. </p>
+                <p>Para mantenerte organizado y productivo, también podrás disfrutar
+                    de nuestra práctica aplicación de notas integrada.</p>
+                <p> ¡Gracias por visitarnos! No dudes en dejar un comentario y compartir tu experiencia.</p>
+            </div>
         </div>
-    </div>
 
-    <div id="dropZoneUbi" class="cont">
-        <h2>Notas</h2>
-    </div>
-    <div id="dropZone" class="dropZone" aria-placeholder="Arrastre sus notas aquí"></div>
-
-
-    <div id="proyectos" class="cont">
-        <h2>Proyectos</h2>
-        <div id="proyectosCont">
-            <div id="p1" class="proyectos centerCont">
-                <div class="center"> <a id="juegos" href="JugateaAlgo.html">Jugate a algo</a> </div>
+        <div id="atajos" class="contenedor">
+            <h2>Atajos</h2>
+            <div class="subContenedor atajos">
+                <ul>
+                    <h2>Links Útiles</h2>
+                    <li><a href="https://www.remove.bg/es/upload" target="_blank">Quitar fondo img</a></li>
+                    <li> <a href="https://fonts.google.com/icons" target="_blank">Google icons</a></li>
+                    <li> <a href="https://iconape.com" target="_blank">Iconos varios</a></li>
+                    <li> <a href="https://cssgradient.io" target="_blank">Gradient</a></li>
+                    <li> <a href="https://codepen.io/sosuke/pen/Pjoqqp" target="_blank">Filter</a></li>
+                    <li> <a href=" https://flexboxfroggy.com/#es" target="_blank">Flex-Box</a></li>
+                    <li><a href="https://color.adobe.com/es/create/color-wheel" target="_blank">Paleta de
+                            Colores</a>
+                    </li>
+                    <li><a href="https://openai.com/blog/chatgpt" target="_blank"><img src="">Chat GPT</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=oBntkyvWy74" target="_blank">MokittApp - Diseño</a>
+                    </li>
+                </ul>
+                <ul>
+                    <h2>Cursos</h2>
+                    <li>
+                        <a href="https://lxp.eggcooperation.com/dashboard/643ecda5b98b91cfb34428bd" target="_blank">Egg
+                            - Front
+                            End</a>
+                    </li>
+                    <li>
+                        <a href="https://lxp.eggcooperation.com/courses" target="_blank">Egg - Java</a>
+                    </li>
+                    <li>
+                        <a href="https://aulasvirtuales.frba.utn.edu.ar/theme/utnba/login.php" target="_blank">UTN -
+                            Diseño Grafico Digital</a>
+                    </li>
+                </ul>
+                <ul>
+                    <h2>Documentación</h2>
+                    <li><a href="https://developer.mozilla.org/" target="_blank">Mozilla</a></li>
+                    <li><a href="https://docs.oracle.com" target="_blank">Oracle</a></li>
+                    <li><a href="https://www.toptal.com/developers/keycode" target="_blank">KeyCode</a></li>
+                </ul>
+                <ul>
+                    <h2>Cursos de Youtube</h2>
+                    <li><a href="https://www.youtube.com/watch?v=tyx05coXixw&list=PLyvsggKtwbLX06iMtXnRGX5lyjiiMaT2y"
+                            target="_blank">Appde Android</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=lc-xGhUf02Q&list=PLpOqH6AE0tNgW6TUTB-EmLShymWufcNS5"
+                            target="_blank">html canvas</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=94s7b83ixb4&list=PLYxATQ-ow631sNpUoZUrbyL4aNsCiayrl"
+                            target="_blank">Css</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=z95mZVUcJ-E&list=PLE8uP447fYpiBqMVF1hdWl9uFeVEeXRTm"
+                            target="_blank">JavaScript </a></li>
+                </ul>
             </div>
+        </div>
 
-            <div id="p2" class="proyectos centerCont">
-                <div class="center">
-                    <h2 id="horaActual"></h2>
+        <div id="dropZoneUbi" class="contenedor notesHide">
+            <h2>Notas</h2>
+            <div class="subContenedor">
+                <div id="dropZone" class="dropZone"></div>
+            </div>
+        </div>
+
+        <div id="proyectos" class="contenedor">
+            <h2>Proyectos</h2>
+            <div class="subContenedor">
+                <div id="proyectosCont">
+                    <div id="p1" class="proyectos centerCont">
+                        <div class="center"> <a id="juegos" href="JugateaAlgo.html">Jugate a algo</a> </div>
+                    </div>
+
+                    <div id="p2" class="proyectos centerCont">
+                        <div class="center">
+                            <h2 id="horaActual"></h2>
+                        </div>
+                    </div>
+
+                    <div id="p3" class="proyectos centerCont">
+                        <div class="center"> <a id="queVer" href="QueVer.html">Qué ver??</a> </div>
+                    </div>
+
+                    <div id="p4" class="proyectos centerCont">
+                        <div class="center"><a id="muro" href="Muro.html">Muro</a></div>
+                    </div>
+
+                    <div id="descripcion" class="proyectos">
+                        <h3>Descripciones</h3>
+                        <div id="proyecto1" class="descripcionContP" data-p="p1">
+                            <img id="abrirDescP1" data-p="p1" class="desplegar" src="./Cosas/Imagenes/Right.png" alt="">
+                            <h4 data-p="p1">Jugate a algo.</h4>
+                        </div>
+                        <div id="descripcionP1" class="descripcionP">
+                            <p>
+                                Es el primer proyecto que inicié, un juego de piedra papel o tijeras.
+                                Buscando profundizar en JavaScript, desde el manejo de las funciones,
+                                pasando por la interacción con el usuario hasta el desarrollo de lógica
+                            </p>
+                            <h4>La viborita</h4>
+                            <p>
+                                Este juego es para aprender Canvas. Continúa en desarrollo debido a errores en
+                                la detección de colisiones y el modo por niveles que consistirá en resolver
+                                laberintos.
+                            </p>
+                        </div>
+                        <div id="proyecto2" class="descripcionContP" data-p="p2">
+                            <img id="abrirDescP2" data-p="p2" class="desplegar" src="./Cosas/Imagenes/Right.png" alt="">
+                            <h4 data-p="p2">Qué ver??</h4>
+                        </div>
+                        <div id="descripcionP2" class="descripcionP">
+                            <p>
+                                En este segundo proyecto busco aprender más sobre diseño, css, html y javaScript.
+                                Replicando el diseño de una de las principales páginas de contenido multimedia me
+                                parece una buena forma de aprender del trabajo de los demás.
+                            </p>
+                        </div>
+                        <div id="proyecto3" class="descripcionContP" data-p="p3">
+                            <img id="abrirDescP3" data-p="p3" class="desplegar" src="./Cosas/Imagenes/Right.png" alt="">
+                            <h4 data-p="p3">Muro.</h4>
+                        </div>
+                        <div id="descripcionP3" class="descripcionP">
+                            <p>
+                                El objetivo claramente es aprender persistencia y conocer las opiniones que
+                                me puedan aportar algo como desarrollador. No olvides dejar un comentario!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="notasFunc" class="proyectos">
+                        <h3>Funcionalidades de las notas</h3>
+                        <h4>Menú</h4>
+                        <p> Recuerda que puedes utilizar el Doble click para acceder al menú de tus notas.</p>
+                        <h4>Eliminar</h4>
+                        <p>Usa esta opción para eliminar tus notas viejas.</p>
+                        <h4>Drag and Drop</h4>
+                        <p>Arrastralas para ubicarlas en un área delimitada diferente!</p>
+                        <h4>Color</h4>
+                        <p>Tambien puedes elegir un color para el tipo de nota que vas a
+                            utilizar con las referencias totalmente personalizables. </p>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div id="p3" class="proyectos centerCont">
-                <div class="center"> <a id="queVer" href="QueVer.html">Qué ver??</a> </div>
-            </div>
+        <div id="dropZone1" class="dropZone contenedor notesHide"></div>
 
-            <div id="p4" class="proyectos centerCont">
-                <div class="center"><a id="muro" href="Muro.html">Muro</a></div>
-            </div>
-
-            <div id="descripcion" class="proyectos">
-                <h3>Descripciones</h3>
-                <div id="proyecto1" class="descripcionContP" data-p="p1">
-                    <img id="abrirDescP1" data-p="p1" class="desplegar" src="./Cosas/Imagenes/Right.png" alt="">
-                    <h4 data-p="p1">Jugate a algo.</h4>
-                </div>
-                <div id="descripcionP1" class="descripcionP">
-                    <p>
-                        Es el primer proyecto que inicié, un juego de piedra papel o tijeras.
-                        Buscando profundizar en JavaScript, desde el manejo de las funciones,
-                        pasando por la interacción con el usuario hasta el desarrollo de lógica
-                    </p>
-                    <h4>La viborita</h4>
-                    <p>
-                        Este juego es para aprender Canvas. Continúa en desarrollo debido a errores en
-                        la detección de colisiones y el modo por niveles que consistirá en resolver
-                        laberintos.
-                    </p>
-                </div>
-                <div id="proyecto2" class="descripcionContP" data-p="p2">
-                    <img id="abrirDescP2" data-p="p2" class="desplegar" src="./Cosas/Imagenes/Right.png" alt="">
-                    <h4 data-p="p2">Qué ver??</h4>
-                </div>
-                <div id="descripcionP2" class="descripcionP">
-                    <p>
-                        En este segundo proyecto busco aprender más sobre diseño, css, html y javaScript.
-                        Replicando el diseño de una de las principales páginas de contenido multimedia me
-                        parece una buena forma de aprender del trabajo de los demás.
-                        Continúa en desarrollo por falta de tiempo.
-                    </p>
-                </div>
-                <div id="proyecto3" class="descripcionContP" data-p="p3">
-                    <img id="abrirDescP3" data-p="p3" class="desplegar" src="./Cosas/Imagenes/Right.png" alt="">
-                    <h4 data-p="p3">Muro.</h4>
-                </div>
-                <div id="descripcionP3" class="descripcionP">
-                    <p>
-                        El objetivo claramente es aprender SQL y conocer las opiniones que
-                        me puedan aportar algo como desarrolador.
-                        Continúa en desarrollo.
-                    </p>
-                </div>
-            </div>
-
-            <div id="notasFunc" class="proyectos">
-                <h3>Funcionalidades de las notas</h3>
-                <h4>Menú</h4>
-                <p> Recuerda que puedes utilizar el Doble click para acceder al menú de tus notas.</p>
-                <h4>Eliminar</h4>
-                <p>Usa esta opción para eliminar tus notas viejas.</p>
-                <h4>Drag and Drop</h4>
-                <p>Arrastralas para ubicarlas en un área delimitada diferente!</p>
-                <h4>Color</h4>
-                <p>Tambien puedes elegir un color para el tipo de nota que vas a
-                    utilizar con las referencias totalmente personalizables. </p>
-            </div>
-
-            <div id="p7">
-                <h2>Otros proyectos</h2>
+        <div class="contenedor">
+            <h2>Contribuir</h2>
+            <div class="subContenedor">
                 <div class="cont1">
-                    <a href="https://github.com/Xzoun" target="_blank">
+                    <a href="https://ceneka.net/lebenitezCoding_" target="_blank">
                         <div class="cont2">
-                            <img id="GitHubIcon" src="./Cosas/Imagenes/redes/gitHub.png" class="squareIcon"></img>
-                            <h3>Xzoun</h3>
+                            <img class="squareIcon" id="MercadoPagoIcon" src="Cosas/Imagenes/redes/MercadoPago.png">
+                            <h2>Realizar aporte</h2>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="dropZone1" class="dropZone"></div>
-
-    <div class="cont">
-        <h2>Contribuir</h2>
-        <div class="cont1">
-            <a href="https://ceneka.net/lebenitezCoding_" target="_blank">
-                <div class="cont2">
-                    <img id="MercadoPagoIcon" src="Cosas/Imagenes/redes/MercadoPago.png">
-                    <h2>Realizar aporte</h2>
+        <div id="acercaDe" class="contenedor">
+            <h2>Sobre mi</h2>
+            <div class="subContenedor">
+                <div id="descripcionPersonal">
+                    <p>
+                        Mi nombre es Leonel y soy una persona dedicada que se encuentra en constante aprendizaje.
+                        A lo largo de mi trayectoria, he adquirido experiencia en diversas áreas, como ventas,
+                        atención
+                        al público, administración y recursos humanos. Además, he explorado una variedad de
+                        intereses,
+                        desde tomar cursos de francés, canto, guitarra y teatro, hasta aventurarme en el mundo de la
+                        electricidad.
+                    </p>
+                    <p>
+                        Sin embargo, mi verdadera pasión y descubrimiento ha sido la programación. Mi primer
+                        acercamiento
+                        fue en 2023, cuando realicé un curso de lógica de programación. Desde entonces, he estado
+                        inmerso
+                        en cursos de lógica, Java y Front-End. Considero que estoy dando mis primeros pasos en este
+                        vasto
+                        mundo de las teclas, pero siento que tengo un gran futuro en el área.
+                    </p>
+                    <p>
+                        Utilizo constantemente esta web desde el editor de código y he decidido compartirla y
+                        actualizarla
+                        casi a diario para documentar mis inicios y organizar toda la información de los diversos
+                        proyectos
+                        en los que estoy trabajando.
+                    </p>
+                    <p>
+                        Mi objetivo principal es insertarme profesionalmente como desarrollador Full Stack y
+                        continuar
+                        aprendiendo de forma constante. Estoy emocionado por las oportunidades que el campo de la
+                        programación ofrece y estoy comprometido a expandir mis conocimientos y habilidades para
+                        alcanzar
+                        nuevas metas.
+                    </p>
                 </div>
-            </a>
-        </div>
-    </div>
-
-    <div id="notas" class="cont">
-        <div id="nuevaNota">
-            <h2 id="noteTittle">Notas</h2>
-            <button id="newNoteBtn">
-                <img src="./Cosas/Imagenes/newNote.png"></img>
-                <h2>Nueva nota</h2>
-            </button>
-            <div id="referencias">
-                <h2>Referencias</h2>
-                <input class="color1" type="text" id="color1" placeholder="Supermercado" />
-                <input class="color2" type="text" id="color2" placeholder="Estudios" />
-                <input class="color3" type="text" id="color3" placeholder="Trabajo" />
-                <input class="color4" type="text" id="color4" placeholder="Ocio" />
-                <input class="color5" type="text" id="color5" placeholder="To do list">
-                <input class="color6" type="text" id="color6" placeholder="Ayuda memoria" />
-                <input class="color7" type="text" id="color7" placeholder="A corto plazo" />
-                <input class="color8" type="text" id="color8" placeholder="A largo plazo" />
-                <input class="color9" type="text" id="color9" placeholder="Ideas dudosas" />
             </div>
         </div>
 
-        <div id="dropZone2" class="dropZone"></div>
+        <div id="notas" class="contenedor notesHide">
+            <h2>Notas</h2>
+            <div class="subContenedor">
+                <div class="notas">
+                    <button id="newNoteBtn" class="btn btn-outline-light">
+                        <img src="./Cosas/Imagenes/newNote.png"></img>
+                        Nueva nota
+                    </button>
+                    <div id="refDiv">
+                        <h2>Referencias</h2>
+                        <div id="referencias">
+                            <input class="color1" type="text" id="color1" placeholder="Supermercado" />
+                            <input class="color2" type="text" id="color2" placeholder="Estudios" />
+                            <input class="color3" type="text" id="color3" placeholder="Trabajo" />
+                            <input class="color4" type="text" id="color4" placeholder="Ocio" />
+                            <input class="color5" type="text" id="color5" placeholder="To do list">
+                            <input class="color6" type="text" id="color6" placeholder="Ayuda memoria" />
+                            <input class="color7" type="text" id="color7" placeholder="A corto plazo" />
+                            <input class="color8" type="text" id="color8" placeholder="A largo plazo" />
+                            <input class="color9" type="text" id="color9" placeholder="Ideas dudosas" />
+                        </div>
+                    </div>
+                </div>
+                <div id="nuevaNota" class="dropZone notesHide"> </div>
+            </div>
+
+            <div id="dropZone2" class="dropZone notesHide"></div>
+        </div>
 
         <div id="dobleclick">
-            <div id="menuNotas">
-                <div id="paletaColores">
-                    <div data-color="colorOne" class="paletaColor color1"></div>
-                    <div data-color="colorTwo" class="paletaColor color2"></div>
-                    <div data-color="colorThree" class="paletaColor color3"></div>
-                    <div data-color="colorFour" class="paletaColor color4"></div>
-                    <div data-color="colorFive" class="paletaColor color5"></div>
-                    <div data-color="colorSix" class="paletaColor color6"></div>
-                    <div data-color="colorSeven" class="paletaColor color7"></div>
-                    <div data-color="colorEight" class="paletaColor color8"></div>
-                    <div data-color="colorNine" class="paletaColor color9"></div>
+            <div class="container text-center colores">
+                <div class="row">
+                    <div class="col">
+                        <div data-color="colorOne" class="paletaColor color1">Rojo</div>
+                    </div>
+                    <div class="col">
+                        <div data-color="colorTwo" class="paletaColor color2">Azul</div>
+                    </div>
+                    <div class="col">
+                        <div data-color="colorThree" class="paletaColor color3">Rosa</div>
+                    </div>
                 </div>
-                <div id="menuBotones">
-                    <button id="eliminar">Eliminar Nota</button>
-                    <button id="cancelar">Cancelar</button>
+                <div class="row">
+                    <div class="col">
+                        <div data-color="colorFour" class="paletaColor color4">Violeta</div>
+                    </div>
+                    <div class="col">
+                        <div data-color="colorFive" class="paletaColor color5">Amarillo</div>
+                    </div>
+                    <div class="col">
+                        <div data-color="colorSix" class="paletaColor color6">Negro</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div data-color="colorSeven" class="paletaColor color7">Naranja</div>
+                    </div>
+                    <div class="col">
+                        <div data-color="colorEight" class="paletaColor color8">Verde</div>
+                    </div>
+                    <div class="col">
+                        <div data-color="colorNine" class="paletaColor color9">Blanco</div>
+                    </div>
                 </div>
             </div>
+            <div id="menuBotones">
+                <button id="eliminar" class="notasButtons btn btn-outline-dark">Eliminar</button>
+                <button id="cancelar" class="notasButtons btn btn-outline-dark  ">Cancelar</button>
+            </div>
         </div>
-    </div>
 
-    <footer>
-        <div id="contacto" class="cont">
+        <div id="contacto" class="contenedor">
+
             <h2>Contacto</h2>
-            <nav>
-                <ul>
-                    <a href="  https://www.linkedin.com/in/leobenitez/" target="_blank">
-                        <li>
-                            <img id="linkedinIcon" src="./Cosas/Imagenes/redes/Linkedin.png" class="squareIcon"></img>
-                            <h3 id="linkedin">Leonel Benitez</h3>
-                        </li>
-                    </a>
-                    <a href="https://wa.me/541136719834" target="_blank">
-                        <li>
-                            <img id="whatsAppIcon" src="./Cosas/Imagenes/redes/WhatsApp.png" class="squareIcon"></img>
-                            <h3 id="whatsApp">Le Benitez!</h3>
-                        </li>
-                    </a>
-                    <a href="https://www.instagram.com/lebenitez_/?next=%2F" target="_blank">
-                        <li>
-                            <img id="instagramIcon" src="./Cosas/Imagenes/redes/Instagram.png" class="squareIcon"></img>
-                            <h3 id="instagram">lebenitez_</h3>
-                        </li>
-                    </a>
-                </ul>
-            </nav>
-            <h2>Redes</h2>
-            <nav>
-                <ul>
-                    <a href="https://www.youtube.com/channel/UCmDgrjDhdFktnWrzVwKOFaQ" target="_blank">
-                        <li>
-                            <img id="youtubeIcon" src="./Cosas/Imagenes/redes/Youtube.png"></img>
-                            <h3 id="youtube">lebenitez_</h3>
-                        </li>
-                    </a>
-                    <a href="https://twitter.com/lebenitez_" target="_blank">
-                        <li>
-                            <img id="twitterIcon" src="./Cosas/Imagenes/redes/Twitter.png" class="squareIcon"></img>
-                            <h3 id="twitter">Lein</h3>
-                        </li>
-                    </a>
-                    <a href=" https://www.twitch.tv/xzoun" target="_blank">
-                        <li>
-                            <img id="twitchIcon" src="./Cosas/Imagenes/redes/Twitch.png" class="squareIcon"></img>
-                            <h3 id="twitch">Xzoun</h3>
-                        </li>
-                    </a>
-                </ul>
-            </nav>
-        </div>
-        <a href="Muro.html" target="_blank"><img>
-            <h3 id="final">No olvides dejar un comentario, saludos!</h3>
-        </a>
-    </footer>
 
+            <div class="subContenedor">
+                <a class="links" href="  https://www.linkedin.com/in/leobenitez/" target="_blank">
+                    <img id="linkedinIcon" src="./Cosas/Imagenes/redes/Linkedin.png" class="rectIcon"></img>
+                </a>
+                <a class="links" href="https://wa.me/541136719834" target="_blank">
+                    <img id="whatsAppIcon" src="./Cosas/Imagenes/redes/WhatsApp.png" class="squareIcon"></img>
+                </a>
+                <a class="links" href="https://www.instagram.com/lebenitez_/?next=%2F" target="_blank">
+                    <img id="instagramIcon" src="./Cosas/Imagenes/redes/Instagram.png" class="squareIcon"></img>
+                </a>
+            </div>
+
+            <h2>Redes</h2>
+
+            <div class="subContenedor">
+                <a class="links" href="https://www.youtube.com/channel/UCmDgrjDhdFktnWrzVwKOFaQ" target="_blank">
+                    <img id="youtubeIcon" src="./Cosas/Imagenes/redes/Youtube.png" class="rectIcon"></img>
+                </a>
+                <a class="links" href="https://twitter.com/lebenitez_" target="_blank">
+                    <img id="twitterIcon" src="./Cosas/Imagenes/redes/Twitter.png" class="squareIcon"></img>
+                </a>
+                <a class="links" href=" https://www.twitch.tv/xzoun" target="_blank">
+                    <img id="twitchIcon" src="./Cosas/Imagenes/redes/Twitch.png" class="squareIcon"></img>
+                </a>
+            </div>
+
+            <h2>Otros Proyectos</h2>
+
+            <div class="subContenedor">
+                <a class="links" href="https://www.github.com/xzoun" target="_blank">
+                    <img src="./Cosas/Imagenes/redes/gitHub.png" class="otrosIcon"></img>
+                </a>
+                <a class="links" href="https://portfolio-leb.web.app/" target="_blank">
+                    <img src="./Cosas/Imagenes/LeBenitez!.png" class="otrosIcon"></img>
+                </a>
+                <a class="links" href="https://simplementealgo-justsomething.web.app/" target="_blank">
+                    <img src="./Cosas/Imagenes/redes/simplementeAlgo.png" class="otrosIcon"></img>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footerBorder">  </div>
+                <a href="Muro.html" target="_blank">
+                    <h3 id="final">No olvides dejar un comentario, saludos!</h3>
+                </a>          
+        </footer>
+    </div>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="./Cosas/Funciones/Interfaz.js"></script>
     <script src="./Cosas/Funciones/Notas.js"></script>
     <script src="./Cosas/Funciones/Proyectos.js"></script>
-    <script></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

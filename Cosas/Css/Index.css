@@ -1,86 +1,118 @@
 /*--------------------------- Start || General ---------------------------*/
-* {
-    margin: 0;
-    padding: 0;
-}
-
-#all {
-    transition: .5s ease-in-out all;
-}
-
 body {
-    font-family: 'Catamaran', sans-serif;
-    background: linear-gradient(131deg,
-            #53D1FA 18%,
-            white 33%);
-    width: 100%;
-    margin: 0%;
-    padding: 0%;
-    scroll-behavior: smooth;
-
-    &.Dark {
-        background: linear-gradient(131deg,
-                #3994E3 18%,
-                black 33%);
-        color: white;
-    }
-
-    &.Dark #banner nav {
-        background-color: #3994E3;
-        box-shadow: 0 0 4px 0.2px #3994E3;
-    }
-
-    &.Dark #banner a {
-        color: black;
-    }
-
-    &.Dark #descripcionPersonal,
-    &.Dark #contacto li {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-
-
-    &.Dark #liContenedores #contenedores li:hover a {
-        color: #FAA852;
-    }
-
-    &.Dark a {
-        color: white;
-    }
-
-    &.Dark .cont2 {
-        box-shadow: 1px 1px 0.1px 0.2px white;
-    }
-
-    &.Dark .cont1,
-    &.Dark #MercadoPagoIcon,
-    &.Dark #GitHubIcon {
-        filter: invert(1);
-    }
-
-    &.Dark .cont2:hover #GitHubIcon {
-        filter: invert(0);
-        }
+    display: flex;
+    justify-content: space-between;
 }
 
-a {
+/*-------------- nav --------------*/
+.navContenedor {
+    height: 100vh;
+    width: 35vh;
+}
+
+.nav {
+    position: fixed;
+    width: 35vh;
+    top: 0;
+    background: black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 600;
+}
+
+.enlaces {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20%;
+    gap: 10%;
+    height: 80%;
+}
+
+.enlaces a {
+    color: white;
     text-decoration: none;
-    font-weight: 400;
-    color: black;
 }
 
-ul {
-    list-style: none;
+.enlaces a:hover {
+    color: #FAA852;
 }
 
-p {
-    text-indent: 4%;
+.darkModeIcon {
+    height: 30px;
+    color: white;
+    border: none;
+}
+
+.logoContendeor {
+    height: 5%;
+}
+
+.logoPersonal {
+    width: 70px;
+    height: 60px;
+}
+
+#darkButton {
+    text-align: left;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    font-weight: 600;
+    margin-left: -10px;
+}
+
+#darkButton:hover {
+    color: #FAA852;
+}
+
+#darkIcon {
+    display: none;
+}
+
+/*-------------- Dark Mode --------------*/
+
+.Dark {
+    background-color: black;
+    color: white;
+}
+
+.Dark .atajos ul h2 {
+    border-bottom: solid white 1px;
+}
+
+.Dark .cont2:hover h2,
+.Dark footer a:hover {
+    color: #FAA852;
+}
+
+.Dark .cont2 h2,
+.Dark footer a,
+.Dark .atajos ul li a {
+    color: white;
+}
+
+.Dark #contacto .subContenedor a:hover {
+    background-color: white;
+}
+
+#darkIcon,
+#lightIcon {
+    filter: invert(1);
 }
 
 /*-------------- Scroll Bar --------------*/
 
 body::-webkit-scrollbar,
-#descripcion::-webkit-scrollbar {
+#descripcion::-webkit-scrollbar,
+#notasFunc::-webkit-scrollbar {
     width: 7px;
     height: 0px;
     margin-right: 3px;
@@ -88,13 +120,15 @@ body::-webkit-scrollbar,
 }
 
 body:hover::-webkit-scrollbar-thumb,
-#descripcion:hover::-webkit-scrollbar-thumb {
-    background-color: #53D1FA;
+#descripcion:hover::-webkit-scrollbar-thumb,
+#notasFunc::-webkit-scrollbar-thumb {
+    background-color: white;
     border-radius: 12px;
 }
 
 body::-webkit-scrollbar-thumb:hover,
-#descripcion::-webkit-scrollbar-thumb:hover {
+#descripcion::-webkit-scrollbar-thumb:hover,
+#notasFunc::-webkit-scrollbar-thumb:hover {
     width: 7px;
     background-color: #FAA852;
     border-radius: 12px;
@@ -104,127 +138,83 @@ html {
     scroll-behavior: smooth;
 }
 
-/*--------------------------- Fixed Nav ---------------------------*/
+/*--------------------------- Contenido ---------------------------*/
+.page {
+    width: calc(100% - 35vh);
+    font-family: 'Catamaran', sans-serif;
+}
 
-#banner {
-    width: 100%;
-    z-index: 600;
-    top: 0%;
+.page::before {
+    content: "";
     position: fixed;
-}
-
-#banner nav {
-    padding: 1% 2%;
-    background-color: #53D1FA;
-    box-shadow: 0 0 4px 0.2px #53D1FA;
-}
-
-#banner nav ul {
-    display: flex;
-    justify-content: right;
-    gap: 3%;
-}
-
-#banner li a {
-    color: white;
-    font-weight: 400;
-
-}
-
-#banner li:hover a {
-    cursor: pointer;
-    font-weight: 800;
-    color: #FAA852;
-}
-
-#contenedores {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s;
-    position: absolute;
+    top: 0;
+    left: 0;
     background: rgba(255, 255, 0, 0.2);
     background: linear-gradient(5deg,
+            #3994e300 10%,
+            #3994e3ad 20%,
             #3994E3 30%,
             rgb(255, 189, 189, 1) 40%,
             rgb(0, 0, 0, 0.2) 50%,
             rgb(0, 0, 0, 0) 80%,
             rgb(255, 189, 189, 0) 100%);
-    padding: 10px;
+    width: 100%;
+    height: 100%;
+    z-index: -20;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*-------------- Presentacion --------------*/
+
+.inicial .subContenedor {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    font-weight: 600;
+    padding: 5% 5% 5% 5%;
+    gap: 10px;
+    text-align: center;
+    font-size: 2ch;
 }
 
-#liContenedores:hover #contenedores {
-    visibility: visible;
-    opacity: 1;
+.contenedor,
+.subContenedor {
+    padding: 5% 2% 0 2%;
+    font-weight: 600;
 }
 
-#liContenedores #contenedores li a {
-    color: white;
+/*-------------- Links Utiles --------------*/
+.atajos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
 }
 
-#liContenedores #contenedores li:hover a {
+.atajos ul h2 {
+    border-bottom: solid black 1px;
+}
+
+.atajos ul li a,
+.atajos ul li {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+.atajos ul li a:hover {
     color: #FAA852;
+    background: linear-gradient(90deg,
+            black,
+            rgb(255, 189, 189, 0) 100%);
+    padding-right: 10%;
+    padding-left: 2%;
+    border-left: #FAA852 solid 3px;
 }
 
-.cont {
-    padding: 4% 5%;
-    position: relative;
-    top: 60px;
-    scroll-margin-top: 20px;
-    margin: 1%;
-}
-
-.acercaDeCont{
-    padding: 4% 5%;
-    position: relative;
-    scroll-margin-top: 20px;
-    margin: 1%;
-}
-
-#darkButton {
-    position: relative;
-    border-radius: 50px;
-    cursor: pointer;
-    border: 3px solid #FA9F4B;
-    display: flex;
-    background-color: black;
-}
-
-#darkButton:hover #darkMode {
-    display: block;
-}
-
-#darkMode {
-    opacity: 0.6;
-    display: none;
-    position: absolute;
-    right: -10px;
-    top: -10px;
-    background-color: aliceblue;
-    border-radius: 12px;
-}
-
-.darkButtonIcons {
-    width: 20px;
-    height: 20px;
-    transition: .3s ease-in-out all;
-}
-
-#lightIcon {
-    filter: invert(1);
-}
-
-.seleccionado {
-    color: #FAA852;
-}
-
-/*--------------------------- Presentación ----------------------------*/
-
-
-
-/*--------------------------- Proyectos ----------------------------*/
-
+/*-------------- Proyectos --------------*/
 #proyectosCont {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 50px 50px 350px auto 50px 50px;
@@ -242,6 +232,7 @@ html {
 
 .proyectos a {
     color: white;
+    text-decoration: none;
 }
 
 .proyectos a:hover {
@@ -287,6 +278,7 @@ html {
 
 #notasFunc {
     grid-area: 3/1/4/3;
+    overflow-y: scroll;
 }
 
 #p7 {
@@ -302,10 +294,10 @@ html {
 }
 
 .desplegar {
-    filter: invert(72%) sepia(18%) saturate(1316%) hue-rotate(154deg) brightness(98%) contrast(100%);
+    filter: invert(1);
 }
 
-.desplegar:hover {
+.descripcionContP:hover .desplegar {
     filter: invert(80%) sepia(26%) saturate(1372%) hue-rotate(324deg) brightness(100%) contrast(97%);
 }
 
@@ -330,124 +322,67 @@ html {
     grid-column: 1/4;
 }
 
-/*--------------------------- Otros Proyectos | Contribuir ----------------------------*/
-
-.cont1 {
+/*-------------- Aportar --------------*/
+.cont1,
+.cont1 a {
     display: flex;
+    align-items: center;
     justify-content: center;
+    width: 100%;
+    text-decoration: none;
 }
 
 .cont2 {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    box-shadow: 1px 1px 0.1px 0.2px black
-}
-
-#cont2:hover {
-    color: black;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-#MercadoPagoIcon,
-#GitHubIcon {
-    width: 70%;
-    height: auto;
-}
-
-.cont2:hover h2,
-.cont2:hover #GitHubIcon,
-.cont2:hover h3 {
-    filter: invert(1);
-}
-
-/*--------------------------- Atajos ----------------------------*/
-
-#contList {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-}
-
-#contList ul {
-    width: 38%;
-    text-align: center;
-    background: rgb(255, 255, 255, 0.0);
-    border-radius: 50px;
-    margin: 3% 6%;
-
-}
-
-#contList h2 {
-    border-bottom: solid 1px #FAA852;
-    ;
-}
-
-#contList ul li {
-    text-align: left;
-    padding-left: 10%;
-}
-
-#contList:hover a:hover {
-    background: rgba(0, 0, 0, 0.2);
-    background: linear-gradient(90deg,
-            rgba(0, 0, 0, 0.9) 18%,
-            rgba(0, 0, 0, 0) 100%);
-    padding-right: 40%;
-    border-left: rgb(255, 255, 255) solid 3px;
-    color: white;
-}
-
-/*--------------------------- Acerca De ----------------------------*/
-
-#descripcionPersonal {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 5% 5%;
-    margin: 0% 5%;
-}
-
-/*--------------------------- Footer || Contacto ----------------------------*/
-
-#contacto {
-    overflow: hidden;
-}
-
-#contacto ul {
-    display: flex;
     justify-content: center;
-    gap: 2%;
 }
 
-#contacto li {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 140px;
-    height: 100px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    box-shadow: 1px 1px 0.1px 0.2px black;
+.cont2 h2 {
+    color: black;
 }
+
+.cont2:hover h2 {
+    color: #FAA852;
+}
+
+/*--------------------------- Contacto ----------------------------*/
 
 #contacto li:hover {
     background-color: rgba(0, 0, 0, 0.2);
     color: black;
 }
 
-.squareIcon {
-    width: auto;
-    height: 70%;
+#contacto .subContenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
 }
 
-#youtubeIcon {
-    width: auto;
-    height: 70%;
+#contacto .subContenedor a {
+    padding: 5%;
+}
+
+#contacto .subContenedor a:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+}
+
+.otrosIcon {
+    width: 60px;
+    height: 55px;
+}
+
+.squareIcon {
+    width: 60px;
+    height: 60px;
+}
+
+.rectIcon {
+    width: 100px;
+    height: 60px;
 }
 
 #whatsAppIcon {
@@ -466,39 +401,75 @@ html {
 }
 
 #final {
-    text-align: right;
+    text-align: center;
     padding: 20px;
     margin-top: 20px;
     cursor: pointer;
     margin-bottom: 20px;
+
+}
+
+.footerBorder {
+    border-top: white 1px solid;
+    width: 50%;
+    margin-left: 25%;
+    margin-top:5%;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #FAA852;
 }
 
 /*--------------------------- Resposive ---------------------------*/
 
 @media (max-width: 768px) {
 
-    /*--------------------------- Generales || Inicio || Barra nav ---------------------------*/
-
     body {
-        font-size: 1.5ch;
+        display: block;
+        justify-content: space-between;
     }
 
-    #banner {
+    .navContenedor {
+        height: 40px;
+    }
+
+    .logoContendeor,
+    .span {
+        display: none;
+    }
+
+    .logoPersonal {
+        height: 40px;
+        width: 45px;
+    }
+
+    .page {
         width: 100%;
     }
 
-    #start a {
-        border-radius: 5px;
-    }
-
     .nav {
-        top: 40px;
+        height: 40px;
+        width: 100%;
+        top: 0;
+        background: black;
+        display: flex;
+        position: fixed;
+        font-weight: 600;
+        gap: 1%;
+        z-index: 20;
     }
 
-    /*--------------------------- Presentacion ---------------------------*/
-
-    #presentacion {
-        border-radius: 12px;
+    div.enlaces {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        height: 40px;
     }
 
     /*--------------------------- Proyectos ---------------------------*/
@@ -593,26 +564,8 @@ html {
 }
 
 @media (min-width: 1200px) {
-
-    /*--------------------------- Generales || Inicio || Barra nav ---------------------------*/
-
     body {
         font-size: 5ch;
-    }
-
-    #banner button {
-        height: 60px;
-        width: 120px;
-        border: 5px solid rgb(255, 189, 189);
-    }
-
-    #banner button img {
-        width: auto;
-        height: 55px;
-    }
-
-    .nav {
-        top: 150px;
     }
 
     /*--------------------------- Proyectos ---------------------------*/
