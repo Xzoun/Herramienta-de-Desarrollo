@@ -1,0 +1,29 @@
+/*-------------- Scroll Bar --------------*/
+
+body::-webkit-scrollbar,
+#descripcion::-webkit-scrollbar,
+#notasFunc::-webkit-scrollbar {
+    width: 7px;
+    height: 0px;
+    margin-right: 3px;
+    background-color: #2e2e2e;
+}
+
+body:hover::-webkit-scrollbar-thumb,
+#descripcion:hover::-webkit-scrollbar-thumb,
+#notasFunc::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 12px;
+}
+
+body::-webkit-scrollbar-thumb:hover,
+#descripcion::-webkit-scrollbar-thumb:hover,
+#notasFunc::-webkit-scrollbar-thumb:hover {
+    width: 7px;
+    background-color: #FAA852;
+    border-radius: 12px;
+}
+
+html {
+    scroll-behavior: smooth;
+}

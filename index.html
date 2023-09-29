@@ -8,6 +8,7 @@
     <title>Herramienta de desarrollo</title>
     <link rel="icon" type="img/png" href="./Cosas/Imagenes/pc.ico">
     <link rel="stylesheet" href="./Cosas/Css/Index.css">
+    <link rel="stylesheet" href="./Cosas/Css/scrollBar.css">
     <link rel="stylesheet" href="./Cosas/Css/Notas.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,9 +25,9 @@
                         class="logoPersonal" alt="LeBenitez! Logo"></a>
             </div>
             <div class="enlaces">
-                <a href="#atajos">Atajos</a>
+                <a href="#atajos" class="atajosHide">Atajos</a>
                 <a href="#proyectos">Proyectos</a>
-                <a href="#acercaDe">Acerca de</a>
+                <a href="#acercaDe" class="acercaDeHide">Acerca de</a>
                 <li class="dropdown notesHide">
                     <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Notas
@@ -76,8 +77,10 @@
                     <li><a href="https://color.adobe.com/es/create/color-wheel" target="_blank">Paleta de
                             Colores</a>
                     </li>
+                    <li><a href="https://www.online-convert.com/" target="_blank">Formatear</a></li>
+                    <li><a href="https://tinypng.com/" target="_blank">Comprimir</a></li>
                     <li><a href="https://openai.com/blog/chatgpt" target="_blank"><img src="">Chat GPT</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=oBntkyvWy74" target="_blank">MokittApp - Diseño</a>
+                    <li><a href="https://www.canva.com/" target="_blank">Canva</a>
                     </li>
                 </ul>
                 <ul>
@@ -169,9 +172,11 @@
                         </div>
                         <div id="descripcionP2" class="descripcionP">
                             <p>
-                                En este segundo proyecto busco aprender más sobre diseño, css, html y javaScript.
-                                Replicando el diseño de una de las principales páginas de contenido multimedia me
-                                parece una buena forma de aprender del trabajo de los demás.
+                                En este segundo proyecto, me enfoqué en mejorar mis habilidades de diseño. Me inspiré en
+                                la estructura del carrusel y el estilo de la Landing Page de Netflix para crear una
+                                interfaz que destaca recomendaciones variadas, como series, películas, canales (como
+                                Podcasts, Streaming, etc.), libros y música. El objetivo era lograr
+                                un diseño atractivo y fácil de explorar para los usuarios.
                             </p>
                         </div>
                         <div id="proyecto3" class="descripcionContP" data-p="p3">
@@ -199,6 +204,18 @@
                             utilizar con las referencias totalmente personalizables. </p>
                     </div>
                 </div>
+            </div>
+            <h2>Otros Proyectos</h2>
+            <div class="subContenedorOtros">
+                <a class="links" href="https://www.github.com/xzoun" target="_blank">
+                    <img src="./Cosas/Imagenes/redes/gitHub.png" class="otrosIcon"></img>
+                </a>
+                <a class="links" href="https://portfolio-leb.web.app/" target="_blank">
+                    <img src="./Cosas/Imagenes/LeBenitez!.png" class="otrosIcon"></img>
+                </a>
+                <a class="links" href="https://simplementealgo-justsomething.web.app/" target="_blank">
+                    <img src="./Cosas/Imagenes/redes/simplementeAlgo.png" class="otrosIcon"></img>
+                </a>
             </div>
         </div>
 
@@ -359,27 +376,13 @@
                     <img id="twitchIcon" src="./Cosas/Imagenes/redes/Twitch.png" class="squareIcon"></img>
                 </a>
             </div>
-
-            <h2>Otros Proyectos</h2>
-
-            <div class="subContenedor">
-                <a class="links" href="https://www.github.com/xzoun" target="_blank">
-                    <img src="./Cosas/Imagenes/redes/gitHub.png" class="otrosIcon"></img>
-                </a>
-                <a class="links" href="https://portfolio-leb.web.app/" target="_blank">
-                    <img src="./Cosas/Imagenes/LeBenitez!.png" class="otrosIcon"></img>
-                </a>
-                <a class="links" href="https://simplementealgo-justsomething.web.app/" target="_blank">
-                    <img src="./Cosas/Imagenes/redes/simplementeAlgo.png" class="otrosIcon"></img>
-                </a>
-            </div>
         </div>
 
         <footer>
-            <div class="footerBorder">  </div>
-                <a href="Muro.html" target="_blank">
-                    <h3 id="final">No olvides dejar un comentario, saludos!</h3>
-                </a>          
+            <div class="footerBorder"> </div>
+            <a href="Muro.html" target="_blank">
+                <h3 id="final">No olvides dejar un comentario, saludos!</h3>
+            </a>
         </footer>
     </div>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>

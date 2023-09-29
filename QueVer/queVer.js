@@ -1,20 +1,93 @@
-import { pagina } from "./Cosas/Funciones/pagina.js"
+import { obtenerUrls } from "./DB/db.js"
+
+const lupita = document.getElementById("botonBuscar"),
+    buscador = document.getElementById("buscador"),
+    titulo = document.getElementById("titulo"),
+    link1 = document.getElementById("link1"),
+    link2 = document.getElementById("link2"),
+    link1Desc = document.getElementById("link1Desc"),
+    link2Desc = document.getElementById("link2Desc"),
+    mainPhoto = document.getElementById("mainImg");
+let url = "imagenes/queVer"
+
+// ---------- Paginas ---------- 
+const paginas = {
+    pagSeries: {
+        photoSrc: "./QueVer/Imagenes/gameOfThrones.jpg",
+        title: "Game Of Thrones",
+        link1Desc: "Ver Trailer",
+        link2Desc: "Sinopsis",
+        link1Href: "https://www.youtube.com/watch?v=vCzW8RzDV2o",
+        link2Href: "https://www.youtube.com/watch?v=QDC5DKSyYcs&list=PLPZ1i5C50RxBTWPU-8S-e0qF6KfWe-7Y5",
+        url: "/series",
+    },
+    pagPeliculas: {
+        photoSrc: "./QueVer/Imagenes/Jobs.png",
+        title: "Jobs",
+        link1Desc: "Ver Trailer",
+        link2Desc: "Sinopsis",
+        link1Href: "https://www.youtube.com/watch?v=zXzyLxad6xk",
+        link2Href: "https://www.youtube.com/watch?v=ouRn5PIwtmU",
+        url: "/peliculas",
+    },
+    pagCanales: {
+        photoSrc: "./QueVer/Imagenes/MrBeasr.jpg",
+        title: "Mr Beast",
+        link1Desc: "Ver",
+        link2Desc: "Información",
+        link1Href: "https://www.youtube.com/watch?v=54Eu9Yzd7xc",
+        link2Href: "https://www.youtube.com/watch?v=xLlYR8dR2nY",
+        url: "/canales",
+    },
+    pagMusicos: {
+        photoSrc: "./QueVer/Imagenes/elKuelgue.jpg",
+        title: "El Kuelgue",
+        link1Desc: "Escuchar",
+        link2Desc: "Información",
+        link1Href: "https://www.youtube.com/watch?v=nolkPq64TrY",
+        link2Href: "https://www.youtube.com/watch?v=dPg4fq1E9xk",
+        url: "/musicos",
+    },
+    pagLibros: {
+        photoSrc: "./QueVer/Imagenes/unMundoSinFin.jpg",
+        title: "Un mundo sin fin",
+        link1Desc: "Comprar",
+        link2Desc: "Información",
+        link1Href: "https://play.google.com/store/books/details/Ken_Follett_Un_mundo_sin_fin_edici%C3%B3n_10o_aniversar?id=LdxH80NuzgAC",
+        link2Href: "https://www.youtube.com/watch?v=7NU04BwAOtEo",
+        url: "/libros",
+    },
+};
+
+// ---------- Inicio ---------- 
+function cargarPagina() {
+    url += "/series";
+    obtenerUrls(url);
+}
+// ---------- Escuchas ----------
+
+document.querySelector('.navbar-nav').addEventListener('click', (event) => {
+    url = "imagenes/queVer";
+    const targetId = event.target.id;
+    const pagina = paginas[targetId];
+
+    if (pagina) {
+        mainPhoto.setAttribute('src', pagina.photoSrc);
+        titulo.innerText = pagina.title;
+        link1Desc.innerText = pagina.link1Desc;
+        link2Desc.innerText = pagina.link2Desc;
+        link1.setAttribute('href', pagina.link1Href);
+        link2.setAttribute('href', pagina.link2Href);
+        const urlLink = url + pagina.url;
+        console.log(urlLink);
+        obtenerUrls(urlLink);
+    }
+
+});
+
+document.addEventListener("DOMContentLoaded", cargarPagina);
 
 // ---------- Banner ---------- 
-
-const lupita = document.getElementById("botonBuscar");
-const buscador = document.getElementById("buscador");
-
-lupita.addEventListener("click", () => {
-    buscador.classList.toggle("active");
-    lupita.classList.toggle("active");
-});
-
-const general = document.getElementById("series");
-general.addEventListener("click", () => {
-    lupita.classList.remove("active");
-    buscador.classList.remove("active");
-});
 
 window.addEventListener("scroll", () => {
     const banner = document.getElementById("banner");
@@ -25,41 +98,4 @@ window.addEventListener("scroll", () => {
         banner.style.background = "black";
     }
 });
-
-// ---------- Carrusel series de Netflix ---------- 
-
-const netflixSeries = document.querySelectorAll(".netflixS");
-const grupo = document.getElementById("divGrupo");
-const flechaDerecha = document.getElementById("flechasDerecha");
-const flechaIzquierda = document.getElementById("flechasIzquierda");
-const paginas = Math.ceil(netflixSeries.length / 4);
-
-for (let i = 0; i < paginas; i++) {
-    const indicador = document.createElement("button");
-    if (i == 0) {
-        indicador.classList.add("active");
-    }
-    document.querySelector(".indicadores").appendChild(indicador);
-}
-
-flechaDerecha.addEventListener("click", () => {
-    grupo.scrollLeft += grupo.offsetWidth;
-    const indicadorActivo = document.querySelector(".indicadores .active");
-    if (indicadorActivo.nextSibling) {
-        indicadorActivo.nextSibling.classList.add("active");
-        indicadorActivo.classList.remove("active");
-    }
-})
-
-flechaIzquierda.addEventListener("click", () => {
-    grupo.scrollLeft -= grupo.offsetWidth;
-    const indicadorActivo = document.querySelector(".indicadores .active");
-    if (indicadorActivo.previousSibling) {
-        indicadorActivo.previousSibling.classList.add("active");
-        indicadorActivo.classList.remove("active");
-    }
-})
-
-
-
 

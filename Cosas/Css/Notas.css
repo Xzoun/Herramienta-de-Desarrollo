@@ -242,89 +242,42 @@
 
 @media (max-width: 768px) {
 
-    .notesHide{
+    .notesHide {
         display: none;
     }
 }
 
 @media (min-width: 1200px) {
+
     .note {
-        height: 200px;
-        width: 200px;
-        font-size: 1.5ch;
+        height: 16ch;
+        width: 16ch;
+        font-size: 2ch;
     }
 
     .note:hover {
-        height: 250px;
-        width: 250px;
+        height: 20ch;
+        width: 20ch;
     }
 
     /*--------------------------- Notas || Drop Zones ---------------------------*/
-    #newNoteBtn {
-        width: 28%;
-        justify-content: center;
-    }
-
-    #newNoteBtn img {
-        height: 28%;
-        width: auto;
-    }
 
     .dropZone {
-        grid-template-columns: repeat(auto-fill, 200px);
-        gap: 1%;
-    }
-
-    #dropZone {
-        height: 200px;
-    }
-
-    #dropZone2 {
-        right: 100px;
-        bottom: 100px;
-    }
-
-    #dropZone2:hover {
-        right: 140px;
-        bottom: 140px;
+        grid-template-columns: repeat(auto-fill, 16ch);
+        gap: 5%;
     }
 
     #nuevaNota {
-        width: 80%;
-        grid-template-columns: repeat(auto-fill, 200px);
-        gap: 1%;
-        padding-top: 70px;
-        min-height: 320px;
+        grid-template-columns: repeat(auto-fill, 18ch);
+        grid-template-columns: repeat(1fr);
+        gap: 5%;
+        min-height: 400px;
     }
 
     #nuevaNota h2 {
         font-size: 2ch;
     }
 
-    #referencias {
-        width: 20%;
-    }
-
-    #referencias input {
-        height: 30px;
-    }
-
     /*--------------------------- Notas || Menu  ---------------------------*/
-    #menuNotas {
-        margin-top: 5%;
-    }
 
-    #paletaColores {
-        min-height: 400px;
-    }
-
-    #menuBotones {
-        height: 200px;
-    }
-
-    #menuBotones button {
-        font-size: 1.5ch;
-        border-radius: 50px;
-        overflow: hidden;
-    }
 }

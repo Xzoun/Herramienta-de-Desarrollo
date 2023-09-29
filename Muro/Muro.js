@@ -1,8 +1,4 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyCxs389TzDaFoyuv2IScEC3U-eh45SYHSs",
-  authDomain: "herramienta-de-desarrollo.firebaseapp.com",
-  projectId: "herramienta-de-desarrollo",
-}
+import firebaseConfig from '../config.js';
 
 firebase.initializeApp(firebaseConfig);
 

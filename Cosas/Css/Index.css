@@ -2,6 +2,7 @@
 body {
     display: flex;
     justify-content: space-between;
+    font-size: 2ch;
 }
 
 /*-------------- nav --------------*/
@@ -99,43 +100,9 @@ body {
     color: white;
 }
 
-.Dark #contacto .subContenedor a:hover {
-    background-color: white;
-}
-
 #darkIcon,
 #lightIcon {
     filter: invert(1);
-}
-
-/*-------------- Scroll Bar --------------*/
-
-body::-webkit-scrollbar,
-#descripcion::-webkit-scrollbar,
-#notasFunc::-webkit-scrollbar {
-    width: 7px;
-    height: 0px;
-    margin-right: 3px;
-    background-color: #2e2e2e;
-}
-
-body:hover::-webkit-scrollbar-thumb,
-#descripcion:hover::-webkit-scrollbar-thumb,
-#notasFunc::-webkit-scrollbar-thumb {
-    background-color: white;
-    border-radius: 12px;
-}
-
-body::-webkit-scrollbar-thumb:hover,
-#descripcion::-webkit-scrollbar-thumb:hover,
-#notasFunc::-webkit-scrollbar-thumb:hover {
-    width: 7px;
-    background-color: #FAA852;
-    border-radius: 12px;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 /*--------------------------- Contenido ---------------------------*/
@@ -176,6 +143,9 @@ html {
     padding: 5% 5% 5% 5%;
     gap: 10px;
     text-align: center;
+    
+}
+.subContenedor{
     font-size: 2ch;
 }
 
@@ -322,6 +292,12 @@ html {
     grid-column: 1/4;
 }
 
+#proyectos .subContenedorOtros {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 /*-------------- Aportar --------------*/
 .cont1,
 .cont1 a {
@@ -347,7 +323,7 @@ html {
     color: #FAA852;
 }
 
-/*--------------------------- Contacto ----------------------------*/
+/*-------------- Aportar --------------*/
 
 #contacto li:hover {
     background-color: rgba(0, 0, 0, 0.2);
@@ -361,12 +337,14 @@ html {
     gap: 5%;
 }
 
-#contacto .subContenedor a {
+#contacto .subContenedor a,
+#proyectos .subContenedorOtros a {
     padding: 5%;
 }
 
-#contacto .subContenedor a:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+#contacto .subContenedor a:hover,
+#proyectos .subContenedorOtros a:hover {
+    background-color: #FAA852;
     border-radius: 8px;
 }
 
@@ -400,6 +378,8 @@ html {
         invert(45%) sepia(97%) saturate(1728%) hue-rotate(164deg) brightness(100%) contrast(103%);
 }
 
+/*-------------- Footer --------------*/
+
 #final {
     text-align: center;
     padding: 20px;
@@ -413,7 +393,7 @@ html {
     border-top: white 1px solid;
     width: 50%;
     margin-left: 25%;
-    margin-top:5%;
+    margin-top: 5%;
 }
 
 footer a {
@@ -432,6 +412,7 @@ footer a:hover {
     body {
         display: block;
         justify-content: space-between;
+        font-size: 3ch;
     }
 
     .navContenedor {
@@ -476,7 +457,7 @@ footer a:hover {
 
     #proyectosCont {
         grid-template-columns: 48.5% 48.5%;
-        grid-template-rows: 60px 60px 60px auto 80px 80px;
+        grid-template-rows: 60px 60px 60px 60px;
         display: grid;
         gap: 2%;
         margin-bottom: 10px;
@@ -492,8 +473,8 @@ footer a:hover {
     }
 
     #p2 {
-        display: none;
-        border: none;
+        grid-row: 4/5;
+        grid-column: 1/2;
     }
 
     #p3 {
@@ -507,7 +488,7 @@ footer a:hover {
     }
 
     #descripcion {
-        grid-row: 1/4;
+        grid-row: 1/5;
         grid-column: 2/3;
     }
 
@@ -563,15 +544,34 @@ footer a:hover {
     }
 }
 
+@media (max-width: 400px) {
+    .atajos {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .acercaDeHide {
+        display: none;
+    }
+}
+
+@media (max-width: 250px) {
+    .atajosHide {
+        display: none;
+    }
+
+}
+
 @media (min-width: 1200px) {
-    body {
-        font-size: 5ch;
+    .subContenedor {
+        font-size: 3ch;
     }
 
     /*--------------------------- Proyectos ---------------------------*/
 
     #proyectosCont {
-        grid-template-rows: 150px 150px 1050px auto 150px 150px;
+        grid-template-rows: 150px 150px auto;
     }
 
     .proyectos {
@@ -590,5 +590,17 @@ footer a:hover {
         height: 200px;
         padding: 20px;
         font-size: 1.2ch;
+    }
+}
+
+@media (min-width: 1500px) {
+    .subContenedor {
+        font-size: 4ch;
+    }
+}
+
+@media (min-width: 1800px) {
+    .subContenedor{
+        font-size: 5ch;
     }
 }

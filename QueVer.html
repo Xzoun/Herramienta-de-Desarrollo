@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Que ver</title>
+    <title>Que ver?</title>
     <link rel="icon" type="img/png" href="./Cosas/Imagenes/LeBenitez!.ico">
     <link rel="stylesheet" href="./QueVer/Css/queVer.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Cosas/Css/scrollBar.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-storage-compat.js"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg" id="banner">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html"><img src="./Cosas/Imagenes/LeBenitez!.png" class="logoNav"
-                    alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <div id="bultoNav"></div>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,87 +30,116 @@
                     <li class="nav-item" id="pagSeries">Series</li>
                     <li class="nav-item" id="pagPeliculas">Peliculas</li>
                     <li class="nav-item" id="pagCanales">Canales</li>
-                    <li class="nav-item" id="pagMusicos">Musicos</li>
+                    <li class="nav-item" id="pagMusicos">Música</li>
                     <li class="nav-item" id="pagLibros">Libros</li>
-                    <li class="nav-item" id="pagFavoritos">Favoritos</li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="fixedTop">
-        <div id="search">
-            <img id="botonBuscar" src="./QueVer/Cosas/Imagenes/Search.png" />
-            <input id="buscador" type="text" name="buscador" />
-        </div>
-    </div>
-
-    <div id="series">
-        <div class="favorita">
-            <img class="favoritaFoto" src="./QueVer/Cosas/Imagenes/Series/Game Of Thrones.jpg">
-            <div class="favoritaInterfaz">
-                <h1>Game Of Thrones</h1>
-                <a href="https://www.youtube.com/watch?v=vCzW8RzDV2o" target="_blank">
-                    <button class="favoritaTrailer"><img src="./QueVer/Cosas/Imagenes/Play.png" />
-                        <span> Ver Trailer</span></button></a>
-                <a href="https://www.youtube.com/watch?v=QDC5DKSyYcs&list=PLPZ1i5C50RxBTWPU-8S-e0qF6KfWe-7Y5"
-                    target="_blank">
-                    <button class="favoritaInfo"><img src="./QueVer/Cosas/Imagenes/Info.png" />
-                        <span>Sinopsis</span></button></a>
-            </div>
-        </div>
-
-        <div class="carrusel">
-            <div class="categoria">
-                <h2>Netflix </h2>
-                <div id="indicadores" class="indicadores"></div>
-            </div>
-            <div class="contenedorGrupo">
-                <img src="./QueVer/Cosas/Imagenes/Izquierda.png" id="flechasIzquierda" class="flechasIzquierda">
-                <div class="divGrupo" id="divGrupo">
-                    <div class="grupo">
-                        <div class="netflixS"><img src="./QueVer/Cosas/Imagenes/Series/theOffice.png"></div>
-                        <div class="netflixS"><img src="./QueVer/Cosas/Imagenes/Series/Merli.jpg"></div>
-                        <div class="netflixS"><img src="./QueVer/Cosas/Imagenes/Series/Vikings.jpg"></div>
-                        <div class="netflixS"><img src="./QueVer/Cosas/Imagenes/Series/okupas.jpg"></div>
-                        <div class="netflixS"><img src="./QueVer/Cosas/Imagenes/Series/Psiconautas.jpg"></div>
-                    </div>
+    <div class="general">
+        <div class="main">
+            <img id="mainImg" class="mainPhoto" src="./QueVer/Imagenes/gameOfThrones.png" alt="">
+            <div class="mainDesc">
+                <h1 id="titulo">Game Of Thrones</h1>
+                <div class="mainButtons">
+                    <a id="link1" href="https://www.youtube.com/watch?v=vCzW8RzDV2o" target="_blank"
+                        class="mainTrailer">
+                        <img src="./QueVer/Imagenes/Play.png" />
+                        <span id="link1Desc">Ver Trailer</span></a>
+                    <a id="link2"
+                        href="https://www.youtube.com/watch?v=QDC5DKSyYcs&list=PLPZ1i5C50RxBTWPU-8S-e0qF6KfWe-7Y5"
+                        target="_blank" class="mainSynopsis">
+                        <img src="./QueVer/Imagenes/Info.png" />
+                        <span id="link2Desc">Sinopsis</span></a>
                 </div>
-                <img src="./QueVer/Cosas/Imagenes/Derecha.png" id="flechasDerecha" class="flechasDerecha">
             </div>
+        </div>
+
+        <h2 class="margin" id="grupo1Titulo"></h2>
+        <div id="grupo1" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#grupo1" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#grupo1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#grupo1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <button id="atras1" class="carousel-control-prev" type="button" data-bs-target="#grupo1"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#grupo1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <h2 class="margin" id="grupo2Titulo"></h2>
+        <div id="grupo2" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#grupo2" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#grupo2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#grupo2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <button id="atras2" class="carousel-control-prev" type="button" data-bs-target="#grupo2"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#grupo2" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <h2 class="margin" id="grupo3Titulo"></h2>
+        <div id="grupo3" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#grupo3" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#grupo3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#grupo3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <button id="atras3" class="carousel-control-prev" type="button" data-bs-target="#grupo3"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#grupo3" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <h2 class="margin" id="grupo4Titulo"></h2>
+        <div id="grupo4" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#grupo4" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#grupo4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#grupo4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <button id="atras4" class="carousel-control-prev" type="button" data-bs-target="#grupo4"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#grupo4" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
     </div>
 
-    <div id="peliculas">
-        <div class="favorita">
-            <img class="favoritaFoto" src="./QueVer/Cosas/Imagenes/Peliculas/Jobs.jpg">
-            <div class="favoritaInterfaz">
-                <h1>Jobs</h1>
-                <a href="https://www.youtube.com/watch?v=zXzyLxad6xk" target="_blank">
-                    <button class="favoritaTrailer"><img src="./QueVer/Cosas/Imagenes/Play.png" />
-                        <span> Ver Trailer</span></button></a>
-                <a href="https://www.youtube.com/watch?v=ouRn5PIwtmU">
-                    <button class="favoritaInfo"><img src="./QueVer/Cosas/Imagenes/Info.png" />
-                        <span>Sinopsis</span></button></a>
-            </div>
+    <footer class="bulto">
+        <div class="volver">
+            <a href="./index.html"><img class="logo" src="./Cosas/Imagenes/LeBenitez!.png" alt="" /></a>
+            <a href="./index.html">Volver</a>
         </div>
-    </div>
-
-    <div id="canales">
-        <div class="favorita">
-            <img class="favoritaFoto" src="./QueVer/Cosas/Imagenes/Canales/MrBeasr.jpg">
-            <div class="favoritaInterfaz">
-                <h1>Mr Beast</h1>
-                <a href="https://www.youtube.com/watch?v=54Eu9Yzd7xc" target="_blank">
-                    <button class="favoritaTrailer"><img src="./QueVer/Cosas/Imagenes/Play.png" />
-                        <span>Ver</span></button></a>
-                <a href="https://www.youtube.com/watch?v=xLlYR8dR2nY">
-                    <button class="favoritaInfo"><img src="./QueVer/Cosas/Imagenes/Info.png" />
-                        <span>Información</span></button></a>
-            </div>
-        </div>
-    </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
