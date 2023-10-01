@@ -1,16 +1,16 @@
-var pantalla = document.getElementById("pantalla"),
+const pantalla = document.getElementById("pantalla"),
     reglamento = document.getElementById("reglamento"),
     opciones = document.getElementById("opciones"),
     indicacionInicial = document.getElementById("indicacionInicial"),
     visuales = document.getElementById("interfazGeneral"),
-    atrasButton = document.getElementById("atras"),
-    ganador;
+    atrasButton = document.getElementById("atras");
+let ganador;
 
-export function interfazFc(cont) {
+export function interfazFc(cont, nombre) {
     switch (cont) {
 
         case 0:  //Reglamento
-        atrasButton.style.display = "none";
+            atrasButton.style.display = "none";
             reglamento.style.display = "block";
             document.getElementById("bienvenida").style.display = "none";
             document.getElementById("finDelJuego").style.display = "none";
@@ -30,14 +30,6 @@ export function interfazFc(cont) {
             visuales.style.display = "grid";
             break;
 
-        case 3:    //Boost fire
-            document.getElementById("fire").style.display = "block";
-            break;
-
-        case 4:   //Boost KO
-            document.getElementById("KO").style.display = "block";
-            break;
-
         case 5:   //Jugar de nuevo?
             document.getElementById("tablero").style.display = "none";
             document.getElementById("racha").style.display = "none";
@@ -45,16 +37,19 @@ export function interfazFc(cont) {
             document.getElementById("fire").style.display = "none";
             document.getElementById("KO").style.display = "none";
             document.getElementById("finDelJuego").style.display = "flex";
-            pantalla.style.display = "none";
             opciones.style.display = "none";
             break;
 
         case 6:   //Fin del juego.
-            document.getElementById("pantalla").style.display = "none";
-            let nombre = document.getElementById("celdanombre").textContent;
-            document.getElementById("findeljuego").style.display = "none";
-            document.getElementById("elegiste").style.display = "block";
-            document.getElementById("elegiste").textContent = "Gracias por jugar " + nombre + ", hasta pronto";
+            document.getElementById("finDelJuego").style.display = "none";
+            document.getElementById("elegiste").innerText = "Gracias por jugar " + nombre + ", hasta pronto";
+            break;
+        case 7:
+            document.getElementById("finDelJuego").style.display = "none";
+            document.getElementById("tablero").style.display = "block";
+            document.getElementById("racha").style.display = "block";
+            document.getElementById("fire").style.display = "block";
+            document.getElementById("KO").style.display = "block";
             break;
     }
 }

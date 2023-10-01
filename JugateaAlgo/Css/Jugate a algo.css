@@ -10,6 +10,7 @@ body {
     background: linear-gradient(131deg,
     #53D1FA 18%,
     #3B85E3 33%);
+    height: 100vh;
 }
 
 #fondo { 

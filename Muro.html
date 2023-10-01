@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muro</title>
-    <link rel="icon" type="img/png" href="./Cosas/Imagenes/pc.ico">
+    <link rel="icon" type="img/png" href="./Cosas/Imagenes/LeBenitez!.ico">
     <link rel="stylesheet" href="./Muro/Css/Muro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,51 +17,33 @@
 </head>
 
 <body>
-    <nav id="banner">
-        <ul>
-            <li>
-                <a href="https://www.youtube.com/channel/UCmDgrjDhdFktnWrzVwKOFaQ" target="_blank">
-                    <img id="youtubeIcon" src="./Cosas/Imagenes/redes/Youtube.png"></img>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/lebenitez_/?next=%2F" target="_blank">
-                    <img id="instagramIcon" src="./Cosas/Imagenes/redes/Instagram.png" class="iconSquare"></img>
-                </a>
-            </li>
-            <li>
-                <a href="https://twitter.com/lebenitez_" target="_blank">
-                    <img id="twitterIcon" src="./Cosas/Imagenes/redes/Twitter.png" class="iconSquare"></img>
-                </a>
-            </li>           
-        </ul>
-    </nav>
-    <form id="formulario">
-        <h2>Caracteres: <span id="caracteres">400</span></h2>
-        <textarea name="comentario" onkeyup="caracteres(this);" id="comentario" placeholder="Ingresar comentario"
-            minlength="20" maxlength="400" required></textarea>
-        <button id="comentar" type="submit" for="comentario">Comentar</button>
+    <div class="general">
+        <h2>Bienvenido a mi muro de comentarios</h2>
 
-    </form>
-    <div id="muro">       
-    </div>
-    <footer>
-        <a href="index.html">
-            <div id="atras">
-                <img class="arrowleft" src="./JugateaAlgo/Cosas/Izquierda.png"></img>
-                <span>Portfolio</span>
+        <div class="general">
+            <h3>Ya que estas acá haceme saber tu opinión!</h3>
+            <div class="general">
+                <form id="formulario">
+
+                    <div class="insert">
+                        <div class="charts">
+                            <p><span id="chartsLeft">0</span>/400</p>
+                            <textarea id="input" name="comentario" placeholder="Ingresar comentario" minlength="20"
+                                maxlength="400" required></textarea>
+                        </div>
+                        <button type="submit" for="comentario">Comentar</button>
+                    </div>
+                </form>
             </div>
-        </a>
+            <div id="muro" class="general"></div>
+        </div>
+    </div>
+    <footer class="bulto">
+        <div class="volver">
+            <a href="./index.html"><img class="logo" src="./Cosas/Imagenes/LeBenitez!.png" alt="" /></a>
+            <a href="./index.html">Volver</a>
+        </div>
     </footer>
-    <script>
-        function caracteres(obj) {
-            // document.getElementById("caracteres").innerHTML = obj.value.length+' characters';
-            var maxLength = 400;
-            var ingresados = obj.value.length;
-            var caracteresActuales = (maxLength - ingresados);
-            document.getElementById("caracteres").innerHTML = caracteresActuales;
-        }
-    </script>
     <script type="module" src="Muro/Muro.js"></script>
 </body>
 

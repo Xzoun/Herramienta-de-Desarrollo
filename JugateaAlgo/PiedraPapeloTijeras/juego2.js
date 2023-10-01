@@ -12,48 +12,46 @@ let cambiarInterfaz = interfazFc,
 
 // ----------------------- Variables -----------------------
 //html
-var nombre = document.getElementById("celdaNombre").innerText,
-    puntoActual = document.getElementById("punto"),
+const puntoActual = document.getElementById("punto"),
     elegiste = document.getElementById("elegiste"),
     eligioIA = document.getElementById("eligioIA"),
     fireButton = document.getElementById("fire"),
-    KOButton = document.getElementById("KO");
+    KOButton = document.getElementById("KO"),
+    opciones = document.getElementById("opciones");
 
 // juego
-var eleccion,
+
+let eleccion,
     ganadorPunto;
 
 // boost
-var racha = 0,
+let racha = 0,
     contadorPantalla,
     fireActive = false
 
 // Marcador
-var puntaje = 0,
+let puntaje = 0,
     puntajeIA = 0,
+    nombre,
     cont;
-
-const opciones = document.getElementById("opciones");
 
 // ----------------------- Interfaz Inicial -----------------------
 
 document.getElementById("bienvenida").addEventListener("submit", (e) => {
     e.preventDefault();
 
-    var nombre = document.getElementById("ingresoNombre").value || "Player 1";
+    nombre = document.getElementById("ingresoNombre").value || "Player 1";
     document.getElementById("celdaNombre").textContent = nombre;
 
-    cont = 0;
-    cambiarInterfaz(cont);
+    cambiarInterfaz(0);
 
 }, { once: true })
 
 document.getElementById("botonInicial").addEventListener("click", () => {
 
-    let cont = 1;
-    cambiarInterfaz(cont);
+    cambiarInterfaz(1);
 
-}, { once: true })
+})
 
 // ----------------------- Juego -----------------------
 
@@ -66,7 +64,7 @@ opciones.addEventListener("click", (e) => {
         puntoActual.innerText = "Fire in the hole!";
         puntoActual.style.display = "block";
 
-    }, { once: true });
+    });
 
 
     KOButton.addEventListener("click", function (event) {
@@ -75,14 +73,13 @@ opciones.addEventListener("click", (e) => {
         setTimeout(() => {
             findeljuego()
         }, 300);
-    }, { once: true });
+    });
 
     // ----------------------- Juego -----------------------
 
     contadorPantalla = 0;
 
-    cont = 2;
-    cambiarInterfaz(cont);
+    cambiarInterfaz(2);
     eleccion = e.target.innerText;
 
     let { maquina } = eleccionMaquina();
@@ -181,55 +178,62 @@ opciones.addEventListener("click", (e) => {
             clearInterval(intervalo);
         }
     }
-    var intervalo = setInterval(buclepantalla, 1000);
 
     // ----------------------- Ganador -----------------------
 
-    if (puntaje >= 10 && puntajeIA >= 10) {
+
+    if (puntaje >= 10 || puntajeIA >= 10) {
+
         setTimeout(() => {
-            findeljuego(),
-                eleccionPantalla.innerText = nombre + ", fue un empate..."
-        }, 1550);
-    } else if (puntaje >= 10 && puntajeIA >= 10) {
-        setTimeout(() => {
-            findeljuego(),
-                eleccionPantalla.innerText = nombre + ", fue un empate..."
-        }, 1550);
-    } else if (puntaje < 10 && puntajeIA >= 10) {
-        setTimeout(() => {
-            findeljuego(),
-                eleccionPantalla.innerText = nombre + ", Perdiste :("
-        }, 1550);
-    } else if (puntaje >= 10 && puntajeIA < 10) {
-        setTimeout(() => {
-            findeljuego(),
-                eleccionPantalla.innerText = nombre + ", Ganaste! :D"
-        }, 1550);
+            clearInterval(intervalo);
+            puntoActual.innerText = "";
+            if (puntaje >= 10 && puntajeIA >= 10) {
+                puntoActual.innerText = nombre + ", fue un empate...";
+            } else if (puntaje < 10 && puntajeIA >= 10) {
+                puntoActual.innerText = nombre + ", Perdiste :(";
+            } else if (puntaje >= 10 && puntajeIA < 10) {
+                puntoActual.innerText = nombre + ", Ganaste! :D";
+            }
+
+            puntoActual.style.display = "block";
+            document.getElementById("eleccionPantalla").style.display = "block"
+            findeljuego();
+
+        }, 4500);
     }
+
 
     setTimeout(() => {
         cont = 2;
         // cargartablero(puntaje, puntajeIA, cont)
         document.getElementById("rachaActual").innerText = racha;
     }, 1000);
+
+    var intervalo = setInterval(buclepantalla, 1500);
 })
 
 function findeljuego() {
     const reinicio = document.getElementById("sino");
+    cambiarInterfaz(5);
+
     reinicio.childNodes.forEach((eleccion) => {
-        let cont = 5;
-        cambiarInterfaz(cont);
+
         eleccion.addEventListener("click", (e) => {
             let respuesta = e.target.value;
             if (respuesta == "si") {
+                puntoActual.innerText = nombre + "";
                 puntaje = 0;
                 puntajeIA = 0;
-                cont = 0;
-                cambiarInterfaz(cont);
+                racha = 0;
+                document.getElementById("rachaActual").innerText = 0;
+                document.getElementById("celdaMarcador").innerText = 0;
+                document.getElementById("celdaMarcadorIA").innerText = 0;
+                cambiarInterfaz(7);
+                cambiarInterfaz(1);
             } else if (respuesta == "no") {
-                cont = 6;
-                cambiarInterfaz(cont);
+                cambiarInterfaz(6, nombre);
             }
-        }, { once: true })
+        });
     })
 }
+

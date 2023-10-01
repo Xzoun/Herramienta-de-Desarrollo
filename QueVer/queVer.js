@@ -13,7 +13,7 @@ let url = "imagenes/queVer"
 // ---------- Paginas ---------- 
 const paginas = {
     pagSeries: {
-        photoSrc: "./QueVer/Imagenes/gameOfThrones.jpg",
+        photoSrc: "./QueVer/Imagenes/gameOfThrones.png",
         title: "Game Of Thrones",
         link1Desc: "Ver Trailer",
         link2Desc: "Sinopsis",
@@ -47,15 +47,6 @@ const paginas = {
         link1Href: "https://www.youtube.com/watch?v=nolkPq64TrY",
         link2Href: "https://www.youtube.com/watch?v=dPg4fq1E9xk",
         url: "/musicos",
-    },
-    pagLibros: {
-        photoSrc: "./QueVer/Imagenes/unMundoSinFin.jpg",
-        title: "Un mundo sin fin",
-        link1Desc: "Comprar",
-        link2Desc: "Información",
-        link1Href: "https://play.google.com/store/books/details/Ken_Follett_Un_mundo_sin_fin_edici%C3%B3n_10o_aniversar?id=LdxH80NuzgAC",
-        link2Href: "https://www.youtube.com/watch?v=7NU04BwAOtEo",
-        url: "/libros",
     },
 };
 

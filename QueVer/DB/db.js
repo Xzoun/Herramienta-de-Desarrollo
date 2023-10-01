@@ -46,9 +46,9 @@ export async function obtenerUrls(imageUrls, cont = 0) {
 }
 
 async function mostrarImagenesEnCarrusel(cont, url) {
-
     let contenedorActual = "",
         botonAtras = "";
+        
     try {
         const storageRef = storage.ref(url);
         const res = await storageRef.listAll();
