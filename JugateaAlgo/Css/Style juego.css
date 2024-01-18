@@ -120,8 +120,8 @@ h2 {
     width: 150px;
 }
 
-#indicacionInicial{
-    display:none;
+#indicacionInicial {
+    display: none;
 }
 
 /*--------------------------- Responsive ----------------------------*/
@@ -135,22 +135,25 @@ h2 {
         border-radius: 50px;
         height: 20px;
         width: 75px;
-        font-size: 2ch;
     }
-    .botons .iconoBoton {       
-        top:2px;
+
+    .botons .iconoBoton {
+        top: 2px;
     }
-    .botons span{
-        top:2px;
+
+    .botons span {
+        top: 2px;
+        font-size: 3ch;
     }
-    .arrowright{
-        width: 16px;
-        height: 16px;
+
+    .arrowright {
+        width: 3ch;
+        height: 3ch;
     }
 }
 
 @media (min-width: 1200px) {
-    #ingresoboton {
+    #ingresoBoton {
         background: black;
         border: none;
         color: rgba(164, 177, 180, 1);
@@ -158,15 +161,22 @@ h2 {
         border-radius: 50px;
         height: 60px;
         width: 240px;
-       font-size: 2ch;
+        font-size: 1ch;
     }
-    .botons .iconoBoton {       
-        top:6px;
+
+    #ingresoBoton span {
+        font-size: 5ch;
     }
-    .botons span{
-        top:6px;
+
+    .botons .iconoBoton {
+        top: 1px;
     }
-    .arrowright{
+
+    .botons span {
+        top: 6px;
+    }
+
+    .arrowright {
         width: 50px;
         height: 50px;
     }
@@ -189,4 +199,3 @@ h2 {
     padding: 10px;
     color: rgb(188, 188, 188);
 }
-

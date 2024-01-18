@@ -192,15 +192,13 @@ h1 {
 #jokeInterfaz #dia {
     position: absolute;
     top: 200px;
-    left: 600px;
+    left: 15%;
 }
 
 #jokeInterfaz #joke {
     text-align: center;
-    width: 320px;
-    top: 12px;
-    left: 12px;
-    font-size: 2ch;
+    width: 50%;
+    margin-left: 25%;
     border-radius: 12px;
     background-color: rgba(240, 248, 255, 0.2);
 }
@@ -287,7 +285,7 @@ padding-bottom: 20px;
 
 @media (min-width: 1200px) {
     body {
-        font-size: 5ch;
+        font-size: 3ch;
     }
 
     .rainbow-text {
@@ -296,15 +294,14 @@ padding-bottom: 20px;
     }
 
     #jokeBoton {
-        top: 600px;
-        width: 120px;
+        top: 80%;
+        width: 70px;
         left: 87%;
-        height: 120px;
-        font-size: 2ch;
+        height: 70px;
     }
 
     #atras {
         width: 500px;
-        font-size: 2ch;
     }
+
 }

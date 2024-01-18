@@ -250,25 +250,25 @@
 @media (min-width: 1200px) {
 
     .note {
-        height: 16ch;
-        width: 16ch;
-        font-size: 2ch;
+        height: 15ch;
+        width: 15ch;
+        font-size: 1ch;
     }
 
     .note:hover {
-        height: 20ch;
-        width: 20ch;
+        height: 18ch;
+        width: 18ch;
     }
 
     /*--------------------------- Notas || Drop Zones ---------------------------*/
 
     .dropZone {
-        grid-template-columns: repeat(auto-fill, 16ch);
+        grid-template-columns: repeat(auto-fill, 10ch);
         gap: 5%;
     }
 
     #nuevaNota {
-        grid-template-columns: repeat(auto-fill, 18ch);
+        grid-template-columns: repeat(auto-fill, 10ch);
         grid-template-columns: repeat(1fr);
         gap: 5%;
         min-height: 400px;
@@ -276,6 +276,11 @@
 
     #nuevaNota h2 {
         font-size: 2ch;
+    }
+
+    #dropZone2 {
+        width: 15ch;
+        height: 15ch;
     }
 
     /*--------------------------- Notas || Menu  ---------------------------*/
