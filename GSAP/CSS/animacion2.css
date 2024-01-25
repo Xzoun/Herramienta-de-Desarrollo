@@ -1,0 +1,29 @@
+* {
+    overflow: hidden;
+}
+
+#bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(120deg,
+            rgb(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.4) 32%,
+            rgba(0, 0, 0, 0.2) 70%,
+            rgba(0, 0, 0, 0.6) 100%);
+    z-index: -30;
+}
+
+.bola {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 0;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}

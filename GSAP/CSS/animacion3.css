@@ -1,0 +1,36 @@
+* {
+    overflow-x: hidden;
+}
+
+body {
+    height: 1000vh;
+}
+
+.box {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-color: white;
+}
+
+#box1 {
+    top: 100vh;
+    z-index: 30;
+}
+
+#box2 {
+    top: 100vh;
+    z-index: 20;
+}
+
+#box3 {
+    top: 100vh;
+    z-index: 10;
+}
+
+.img {
+    height: 100vh;
+}

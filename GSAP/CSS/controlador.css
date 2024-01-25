@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap');
+
+* {
+    font-family: Inter, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#controlador {
+    position: fixed;
+    bottom: 10vh;
+    left: 20vw;
+    height: 10vh;
+    width: 60vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    overflow: hidden;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#controlador a {
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+#controlador h2 {
+    color: white;
+}
+
+#homeLogo {
+    filter: invert(1);
+}
+
+@media (max-width : 768px) {
+
+    #controlador {
+        top: 10vh;
+        left: 10vw;
+        height: 60vh;
+        width: 10vw;
+
+        flex-direction: column;
+        gap: 0rem;
+    }
+
+    #controlador h2 {
+        visibility: hidden;
+    }
+
+    #controlador a span {
+        display: none;
+    }
+}
