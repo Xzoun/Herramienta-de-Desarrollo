@@ -1,95 +1,71 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
+const indicacion = document.getElementById('indicacion');
+
 const box1 = document.getElementById('box1');
 const box2 = document.getElementById('box2');
 const box3 = document.getElementById('box3');
-const box4 = document.getElementById('box4');
+const container = document.getElementById('container');
+
+gsap.set(indicacion, {
+    opacity: 0,
+    yPercent: -100
+})
+
+gsap.to(indicacion, {
+    opacity: 1,
+    yPercent: 0,
+    delay: 1,
+    duration: 2,
+})
 
 const tl = gsap.timeline({
     scrollTrigger: {
-        trigger: ".box",
-        start: "top center",
+        trigger: container,
+        start: "top top",
         end: "bottom 20%",
         scrub: 3,
-        pin: ".box",
-        markers: {
-            startColor: "green",
-            endColor: "red",
-            indent: "100",
-            fontSize: "1rem"
-        }
+        pin: container,
     }
 })
 
-tl.to(".box", {
-    xPercent: -100,
-    y: -100,
-    rotate: -90,
-    duration: 1,
-    stagger: 5
-})
+tl
+    .set(container, {
+        opacity: 0,
+    })
 
-// gsap.to(box1, {
-//     scrollTrigger: {
-//         trigger: box1,
-//         start: "top top",
-//         end: "bottom 20%",
-//         scrub: 1,
-//         pin: true,
-//         markers: {
-//             startColor: "green",
-//             endColor: "red",
-//             fontSize: "1rem",
-//             indent: "100"
-//         }
-//     },
+    .to(container, {
+        duration: 3,
+        opacity: 1,
+        onComplete: () => {
+            indicacion.remove();
+            document.body.style.background = "black";
+        }
+    })
 
-//     xPercent: -100,
-//     y: -100,
-//     rotate: -90,
-//     duration: 2,
+    .to(box1, {
+        duration: 5,
+        rotate: -90,
+        stagger: 5,
+        delay: 5,
+        scale: 5,
+        opacity: 0
+    })
 
-// });
 
-// gsap.to(box2, {
-//     scrollTrigger: {
-//         trigger: box2,
-//         start: "top top",
-//         end: "bottom 20%",
-//         scrub: 1,
-//         pin: true,
-//         markers: {
-//             startColor: "green",
-//             endColor: "red",
-//             fontSize: "1rem",
-//             indent: "100"
-//         }
-//     },
+    .to(box2, {
+        yPercent: 100,
+        xPercent: -100,
+        duration: 10,
+        rotate: -10,
+        delay: 5,
+       opacity: 0
+    })
 
-//     xPercent: -100,
-//     y: -100,
-//     rotate: -90,
-//     duration: 2,
-
-// }); gsap.to(box3, {
-//     scrollTrigger: {
-//         trigger: box3,
-//         start: "top top",
-//         end: "bottom 20%",
-//         scrub: 1,
-//         pin: true,
-//         markers: {
-//             startColor: "green",
-//             endColor: "red",
-//             fontSize: "1rem",
-//             indent: "100"
-//         }
-//     },
-
-//     xPercent: -100,
-//     y: -100,
-//     rotate: -90,
-//     duration: 2,
-
-// });
+    .to(box3, {
+        opacity: 1,
+        delay: 2,
+        yPercent:-30,
+        duration: 10
+    })
